@@ -66,3 +66,15 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
+
+/* line 8, ../sass/screen.scss */
+header {
+  background-color: #34495E;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 300px;
+  display: block;
+  border-bottom: 10px solid #48C9B0;
+}
