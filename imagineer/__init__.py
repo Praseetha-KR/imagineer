@@ -1,5 +1,21 @@
 from flask import Flask
-# create our little application :)
-app = Flask(__name__)
+from flask.ext.mongoengine import MongoEngine
 
-from . import models, views
+app = Flask(__name__)
+app.config["MONGODB_SETTINGS"] = {"DB": "my_tumble_log"}
+app.config["SECRET_KEY"] = "KeepThisS3cr3t"
+
+db = MongoEngine(app)
+
+
+def register_blueprints(app):
+    # Prevents circular imports
+    from imagineer.views import posts
+    from imagineer.admin import admin
+    app.register_blueprint(posts)
+    app.register_blueprint(admin)
+
+register_blueprints(app)
+
+if __name__ == '__main__':
+    app.run()
