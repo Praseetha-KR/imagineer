@@ -4,7 +4,7 @@ from flask.views import MethodView
 from flask.ext.mongoengine.wtf import model_form
 from imagineer.models import Post, Comment
 
-posts = Blueprint('posts', __name__, template_folder='templates')
+posts = Blueprint('posts', __name__, static_folder='static', static_url_path='/_imagineer', template_folder='templates')
 
 
 class ListView(MethodView):
