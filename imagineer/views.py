@@ -3,6 +3,7 @@ from flask.views import MethodView
 
 from flask.ext.mongoengine.wtf import model_form
 from imagineer.models import Post, Comment
+from imagineer import app
 
 posts = Blueprint('posts', __name__, static_folder='static', static_url_path='/_imagineer', template_folder='templates')
 
@@ -49,5 +50,38 @@ class DetailView(MethodView):
 
 
 # Register the urls
-posts.add_url_rule('/', view_func=ListView.as_view('list'))
-posts.add_url_rule('/<slug>/', view_func=DetailView.as_view('detail'))
+posts.add_url_rule('/blog/', view_func=ListView.as_view('list'))
+posts.add_url_rule('/blog/<slug>/', view_func=DetailView.as_view('detail'))
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/about/')
+def about():
+    return render_template('about.html')
+
+@app.route('/resume/')
+def resume():
+    return render_template('resume.html')
+
+@app.route('/experiments/css/')
+def experiments_css():
+    return render_template('experiments/css.html')
+
+@app.route('/experiments/js/')
+def experiments_js():
+    return render_template('experiments/js.html')
+
+@app.route('/experiments/art/')
+def experiments_art():
+    return render_template('experiments/art.html')
+
+@app.route('/experiments/craft/')
+def experiments_craft():
+    return render_template('experiments/craft.html')
+
+@app.route('/experiments/photography/')
+def experiments_photography():
+    return render_template('experiments/photography.html')
+
