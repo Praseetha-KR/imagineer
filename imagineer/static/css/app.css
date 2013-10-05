@@ -4,3 +4,54 @@
   line-height: 1em;
   margin-left: 10px;
 }
+
+/* line 6, ../sass/app.sass */
+.navbar-inverse {
+  background-color: #080808;
+}
+
+/* line 9, ../sass/app.sass */
+.content {
+  padding-top: 40px;
+}
+
+/* line 12, ../sass/app.sass */
+.center-container {
+  background: #2e5f3e;
+  color: #4fa46b;
+  width: 100%;
+  min-height: 600px;
+  clear: both;
+  position: relative;
+}
+
+/* line 20, ../sass/app.sass */
+.center-block {
+  background: #4fa46b;
+  color: white;
+}
+
+/* line 24, ../sass/app.sass */
+.absolute-center {
+  width: 320px;
+  height: 80px;
+  min-width: 200px;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* line 36, ../sass/app.sass */
+.codepen h3 {
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+/* line 39, ../sass/app.sass */
+.codepen p {
+  padding-top: 10px;
+  margin-bottom: 50px;
+}
