@@ -1,21 +1,42 @@
 /* line 1, ../sass/app.sass */
+body {
+  background-color: #efefef;
+}
+
+/* line 4, ../sass/app.sass */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Oswald", sans-serif;
+}
+
+/* line 7, ../sass/app.sass */
+hr {
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid white;
+}
+
+/* line 11, ../sass/app.sass */
 .navbar-brand > small {
   font-size: 0.75em;
   line-height: 1em;
   margin-left: 10px;
 }
 
-/* line 6, ../sass/app.sass */
+/* line 16, ../sass/app.sass */
+.navbar-right > li:nth-child(4) > a:hover {
+  background-color: #69d2e7;
+}
+
+/* line 19, ../sass/app.sass */
 .navbar-inverse {
   background-color: #080808;
 }
 
-/* line 9, ../sass/app.sass */
+/* line 22, ../sass/app.sass */
 .content {
   padding-top: 40px;
 }
 
-/* line 12, ../sass/app.sass */
+/* line 25, ../sass/app.sass */
 .center-container {
   background: #2e5f3e;
   color: #4fa46b;
@@ -25,13 +46,13 @@
   position: relative;
 }
 
-/* line 20, ../sass/app.sass */
+/* line 33, ../sass/app.sass */
 .center-block {
   background: #4fa46b;
   color: white;
 }
 
-/* line 24, ../sass/app.sass */
+/* line 37, ../sass/app.sass */
 .absolute-center {
   width: 320px;
   height: 80px;
@@ -45,13 +66,18 @@
   bottom: 0;
 }
 
-/* line 36, ../sass/app.sass */
+/* line 49, ../sass/app.sass */
 .codepen h3 {
   padding-bottom: 20px;
   padding-top: 10px;
 }
-/* line 39, ../sass/app.sass */
+/* line 52, ../sass/app.sass */
 .codepen p {
   padding-top: 10px;
   margin-bottom: 50px;
+}
+
+/* line 56, ../sass/app.sass */
+.craft-steps p {
+  height: 150px;
 }
