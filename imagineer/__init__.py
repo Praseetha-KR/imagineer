@@ -1,5 +1,5 @@
 from flask import Flask
-
+# create our little application :)
 app = Flask(__name__)
 
-from . import views
+from . import models, views
