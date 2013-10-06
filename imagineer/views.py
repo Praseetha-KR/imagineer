@@ -50,12 +50,8 @@ class DetailView(MethodView):
 
 
 # Register the urls
-posts.add_url_rule('/blog/', view_func=ListView.as_view('list'))
+posts.add_url_rule('/', view_func=ListView.as_view('list'))
 posts.add_url_rule('/blog/<slug>/', view_func=DetailView.as_view('detail'))
-
-@app.route('/')
-def index():
-    return render_template('index.html')
 
 @app.route('/about/')
 def about():
@@ -82,6 +78,10 @@ def experiments_craft():
     return render_template('experiments/craft.html')
 
 @app.route('/experiments/photography/')
-def experiments_photography():
-    return render_template('experiments/photography.html')
+@app.route('/experiments/photography/travel/1/')
+def experiments_photography_travel_1():
+    return render_template('experiments/photography/travel/1.html')
 
+@app.route('/experiments/photography/nature/1/')
+def experiments_photography_nature_1():
+    return render_template('experiments/photography/nature/1.html')
