@@ -37,6 +37,16 @@ hr {
 }
 
 /* line 25, ../sass/app.sass */
+footer {
+  height: 80px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* line 32, ../sass/app.sass */
 .center-container {
   background: #2e5f3e;
   color: #4fa46b;
@@ -46,13 +56,13 @@ hr {
   position: relative;
 }
 
-/* line 33, ../sass/app.sass */
+/* line 40, ../sass/app.sass */
 .center-block {
   background: #4fa46b;
   color: white;
 }
 
-/* line 37, ../sass/app.sass */
+/* line 44, ../sass/app.sass */
 .absolute-center {
   width: 320px;
   height: 80px;
@@ -66,18 +76,47 @@ hr {
   bottom: 0;
 }
 
-/* line 49, ../sass/app.sass */
+/* line 56, ../sass/app.sass */
 .codepen h3 {
   padding-bottom: 20px;
   padding-top: 10px;
 }
-/* line 52, ../sass/app.sass */
+/* line 59, ../sass/app.sass */
 .codepen p {
   padding-top: 10px;
   margin-bottom: 50px;
 }
 
-/* line 56, ../sass/app.sass */
+/* line 63, ../sass/app.sass */
 .craft-steps p {
   height: 150px;
+}
+
+/* line 66, ../sass/app.sass */
+.hashtags {
+  margin-left: 0;
+  padding-left: 0;
+}
+/* line 69, ../sass/app.sass */
+.hashtags li {
+  list-style-type: none;
+  display: inline-block;
+  padding-right: 10px;
+  font-weight: bold;
+}
+
+/* line 76, ../sass/app.sass */
+.social a {
+  display: inline-block;
+  padding-right: 30px;
+  color: #333333;
+}
+/* line 80, ../sass/app.sass */
+.social a:hover {
+  text-decoration: none;
+  color: #999999;
+}
+/* line 83, ../sass/app.sass */
+.social a i {
+  padding-right: 8px;
 }
