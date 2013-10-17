@@ -1,5 +1,0 @@
-flask
-flask-script
-WTForms
-mongoengine
-flask_mongoengine
