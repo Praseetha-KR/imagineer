@@ -1,0 +1,2 @@
+PORT = 14071
+DEBUG = True

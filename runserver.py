@@ -1,9 +1,8 @@
-from flask import Flask 
-app = Flask(__name__)
+import sys
+import os.path
+sys.path.insert(0, os.path.dirname(__file__))
 
-@app.route('/')
-def hello_world():
-	return "Hello world!"
 
-if __name__ == '__main__':
-	app.run(host='0.0.0.0', port=14071)
+from imagineer import app as application
+if __name__ == "__main__":
+	application.run(debug=application.config['DEBUG'], port=application.config['PORT'])
