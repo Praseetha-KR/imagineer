@@ -9,6 +9,12 @@
 					<p>{{ post['content'] | safe }}</p>
 					<p>{{ post['slug'] }}</p>
 					<p>{{ post['_id'] }}</p>
+					<h4>
+						{% if post['tags'] %}tags:{% endif %} 
+						{% for tag in post['tags']: %}
+							{{ tag }}
+						{% endfor %}
+					</h4>
 					<hr>
 				{% endfor %}
 			</div>
