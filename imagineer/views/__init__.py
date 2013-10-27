@@ -7,7 +7,7 @@ def index():
 	posts = mongo.db.blogCollection.find()
 	return render_template('index.html', posts=posts)
 
-@app.route('/new', methods=['GET', 'POST'])
+@app.route('/new/', methods=['GET', 'POST'])
 def new():
 	form = BlogPost(request.form)
 	if request.method == 'POST' and form.validate():
@@ -16,8 +16,8 @@ def new():
 		redirect('index')
 	return render_template('new.html', form=form)
 
-@app.route('/<slug>')
-def post_view(self, slug):
-	post = BlogPost.objects.get_or_404(slug=slug)
+@app.route('/post/<slug>/')
+def post_view(slug):
+	post = mongo.db.blogCollection.find_one_or_404({'slug':slug})
 	return render_template('post_view.html', post=post)
 
