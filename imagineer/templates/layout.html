@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>imagineer.in | Website of Praseetha KR</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/vendor/normalize.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/vendor/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome-ie7.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+</head>
+<body>
+	<header>
+		<h1>imagineer</h1>
+		<h3>coding with colors</h3>
+		<a href="{{ url_for('index') }}"><button type="button" class="btn btn-warning">home</button></a>
+		<a href="{{ url_for('new') }}"><button type="button" class="btn btn-primary">create post</button></a>
+		<hr>
+		{% block header %}{% endblock %}
+	</header>
+	{% block content %}{% endblock %}
+	<footer></footer>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/vendor/jquery-1.10.2.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/vendor/modernizr-2.6.2.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/vendor/bootstrap.min.js') }}"></script>
+	{% block footerscripts %}{% endblock %}
+</body>
+</html>

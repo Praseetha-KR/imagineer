@@ -3,14 +3,12 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				{% for post in posts %}
-					<h1><a href="{{ url_for('post_view', slug=post['slug'] ) }}">{{ post['title'] | safe }}</a></h1>
+					<h1>{{ post['title'] | safe }}</h1>
 					<h6><em>{{ post['created_at'].strftime("%d %B %Y") }}</em></h6>
 					<p>{{ post['content'] | safe }}</p>
 					<p>{{ post['slug'] }}</p>
 					<p>{{ post['_id'] }}</p>
 					<hr>
-				{% endfor %}
 			</div>
 		</div>
 	</div>

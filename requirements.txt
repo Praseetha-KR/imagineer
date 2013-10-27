@@ -1,1 +1,4 @@
 Flask
+pymongo
+flask-wtf
+

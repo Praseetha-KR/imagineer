@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+				<form name="postform" action="{{ url_for('new') }}" method=post>
+					{#{{ form.hidden_tag() }}#}
+					{{ form.title }}
+					{{ form.content }}
+					{{ form.slug }}
+					{{ form.submit }}
+				</form>
+			</div>	
+		</div>
+	</div>
+{% endblock %}
