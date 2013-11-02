@@ -1,24 +1,24 @@
-/* line 3, ../scss/app.scss */
+/* line 3, ../sass/app.sass */
 body {
   background-color: #efefef;
 }
 
-/* line 7, ../scss/app.scss */
+/* line 6, ../sass/app.sass */
 .navbar-default {
   background-color: white;
 }
 
-/* line 11, ../scss/app.scss */
+/* line 8, ../sass/app.sass */
 .content {
   margin-top: 52px;
 }
 
-/* line 15, ../scss/app.scss */
+/* line 10, ../sass/app.sass */
 .posts {
   padding-left: 0;
 }
 
-/* line 19, ../scss/app.scss */
+/* line 12, ../sass/app.sass */
 .post-list {
   background-color: white;
   padding: 10px;
@@ -27,7 +27,7 @@ body {
   border-top: 3px solid #f26328;
   list-style-type: none;
 }
-/* line 26, ../scss/app.scss */
+/* line 19, ../sass/app.sass */
 .post-list h3 > a {
   text-decoration: none;
   color: black;
