@@ -1,24 +1,21 @@
-/* line 3, ../scss/app.scss */
+@import "compass";
+
 body {
   background-color: #efefef;
 }
 
-/* line 7, ../scss/app.scss */
 .navbar-default {
   background-color: white;
 }
 
-/* line 11, ../scss/app.scss */
 .content {
   margin-top: 52px;
 }
 
-/* line 15, ../scss/app.scss */
 .posts {
   padding-left: 0;
 }
 
-/* line 19, ../scss/app.scss */
 .post-list {
   background-color: white;
   padding: 10px;
@@ -26,9 +23,8 @@ body {
   margin-bottom: 30px;
   border-top: 3px solid #f26328;
   list-style-type: none;
-}
-/* line 26, ../scss/app.scss */
-.post-list h3 > a {
-  text-decoration: none;
-  color: black;
+  h3 > a {
+    text-decoration: none;
+    color: black;
+  }
 }
