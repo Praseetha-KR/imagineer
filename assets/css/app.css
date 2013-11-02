@@ -3,15 +3,31 @@ body {
   background-color: #efefef;
 }
 
-/* line 7, ../sass/app.sass */
+/* line 6, ../sass/app.sass */
+.navbar-default {
+  background-color: white;
+}
+
+/* line 8, ../sass/app.sass */
+.content {
+  margin-top: 52px;
+}
+
+/* line 10, ../sass/app.sass */
+.posts {
+  padding-left: 0;
+}
+
+/* line 12, ../sass/app.sass */
 .post-list {
   background-color: white;
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 30px;
   border-top: 3px solid #f26328;
+  list-style-type: none;
 }
-/* line 13, ../sass/app.sass */
+/* line 19, ../sass/app.sass */
 .post-list h3 > a {
   text-decoration: none;
   color: black;
