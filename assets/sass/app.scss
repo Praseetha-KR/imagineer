@@ -32,6 +32,7 @@ body{
 	padding-top: 50%;
 	float: left;
 	overflow: hidden;
+	max-width: 2000px;
 }
 #half-left{
 	/*background-color: #E96F23;*/
@@ -60,9 +61,9 @@ body{
     display: block;
     width: 0;
     height: 0;
-    margin-left: -720px;
-    border-bottom: 720px solid transparent;
-    border-left: 720px solid #4679BD;
+    margin-left: -2000px;
+    border-bottom: 2000px solid transparent;
+    border-left: 2000px solid #4679BD;
 }
 #triangle2 {
     width: 0;
@@ -77,16 +78,29 @@ body{
     display: block;
     width: 0;
     height: 0;
-    margin-left: -720px;
-    border-top: 720px solid transparent;
-    border-right: 720px solid orange;
+    margin-left: -2000px;
+    border-top: 2000px solid transparent;
+    border-right: 2000px solid #333;
 }
 #square3{
 	height: 0;
 	padding-bottom: 50%;
 	width: 50%;
-	background-color: yellow;
+	background-color: #4679BD;
 	margin-top: -100%;
+	vertical-align: middle;
+}
+a > #square3{
+	color: #333;
+}
+@media screen and (min-width: 768px){
+	#square3:hover{
+		background-image: url('/assets/img/praseetha.png');
+		background-size: 100% 100%;
+		.text{
+			opacity: 0;
+		}
+	}
 }
 #triangle4 {
     width: 0;
@@ -102,9 +116,9 @@ body{
     display: block;
     width: 0;
     height: 0;
-    margin-left: -720px;
-    border-bottom: 720px solid transparent;
-    border-left: 720px solid red;
+    margin-left: -2000px;
+    border-bottom: 2000px solid transparent;
+    border-left: 2000px solid #333;
 }
 #triangle5 {
     width: 50%;
@@ -132,15 +146,69 @@ body{
 #triangle7 div {
     width: 0;
     height: 0;
-    margin-top:-720px;
+    margin-top:-2000px;
     
-    border-top: 720px solid transparent;
-    border-bottom: 720px solid transparent;
-    border-right: 720px solid #4679BD;
+    border-top: 2000px solid transparent;
+    border-bottom: 2000px solid transparent;
+    border-right: 2000px solid #4679BD;
+}
+#masthead{
+	font-family: 'Oswald';
+	#text1{
+		margin-top: -90%;
+		font-size: 4.5em;
+		margin-left: 10%;
+	}
+	#text2{
+		margin-top: 0%;
+		padding-right: 5%;
+		font-size: 4.8em;
+		text-align: right;
+		color: #4679BD;
+		text-transform: uppercase;
+	}
+	#text3{
+		padding-top: 50%;
+		font-size: 3em;
+		padding-right: 10%;
+	}
+	#text4{
+		font-size: 1.3em;
+		padding-right: 10%;
+	}
 }
 
-
-
-
-
+@media screen and (min-width: 1200px){
+}
+@media screen and (min-width: 992px) and (max-width: 1199px){
+	#masthead{
+		#text1{
+			font-size: 3.5em;
+		}
+		#text2{
+			font-size: 4em;
+		}
+	}
+}
+@media screen and (min-width: 768px) and (max-width: 991px){
+	#masthead{
+		#text1{
+			font-size: 2.8em;
+		}
+		#text2{
+			font-size: 3em;
+		}
+		#text3{
+			padding-top: 40%;
+			font-size: 2.05em;
+		}
+	}
+}
+@media screen and (max-width: 767px){
+	#masthead{
+		.text{
+			display: none;
+		}
+	}
+}
 
