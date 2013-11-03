@@ -1,0 +1,19 @@
+{
+  "name": "imagineer",
+  "version": "0.0.1",
+  "description": "Imagineer Website",
+  "dependencies": {
+    "grunt": "0.4.x",
+    "grunt-jekyll": "0.4.x",
+    "grunt-contrib-watch": "0.5.x"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Praseetha-KR/imagineer.git"
+  },
+  "author": "Praseetha K R",
+  "bugs": {
+    "url": "https://github.com/Praseetha-KR/imagineer/issues"
+  }
+}
