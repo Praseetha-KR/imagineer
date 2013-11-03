@@ -52,10 +52,8 @@ module.exports = function(grunt) {
         tasks: ['compass','jekyll:dev']
       },
       jekyll: {
-        files: ['src/about/**/*.html',
-                'src/blog/**/*.html',
-                'src/_layouts/**/*.html',
-                'src/_posts/**/*.markdown'],
+        files: ['src/**/*.html',
+                'src/**/*.markdown'],
         tasks: ['jekyll:dev']
       }
     }
