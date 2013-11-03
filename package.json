@@ -5,9 +5,11 @@
   "dependencies": {
     "grunt": "0.4.x",
     "grunt-jekyll": "0.4.x",
-    "grunt-contrib-watch": "0.5.x"
+    "grunt-contrib-watch": "0.5.x",
+    "grunt-concurrent": "0.4.x"
   },
-  "devDependencies": {},
+  "devDependencies": {
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/Praseetha-KR/imagineer.git"
