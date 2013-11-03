@@ -5,23 +5,24 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     jekyll: {
+      options : {
+        src: 'src',
+        config : '_config.yml'
+      },
       serve : {
         options : {
           serve : true,
           port : 8000,
-          src: 'src',
           dest : 'dev'
         }
       },
       dev : {
         options:{
-          src: 'src',
           dest : 'dev'
         }
       },
       prod : {
         options:{
-          src: 'src',
           dest : 'prod'
         }
       }
