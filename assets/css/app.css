@@ -39,14 +39,15 @@ body {
   height: 0;
   padding-top: 50%;
   float: left;
+  overflow: hidden;
 }
 
-/* line 35, ../sass/app.scss */
+/* line 36, ../sass/app.scss */
 #half-left {
   /*background-color: #E96F23;*/
 }
 
-/* line 38, ../sass/app.scss */
+/* line 39, ../sass/app.scss */
 #half-right {
   background-color: #333;
 }
@@ -59,7 +60,7 @@ body {
 	border-right: 50% solid transparent;
 	border-bottom: 50% solid transparent;
 }*/
-/* line 49, ../sass/app.scss */
+/* line 50, ../sass/app.scss */
 #triangle1 {
   width: 0;
   height: 0;
@@ -69,7 +70,7 @@ body {
   margin-top: -100%;
 }
 
-/* line 57, ../sass/app.scss */
+/* line 58, ../sass/app.scss */
 #triangle1:after {
   content: "";
   display: block;
@@ -80,7 +81,7 @@ body {
   border-left: 720px solid #4679BD;
 }
 
-/* line 66, ../sass/app.scss */
+/* line 67, ../sass/app.scss */
 #triangle2 {
   width: 0;
   height: 0;
@@ -90,7 +91,7 @@ body {
   margin-top: -100%;
 }
 
-/* line 74, ../sass/app.scss */
+/* line 75, ../sass/app.scss */
 #triangle2:after {
   content: "";
   display: block;
@@ -99,4 +100,74 @@ body {
   margin-left: -720px;
   border-top: 720px solid transparent;
   border-right: 720px solid orange;
+}
+
+/* line 84, ../sass/app.scss */
+#square3 {
+  height: 0;
+  padding-bottom: 50%;
+  width: 50%;
+  background-color: yellow;
+  margin-top: -100%;
+}
+
+/* line 91, ../sass/app.scss */
+#triangle4 {
+  width: 0;
+  height: 0;
+  padding-bottom: 100%;
+  padding-left: 100%;
+  overflow: hidden;
+  margin-top: -100%;
+  margin-left: 50%;
+}
+
+/* line 100, ../sass/app.scss */
+#triangle4:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  margin-left: -720px;
+  border-bottom: 720px solid transparent;
+  border-left: 720px solid red;
+}
+
+/* line 109, ../sass/app.scss */
+#triangle5 {
+  width: 50%;
+  height: 0;
+  padding-bottom: 50%;
+  overflow: hidden;
+}
+
+/* line 115, ../sass/app.scss */
+#triangle5:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-right: 500px solid transparent;
+  border-bottom: 500px solid #4679BD;
+}
+
+/* line 123, ../sass/app.scss */
+#triangle7 {
+  width: 50%;
+  height: 0;
+  padding-top: 50%;
+  padding-bottom: 50%;
+  overflow: hidden;
+  margin-left: 50%;
+  margin-top: -100%;
+}
+
+/* line 132, ../sass/app.scss */
+#triangle7 div {
+  width: 0;
+  height: 0;
+  margin-top: -720px;
+  border-top: 720px solid transparent;
+  border-bottom: 720px solid transparent;
+  border-right: 720px solid #4679BD;
 }
