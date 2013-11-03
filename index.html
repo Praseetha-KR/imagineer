@@ -2,44 +2,16 @@
 layout: default
 title: imagineer
 ---
-<div id="masthead">
-	<div class="half" id="half-left">
-		<div id="triangle1"></div>
-		<div id="triangle2"></div>
-		<div id="text1" class="text"><i class="icon-angle-left icon-4x"> </i><i class="icon-angle-right icon-4x"></i></div>
-		<div id="text2" class="text">coding<br>with<br>colors</div>
-	</div>
-	<div class="half" id="half-right">
-		<a href="">
-			<div id="square3">
-				<div class="text-right">
-					<div id="text3" class="text">Praseetha KR</div>
-					<div id="text4" class="text">Frontend Developer &amp; Designer</div>
-				</div>
-			</div>
-		</a>
-		<div id="triangle4"></div>
-		<div id="triangle5"></div>
-		<div id="parallelogram6"></div>
-		<div id="triangle7"><div></div></div>
-		
-	</div>
-</div>
-<div class="container">
-	<div class="row">
-		<div class="col-lg-offset-2 col-lg-8">
-			<div id="home">
-			  <h1>Blog Posts</h1>
-			  <ul class="posts">
-			    {% for post in site.posts %}
-			      <li class="post-list">
-			      	<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-			      	<span>{{ post.date | date_to_string }}</span> &raquo; 
-			      	<p>{{ post.content }}</p>
-			      </li>
-			    {% endfor %}
-			  </ul>
-			</div>
-		</div>
-	</div>
+<div class=" col-lg-8 fill-light paper">
+  <div id="home">
+    <ul class="posts">
+      {% for post in site.posts %}
+        <li class="post-list">
+          <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+          <span>{{ post.date | date_to_string }}</span> &raquo; 
+          <p>{{ post.content }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 </div>

@@ -1,28 +1,28 @@
 @import 'compass';
-
+@import 'colors';
 
 body{
 	background-color: #EFEFEF;
+	background: url('/assets/img/cardboard_flat.png') repeat;
 }
 .navbar-default{
 	background-color: #FFF;
 }
-.content{
-	margin-top: 52px;
-}
+
 .posts{
 	padding-left: 0;
 }
 .post-list{
 	background-color: #FFF;
-	padding: 10px;
-	border-radius: 5px;
-	margin-bottom: 30px;
-	border-top: 3px solid #F26328;
+	margin-bottom: 50px;
+	border-top: 3px solid $theme-light;
 	list-style-type: none;
+	padding: 30px;
+	border-radius: 3px;
+	box-shadow: 1px 1px 8px rgba(0,0,0,0.08);
 	h3 > a{
 		text-decoration: none;
-		color: #000;
+		color: $theme-dark;
 	}
 }
 
@@ -38,7 +38,7 @@ body{
 	/*background-color: #E96F23;*/
 }
 #half-right{
-	background-color: #333;
+	background-color: $theme-dark;
 }
 /*#triangle1{
 	height: 0;
@@ -63,7 +63,7 @@ body{
     height: 0;
     margin-left: -2000px;
     border-bottom: 2000px solid transparent;
-    border-left: 2000px solid #4679BD;
+    border-left: 2000px solid $theme-light;
 }
 #triangle2 {
     width: 0;
@@ -80,18 +80,18 @@ body{
     height: 0;
     margin-left: -2000px;
     border-top: 2000px solid transparent;
-    border-right: 2000px solid #333;
+    border-right: 2000px solid $theme-dark;
 }
 #square3{
 	height: 0;
 	padding-bottom: 50%;
 	width: 50%;
-	background-color: #4679BD;
+	background-color: $theme-light;
 	margin-top: -100%;
 	vertical-align: middle;
 }
 a > #square3{
-	color: #333;
+	color: $theme-dark;
 }
 @media screen and (min-width: 768px){
 	#square3:hover{
@@ -118,7 +118,7 @@ a > #square3{
     height: 0;
     margin-left: -2000px;
     border-bottom: 2000px solid transparent;
-    border-left: 2000px solid #333;
+    border-left: 2000px solid $theme-dark;
 }
 #triangle5 {
     width: 50%;
@@ -132,7 +132,7 @@ a > #square3{
     width: 0;
     height: 0;
     border-right: 500px solid transparent;
-    border-bottom: 500px solid #4679BD;
+    border-bottom: 500px solid $theme-light;
 }
 #triangle7 {
     width: 50%;
@@ -150,7 +150,7 @@ a > #square3{
     
     border-top: 2000px solid transparent;
     border-bottom: 2000px solid transparent;
-    border-right: 2000px solid #4679BD;
+    border-right: 2000px solid $theme-light;
 }
 #masthead{
 	font-family: 'Oswald';
@@ -158,13 +158,16 @@ a > #square3{
 		margin-top: -90%;
 		font-size: 4.5em;
 		margin-left: 10%;
+		i{
+			color: $theme-dark;
+		}
 	}
 	#text2{
 		margin-top: 0%;
 		padding-right: 5%;
 		font-size: 4.8em;
 		text-align: right;
-		color: #4679BD;
+		color: $theme-light;
 		text-transform: uppercase;
 	}
 	#text3{
@@ -212,3 +215,35 @@ a > #square3{
 	}
 }
 
+
+#home{
+	padding-top: 100px;
+}
+
+
+
+.fill-light{
+	background-color: #fcfcfc;
+}
+.paper{
+	border-right: 5px solid #efefef;
+	border-bottom: 5px solid #efefef;
+	box-shadow: 5px 5px #E3E3E3;
+	margin-bottom: 300px;
+	margin-left: 30px;
+	padding: 100px;
+	position: relative;
+	z-index: 1;
+}
+
+#logo{
+	background-color: #E9CCB2;
+	display: block;
+	width: 280px;
+	margin-left: 30px;
+	font-size: 2em;
+	padding: 10px;
+	position: relative;
+	z-index: 3;
+	box-shadow: 2px 0px 3px rgba(0,0,0,0.1);
+}
