@@ -1,0 +1,86 @@
+@import 'compass';
+
+
+body{
+	background-color: #EFEFEF;
+}
+.navbar-default{
+	background-color: #FFF;
+}
+.content{
+	margin-top: 52px;
+}
+.posts{
+	padding-left: 0;
+}
+.post-list{
+	background-color: #FFF;
+	padding: 10px;
+	border-radius: 5px;
+	margin-bottom: 30px;
+	border-top: 3px solid #F26328;
+	list-style-type: none;
+	h3 > a{
+		text-decoration: none;
+		color: #000;
+	}
+}
+
+.half{
+	width: 50%;
+	height: 0;
+	padding-top: 50%;
+	float: left;
+}
+#half-left{
+	/*background-color: #E96F23;*/
+}
+#half-right{
+	background-color: #333;
+}
+/*#triangle1{
+	height: 0;
+	width: 0;
+	border-top: 50% solid red;
+	border-left: 50% solid red;
+	border-right: 50% solid transparent;
+	border-bottom: 50% solid transparent;
+}*/
+#triangle1 {
+    width: 0;
+    height: 0;
+    padding-bottom: 100%;
+    padding-left: 100%;
+    overflow: hidden;
+    margin-top: -100%;
+}
+#triangle1:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    margin-left: -720px;
+    border-bottom: 720px solid transparent;
+    border-left: 720px solid #4679BD;
+}
+#triangle2 {
+    width: 0;
+    height: 0;
+    padding-bottom: 100%;
+    padding-left: 100%;
+    overflow: hidden;
+    margin-top: -100%;
+}
+#triangle2:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    margin-left: -720px;
+    border-top: 720px solid transparent;
+    border-right: 720px solid orange;
+}
+
+
+
+

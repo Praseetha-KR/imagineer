@@ -1,34 +1,102 @@
-/* line 3, ../sass/app.sass */
+/* line 4, ../sass/app.scss */
 body {
-  background-color: #efefef;
+  background-color: #EFEFEF;
 }
 
-/* line 6, ../sass/app.sass */
+/* line 7, ../sass/app.scss */
 .navbar-default {
-  background-color: white;
+  background-color: #FFF;
 }
 
-/* line 8, ../sass/app.sass */
+/* line 10, ../sass/app.scss */
 .content {
   margin-top: 52px;
 }
 
-/* line 10, ../sass/app.sass */
+/* line 13, ../sass/app.scss */
 .posts {
   padding-left: 0;
 }
 
-/* line 12, ../sass/app.sass */
+/* line 16, ../sass/app.scss */
 .post-list {
-  background-color: white;
+  background-color: #FFF;
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 30px;
-  border-top: 3px solid #f26328;
+  border-top: 3px solid #F26328;
   list-style-type: none;
 }
-/* line 19, ../sass/app.sass */
+/* line 23, ../sass/app.scss */
 .post-list h3 > a {
   text-decoration: none;
-  color: black;
+  color: #000;
+}
+
+/* line 29, ../sass/app.scss */
+.half {
+  width: 50%;
+  height: 0;
+  padding-top: 50%;
+  float: left;
+}
+
+/* line 35, ../sass/app.scss */
+#half-left {
+  /*background-color: #E96F23;*/
+}
+
+/* line 38, ../sass/app.scss */
+#half-right {
+  background-color: #333;
+}
+
+/*#triangle1{
+	height: 0;
+	width: 0;
+	border-top: 50% solid red;
+	border-left: 50% solid red;
+	border-right: 50% solid transparent;
+	border-bottom: 50% solid transparent;
+}*/
+/* line 49, ../sass/app.scss */
+#triangle1 {
+  width: 0;
+  height: 0;
+  padding-bottom: 100%;
+  padding-left: 100%;
+  overflow: hidden;
+  margin-top: -100%;
+}
+
+/* line 57, ../sass/app.scss */
+#triangle1:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  margin-left: -720px;
+  border-bottom: 720px solid transparent;
+  border-left: 720px solid #4679BD;
+}
+
+/* line 66, ../sass/app.scss */
+#triangle2 {
+  width: 0;
+  height: 0;
+  padding-bottom: 100%;
+  padding-left: 100%;
+  overflow: hidden;
+  margin-top: -100%;
+}
+
+/* line 74, ../sass/app.scss */
+#triangle2:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  margin-left: -720px;
+  border-top: 720px solid transparent;
+  border-right: 720px solid orange;
 }
