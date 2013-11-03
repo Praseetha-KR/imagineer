@@ -18,14 +18,17 @@
   </head>
   <body>
     <header>
-      <div id="logo">
+      <span id="logo">
         <i class="icon-angle-left"></i>&nbsp;<i class="icon-angle-right"></i>&nbsp;{{ site.name }} <br>
         <small><em>{{ site.blurb }}</em></small>
-      </div>
+      </span>
+      <nav class="text-center">
+        <li><a href="/experiments/css/">CSS</a></li>
+        <li><a href="/photography/">Photography</a></li>
+        <li><a href="/art/">Art</a></li>
+        <li><a href="/about/">About</a></li>
+      </nav>
     </header>
-    <nav>
-      
-    </nav>
     <div class="clearfix content">
         <div class="site">
           {{ content }}

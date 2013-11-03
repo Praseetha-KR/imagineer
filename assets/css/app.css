@@ -264,6 +264,11 @@ a > #square3 {
 }
 
 /* line 228, ../sass/app.scss */
+.fill-album {
+  background-image: url("/assets/img/shl.png");
+}
+
+/* line 231, ../sass/app.scss */
 .paper {
   border-right: 5px solid #efefef;
   border-bottom: 5px solid #efefef;
@@ -275,10 +280,10 @@ a > #square3 {
   z-index: 1;
 }
 
-/* line 239, ../sass/app.scss */
+/* line 242, ../sass/app.scss */
 #logo {
-  background-color: #E9CCB2;
-  display: block;
+  background-color: rgba(236, 236, 236, 0.82);
+  display: inline-block;
   width: 280px;
   margin-left: 30px;
   font-size: 2em;
@@ -286,4 +291,51 @@ a > #square3 {
   position: relative;
   z-index: 3;
   box-shadow: 2px 0px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* line 254, ../sass/app.scss */
+nav {
+  display: inline-block;
+}
+/* line 256, ../sass/app.scss */
+nav li {
+  display: inline-block;
+  list-style-type: none;
+}
+/* line 259, ../sass/app.scss */
+nav li a {
+  min-width: 150px;
+  display: block;
+  padding: 15px 15px 12px 13px;
+  font-size: 1.2em;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+  color: #333;
+  text-decoration: none;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.05);
+  border-left: 2px solid rgba(0, 0, 0, 0.05);
+}
+/* line 271, ../sass/app.scss */
+nav li a:hover, nav li a:active {
+  text-decoration: none;
+  color: #000;
+  border-bottom: 3px solid transparent;
+  border-left: 2px solid transparent;
+}
+/* line 280, ../sass/app.scss */
+nav li:nth-child(1) > a {
+  background-color: rgba(157, 197, 196, 0.85);
+}
+/* line 283, ../sass/app.scss */
+nav li:nth-child(2) > a {
+  background-color: rgba(175, 201, 173, 0.85);
+}
+/* line 286, ../sass/app.scss */
+nav li:nth-child(3) > a {
+  background-color: rgba(193, 197, 156, 0.85);
+}
+/* line 289, ../sass/app.scss */
+nav li:nth-child(4) > a {
+  background-color: rgba(187, 180, 190, 0.85);
 }
