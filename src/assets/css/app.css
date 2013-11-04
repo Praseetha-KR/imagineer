@@ -349,15 +349,15 @@ nav li:nth-child(4) > a {
 }
 
 /* line 299, ../sass/app.scss */
-#photography ul {
+#photography ul, #css ul {
   padding-left: 0;
 }
 /* line 301, ../sass/app.scss */
-#photography ul li {
+#photography ul li, #css ul li {
   list-style-type: none;
 }
 /* line 305, ../sass/app.scss */
-#photography .img-responsive {
+#photography .img-responsive, #css .img-responsive {
   margin-left: auto;
   margin-right: auto;
 }

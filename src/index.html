@@ -10,7 +10,7 @@ title: imagineer
         <li class="post-list">
           <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
           <span>{{ post.date | date_to_string }}</span> &raquo; 
-          <p>{{ post.content }}</p>
+          <p>{{ post.excerpt }}</p>
         </li>
       {% endfor %}
     </ul>
