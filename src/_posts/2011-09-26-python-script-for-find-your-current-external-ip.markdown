@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Python script to find the current External IP"
-date:   2013-11-02 14:54:02
+date:   2011-09-26 01:17:50
 categories: blog
 ---
 

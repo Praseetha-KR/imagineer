@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Awesome Geometric Patterns Using Matlab"
-date:   2013-11-02 14:54:02
+date:   2012-07-12 08:15:28
 categories: blog
 ---
 
