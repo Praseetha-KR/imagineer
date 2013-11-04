@@ -216,12 +216,6 @@ a > #square3{
 }
 
 
-#home{
-	padding-top: 100px;
-}
-
-
-
 .fill-light{
 	background-color: #fcfcfc;
 }
@@ -288,5 +282,17 @@ nav{
 	}
 	li:nth-child(4) > a{
 		background-color: rgba(187, 180, 190, 0.85);
+	}
+}
+#photography{
+	ul{
+		padding-left: 0;
+		li{
+			list-style-type: none;
+		}
+	}
+	.img-responsive{
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
