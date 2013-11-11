@@ -1,363 +1,168 @@
-/* line 4, ../sass/app.scss */
+/* line 1, ../sass/_typography.scss */
+.legible {
+  font-size: 2.3em;
+}
+
+/* line 4, ../sass/_typography.scss */
+.legible-prose {
+  font-size: 1.8em;
+}
+
+/* line 7, ../sass/_typography.scss */
+.tiny {
+  font-size: 0.8em;
+}
+
+/* line 5, ../sass/app.scss */
 body {
-  background-color: #EFEFEF;
-  background: url("/assets/img/cardboard_flat.png") repeat;
+  font-family: Georgia, 'Times New Roman', Times !important;
 }
 
 /* line 8, ../sass/app.scss */
-.navbar-default {
-  background-color: #FFF;
+header {
+  width: 100%;
+  margin-bottom: 30px;
 }
-
-/* line 12, ../sass/app.scss */
-.posts {
-  padding-left: 0;
-}
-
-/* line 15, ../sass/app.scss */
-.post-list {
-  background-color: #FFF;
-  margin-bottom: 50px;
-  border-top: 3px solid #b0d6ac;
-  list-style-type: none;
-  padding: 30px;
-  border-radius: 3px;
-  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.08);
-}
-/* line 23, ../sass/app.scss */
-.post-list h3 > a {
+/* line 11, ../sass/app.scss */
+header a {
+  color: #333333;
   text-decoration: none;
-  color: #493658;
+}
+/* line 15, ../sass/app.scss */
+header a:hover {
+  color: #999999;
+  text-decoration: none;
+}
+/* line 19, ../sass/app.scss */
+header nav {
+  margin-top: 30px;
+  background-color: #efefef;
+}
+/* line 22, ../sass/app.scss */
+header nav li {
+  display: inline-block;
+  list-style-type: none;
+  padding: 10px 30px 10px 30px;
 }
 
 /* line 29, ../sass/app.scss */
-.half {
-  width: 50%;
-  height: 0;
-  padding-top: 50%;
-  float: left;
-  overflow: hidden;
-  max-width: 2000px;
+h1, h2, h3, h4, h5, h6 {
+  font-family: Georgia, 'Times New Roman', Times;
+}
+
+/* line 32, ../sass/app.scss */
+p {
+  font-size: 16px;
+  line-height: 150%;
+  color: #333333;
 }
 
 /* line 37, ../sass/app.scss */
-#half-left {
-  /*background-color: #E96F23;*/
+.post {
+  margin-bottom: 30px;
 }
 
 /* line 40, ../sass/app.scss */
-#half-right {
-  background-color: #493658;
+.post-content {
+  /*background-color: #ccc;*/
+}
+/* line 42, ../sass/app.scss */
+.post-content h2 {
+  font-weight: normal;
+  color: #666666;
+  font-size: 1.5em;
+  line-height: 150%;
+}
+/* line 48, ../sass/app.scss */
+.post-content img {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  height: auto;
+  max-width: 100%;
+  max-height: 250px;
+  height: auto;
+  width: auto;
 }
 
-/*#triangle1{
-	height: 0;
-	width: 0;
-	border-top: 50% solid red;
-	border-left: 50% solid red;
-	border-right: 50% solid transparent;
-	border-bottom: 50% solid transparent;
-}*/
-/* line 51, ../sass/app.scss */
-#triangle1 {
-  width: 0;
-  height: 0;
-  padding-bottom: 100%;
-  padding-left: 100%;
-  overflow: hidden;
-  margin-top: -100%;
+/* line 57, ../sass/app.scss */
+.post-date {
+  margin-top: 28px;
+  margin-right: 10px;
+  font-size: 12px;
+  color: #666666;
+  line-height: 150%;
+  border-right: 1px solid #999999;
+}
+/* line 64, ../sass/app.scss */
+.post-date h6 {
+  padding: 0;
+  margin: 0 10px 2px 0;
 }
 
-/* line 59, ../sass/app.scss */
-#triangle1:after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 0;
-  margin-left: -2000px;
-  border-bottom: 2000px solid transparent;
-  border-left: 2000px solid #b0d6ac;
-}
-
-/* line 68, ../sass/app.scss */
-#triangle2 {
-  width: 0;
-  height: 0;
-  padding-bottom: 100%;
-  padding-left: 100%;
-  overflow: hidden;
-  margin-top: -100%;
+/* line 70, ../sass/app.scss */
+.gray {
+  color: #999999;
 }
 
 /* line 76, ../sass/app.scss */
-#triangle2:after {
-  content: "";
+#about h1 {
+  display: inline-block;
+}
+/* line 79, ../sass/app.scss */
+#about h4 {
+  line-height: 150%;
+}
+/* line 82, ../sass/app.scss */
+#about #pronounce {
+  display: inline-block;
+}
+
+/* line 87, ../sass/app.scss */
+#photography li, #art li {
+  margin-bottom: 15px;
+}
+
+/* line 92, ../sass/app.scss */
+#css li {
+  margin-bottom: 50px;
+}
+/* line 94, ../sass/app.scss */
+#css li iframe {
+  border: 15px solid rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+}
+
+/* line 104, ../sass/app.scss */
+.tags {
+  padding: 10px;
+  line-height: 130%;
+}
+
+/* line 108, ../sass/app.scss */
+.center-block {
+  margin-left: auto;
+  margin-right: auto;
   display: block;
-  width: 0;
-  height: 0;
-  margin-left: -2000px;
-  border-top: 2000px solid transparent;
-  border-right: 2000px solid #493658;
-}
-
-/* line 85, ../sass/app.scss */
-#square3 {
-  height: 0;
-  padding-bottom: 50%;
-  width: 50%;
-  background-color: #b0d6ac;
-  margin-top: -100%;
-  vertical-align: middle;
-}
-
-/* line 93, ../sass/app.scss */
-a > #square3 {
-  color: #493658;
-}
-
-@media screen and (min-width: 768px) {
-  /* line 97, ../sass/app.scss */
-  #square3:hover {
-    background-image: url("/assets/img/praseetha.png");
-    background-size: 100% 100%;
-  }
-  /* line 100, ../sass/app.scss */
-  #square3:hover .text {
-    opacity: 0;
-  }
-}
-/* line 105, ../sass/app.scss */
-#triangle4 {
-  width: 0;
-  height: 0;
-  padding-bottom: 100%;
-  padding-left: 100%;
-  overflow: hidden;
-  margin-top: -100%;
-  margin-left: 50%;
 }
 
 /* line 114, ../sass/app.scss */
-#triangle4:after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 0;
-  margin-left: -2000px;
-  border-bottom: 2000px solid transparent;
-  border-left: 2000px solid #493658;
-}
-
-/* line 123, ../sass/app.scss */
-#triangle5 {
-  width: 50%;
-  height: 0;
-  padding-bottom: 50%;
-  overflow: hidden;
-}
-
-/* line 129, ../sass/app.scss */
-#triangle5:after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 0;
-  border-right: 500px solid transparent;
-  border-bottom: 500px solid #b0d6ac;
-}
-
-/* line 137, ../sass/app.scss */
-#triangle7 {
-  width: 50%;
-  height: 0;
-  padding-top: 50%;
-  padding-bottom: 50%;
-  overflow: hidden;
-  margin-left: 50%;
-  margin-top: -100%;
-}
-
-/* line 146, ../sass/app.scss */
-#triangle7 div {
-  width: 0;
-  height: 0;
-  margin-top: -2000px;
-  border-top: 2000px solid transparent;
-  border-bottom: 2000px solid transparent;
-  border-right: 2000px solid #b0d6ac;
-}
-
-/* line 155, ../sass/app.scss */
-#masthead {
-  font-family: 'Oswald';
-}
-/* line 157, ../sass/app.scss */
-#masthead #text1 {
-  margin-top: -90%;
-  font-size: 4.5em;
-  margin-left: 10%;
-}
-/* line 161, ../sass/app.scss */
-#masthead #text1 i {
-  color: #493658;
-}
-/* line 165, ../sass/app.scss */
-#masthead #text2 {
-  margin-top: 0%;
-  padding-right: 5%;
-  font-size: 4.8em;
-  text-align: right;
-  color: #b0d6ac;
-  text-transform: uppercase;
-}
-/* line 173, ../sass/app.scss */
-#masthead #text3 {
-  padding-top: 50%;
-  font-size: 3em;
-  padding-right: 10%;
-}
-/* line 178, ../sass/app.scss */
-#masthead #text4 {
-  font-size: 1.3em;
-  padding-right: 10%;
-}
-
-@media screen and (min-width: 992px) and (max-width: 1199px) {
-  /* line 188, ../sass/app.scss */
-  #masthead #text1 {
-    font-size: 3.5em;
-  }
-  /* line 191, ../sass/app.scss */
-  #masthead #text2 {
-    font-size: 4em;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  /* line 198, ../sass/app.scss */
-  #masthead #text1 {
-    font-size: 2.8em;
-  }
-  /* line 201, ../sass/app.scss */
-  #masthead #text2 {
-    font-size: 3em;
-  }
-  /* line 204, ../sass/app.scss */
-  #masthead #text3 {
-    padding-top: 40%;
-    font-size: 2.05em;
-  }
-}
-@media screen and (max-width: 767px) {
-  /* line 212, ../sass/app.scss */
-  #masthead .text {
-    display: none;
-  }
-}
-/* line 219, ../sass/app.scss */
-.fill-light {
-  background-color: #fcfcfc;
-}
-
-/* line 222, ../sass/app.scss */
-.fill-album {
-  background-image: url("/assets/img/shl.png");
-}
-
-/* line 225, ../sass/app.scss */
-.paper {
-  border-right: 5px solid #efefef;
-  border-bottom: 5px solid #efefef;
-  box-shadow: 5px 5px #E3E3E3;
-  margin-bottom: 300px;
-  margin-left: 30px;
-  padding: 100px;
-  position: relative;
-  z-index: 1;
-}
-
-/* line 236, ../sass/app.scss */
-a > span#logo {
-  background-color: rgba(236, 236, 236, 0.82);
-  display: inline-block;
-  width: 280px;
-  margin-left: 30px;
-  font-size: 2em;
-  padding: 10px;
-  position: relative;
-  z-index: 3;
-  box-shadow: 2px 0px 3px rgba(0, 0, 0, 0.1);
-}
-/* line 246, ../sass/app.scss */
-a > span#logo div {
-  font-weight: 500;
-  text-shadow: 1px 1px 1px #FFF;
-  font-size: 1.3em;
-  color: #333;
-}
-/* line 252, ../sass/app.scss */
-a > span#logo h5 {
-  font-size: 0.624em;
-  color: #fff;
-  text-shadow: -1px -1px 1px #ccc;
-}
-
-/* line 259, ../sass/app.scss */
-nav {
-  display: inline-block;
-}
-/* line 261, ../sass/app.scss */
-nav li {
-  display: inline-block;
-  list-style-type: none;
-}
-/* line 264, ../sass/app.scss */
-nav li a {
-  min-width: 150px;
-  display: block;
-  padding: 15px 15px 12px 13px;
-  font-size: 1.2em;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
-  box-shadow: 1px 1px rgba(0, 0, 0, 0.1);
-  color: #333;
-  text-decoration: none;
-  border-bottom: 3px solid rgba(0, 0, 0, 0.05);
-  border-left: 2px solid rgba(0, 0, 0, 0.05);
-}
-/* line 276, ../sass/app.scss */
-nav li a:hover, nav li a:active {
-  text-decoration: none;
-  color: #000;
-  border-bottom: 3px solid transparent;
-  border-left: 2px solid transparent;
-}
-/* line 285, ../sass/app.scss */
-nav li:nth-child(1) > a {
-  background-color: rgba(157, 197, 196, 0.85);
-}
-/* line 288, ../sass/app.scss */
-nav li:nth-child(2) > a {
-  background-color: rgba(175, 201, 173, 0.85);
-}
-/* line 291, ../sass/app.scss */
-nav li:nth-child(3) > a {
-  background-color: rgba(193, 197, 156, 0.85);
-}
-/* line 294, ../sass/app.scss */
-nav li:nth-child(4) > a {
-  background-color: rgba(187, 180, 190, 0.85);
-}
-
-/* line 299, ../sass/app.scss */
-#photography ul, #css ul {
+.list-silent ol, .list-silent ul {
+  margin-left: 0;
   padding-left: 0;
 }
-/* line 301, ../sass/app.scss */
-#photography ul li, #css ul li {
+/* line 118, ../sass/app.scss */
+.list-silent li {
   list-style-type: none;
 }
-/* line 305, ../sass/app.scss */
-#photography .img-responsive, #css .img-responsive {
-  margin-left: auto;
-  margin-right: auto;
+
+/* line 122, ../sass/app.scss */
+footer {
+  clear: both;
+  margin-top: 50px;
+}
+/* line 125, ../sass/app.scss */
+footer .topline {
+  border-top: 1px solid #efefef;
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 20px;
 }

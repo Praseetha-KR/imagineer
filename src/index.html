@@ -2,17 +2,14 @@
 layout: default
 title: imagineer
 ---
-<div class=" col-lg-8 fill-light paper">
-  <div id="home">
-    <ul class="posts">
-
-      {% for post in site.posts %}
-        <li class="post-list">
-          <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-          <span>{{ post.date | date_to_string }}</span> &raquo; 
-          <p>{{ post.excerpt }}</p>
-        </li>
-      {% endfor %}
-    </ul>
+{% for post in site.posts %}
+<div class="row post">
+  <div class="col-lg-3 col-md-3 col-sm-2 col-xs-12 text-right post-date">
+    <h6>{{ post.date | date_to_string }}</h6> 
+  </div>
+  <div class="col-lg-7 col-md-7 col-sm-9 col-xs-12 post-content">
+    <a href="{{ post.url }}"><h2>{{ post.title }}</h2></a>
+    <p>{{ post.excerpt }}</p>
   </div>
 </div>
+{% endfor %}
