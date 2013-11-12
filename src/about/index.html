@@ -1,25 +1,34 @@
 ---
 layout: default
 title: imagineer
+comments: true
 ---
 <div class="row">
 	<div class="col-lg-offset-3 col-lg-7 col-md-offset-2 col-md-8 col-sm-offset-3 col-sm-7 col-xs-12 fill-light paper">
-	  <div id="about">   
-	    <h1>Praseetha KR&nbsp;&nbsp;</h1><span id="pronounce" class="gray legible-prose">/ˈprɛziːða-keɪ-ɑː/<i class="icon-volume-up"></i></span>
-	    <h3>Noun</h3>
-	    <h4>1. A frondend developer from Bangalore</h4>
-	    <h4>2. A Homo Sapiens Sapiens originated from the vicinity of Silent Valley</h4>
-	    <h4>3. An engineer living in the world of imaginations aka <em>imagineer</em></h4>
-	    <br>
-	    <h3>Related words</h3>
-	    <h4 class="tags">#geek &nbsp;&sdot;&nbsp; #html &nbsp;&sdot;&nbsp; #css &nbsp;&sdot;&nbsp; #javascript &nbsp;&sdot;&nbsp; #design &nbsp;&sdot;&nbsp; #drawing &nbsp;&sdot;&nbsp; #photography &nbsp;&sdot;&nbsp; #nature &nbsp;&sdot;&nbsp; #python &nbsp;&sdot;&nbsp; #c &nbsp;&sdot;&nbsp; #colors &nbsp;&sdot;&nbsp; #philately &nbsp;&sdot;&nbsp; #birds &nbsp;&sdot;&nbsp; #food &nbsp;&sdot;&nbsp; #web</h4>
-	    <br>
-	    <h3>References</h3>
-	    <h4>[1] Twitter (<a href="https://twitter.com/void_imagineer">https://twitter.com/void_imagineer</a>)</h4>
-	    <h4>[2] Github (<a href="https://github.com/Praseetha-KR">https://github.com/Praseetha-KR</a>)</h4>
-	    <h4>[3] Codepen (<a href="http://codepen.io/Praseetha-KR/">http://codepen.io/Praseetha-KR/</a>)</h4>
-	    <h4>[4] Flickr (<a href="http://www.flickr.com/photos/void_imagineer/">http://www.flickr.com/photos/void_imagineer/</a>)</h4>
-	  </div>
+		<div id="about">   
+		    <h1>Praseetha KR&nbsp;&nbsp;</h1><span id="pronounce" class="gray legible-prose">/ˈprɛziːða-keɪ-ɑː/<i class="icon-volume-up"></i></span>
+		    <h3>Noun</h3>
+		    <h4>1. A frondend developer from Bangalore</h4>
+		    <h4>2. A Homo Sapiens Sapiens originated from the vicinity of Silent Valley</h4>
+		    <h4>3. An engineer living in the world of imaginations aka <em>imagineer</em></h4>
+		    <br>
+		    <h3>Related words</h3>
+		    <h4 class="tags">#geek &nbsp;&sdot;&nbsp; #html &nbsp;&sdot;&nbsp; #css &nbsp;&sdot;&nbsp; #javascript &nbsp;&sdot;&nbsp; #design &nbsp;&sdot;&nbsp; #drawing &nbsp;&sdot;&nbsp; #photography &nbsp;&sdot;&nbsp; #nature &nbsp;&sdot;&nbsp; #python &nbsp;&sdot;&nbsp; #c &nbsp;&sdot;&nbsp; #colors &nbsp;&sdot;&nbsp; #philately &nbsp;&sdot;&nbsp; #birds &nbsp;&sdot;&nbsp; #food &nbsp;&sdot;&nbsp; #web</h4>
+		    <br>
+		    <h3>References</h3>
+		    <h4>[1] Twitter (<a href="https://twitter.com/void_imagineer">https://twitter.com/void_imagineer</a>)</h4>
+		    <h4>[2] Github (<a href="https://github.com/Praseetha-KR">https://github.com/Praseetha-KR</a>)</h4>
+		    <h4>[3] Codepen (<a href="http://codepen.io/Praseetha-KR/">http://codepen.io/Praseetha-KR/</a>)</h4>
+		    <h4>[4] Flickr (<a href="http://www.flickr.com/photos/void_imagineer/">http://www.flickr.com/photos/void_imagineer/</a>)</h4>
+		</div>
+		<br>
+		{% if page.comments %}
+			<div id="disqus_thread"></div>
+			<script type="text/javascript" src="http://disqus.com/forums/imagineer/embed.js"></script>
+			<noscript><a href="http://imagineer.disqus.com/?url=ref">View the discussion thread.</a></noscript>
+			<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+		{% endif %}
+
 	</div>
 </div>
 

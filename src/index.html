@@ -5,7 +5,12 @@ title: imagineer
 {% for post in site.posts %}
 <div class="row post">
   <div class="col-lg-3 col-md-3 col-sm-2 col-xs-12 text-right post-date">
-    <h6>{{ post.date | date_to_string }}</h6> 
+    <h6>
+    	{{ post.date | date_to_string }}
+    	<br><br>
+    	<a href="{{ post.url }}#disqus_thread"></a>
+    </h6>
+
   </div>
   <div class="col-lg-7 col-md-7 col-sm-9 col-xs-12 post-content">
     <a href="{{ post.url }}"><h2>{{ post.title }}</h2></a>

@@ -54,5 +54,19 @@
     </footer>      
     <script type="text/javascript" src="/assets/js/vendor/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="/assets/js/vendor/bootstrap.min.js"></script>
+      <script type="text/javascript">
+        //<![CDATA[
+        (function() {
+          var links = document.getElementsByTagName('a');
+          var query = '?';
+          for(var i = 0; i < links.length; i++) {
+            if(links[i].href.indexOf('#disqus_thread') >= 0) {
+              query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+            }
+          }
+          document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/imagineer/get_num_replies.js' + query + '"></' + 'script>');
+          })();
+        //]]>
+      </script>
   </body>
 </html>
