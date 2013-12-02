@@ -5,7 +5,7 @@ date:   2013-12-02 07:14:30
 categories: blog
 ---
 
-I have started using Raspberry Pi today, and I can't control myself from saying that it is **AWESOME!** 
+I have started using Raspberry Pi today, and I can't control myself from saying that it is AWESOME! 
 
 RPi has got a ARM1176JZF-S 700 MHz processor with 512MB RAM. I have attached a 8GB class 10 SD card to it.
 
@@ -46,7 +46,7 @@ Thats all! Raspbian has booted up running on RPi!
 
 
 ###SSHing to RPi:###
-I have connected a LAN cable from laptop to RPi. Laptop have WiFi access, which has to be shared to LAN. So, on start button, search for 'View network connections', from the opened window right click on 'Wireless Network Connection' and choose 'properties'. Goto 'sharing' tab and check 'Allow other network users to connect through this computer's internet connection' along with selecting Home networking connection as 'Local Area Connection'.
+I have connected a ethernet cable from laptop to RPi. Laptop have WiFi access, which has to be shared to LAN. So, on start button, search for 'View network connections', from the opened window right click on 'Wireless Network Connection' and choose 'properties'. Goto 'sharing' tab and check 'Allow other network users to connect through this computer's internet connection' along with selecting Home networking connection as 'Local Area Connection'.
 Now the RPi has got LAN Access.
 
 To get IP address of RPi, you can either get LAN IP from `ipconfig` and run a ping scan with command `FOR /L %i IN (i,i,254) DO ping -n 1 192.168.1.%i | FIND /i "Reply">> c:\lanipaddresses.txt` where `192.168.1.%i` is replaced with LAN's IP, or try command `arp -a`
@@ -61,3 +61,12 @@ Once the IP of RPi is known, you can SSH using <a href="http://www.putty.org/">P
 <img src="http://i844.photobucket.com/albums/ab6/voidimagineer/RPi_putty_ssh_access_zps757939cb.jpg" width="100%" alt="RPi_putty_ssh">
 	</div>
 </div>
+
+### Troubleshooting###
+If the monitor shows 'No Signal' even after its connected to RPi with bootable SD card, then the problem may be because RPi deliver weak HDMI signals than it required to function. Using a short HDMI cable can solve problem. Also, making the following changes to config.txt in SD card can help:
+`hdmi_force_hotplug=1` --> makes sure the Pi believes the monitor/TV is really there
+
+`config_hdmi_boost=4` ---> or even higher (up to 9) if your display needs a stronger signal
+
+`hdmi_group=1` --> if the display is a computer monitor, `hdmi_group=2` --> if it is a TV
+
