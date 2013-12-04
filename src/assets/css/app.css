@@ -194,3 +194,32 @@ footer .topline {
   padding-top: 10px;
   padding-bottom: 20px;
 }
+
+/* line 148, ../sass/app.scss */
+.video-wrapper {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto auto 0;
+  background: #CCC;
+}
+
+/* line 149, ../sass/app.scss */
+.h_iframe {
+  position: relative;
+}
+
+/* line 150, ../sass/app.scss */
+.h_iframe .ratio {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* line 151, ../sass/app.scss */
+.h_iframe iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
