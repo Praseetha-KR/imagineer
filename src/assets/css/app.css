@@ -1,107 +1,87 @@
-/* line 1, ../sass/_typography.scss */
 .extralarge {
   font-size: 4em;
 }
 
-/* line 4, ../sass/_typography.scss */
 .large {
   font-size: 3em;
 }
 
-/* line 7, ../sass/_typography.scss */
 .legible {
   font-size: 2.3em;
 }
 
-/* line 10, ../sass/_typography.scss */
 .legible-prose {
   font-size: 1.8em;
 }
 
-/* line 13, ../sass/_typography.scss */
 .tiny {
   font-size: 0.8em;
 }
 
-/* line 5, ../sass/app.scss */
 body {
   font-family: Georgia, 'Times New Roman', Times !important;
   min-width: 240px;
 }
 
-/* line 9, ../sass/app.scss */
 header {
   width: 100%;
   margin-bottom: 30px;
   background-color: #EFEFEF;
 }
-/* line 13, ../sass/app.scss */
 header a {
   color: #333333;
   text-decoration: none;
 }
-/* line 17, ../sass/app.scss */
 header a:hover {
   color: #999999;
   text-decoration: none;
 }
-/* line 21, ../sass/app.scss */
 header nav {
   margin-top: 30px;
   background-color: #efefef;
   background-image: url(/assets/img/stripe.png);
   background-size: auto 100%;
 }
-/* line 26, ../sass/app.scss */
 header nav li {
   display: inline-block;
   list-style-type: none;
   padding: 10px 20px 10px 20px;
 }
-/* line 30, ../sass/app.scss */
 header nav li a {
   padding: 5px 10px 5px 10px;
 }
-/* line 33, ../sass/app.scss */
 header nav li a:hover {
   background-color: #FFF;
   padding: 5px 10px 5px 10px;
   border-radius: 30px;
 }
 
-/* line 41, ../sass/app.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: Georgia, 'Times New Roman', Times;
 }
 
-/* line 44, ../sass/app.scss */
 p {
   font-size: 16px;
   line-height: 150%;
   color: #333333;
 }
 
-/* line 49, ../sass/app.scss */
 .post {
   margin-bottom: 30px;
 }
 
-/* line 52, ../sass/app.scss */
 .post-content {
   /*background-color: #ccc;*/
 }
-/* line 54, ../sass/app.scss */
 .post-content h2 > a {
   font-weight: normal;
   color: #333333;
   font-size: 0.8em;
   line-height: 150%;
 }
-/* line 60, ../sass/app.scss */
 .post-content p.tiny > a {
   color: #666666;
 }
-/* line 63, ../sass/app.scss */
 .post-content img {
   border: 1px solid rgba(0, 0, 0, 0.05);
   height: auto;
@@ -111,7 +91,6 @@ p {
   width: auto;
 }
 
-/* line 72, ../sass/app.scss */
 .post-date {
   margin-top: 28px;
   margin-right: 10px;
@@ -120,74 +99,60 @@ p {
   line-height: 150%;
   border-right: 1px solid #999999;
 }
-/* line 79, ../sass/app.scss */
 .post-date h6 {
   padding: 0;
   margin: 0 10px 2px 0;
 }
 
-/* line 85, ../sass/app.scss */
 .gray {
   color: #999999;
 }
 
-/* line 91, ../sass/app.scss */
 #about h1 {
   display: inline-block;
 }
-/* line 94, ../sass/app.scss */
 #about h4 {
   line-height: 150%;
 }
-/* line 97, ../sass/app.scss */
 #about #pronounce {
   display: inline-block;
 }
 
-/* line 102, ../sass/app.scss */
 #photography li, #art li {
   margin-bottom: 15px;
 }
 
-/* line 107, ../sass/app.scss */
 #css li {
   margin-bottom: 50px;
 }
-/* line 109, ../sass/app.scss */
 #css li iframe {
   border: 15px solid rgba(0, 0, 0, 0.05);
   border-radius: 5px;
 }
 
-/* line 119, ../sass/app.scss */
 .tags {
   padding: 10px;
   line-height: 130%;
 }
 
-/* line 123, ../sass/app.scss */
 .center-block {
   margin-left: auto;
   margin-right: auto;
   display: block;
 }
 
-/* line 129, ../sass/app.scss */
 .list-silent ol, .list-silent ul {
   margin-left: 0;
   padding-left: 0;
 }
-/* line 133, ../sass/app.scss */
 .list-silent li {
   list-style-type: none;
 }
 
-/* line 137, ../sass/app.scss */
 footer {
   clear: both;
   margin-top: 50px;
 }
-/* line 140, ../sass/app.scss */
 footer .topline {
   border-top: 1px solid #efefef;
   display: block;
@@ -195,7 +160,6 @@ footer .topline {
   padding-bottom: 20px;
 }
 
-/* line 148, ../sass/app.scss */
 .video-wrapper {
   width: 80%;
   height: 100%;
@@ -203,19 +167,16 @@ footer .topline {
   background: #CCC;
 }
 
-/* line 149, ../sass/app.scss */
 .h_iframe {
   position: relative;
 }
 
-/* line 150, ../sass/app.scss */
 .h_iframe .ratio {
   display: block;
   width: 100%;
   height: auto;
 }
 
-/* line 151, ../sass/app.scss */
 .h_iframe iframe {
   position: absolute;
   top: 0;
