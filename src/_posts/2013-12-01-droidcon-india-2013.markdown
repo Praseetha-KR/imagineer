@@ -11,6 +11,6 @@ Had lots of fun during conference and hackathon. Met some interesting people, he
 
 Overall it was super awesome experience!
 
-<img src="/assets/img/posts/andro.jpg" width="50%" alt="Andro and me">
+<img src="/assets/img/posts/andro.jpg" class="small-img" width="50%" alt="Andro and me">
 
 Me with andro at Droidcon :)
