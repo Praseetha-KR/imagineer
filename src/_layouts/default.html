@@ -16,34 +16,40 @@
     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    <header>
-      <div class="container">
-        <div class="col-lg-4 col-lg-offset-4">
-          <a href="/"><div id="logo" class="text-center">
-            <h1>{{ site.name }}</h1>
-            <h3>&lt;{{ site.blurb }}/&gt;</h3>
-          </a>
-        </div>
-        </div>
-      </div>
-        
-      <nav class="text-center">
-        <li><a href="/blog/">Blog</a></li>
-        <li><a href="/experiments/css/">CSS</a></li>
-        <li><a href="/photography/">Photography</a></li>
-        <li><a href="/art/">Art</a></li>
-        <li><a href="/about/">About</a></li>
-      </nav>
-    </header>
-    <div class="container">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+          <header>
+            <nav class="navbar navbar-default" role="navigation">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="/">{{ site.name }}</a>
+              </div>
+
+              <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-reorder"></i></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="/blog/">Blog</a></li>
+                      <li><a href="/experiments/css/">CSS</a></li>
+                      <li><a href="/photography/">Photography</a></li>
+                      <li><a href="/art/">Art</a></li>
+                      <li><a href="/about/">About</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </header>
+         </div>
+        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 page-content">
           {{ content }}
         </div>
       </div>
     </div>
+    
     <footer>
-      <div class="container text-center">
+      <div class="col-lg-12 text-center">
         <div class="row">
           <div class="topline">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">

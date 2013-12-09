@@ -5,18 +5,19 @@ title: imagineer
 
 {% for post in site.posts %}
 <div class="row post">
-  <div class="col-lg-3 col-md-3 col-sm-2 col-xs-12 text-right post-date">
-    <h6>
+  <div class="col-lg-9 col-md-7 col-sm-9 col-xs-12 post-content">
+    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+    <p>{{ post.excerpt }}</p>
+    <a class="read-more" href="{{ post.url }}">Read more &raquo;</a>
+  </div>
+  <div class="col-lg-3 col-md-3 col-sm-2 col-xs-12 text-right">
+    <div class="post-date">
       {{ post.date | date_to_string }}
-      <br><br>
+      <br>
       <a href="{{ post.url }}#disqus_thread"></a>
-    </h6>
+    </div>
 
   </div>
-  <div class="col-lg-7 col-md-7 col-sm-9 col-xs-12 post-content">
-    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-    <p>{{ post.content }}</p>
-    <a href="{{ post.url }}"><p class="tiny">Read more &raquo;</p></a>
-  </div>
+  
 </div>
 {% endfor %}

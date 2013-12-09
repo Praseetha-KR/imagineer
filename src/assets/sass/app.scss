@@ -5,11 +5,13 @@
 body{
 	font-family: Georgia, 'Times New Roman', Times !important;
 	min-width: 240px;
+	// background-color: #36536C;
+	background-color: #EFEDE0;
 }
 header{
-	width: 100%;
-	margin-bottom: 30px;
-	background-color: #EFEFEF;
+	width: 20%;
+	position: fixed;
+	z-index: 999;
 	a{
 		color: $extra-dark-gray;
 		text-decoration: none;
@@ -18,24 +20,25 @@ header{
 		color: $medium-gray;
 		text-decoration: none;
 	}
-	nav{
-		margin-top: 30px;
-		background-color: $light-gray;
-		background-image: url(/assets/img/stripe.png);
-		background-size: auto 100%;
-		li{
-			display: inline-block;
-			list-style-type: none;
-			padding: 10px 20px 10px 20px;
-			a{
-				padding: 5px 10px 5px 10px;
-			}
-			a:hover{
-				background-color: #FFF;
-				padding: 5px 10px 5px 10px ;
-				border-radius: 30px;
-			}
-		}
+	.navbar-default .navbar-brand{
+		color: $white;
+	}
+	.navbar-default .navbar-nav>li>a {
+		color: $extra-dark-gray;
+	}
+	.navbar-default {
+		background-color: $orange;
+		border: 0;
+		border-radius: 0;
+	}
+}
+@media (max-width: 768px){
+	header{
+		width: 100%;
+		margin-left: -15px;
+	}
+	.page-content{
+		margin-top: 50px;
 	}
 }
 h1,h2,h3,h4,h5,h6{
@@ -48,9 +51,15 @@ p{
 }
 .post{
 	margin-bottom: 30px;
+	// background-color: #FFF;
 }
 .post-content{
-	/*background-color: #ccc;*/
+	background-color: #FFF;
+	word-wrap: break-word;
+	// border-radius: 5px;
+	// box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+	// -webkit-box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+	// -moz-box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
 	h2>a{
 		font-weight: normal;
 		color: $extra-dark-gray;
@@ -73,20 +82,35 @@ p{
 .post-date{
 	margin-top: 28px;
 	margin-right: 10px;
+	margin-left: -15px;
 	font-size: 12px;
 	color: $dark-gray;
 	line-height: 150%;
-	border-right: 1px solid $medium-gray;
-	h6{
-		padding: 0;
-		margin: 0 10px 2px 0;
-	}
+	padding: 0;
+	text-align: center;
+	width: 100px;
+	float: left;
+	background-color: rgba(0,0,0,0.1);
+}
+a.read-more{
+	background-color: #2EAC9D;
+	padding: 2px 10px;
+	color: #FFF;
+	float: right;
+}
+a.read-more:hover{
+	text-decoration: none;
 }
 
 .gray{
 	color: $medium-gray;
 }
-
+.push-one-top{
+	padding-top: 1em;
+}
+.push-two-top{
+	padding-top: 2em;
+}
 
 #about{
 	h1{
@@ -139,7 +163,7 @@ footer{
 	clear: both;
 	margin-top: 50px;
 	.topline{
-		border-top: 1px solid $light-gray;
+		border-top: 1px solid $black-transparent-1;
 		display: block;
 		padding-top: 10px;
 		padding-bottom: 20px;

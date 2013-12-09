@@ -49,7 +49,7 @@ Thats all! Raspbian has booted up running on RPi!
 I have connected a ethernet cable from laptop to RPi. Laptop have WiFi access, which has to be shared to LAN. So, on start button, search for 'View network connections', from the opened window right click on 'Wireless Network Connection' and choose 'properties'. Goto 'sharing' tab and check 'Allow other network users to connect through this computer's internet connection' along with selecting Home networking connection as 'Local Area Connection'.
 Now the RPi has got LAN Access.
 
-To get IP address of RPi, you can either get LAN IP from `ipconfig` and run a ping scan with command `FOR /L %i IN (i,i,254) DO ping -n 1 192.168.1.%i | FIND /i "Reply">> c:\lanipaddresses.txt` where `192.168.1.%i` is replaced with LAN's IP, or try command `arp -a`
+To get IP address of RPi, you can either get LAN IP from `ipconfig` and run a ping scan with command `FOR /L %i IN (i,i,254) DO ping -n 1 192.168.1.%i `<br>`| FIND /i "Reply">> c:\lanipaddresses.txt` where `192.168.1.%i` is replaced with LAN's IP, or try command `arp -a`
 
 Once the IP of RPi is known, you can SSH using <a href="http://www.putty.org/">Putty</a>.
 <div class="row">

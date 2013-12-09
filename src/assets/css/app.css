@@ -21,12 +21,13 @@
 body {
   font-family: Georgia, 'Times New Roman', Times !important;
   min-width: 240px;
+  background-color: #EFEDE0;
 }
 
 header {
-  width: 100%;
-  margin-bottom: 30px;
-  background-color: #EFEFEF;
+  width: 20%;
+  position: fixed;
+  z-index: 999;
 }
 header a {
   color: #333333;
@@ -36,26 +37,28 @@ header a:hover {
   color: #999999;
   text-decoration: none;
 }
-header nav {
-  margin-top: 30px;
-  background-color: #efefef;
-  background-image: url(/assets/img/stripe.png);
-  background-size: auto 100%;
+header .navbar-default .navbar-brand {
+  color: white;
 }
-header nav li {
-  display: inline-block;
-  list-style-type: none;
-  padding: 10px 20px 10px 20px;
+header .navbar-default .navbar-nav > li > a {
+  color: #333333;
 }
-header nav li a {
-  padding: 5px 10px 5px 10px;
-}
-header nav li a:hover {
-  background-color: #FFF;
-  padding: 5px 10px 5px 10px;
-  border-radius: 30px;
+header .navbar-default {
+  background-color: #da623f;
+  border: 0;
+  border-radius: 0;
 }
 
+@media (max-width: 768px) {
+  header {
+    width: 100%;
+    margin-left: -15px;
+  }
+
+  .page-content {
+    margin-top: 50px;
+  }
+}
 h1, h2, h3, h4, h5, h6 {
   font-family: Georgia, 'Times New Roman', Times;
 }
@@ -71,7 +74,8 @@ p {
 }
 
 .post-content {
-  /*background-color: #ccc;*/
+  background-color: #FFF;
+  word-wrap: break-word;
 }
 .post-content h2 > a {
   font-weight: normal;
@@ -95,18 +99,38 @@ p {
 .post-date {
   margin-top: 28px;
   margin-right: 10px;
+  margin-left: -15px;
   font-size: 12px;
   color: #666666;
   line-height: 150%;
-  border-right: 1px solid #999999;
-}
-.post-date h6 {
   padding: 0;
-  margin: 0 10px 2px 0;
+  text-align: center;
+  width: 100px;
+  float: left;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+a.read-more {
+  background-color: #2EAC9D;
+  padding: 2px 10px;
+  color: #FFF;
+  float: right;
+}
+
+a.read-more:hover {
+  text-decoration: none;
 }
 
 .gray {
   color: #999999;
+}
+
+.push-one-top {
+  padding-top: 1em;
+}
+
+.push-two-top {
+  padding-top: 2em;
 }
 
 #about h1 {
@@ -155,7 +179,7 @@ footer {
   margin-top: 50px;
 }
 footer .topline {
-  border-top: 1px solid #efefef;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   display: block;
   padding-top: 10px;
   padding-bottom: 20px;
