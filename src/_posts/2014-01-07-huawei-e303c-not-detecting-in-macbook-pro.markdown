@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Huwei E303C not detecting in MacBook Pro"
+title:  "Huawei E303C not detecting in MacBook Pro"
 date:   2014-01-07 21:40:30
 categories: blog
 ---
