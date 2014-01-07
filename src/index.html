@@ -3,7 +3,7 @@ layout: default
 title: imagineer
 ---
 
-{% for post in site.posts %}
+{% for post in paginator.posts %}
   <div class="post row">
     <div class="col-lg-8 col-md-7 col-sm-9 col-xs-12 post-content">
       <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
@@ -19,4 +19,58 @@ title: imagineer
     </div>
   </div>
 {% endfor %}
+<!-- Pagination links -->
+<div class="row text-center">
+  <div class="col-lg-8 col-md-7 col-sm-9 col-xs-12">
+    <div id="post-pagination" class="pagination">
+  <ul class="pages">
+  {% if paginator.previous_page %}
+    <li class="page">
+      {% if paginator.previous_page == 1 %}
+        <a href="/"><i class="icon-chevron-left"></i></a>
+      {% else %}
+        <a href="{{ paginator.previous_page_path }}"><i class="icon-chevron-left"></i></a>
+      {% endif %}
+    </li>
+  {% else %}
+    <li class="page disabled">
+      <span><i class="icon-chevron-left"></i></span>
+    </li>
+  {% endif %}
+
+  
+    <li class="page">
+      {% if paginator.page == 1 %}
+        <span class="current-page">1</span>
+      {% else %}
+        <a href="/">1</a>
+      {% endif %}
+    </li>
+
+    {% for count in (2..paginator.total_pages) %}
+      <li class="page">
+        {% if count == paginator.page %}
+          <span class="current-page">{{ count }}</span>
+        {% else %}
+          <a href="/page{{ count }}">{{ count }}</a>
+        {% endif %}
+      </li>
+    {% endfor %}
+
+
+  {% if paginator.next_page %}
+    <li class="page">
+      <a href="{{ paginator.next_page_path }}"><i class="icon-chevron-right"></i></a>
+    </li>
+  {% else %}
+    <li class="page disabled">
+      <span><i class="icon-chevron-right"></i></span>
+    </li>
+  {% endif %}
+  </ul>
+</div>
+  </div>
+</div>
+
+
    
