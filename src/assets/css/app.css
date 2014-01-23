@@ -221,3 +221,36 @@ li.page {
   background: #fff;
   border: 1px solid #ccc;
 }
+
+.border-light-one {
+  border: 1em solid rgba(0, 0, 0, 0.1);
+}
+
+.border-light-half {
+  border: 0.5em solid rgba(0, 0, 0, 0.1);
+}
+
+.space-one-top {
+  margin-top: 1em;
+}
+
+.space-one-bottom {
+  margin-bottom: 1em;
+}
+
+.space-one {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.sq-box-left, .sq-box-right {
+  height: 100%;
+  width: 50%;
+  float: left;
+  display: block;
+}
+
+.color-pallette {
+  width: 100%;
+  height: 75px;
+}
