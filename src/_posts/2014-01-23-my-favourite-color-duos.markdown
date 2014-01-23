@@ -16,74 +16,74 @@ My favourite places to find colors for projects involves: <a href="http://colors
 I have listed some of my recent favourite color-duos here:
 
 <div class="row">
-	<div class="col-lg-3">
+	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 		<div class="color-pallette border-light-half space-one">
 			<div class="sq-box-left" style="background-color: #53B461"></div>
 			<div class="sq-box-right" style="background-color: #455369"></div>
 		</div>
 	</div>
-	<div class="col-lg-3">
+	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 		<div class="color-pallette border-light-half space-one">
 			<div class="sq-box-left" style="background-color: #E2403D"></div>
 			<div class="sq-box-right" style="background-color: #303030"></div>
 		</div>
 	</div>
-	<div class="col-lg-3">
+	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 		<div class="color-pallette border-light-half space-one">
 			<div class="sq-box-left" style="background-color: #DA623F"></div>
 			<div class="sq-box-right" style="background-color: #514157"></div>
 		</div>
 	</div>
-	<div class="col-lg-3">
+	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 		<div class="color-pallette border-light-half space-one">
 			<div class="sq-box-left" style="background-color: #FFFFFF"></div>
 			<div class="sq-box-right" style="background-color: #D0503C"></div>
 		</div>
 	</div>
-	<div class="col-lg-3">
+	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 		<div class="color-pallette border-light-half space-one">
 			<div class="sq-box-left" style="background-color: #BADEA5"></div>
 			<div class="sq-box-right" style="background-color: #A497BB"></div>
 		</div>
 	</div>
-	<div class="col-lg-3">
+	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 		<div class="color-pallette border-light-half space-one">
 			<div class="sq-box-left" style="background-color: #FFFFFF"></div>
 			<div class="sq-box-right" style="background-color: #323232"></div>
 		</div>
 	</div>
-	<div class="col-lg-3">
+	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 		<div class="color-pallette border-light-half space-one">
 			<div class="sq-box-left" style="background-color: #FCEDA3"></div>
 			<div class="sq-box-right" style="background-color: #8ECFCC"></div>
 		</div>
 	</div>
-	<div class="col-lg-3">
+	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 		<div class="color-pallette border-light-half space-one">
 			<div class="sq-box-left" style="background-color: #0CA5B0"></div>
 			<div class="sq-box-right" style="background-color: #655643"></div>
 		</div>
 	</div>
-	<div class="col-lg-3">
+	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 		<div class="color-pallette border-light-half space-one">
 			<div class="sq-box-left" style="background-color: #A4825D"></div>
 			<div class="sq-box-right" style="background-color: #363149"></div>
 		</div>
 	</div>
 
-	<div class="col-lg-3">
+	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 		<div class="color-pallette border-light-half space-one">
 			<div class="sq-box-left" style="background-color: #FFFFFF"></div>
 			<div class="sq-box-right" style="background-color: #768A9A"></div>
 		</div>
 	</div>
-	<div class="col-lg-3">
+	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 		<div class="color-pallette border-light-half space-one">
 			<div class="sq-box-left" style="background-color: #51B8F2"></div>
 			<div class="sq-box-right" style="background-color: #54667A"></div>
 		</div>
 	</div>
-	<div class="col-lg-3">
+	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 		<div class="color-pallette border-light-half space-one">
 			<div class="sq-box-left" style="background-color: #64BDB7"></div>
 			<div class="sq-box-right" style="background-color: #E76135"></div>
