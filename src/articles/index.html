@@ -9,7 +9,7 @@ title: imagineer
         <div id="articles"> 
           {% for post in paginator.posts %}
             <div class="row post">
-              <div class="col-lg-9 col-md-7 col-sm-9 col-xs-12 post-content">
+              <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 post-content">
                 <h2 class="large-prose"><a href="{{ post.url }}">{{ post.title }}</a></h2>
                 <p>{{ post.content }}</p>
                 <a class="read-more tiny" href="{{ post.url }}">Read more &raquo;</a>

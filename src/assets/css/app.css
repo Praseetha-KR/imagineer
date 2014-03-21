@@ -489,7 +489,7 @@ p {
 }
 
 .post-date {
-  margin-top: 28px;
+  margin-top: 0;
   margin-right: 10px;
   margin-left: -15px;
   font-size: 12px;
@@ -502,6 +502,11 @@ p {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+@media screen and (min-width: 768px) {
+  .post-date {
+    margin-top: 28px;
+  }
+}
 a.read-more {
   background-color: #2EAC9D;
   padding: 2px 10px;
@@ -700,4 +705,14 @@ section {
 
 .navbar-default .navbar-brand, .navbar-default .navbar-nav > li > a {
   color: #000000;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar-header {
+    margin-left: 2em;
+  }
+
+  .navbar-collapse {
+    margin-right: 2em;
+  }
 }
