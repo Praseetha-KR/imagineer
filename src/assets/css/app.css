@@ -390,6 +390,10 @@ a:hover.link-silent {
   margin-left: -35px;
 }
 
+.full-width {
+  width: 100%;
+}
+
 .fill-gray {
   background-color: rgba(0, 0, 0, 0.1);
 }
