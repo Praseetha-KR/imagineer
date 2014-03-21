@@ -1,4 +1,4 @@
-@import 'compass';
+@import "compass/css3/box-shadow";
 @import 'colors';
 @import 'typography';
 @import 'layout';
@@ -42,10 +42,9 @@ p{
 .post-content{
 	background-color: #FFF;
 	word-wrap: break-word;
+	border: 1px solid #EFEFEF;
 	// border-radius: 5px;
-	// box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
-	// -webkit-box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
-	// -moz-box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+	@include box-shadow(rgba(0,0,0,0.05) 1px 1px 5px);
 	h2>a{
 		font-weight: normal;
 		color: $extra-dark-gray;

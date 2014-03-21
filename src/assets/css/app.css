@@ -464,6 +464,10 @@ p {
 .post-content {
   background-color: #FFF;
   word-wrap: break-word;
+  border: 1px solid #EFEFEF;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.05) 1px 1px 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.05) 1px 1px 5px;
+  box-shadow: rgba(0, 0, 0, 0.05) 1px 1px 5px;
 }
 .post-content h2 > a {
   font-weight: normal;
