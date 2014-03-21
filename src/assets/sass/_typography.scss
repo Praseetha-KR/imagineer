@@ -1,15 +1,74 @@
+@import "compass/css3/hyphenation";
+
+a{
+	color: #333333;
+}
+a:hover{
+	color: #323A45;
+}
+a:hover.link-silent{
+	text-decoration: none;
+}
+
+.all-caps{
+	text-transform: uppercase;
+}
+.all-lower{
+	text-transform: lowercase;
+}
+.all-capitalize{
+	text-transform: capitalize;
+}
+
 .extralarge{
 	font-size: 4em;
 }
 .large{
 	font-size: 3em;
 }
-.legible{
+.large-prose{
 	font-size: 2.3em;
 }
-.legible-prose{
+.legible{
 	font-size: 1.8em;
+	line-height: 1.6em;
+}
+.legible-prose{
+	font-size: 1.6em;
+	line-height: 1.6em;
+}
+.regular{
+	font-size: 1.4em;
+	line-height: 1.6em;
+}
+.regular-prose{
+	font-size: 1.2em;
+	line-height: 1.6em;
+}
+.secondary{
+	font-size: 1.1em;
+	line-height: 1.6em;
 }
 .tiny{
 	font-size: 0.8em;
+}
+
+.thin{
+	font-weight: 300;
+}
+.semibold{
+	font-weight: 500;
+}
+.bold{
+	font-weight: 600;
+}
+.italic{
+	font-style: italic;
+}
+.normal{
+	font-style: normal;
+}
+
+.hyphenated{
+	@include hyphens(auto);
 }

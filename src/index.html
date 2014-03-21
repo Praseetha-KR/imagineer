@@ -3,74 +3,45 @@ layout: default
 title: imagineer
 ---
 
-{% for post in paginator.posts %}
-  <div class="post row">
-    <div class="col-lg-8 col-md-7 col-sm-9 col-xs-12 post-content">
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      <p>{{ post.content }}</p>
-      <a class="read-more" href="{{ post.url }}">Read more &raquo;</a>
+<section id="section1" class="pad-four push-four-bottom push-eight-top text-center">
+  <div class="row">
+    <div class="col-lg-10 col-lg-offset-1">
+      <div class="legible thin">
+        <span class="bold">Hi! I'm Praseetha</span>, a UI/UX designer &amp; front-end web developer from Kerala. I'm a computer science graduate, currently working as pixel pusher at HasGeek, Bangalore.
+     </div>
     </div>
-    <div class="col-lg-2 col-md-7 col-sm-9 col-xs-12">
-      <div class="post-date">
-        {{ post.date | date_to_string }}
-        <br>
-        <a href="{{ post.url }}#disqus_thread"></a>
+  </div>
+     
+</section>
+    <section id="section2" class="pad-four push-four"></section>
+    <section id="section3" class="pad-four push-four fill-black text-center">
+      <p class="legible-prose thin prose-type space-one-bottom">
+        Coding with Colors
+      </p>
+      <div class="row">
+        <div class="col-lg-12">
+          <ul class="legible nospace-ul">
+            <li class="linear"><a class="extradarkgray" href=""><i class="fa fa-twitter-square"></i></a></li>
+            <li class="linear"><a class="extradarkgray" href=""><i class="fa fa-github-square"></i></a></li>
+            <li class="linear"><a class="extradarkgray" href=""><i class="fa fa-flickr"></i></a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </div>
-{% endfor %}
-<!-- Pagination links -->
-<div class="row text-center">
-  <div class="col-lg-8 col-md-7 col-sm-9 col-xs-12">
-    <div id="post-pagination" class="pagination">
-  <ul class="pages">
-  {% if paginator.previous_page %}
-    <li class="page">
-      {% if paginator.previous_page == 1 %}
-        <a href="/"><i class="icon-chevron-left"></i></a>
-      {% else %}
-        <a href="{{ paginator.previous_page_path }}"><i class="icon-chevron-left"></i></a>
-      {% endif %}
-    </li>
-  {% else %}
-    <li class="page disabled">
-      <span><i class="icon-chevron-left"></i></span>
-    </li>
-  {% endif %}
-
-  
-    <li class="page">
-      {% if paginator.page == 1 %}
-        <span class="current-page">1</span>
-      {% else %}
-        <a href="/">1</a>
-      {% endif %}
-    </li>
-
-    {% for count in (2..paginator.total_pages) %}
-      <li class="page">
-        {% if count == paginator.page %}
-          <span class="current-page">{{ count }}</span>
-        {% else %}
-          <a href="/page{{ count }}">{{ count }}</a>
-        {% endif %}
-      </li>
-    {% endfor %}
-
-
-  {% if paginator.next_page %}
-    <li class="page">
-      <a href="{{ paginator.next_page_path }}"><i class="icon-chevron-right"></i></a>
-    </li>
-  {% else %}
-    <li class="page disabled">
-      <span><i class="icon-chevron-right"></i></span>
-    </li>
-  {% endif %}
-  </ul>
-</div>
-  </div>
-</div>
+    </section>
+    <footer class="fill-black">
+      <div class="col-lg-12 text-center">
+        <div class="row">
+          <div class="topline">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <p class="tiny text-left">&copy; licensed under <a rel="license" class="link-silent" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a></p>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <p class="tiny text-right">Powered by <a href="http://jekyllrb.com/">Jekyll</p>
+            </div></a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
 
    

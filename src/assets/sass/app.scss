@@ -1,49 +1,25 @@
 @import 'compass';
 @import 'colors';
 @import 'typography';
+@import 'layout';
+@import 'theme';
 
 body{
-	font-family: Georgia, 'Times New Roman', Times !important;
+	font-family: 'Merriweather Sans', 'Open Sans', 'Lato', sans-serif;
 	min-width: 240px;
-	// background-color: #36536C;
-	background-color: #EFEDE0;
+	font-size: 1.4em;
+	line-height: 1.6em;
+	font-weight: 300;
+	// background-color: #EFEDE0;
 }
-header{
-	width: 20%;
-	position: fixed;
-	z-index: 999;
-	a{
-		color: $extra-dark-gray;
-		text-decoration: none;
-	}
-	a:hover{
-		color: $medium-gray;
-		text-decoration: none;
-	}
-	.navbar-default .navbar-brand{
-		color: $white;
-	}
-	.navbar-default .navbar-nav>li>a {
-		color: $extra-dark-gray;
-	}
-	.navbar-default {
-		background-color: $orange;
-		border: 0;
-		border-radius: 0;
-	}
+.logo{
+	display: inline-block;
+	color: $white;
+	background-color: $black-transparent-1;
+	padding: 0 3px 0 3px;
 }
-@media (max-width: 768px){
-	header{
-		width: 100%;
-		margin-left: -15px;
-	}
-	.page-content{
-		margin-top: 50px;
-	}
-}
-h1,h2,h3,h4,h5,h6{
-	font-family: Georgia, 'Times New Roman', Times;
-}
+
+h1,h2,h3,h4,h5,h6{}
 p{
 	font-size: 16px;
 	line-height: 150%;
@@ -161,7 +137,6 @@ a.read-more:hover{
 }
 footer{
 	clear: both;
-	margin-top: 50px;
 	.topline{
 		border-top: 1px solid $black-transparent-1;
 		display: block;
@@ -214,4 +189,55 @@ li.page{
 .color-pallette{
 	width: 100%;
 	height: 75px;
+}
+
+
+
+html, body, .page-content, .page-content section{
+	height: 90%;
+}
+header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	background-color: #FFF;
+	z-index: 999;
+}
+.prose-type{
+	font-family: 'Julius Sans One', sans-serif;
+}
+.navbar{
+	margin-bottom: 0;
+}
+section{
+	background-attachment: fixed;
+}
+#section1{
+	background-color: #FFF;
+	height: auto;
+}
+#section2{
+	background-image: url(/assets/img/5.JPG);
+	background-size: cover;
+	background-position: bottom center;
+	position: relative;
+	background-repeat: no-repeat;
+}
+#section3{
+	height: auto;
+}
+#section4{
+	color: #FFF;
+	height: auto;
+}
+
+
+
+.navbar-default {
+    background-color: #FFFFFF;
+}
+.navbar-default .navbar-brand, .navbar-default .navbar-nav > li > a {
+    color: #000000;
 }
