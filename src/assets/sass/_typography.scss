@@ -1,7 +1,7 @@
 @import "compass/css3/hyphenation";
 
 a{
-	color: #333333;
+	color: #1CB;
 }
 a:hover{
 	color: #323A45;
@@ -47,6 +47,10 @@ a:hover.link-silent{
 }
 .secondary{
 	font-size: 1.1em;
+	line-height: 1.6em;
+}
+.secondary-prose{
+	font-size: 0.9em;
 	line-height: 1.6em;
 }
 .tiny{

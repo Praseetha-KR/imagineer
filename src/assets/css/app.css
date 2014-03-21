@@ -1,5 +1,5 @@
 a {
-  color: #333333;
+  color: #1CB;
 }
 
 a:hover {
@@ -56,6 +56,11 @@ a:hover.link-silent {
 
 .secondary {
   font-size: 1.1em;
+  line-height: 1.6em;
+}
+
+.secondary-prose {
+  font-size: 0.9em;
   line-height: 1.6em;
 }
 
@@ -418,7 +423,7 @@ a:hover.link-silent {
 }
 
 body {
-  font-family: 'Merriweather Sans', 'Open Sans', 'Lato', sans-serif;
+  font-family: 'Merriweather Sans', 'Lato', sans-serif;
   min-width: 240px;
   font-size: 1.4em;
   line-height: 1.6em;
@@ -432,10 +437,24 @@ body {
   padding: 0 3px 0 3px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather Sans', 'Lato', sans-serif;
+}
+
 p {
   font-size: 16px;
   line-height: 150%;
   color: #333333;
+}
+
+.img-wrapper {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img-wrapper > img {
+  width: 100%;
 }
 
 .post {
@@ -655,7 +674,7 @@ section {
 }
 
 #section2 {
-  background-image: url(/assets/img/5.JPG);
+  background-image: url(/assets/img/bg.jpg);
   background-size: cover;
   background-position: bottom center;
   position: relative;
