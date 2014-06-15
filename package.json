@@ -9,6 +9,9 @@
     "grunt-concurrent": "0.x",
     "grunt-contrib-compass": "0.x"
   },
+  "scripts": {
+    "test": "grunt production"
+  },
   "devDependencies": {},
   "repository": {
     "type": "git",
