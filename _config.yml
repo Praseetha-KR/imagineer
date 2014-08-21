@@ -1,6 +1,6 @@
 name: imagineer
 blurb: 'coding with colors'
 markdown: redcarpet
-pygments: true
+highlighter: pygments
 paginate: 6
 paginate_path: "/page:num"

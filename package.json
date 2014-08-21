@@ -1,13 +1,16 @@
 {
   "name": "imagineer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Imagineer Website",
   "dependencies": {
     "grunt": "0.4.x",
-    "grunt-jekyll": "0.4.x",
-    "grunt-contrib-watch": "0.5.x",
-    "grunt-concurrent": "0.4.x",
-    "grunt-contrib-compass": "0.6.x"
+    "grunt-jekyll": "0.x",
+    "grunt-contrib-watch": "0.x",
+    "grunt-concurrent": "0.x",
+    "grunt-contrib-compass": "0.x"
+  },
+  "scripts": {
+    "test": "grunt production"
   },
   "devDependencies": {},
   "repository": {
