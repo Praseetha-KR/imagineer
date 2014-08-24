@@ -10,8 +10,9 @@ Just like ideation, layouting & typography, another most important factor in des
 Feel and effect of design is strongly dependent on color domain. We select cool and warm colors from color wheel according to the nature of design. Even a slight variation on shade of a color can affect the entire design positively/negatively. So, selection of colors should be done carefully and is definitely a time consuming process.
 
 Color selection also depends on the medium, i.e., web or print. The colors on printed materials appear to be darker than the colors we see in computer screen, whereas perception of web colors to user varies according to screen properties. For example, screen backlight is almost pure white for MacBook, and it is comparatively yellowish white in my Dell Inspiron laptop. It depends on backlight brightness as well.
-
+<!-- more -->
 My favourite places to find colors for projects involves: <a href="http://colorschemedesigner.com/">colorschemedesigner.com</a>, <a href="http://colourlovers.com/">colourlovers.com</a>, <a href="http://colourco.de/">colourco.de</a> and <a href="http://dribbble.com/colors/">dribbble.com</a>. Firefox/Chrome add-on <a href="http://www.colorzilla.com">ColorZilla</a> is also a helpful tool.
+
 
 I have listed some of my recent favourite color-duos here:
 

@@ -13,46 +13,41 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/assets/css/app.css">
     <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Kameron:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Radley:400,400italic' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-      <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-          <header>
-            <nav class="navbar navbar-default" role="navigation">
-              <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/">{{ site.name }}</a>
-              </div>
+    <header>
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Coding with colors</a>
+          </div>
 
-              <div class="collapse navbar-collapse" id="navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-reorder"></i></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="/">Blog</a></li>
-                      <li><a href="/work/">Work</a></li>
-                      <li><a href="/experiments/css/">CSS</a></li>
-                      <li><a href="/photography/">Photography</a></li>
-                      <li><a href="/art/">Art</a></li>
-                      <li><a href="/about/">About</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-          </header>
-         </div>
-        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 page-content">
-          {{ content }}
-        </div>
-      </div>
-    </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                  
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/">Blog</a></li>
+              <li><a href="/work/">Work</a></li>
+              <li><a href="/experiments/css/">CSS</a></li>
+              <li><a href="/photography/">Photography</a></li>
+              <li><a href="/art/">Art</a></li>
+              <li><a href="/about/">About</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </header>
+    
+    {{ content }}
     
     <footer>
       <div class="col-lg-12 text-center">
