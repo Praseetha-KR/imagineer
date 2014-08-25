@@ -3,6 +3,7 @@ layout: post
 title:  "How opacity affect layering in CSS"
 date:   2014-09-25 08:15:00
 categories: blog
+status: draft
 ---
 
 Web developers use `position`, `z-index` and `transforms` for altering the default DOM layering in CSS. If I say `opacity` can also affect layering, would you agree? Well, in this article I'm gonna show you how it is done.
