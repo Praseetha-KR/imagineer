@@ -3,6 +3,7 @@ layout: post
 title:  "Starting with Raspberry Pi"
 date:   2013-12-02 07:14:30
 categories: blog
+theme: "#8DCCAD"
 ---
 
 I have started using Raspberry Pi today, and I can't control myself from saying that it is AWESOME! 
