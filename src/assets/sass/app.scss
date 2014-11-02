@@ -5,16 +5,13 @@
 @import 'themes';
 
 body{
-	font-family: "Muli", "Nunito", "Libre Baskerville", 'Sanchez', 'Radley', 'Kameron', Georgia !important;
+	font-family: "Muli", serif;
 	min-width: 240px;
-	// color: #1A1F1E;
-	color: #555;
+	color: $bodycolor;
 	font-weight: 400;
-	// background-color: #EFEDE0;
-	// padding-top: 70px;
 }
 h1,h2,h3,h4,h5,h6{
-	font-family: "Muli", "Nunito", "Libre Baskerville", "Radley", "Kameron", Georgia;
+	font-family: "Muli", serif;
 	font-weight: 400;
 }
 p, ol, ul, blockquote{
@@ -23,7 +20,7 @@ p, ol, ul, blockquote{
 	margin: 0 0 2.5rem;
 }
 a {
-	color: #20BAD5;
+	color: $lightblue;
 }
 .navbar {
 	margin-bottom: 0;
@@ -48,7 +45,7 @@ ul.navbar-nav {
 	color: $pink;
 }
 .navbar-default {
-	background-color: rgba(255,255,255,0.86);
+	background-color: white;
 	border-color: $lightblue;
 	border-width: 0 0 1px 0;
 	border-radius: 0;
@@ -61,7 +58,7 @@ ul.navbar-nav {
 	border: 0;
 }
 .navbar-default .navbar-toggle .icon-bar {
-	background-color: #999;
+	background-color: $gray;
 }
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
 	background-color: transparent;
@@ -77,24 +74,17 @@ ul.navbar-nav {
 	background-size: 100%;
 	background-size: cover !important;
 	background-position: center center;
-	color: #FFF;
-	/*margin-top: -5em;
-	padding-top: 3.7em;*/
+	color: white;
 }
 .meta {
 	color: rgba(255,255,255,0.5)
 }
 .post{
 	margin-bottom: 30px;
-	// background-color: #FFF;
 }
 .post-content{
 	background-color: #FFF;
 	word-wrap: break-word;
-	// border-radius: 5px;
-	// box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
-	// -webkit-box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
-	// -moz-box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
 	h2>a{
 		color: $extra-dark-gray;
 		line-height: 150%;
@@ -260,7 +250,7 @@ pre {
 		border-bottom: 1px dashed #EEE;
 		display: block;
 		padding: 0.2em 0;
-		color: #999;
+		color: $gray;
 		&:hover {
 			color: $pink;
 		}
