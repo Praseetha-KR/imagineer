@@ -3,28 +3,46 @@ layout: default
 title: imagineer
 ---
 <div class="container-fluid">
-{% for post in paginator.posts %}
-  {% if post.status != 'draft' %}
-    <div class="row-fluid clearall">
-      <div class="post">
-        <div class="col-sm-8 col-sm-offset-2 col-xs-12 post-content">
-          <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-          <div class="post-date">{{ post.date | date_to_string }}</div>
-          <!-- <a href="{{ post.url }}#disqus_thread"></a> -->
-          <!-- <p>{{ post.content | truncatewords:200 }}</p> -->
-            <p>
-            {% if post.content contains "<!-- more -->" %}
-              {{ post.content | split:"<!-- more -->" | first % }}
-            {% else %}
-              {{ post.content | strip_html | truncatewords:100 }}
-            {% endif %}
-            </p>
-          <a class="read-more" href="{{ post.url }}">Read more &raquo;</a>
-        </div>
-      </div>
+  <div class="row-fluid">
+    <div class="col-sm-3 pad-2-left sidebar">
+      <img src="https://pbs.twimg.com/profile_images/525534390491705344/_WyPxhz4_400x400.jpeg" width="100%" alt="">
+      <h1 class="legible">Praseetha KR</h1>
+      <h2 class="regular push-2-bottom"><a href="https://twitter.com/void_imagineer" target="_blank">@void_imagineer</a></h2>
+      <ul id="social-connect" class="list-silent link-silent nopad-ul regular push-3-bottom">
+        <li><a href="https://github.com/Praseetha-KR" title="Github" target="_blank"><i class="fa fa-github"></i> Code</a></li>
+        <li><a href="http://codepen.io/Praseetha-KR/" title="Codepen" target="_blank"><i class="fa fa-codepen"></i> Experiments</a></li>
+        <li><a href="http://praseetha-kr.tumblr.com/" title="Tumblr" target="_blank"><i class="fa fa-tumblr"></i> Error.log</a></li>
+        <li><a href="https://twitter.com/void_imagineer" title="Twitter" target="_blank"><i class="fa fa-twitter"></i> Tweets</a></li>
+        <li><a href="https://www.flickr.com/photos/void_imagineer/sets/" title="Flickr" target="_blank"><i class="fa fa-flickr"></i> Photography</a></li>
+      </ul>
+
     </div>
-  {% endif %}
-{% endfor %}
+    <div class="col-sm-8">
+      {% for post in paginator.posts %}
+        {% if post.status != 'draft' %}
+          <div class="row-fluid clearall">
+            <div class="post">
+              <div class="col-sm-12 col-xs-12 post-content">
+                <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                <div class="post-date">{{ post.date | date_to_string }}</div>
+                <!-- <a href="{{ post.url }}#disqus_thread"></a> -->
+                <!-- <p>{{ post.content | truncatewords:200 }}</p> -->
+                  <p>
+                  {% if post.content contains "<!-- more -->" %}
+                    {{ post.content | split:"<!-- more -->" | first % }}
+                  {% else %}
+                    {{ post.content | strip_html | truncatewords:100 }}
+                  {% endif %}
+                  </p>
+                <a class="read-more" href="{{ post.url }}">Read more &raquo;</a>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
 <!-- Pagination links -->
 <div class="row-fluid text-center">
   <div class="col-sm-6 col-sm-offset-3 col-xs-12">

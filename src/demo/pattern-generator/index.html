@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Gradient Generator</title>
+	<style>
+		html {
+			height: 100%;
+			background-color: deeppink;
+			background-image: linear-gradient(45deg, rgba(255,255,255,0.5) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.5) 75%, transparent 75%, transparent);
+			background-size: 30px 30px;
+		}
+		#settings {
+			background-color: rgba(255,255,255,0.8);
+			width: 14.5em;
+			text-align: left;
+			padding: 0.1em 1em 1em 1em;
+			border-radius: 0.5em;
+		}
+		.form-group {
+			display: block;
+			float: left;
+			width: 100%;
+			margin-top: 1em;
+		}
+		label {
+			width: 40%;
+			display: block;
+			float: left;
+			font-family: sans-serif;
+		}
+		input {
+			margin: 0;
+			padding: 0;
+			width: 60%;
+			display: block;
+			float: left;
+			border: 0;
+		}
+		form {
+			display: block;
+			height: auto;
+			min-height: 10em;
+		}
+		#credit {
+			position: fixed;
+			bottom: 1em;
+			right: 1em;
+			font-size: 1em;
+			font-family: sans-serif;
+		}
+		#credit a {
+			color: #000;
+			text-decoration: none;
+		}
+		textarea {
+			padding: 1em;
+			width: 88%;
+		}
+	</style>
+</head>
+<body>
+	<div id="settings">
+		<h1>CSS3 Background Pattern Generator</h1>
+		<hr>
+		<form>
+			<div class="form-group">
+				<label for="background">Color 1</label>
+				<input type="color" value="#FF1493" id="background" name="background">
+			</div>
+			<div class="form-group">
+				<label for="stripe">Color 2</label>
+				<input type="color" value="#FF89C9" id="stripe" name="stripe">
+			</div>
+			<div class="form-group">
+				<label for="angle">Angle</label>
+				<input type="range" max="135" step="15" id="angle" name="angle">
+			</div>
+			<div class="form-group">
+				<label for="tile">Tile size</label>
+				<input type="range" min="5" id="tile" name="tile">
+			</div>
+		</form>		
+		<textarea readonly id="code" cols="30" rows="14"></textarea>
+	</div>
+	<div id="credit">&hearts;&nbsp;<a target="_blank" href="https://twitter.com/void_imagineer">Praseetha KR</a></div>
+	<script>
+		var html = document.getElementsByTagName("html")[0];
+		var bg = document.getElementById("background");
+		var stripe = document.getElementById("stripe");
+		var angle = document.getElementById("angle");
+		var tile = document.getElementById("tile");
+		var code = document.getElementById("code");
+
+		function setBgImg(angle, stripe) {
+			html.style.backgroundImage = "linear-gradient("+ angle + "deg, " + stripe + " 25%, transparent 25%, transparent 50%, " + stripe + " 50%, " + stripe + " 75%, transparent 75%, transparent)";
+		}
+
+		function genCode() {
+			code.value = "background-color: " + html.style.backgroundColor + ";\nbackground-image: " + html.style.backgroundImage + ";\nbackground-size: " + html.style.backgroundSize + ";\n";
+		}
+		html.style.backgroundColor = "deeppink";
+		html.style.backgroundSize = "30px 30px";
+		html.style.backgroundImage = setBgImg(45, "rgba(255,255,255,0.5)");
+		genCode();
+
+		bg.onchange = function() {
+			html.style.backgroundColor = bg.value;
+		}
+		stripe.onchange = function() {
+			if (angle.value) { setBgImg(angle.value, stripe.value); } 
+			else { setBgImg(45, stripe.value); }
+		}
+		angle.onchange = function() {
+			if (stripe.value) { setBgImg(angle.value, stripe.value); } 
+			else { setBgImg(angle.value, "rgba(255,255,255,0.5)"); }
+		}
+		tile.onchange = function() {
+			html.style.backgroundSize = tile.value + "px " + tile.value + "px";
+		}
+		document.onchange = function() {
+			genCode();
+		}
+		code.onfocus = function() {
+			code.select();
+		}
+	</script>
+</body>
+</html>

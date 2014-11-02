@@ -60,5 +60,95 @@
 .nopush,     .nopush-top        { padding-top:    0       !important; }
 .nopush,     .nopush-bottom     { padding-bottom: 0       !important; }
 
+.no-pad, .no-pad-left {
+  padding-left: 0;
+}
+
+.no-pad, .no-pad-right {
+  padding-right: 0;
+}
+
+.pad-half, .pad-half-left {
+  padding-left: 0.5em;
+}
+
+.pad-half, .pad-half-right {
+  padding-right: 0.5em;
+}
+
+.pad-3q, .pad-3q-left {
+  padding-left: 0.75em;
+}
+
+.pad-3q, .pad-3q-right {
+  padding-right: 0.75em;
+}
+
+.pad-1, .pad-1-left {
+  padding-left: 1em;
+}
+
+.pad-1, .pad-1-right {
+  padding-right: 1em;
+}
+
+.pad-line, .pad-line-left {
+  padding-left: 1.5em;
+}
+
+.pad-line, .pad-line-right {
+  padding-right: 1.5em;
+}
+
+.pad-2, .pad-2-left {
+  padding-left: 2em;
+}
+
+.pad-2, .pad-2-right {
+  padding-right: 2em;
+}
+
+.pad-2h, .pad-2h-left {
+  padding-left: 2.5em;
+}
+
+.pad-2h, .pad-2h-right {
+  padding-right: 2.5em;
+}
+
+.pad-3, .pad-3-left {
+  padding-left: 3em;
+}
+
+.pad-3, .pad-3-right {
+  padding-right: 3em;
+}
+
+.pad-4, .pad-4-left {
+  padding-left: 4em;
+}
+
+.pad-4, .pad-4-right {
+  padding-right: 4em;
+}
+
+
 .flushright { float: right !important; }
 .clearall { clear: both; }
+
+.tablecell {
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+	& > li {
+		display: table-cell;
+		width: auto;
+	}
+}
+a.list-silent, .link-silent a, a.link-silent:hover, .link-silent a:hover {
+	list-style-type: none;
+}
+ul.nopad-ul {
+	padding-left: 0;
+	margin-left: 0;
+}

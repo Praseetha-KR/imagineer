@@ -3,6 +3,7 @@ layout: post
 title:  "My Favourite Color Duos"
 date:   2014-01-23 14:50:00
 categories: blog
+theme: "#F5AD70"
 ---
 
 Just like ideation, layouting & typography, another most important factor in design is selection of colours. 
