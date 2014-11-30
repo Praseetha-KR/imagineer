@@ -37,12 +37,13 @@ module.exports = function (grunt) {
         },
 
         concat: {
-            options: {
-                separator: ';',
-            },
-            dist: {
+            js: {
                 src: ['src/assets/js/vendor/*.js', 'src/assets/js/scripts.js'],
-                dest: 'src/assets/js/app.js'
+                dest: 'src/assets/js/main.js'
+            },
+            css: {
+                src: ['src/assets/css/vendor/*.css', 'src/assets/css/app.css'],
+                dest: 'src/assets/css/main.css'
             }
         },
 
