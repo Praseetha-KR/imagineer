@@ -3,95 +3,35 @@ layout: default
 title: imagineer
 ---
 <div class="container-fluid">
-  <div class="row-fluid">
-    <div class="col-sm-3 pad-2-left sidebar">
-      <img src="/assets/img/praseetha_kr.jpeg" width="100%" alt="">
-      <h1 class="legible">Praseetha KR</h1>
-      <h2 class="regular push-2-bottom"><a href="https://twitter.com/void_imagineer" target="_blank">@void_imagineer</a></h2>
-      <ul id="social-connect" class="list-silent link-silent nopad-ul regular push-3-bottom">
-        <li><a href="https://github.com/Praseetha-KR" title="Github" target="_blank"><i class="fa fa-github"></i> Code</a></li>
-        <li><a href="http://codepen.io/Praseetha-KR/" title="Codepen" target="_blank"><i class="fa fa-codepen"></i> Experiments</a></li>
-        <li><a href="http://praseetha-kr.tumblr.com/" title="Tumblr" target="_blank"><i class="fa fa-tumblr"></i> Error.log</a></li>
-        <li><a href="https://twitter.com/void_imagineer" title="Twitter" target="_blank"><i class="fa fa-twitter"></i> Tweets</a></li>
-        <li><a href="https://www.flickr.com/photos/void_imagineer/sets/" title="Flickr" target="_blank"><i class="fa fa-flickr"></i> Photography</a></li>
-      </ul>
-
-    </div>
-    <div class="col-sm-8">
-      {% for post in paginator.posts %}
-        {% if post.status != 'draft' %}
-          <div class="row-fluid clearall">
-            <div class="post">
-              <div class="col-sm-12 col-xs-12 post-content">
-                <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-                <div class="post-date">{{ post.date | date_to_string }}</div>
-                <!-- <a href="{{ post.url }}#disqus_thread"></a> -->
-                <!-- <p>{{ post.content | truncatewords:200 }}</p> -->
-                  <p>
-                  {% if post.content contains "<!-- more -->" %}
-                    {{ post.content | split:"<!-- more -->" | first % }}
-                  {% else %}
-                    {{ post.content | strip_html | truncatewords:100 }}
-                  {% endif %}
-                  </p>
-                <a class="read-more" href="{{ post.url }}">Read more &raquo;</a>
-              </div>
+    <div class="row-fluid fill-blue masthead">
+        <div class="col-sm-9 col-sm-offset-3 col-xs-12 text-container">
+            <!-- <img src="/assets/img/praseetha_kr.jpeg" width="100%" alt=""> -->
+            <div class="legible-prose vertical-center">
+                {
+                    <div class="pad-2-left">"<span class="key">name</span>":&nbsp;"<span class="value">Praseetha KR</span>",</div>
+                    <div class="pad-2-left">"<span class="key">roles</span>":&nbsp;[ "<span class="value">Front-end Web Developer</span>", "<span class="value">Designer</span>", "<span class="value">Engineer</span>", "<span class="value">Dreamer</span>" ],</div>
+                    <div class="pad-2-left">"<span class="key">city</span>":&nbsp;"<span class="value">Bangalore</span>"</div>
+                    <div class="pad-2-left">"<span class="key">social</span>":&nbsp;[ "<a class="value" href="https://github.com/Praseetha-KR" target="_blank">Github</a>", "<a class="value" href="http://codepen.io/Praseetha-KR/" target="_blank">Codepen</a>", "<a class="value" href="https://twitter.com/void_imagineer" target="_blank">Twitter</a>", "<a class="value" href="https://www.flickr.com/photos/void_imagineer/sets/" target="_blank">Flickr</a>" ]</div>
+                }  
             </div>
-          </div>
-        {% endif %}
-      {% endfor %}
+        </div>
     </div>
-  </div>
-
-<!-- Pagination links -->
-<div class="row-fluid text-center">
-  <div class="col-sm-6 col-sm-offset-3 col-xs-12">
-    <div id="post-pagination" class="pagination">
-  <ul class="pages">
-  {% if paginator.previous_page %}
-    <li class="page">
-      {% if paginator.previous_page == 1 %}
-        <a href="/"><i class="icon-chevron-left"></i></a>
-      {% else %}
-        <a href="{{ paginator.previous_page_path }}"><i class="icon-chevron-left"></i></a>
-      {% endif %}
-    </li>
-  {% else %}
-    <li class="page disabled">
-      <span><i class="icon-chevron-left"></i></span>
-    </li>
-  {% endif %}
-
-  
-    <li class="page">
-      {% if paginator.page == 1 %}
-        <span class="current-page">1</span>
-      {% else %}
-        <a href="/">1</a>
-      {% endif %}
-    </li>
-
-    {% for count in (2..paginator.total_pages) %}
-      <li class="page">
-        {% if count == paginator.page %}
-          <span class="current-page">{{ count }}</span>
-        {% else %}
-          <a href="/page{{ count }}">{{ count }}</a>
-        {% endif %}
-      </li>
-    {% endfor %}
-
-  {% if paginator.next_page %}
-    <li class="page">
-      <a href="{{ paginator.next_page_path }}"><i class="icon-chevron-right"></i></a>
-    </li>
-  {% else %}
-    <li class="page disabled">
-      <span><i class="icon-chevron-right"></i></span>
-    </li>
-  {% endif %}
-  </ul>
-</div>
-  </div>
+    <div class="row-fluid">
+        <div class="col-sm-8 col-sm-offset-2 push-four">
+            <h3 class="gray pad-line-left push-one-bottom">Latest posts</h3>
+            {% for post in paginator.posts limit:4 %}
+                {% if post.status != 'draft' %}
+                    <div class="row-fluid clearall">
+                        <div class="post-list">
+                            <div class="col-sm-12 col-xs-12 post-content">
+                                <h2><span class="post-date">{{ post.date | date_to_string }}</span><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            <p class="pad-line-left push-two-top"><a href="/writing/" class="btn btn-blue">View all posts&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></a></p>
+        </div>
+    </div>
 </div>
 </div>
