@@ -36,6 +36,16 @@ module.exports = function (grunt) {
             }
         },
 
+        concat: {
+            options: {
+                separator: ';',
+            },
+            dist: {
+                src: ['src/assets/js/vendor/*.js', 'src/assets/js/scripts.js'],
+                dest: 'src/assets/js/app.js'
+            }
+        },
+
         concurrent: {
             target: {
                 tasks: ['compass', 'jekyll:serve', 'watch'],
@@ -58,7 +68,7 @@ module.exports = function (grunt) {
                     ],
                 tasks: ['jekyll:dev']
             }
-        }
+        },
 
     });
 
@@ -66,7 +76,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-concat');
 
-    grunt.registerTask('default', ['concurrent:target']);
+    grunt.registerTask('default', ['concat', 'concurrent:target']);
     grunt.registerTask('production', ['compass', 'jekyll:prod']);
 };
