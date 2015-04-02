@@ -7,21 +7,21 @@
 * {
 	box-sizing: border-box;
 }
+
 body{
-	font-family: "Open Sans", Georgia, "Muli", serif;
 	min-width: 240px;
 	color: $bodycolor;
-	background: white;
+	background: #EEEFF0;
 	font-weight: 400;
-	font-size: 1.5em;
+	font-size: 1.45em;
 	line-height: 3em;
 }
 h1,h2,h3,h4,h5,h6{
 	font-weight: 400;
-	font-size: 1.6em
+	font-size: 1.6em;
 }
 p, ol, ul, blockquote{
-	font-size: 1.2em;
+	font-size: 1.6em;
 	line-height: 150%;
 	margin: 0 0 2.5rem;
 }
@@ -81,7 +81,7 @@ a {
 	transform: translateY(-50%);
 }
 header {
-	background-color: $white;
+	background-color: $header-bg;
 }
 .navbar {
 	margin-bottom: 0;
@@ -137,7 +137,7 @@ ul.navbar-nav {
 	background-size: cover !important;
 	background-position: center center;
 	color: $theme-secondary;
-	border-bottom: 0.4em solid $white;
+	border-bottom: .1em solid $header-bg;
 	text-align: center;
 	h2 {
 		font-size: 4em;
@@ -171,9 +171,7 @@ ul.navbar-nav {
 	}
 }
 .post-date{
-	
 	color: $blue;
-	font-family: 'Kameron', serif;
 	padding-bottom: 10px;
 	padding-right: 1em;
 }
@@ -318,7 +316,7 @@ pre {
 }
 code {
 	color: $pink;
-	background-color: #FFF5F9;
+	background-color: transparent;
 }
 .highlight {
 	.c {
@@ -330,7 +328,7 @@ code {
 	.nf {
 		color: $pink;
 	}
-} 
+}
 #social-connect {
 	li > a {
 		width: 100%;
