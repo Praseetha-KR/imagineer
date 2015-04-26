@@ -182,6 +182,7 @@ ol, ul {
 .page-nav {
     position: relative;
     margin-top: 1.5em;
+    overflow: hidden;
     a {
         &:first-child {
             float: left;
