@@ -1,8 +1,8 @@
 @import 'compass';
 @import 'colors';
-@import 'typography';
 @import 'layout';
 @import 'themes';
+@import 'compass/css3/transform';
 
 * {
 	box-sizing: border-box;
@@ -16,6 +16,11 @@ body{
 	font-weight: 400;
 	font-size: 1em;
 	line-height: 1.5em;
+}
+blockquote {
+    border-left: 4px solid rgb(38, 173, 228);
+    padding: 0.5em 1em;
+    margin-bottom: 1em;
 }
 h1,h2,h3,h4,h5,h6{
 	font-weight: 400;
@@ -38,6 +43,19 @@ a {
     position: relative;
     width: 90%;
     margin: auto;
+}
+
+article.post-content {
+    font-size: 1.1em;
+    hr {
+        margin: 1em 0;
+    }
+    h2, h3, h4, h5 {
+        margin: 1em 0 0.5em 0;
+    }
+    img {
+        max-width: 100%;
+    }
 }
 
 header[role="banner"] {
@@ -69,12 +87,20 @@ header[role="banner"] {
         }
     }
 }
-header[role="post-title"] {
+header[role="entity-title"] {
     padding: 0 0 2em 0;
-    h2 {
+    h2, h3 {
         font-family: 'Roboto Condensed', serif;
+    }
+    h2 {
         font-size: 3em;
         line-height: 1.2em;
+    }
+    h3 {
+        font-size: 2.2em;
+        line-height: 1.2em;
+        margin: 0;
+        color: $primary;
     }
     time {
         text-transform: uppercase;
@@ -132,14 +158,11 @@ footer {
     padding: 1em 0;
     background-color: $primary;
     a {
-        color: $dark;
+        color: #000;
     }
 }
 ol, ul {
     margin: 0.5em 0 0.5em 2em;
-}
-article.post-content {
-    font-size: 1.1em;
 }
 .page-nav {
     position: relative;
@@ -163,4 +186,73 @@ article.post-content {
         width: 54em;
         margin-left: -3em;
     }
+}
+figure#about-image {
+    background: white;
+    display: inline-block;
+    text-align: center;
+    padding: 0.5em;
+    margin: 1em 0 0 0em;
+    box-shadow: 1px 1px 3px rgba(99, 115, 121, 0.51);
+    @include transform(rotateZ(-10deg));
+    @include transform-origin(50%, 0, 0);
+    &:hover {
+        -moz-animation: shake 1s alternate;
+        -webkit-animation: shake 1s alternate;
+        animation: shake 1s alternate;
+    }
+
+    img {
+        width: 200px;
+        height: 200px;
+    }
+}
+@-moz-keyframes shake {
+    0% {
+        @include transform(rotateZ(-10deg));
+    }
+    50% {
+        @include transform(rotateZ(0deg));
+    }
+    100% {
+        @include transform(rotateZ(-10deg));
+    }
+}
+@-webkit-keyframes shake {
+    0% {
+        @include transform(rotateZ(-10deg));
+    }
+    50% {
+        @include transform(rotateZ(0deg));
+    }
+    100% {
+        @include transform(rotateZ(-10deg));
+    }
+}
+@keyframes shake {
+    0% {
+        @include transform(rotateZ(-10deg));
+    }
+    50% {
+        @include transform(rotateZ(0deg));
+    }
+    100% {
+        @include transform(rotateZ(-10deg));
+    }
+}
+
+.highlight {
+    background: #EFECE3;
+    padding: 0.5em;
+}
+
+.color-pallette {
+    width: 100%;
+    margin-bottom: 2em;
+    float: left;
+}
+.sq-box-left, .sq-box-right {
+    height: 3em;
+    width: 100%;
+    float: left;
 }

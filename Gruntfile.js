@@ -42,7 +42,7 @@ module.exports = function (grunt) {
                 dest: 'src/assets/js/app.js'
             },
             css: {
-                src: ['src/assets/css/main.css'],
+                src: ['src/assets/css/vendor/*.css', 'src/assets/css/main.css'],
                 dest: 'src/assets/css/app.css'
             }
         },
