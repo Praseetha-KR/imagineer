@@ -42,7 +42,7 @@ module.exports = function (grunt) {
                 dest: 'src/assets/js/app.js'
             },
             css: {
-                src: ['src/assets/css/vendor/*.css', 'src/assets/css/main.css'],
+                src: ['src/assets/css/main.css'],
                 dest: 'src/assets/css/app.css'
             }
         },
@@ -75,7 +75,10 @@ module.exports = function (grunt) {
                 files: ['src/**/*.scss',
                     'src/**/*.sass'
                     ],
-                tasks: ['compass', 'jekyll:dev']
+                tasks: ['compass', 'jekyll:dev', 'concat', 'cssmin'],
+                options: {
+                    livereload: true
+                }
             },
             jekyll: {
                 files: ['src/**/*.html',
@@ -95,6 +98,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
-    grunt.registerTask('default', ['concat', 'cssmin', 'uglify', 'concurrent:target']);
+    grunt.registerTask('default', ['uglify', 'concurrent:target']);
     grunt.registerTask('production', ['compass', 'jekyll:prod']);
 };
