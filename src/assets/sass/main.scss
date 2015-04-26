@@ -131,26 +131,41 @@ div.blog-archives {
    article {
         padding: 1em 0 0 0;
         display: block;
-        time, h2 {
-
-        }
         time {
-            width: 9em;
-            display: inline-block;
+            width: 100%;
+            display: block;
             float: left;
             text-transform: uppercase;
-            font-size: 0.8em;
+            font-size: 0.7em;
         }
         h2 {
             padding: 0 0 0.5em 0;
             margin: 0;
             border-bottom: 1px dotted #CCC;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            overflow: hidden;
             font-family: 'Roboto Condensed', serif;
+            line-height: 1.5em;
+            font-size: 1.2em;
         }
    }
+}
+
+@media screen and (min-width: 50em) {
+    div.blog-archives {
+       article {
+            time {
+                width: 9em;
+                display: inline-block;
+                font-size: 0.8em;
+            }
+            h2 {
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                font-size: 1.6em;
+                line-height: 1em;
+            }
+       }
+    }
 }
 footer {
     text-align: center;
@@ -166,6 +181,7 @@ ol, ul {
 }
 .page-nav {
     position: relative;
+    margin-top: 1.5em;
     a {
         &:first-child {
             float: left;
