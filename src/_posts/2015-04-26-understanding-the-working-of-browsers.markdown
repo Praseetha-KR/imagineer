@@ -62,6 +62,6 @@ It is a small database saved on client computer which store cache, cookies, etc.
 
 Here is an illustration of these processes:
 <figure>
-    <img src="/assets/img/browser.jpg" width="100%" alt="Browser working">
+    <img src="/assets/img/posts/browser.jpg" width="100%" alt="Browser working">
     <figcaption>Working of browser</figcaption>
 </figure>
