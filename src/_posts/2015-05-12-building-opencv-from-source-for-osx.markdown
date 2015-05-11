@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Setting up OpenCV in OSX"
+title:  "Building OpenCV from source for OSX"
 date:   2015-05-12 11:52:00
 categories: blog
 ---
 
-This article explain how did I setup OpenCV in Mac OSX (Mavericks).
+This article explain how I did the setup of OpenCV in Mac OSX (Mavericks).
 
 ##Pre-requisite: Install CMake
 
@@ -14,9 +14,9 @@ This article explain how did I setup OpenCV in Mac OSX (Mavericks).
 2. Install the dmg package and launch it from Applications. That will give you the UI app of CMake
 3. Add `cmake` command:
    1. Close the CMake app
-   2. Check whether `cmake` command already exists, (by typing `cmake --version`), if exists then remove it using: `brew uninstall cmake`
-   3. Remove old links if any, do `cd /usr/bin` and then `sudo rm cmake ccmake cmake-gui cpack ctest cmakexbuild`
-   4. Open CMake app from the terminal with *sudo*: `sudo /Applications/CMake.app/Contents/MacOS/CMake`
+   2. Check whether `cmake` command already exists, (by typing `cmake --version`), <br>if exists then remove it using: <br>`brew uninstall cmake`
+   3. Remove old links if any, do: <br>`cd /usr/bin`<br>`sudo rm cmake ccmake cmake-gui cpack ctest cmakexbuild`
+   4. Open CMake app from the terminal with *sudo*: <br>`sudo /Applications/CMake.app/Contents/MacOS/CMake`
    5. From the CMake app window, choose menu `Tools --> Install For Command Line Use`. Install folder will be `/usr/bin/` by default, submit it by choosing `Install command line links`.
    6. Make sure it works checking `cmake --version`.
 
@@ -26,20 +26,21 @@ This article explain how did I setup OpenCV in Mac OSX (Mavericks).
 
 Extract the zip file, copy the folder `opencv-3.0.0-rc1` to your projects folder,
 {% highlight bash %}
-    mv opencv-3.0.0-rc1 opencv
-    cd opencv
-    mkdir build
-    cd build
+mv opencv-3.0.0-rc1 opencv
+cd opencv
+mkdir build
+cd build
 {% endhighlight %}
+
 {% highlight bash %}
-    cmake
-    make
-    make install
+cmake
+make
+make install
 {% endhighlight %}
 
 <br>Thats it, OpenCV is installed on your system. To confirm installation, do `import cv` from the python terminal:
 {% highlight bash %}
-    $ python
+$ python
     Python 2.7.8 |Anaconda 2.0.1 (x86_64)| (default, Aug 21 2014, 15:21:46)
     [GCC 4.2.1 (Apple Inc. build 5577)] on darwin
     Type "help", "copyright", "credits" or "license" for more information.
