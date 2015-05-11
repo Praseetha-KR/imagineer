@@ -7,7 +7,7 @@ categories: blog
 
 This article explains the importance of video compression through some interesting figures.
 
-Video comprises of collection of picture frames, picture is composed of pixels (aka picture elements). So lt's start from pixels.
+Video comprises of collection of picture frames, picture is composed of pixels (aka picture elements). So let's start from pixels.
 
 A pixel is the unit of display screen. Typically pixel is represented by RGB plus an alpha value, RGB (red, green, blue) values changing from 0-255 and alpha value on a scale of 0 to 1 with fractions. So each value can have 256 values = 2^8, that is 8 bits.
 
