@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The why of video compression"
-date:   2015-04-29 09:44:00
+date:   2015-05-11 11:52:00
 categories: blog
 ---
 
