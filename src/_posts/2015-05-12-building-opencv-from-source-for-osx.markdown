@@ -5,11 +5,11 @@ date:   2015-05-12 11:52:00
 categories: blog
 ---
 
-This article explain how I did the setup of OpenCV in Mac OSX (Mavericks).
+Today I have been trying to figure out installation of [OpenCV](http://opencv.org/) (a computer vision library) in my laptop. This article explain how I did the setup of OpenCV in Mac OSX (Mavericks).
 
 ##Pre-requisite: Install CMake
 
-1. Download CMake from the official [CMake website](http://www.cmake.org/download/). I downloaded it from here: [http://www.cmake.org/files/v3.2/cmake-3.2.2-Darwin-x86_64.dmg](http://www.cmake.org/files/v3.2/cmake-3.2.2-Darwin-x86_64.dmg)
+1. Download [CMake](http://www.cmake.org/) build system from the official [CMake website](http://www.cmake.org/download/). I downloaded it from here: [http://www.cmake.org/files/v3.2/cmake-3.2.2-Darwin-x86_64.dmg](http://www.cmake.org/files/v3.2/cmake-3.2.2-Darwin-x86_64.dmg)
 
 2. Install the dmg package and launch it from Applications. That will give you the UI app of CMake
 3. Add `cmake` command:
