@@ -19,24 +19,25 @@
   </head>
   <body>
     <div class="wrapper">
-        <div class="container">
-            <header role="banner">
-                <h1>
-                    <a href="/">Praseetha KR</a>
-                </h1>
-                <h2>
-                    <a href="https://twitter.com/void_imagineer" target="_blank"><i class="fa fa-twitter"></i></a>
-                    <a href="https://github.com/Praseetha-KR" target="_blank"><i class="fa fa-github"></i></a>
-                    <!-- <a href=""><i class="fa fa-rss" target="_blank"></i></a> -->
-                </h2>
-                <!-- <p>THINGS I'VE DONE, LEARNED, OR THOUGHT ABOUT.</p> -->
-            </header>
+        <header role="banner">
+            <h1>
+                <a href="/">Praseetha KR</a>
+            </h1>
+            <h2>
+                <a href="https://twitter.com/void_imagineer" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a>
+                <a href="https://github.com/Praseetha-KR" target="_blank" title="Github"><i class="fa fa-github"></i></a>
+                <!-- <a href=""><i class="fa fa-rss" target="_blank"></i></a> -->
+            </h2>
+            <!-- <p>THINGS I'VE DONE, LEARNED, OR THOUGHT ABOUT.</p> -->
+
             <nav class="site-nav">
                 <a href="/" {% if page.active == 'home' %}class="active"{% endif %}>Home</a>
-                <!-- <a href="/archives" {% if page.active == 'archives' %}class="active"{% endif %}>Archives</a> -->
                 <a href="/works" {% if page.active == 'works' %}class="active"{% endif %}>Works</a>
                 <a href="/about" {% if page.active == 'about' %}class="active"{% endif %}>About</a>
             </nav>
+        </header>
+
+        <div class="container">
             {{ content }}
         </div>
 
