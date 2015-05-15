@@ -13,10 +13,7 @@ Today I have been trying to figure out installation of [OpenCV](http://opencv.or
 
 2. Install the dmg package and launch it from Applications. That will give you the UI app of CMake
 3. Add `cmake` command:
-   1. Close the CMake app
-   2. Check whether `cmake` command already exists, (by typing `cmake --version`), <br>if exists then remove it using: <br>`brew uninstall cmake`
-   3. Remove old links if any, do: <br>`cd /usr/bin`<br>`sudo rm cmake ccmake cmake-gui cpack ctest cmakexbuild`
-   4. Open CMake app from the terminal with *sudo*: <br>`sudo /Applications/CMake.app/Contents/MacOS/CMake`
+   1. Close the CMake app and open it from the terminal with *sudo*: <br>`sudo /Applications/CMake.app/Contents/MacOS/CMake`
    5. From the CMake app window, choose menu `Tools --> Install For Command Line Use`. Install folder will be `/usr/bin/` by default, submit it by choosing `Install command line links`.
    6. Make sure it works checking `cmake --version`.
 
@@ -33,8 +30,8 @@ cd build
 {% endhighlight %}
 
 {% highlight bash %}
-cmake
-make
+cmake -D CMAKE_BUILD_TYPE=RELEASE ..
+make -j4
 make install
 {% endhighlight %}
 
@@ -52,6 +49,4 @@ $ python
 
 <br>If `import cv` doesn't show errors, then the installation is success! Go ahead and write your hello-world opencv app!
 
-
-*NB: I tried `brew install cmake` and `port install cmake` (using MacPorts), along with `brew install opencv`. But after installation, `import cv` from python terminal ended up throwing error `Segmentation fault`. So I would suggest using CMake app & its command to use for OpenCV compilation from source as explained above.*
 
