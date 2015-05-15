@@ -11,13 +11,13 @@ Video comprises of collection of picture frames, picture is composed of pixels (
 
 A pixel is the unit of display screen. Typically pixel is represented by RGB plus an alpha value, RGB (red, green, blue) values changing from 0-255 and alpha value on a scale of 0 to 1 with fractions. So each value can have 256 values = 2^8, that is 8 bits.
 
-| Elements   | Total number of values | 2 power representation  | numer of bits  | number of bytes |
-| ---------- |:----------------------:|:-----------------------:| :-------------:|----------------:|
-| R          | 256                    | 2 ^ 8                   | 8 bit          | 1 byte          |
-| G          | 256                    | 2 ^ 8                   | 8 bit          | 1 byte          |
-| B          | 256                    | 2 ^ 8                   | 8 bit          | 1 byte          |
-| Alpha      | 256                    | 2 ^ 8                   | 8 bit          | 1 byte          |
-| Total      |                        |                         | 32 bit         | 4 bytes         |
+| Elements   | Total number of values | number of bytes        |
+| ---------- |:----------------------:|-----------------------:|
+| R          | 256                    | 2 ^ 8 = 8 bit = 1 byte |
+| G          | 256                    | 1 byte                 |
+| B          | 256                    | 1 byte                 |
+| Alpha      | 256                    | 1 byte                 |
+| Total      |                        | 4 bytes                |
 
 
 <br>So 32 bits or 4 bytes memory is required to represent a pixel.

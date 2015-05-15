@@ -15,36 +15,39 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/css/app.min.css">
-    <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400|Source+Sans+Pro|Shadows+Into+Light' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400|Source+Sans+Pro|Montserrat' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    <div class="container">
-        <header role="banner">
-            <h1>
-                <a href="/">Praseetha KR</a>
-            </h1>
-            <h2>
-                <a href="https://twitter.com/void_imagineer" target="_blank"><i class="fa fa-twitter"></i></a>
-                <a href="https://github.com/Praseetha-KR" target="_blank"><i class="fa fa-github"></i></a>
-                <!-- <a href=""><i class="fa fa-rss" target="_blank"></i></a> -->
-            </h2>
-        </header>
-        <nav class="site-nav">
-            <a href="/" {% if page.active == 'home' %}class="active"{% endif %}>Home</a>
-            <!-- <a href="/archives" {% if page.active == 'archives' %}class="active"{% endif %}>Archives</a> -->
-            <a href="/works" {% if page.active == 'works' %}class="active"{% endif %}>Works</a>
-            <a href="/about" {% if page.active == 'about' %}class="active"{% endif %}>About</a>
-        </nav>
-        {{ content }}
-    </div>
-
-    <footer role="contentinfo">
+    <div class="wrapper">
         <div class="container">
-            <p>
-                &copy; <a rel="license" href="//creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US" target="_blank">Praseetha KR 2015</a> <span class="credit">built with &hearts;&nbsp;<a href="http://jekyllrb.com/" target="_blank">Jekyll</a></span>
-            </p>
+            <header role="banner">
+                <h1>
+                    <a href="/">Praseetha KR</a>
+                </h1>
+                <h2>
+                    <a href="https://twitter.com/void_imagineer" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="https://github.com/Praseetha-KR" target="_blank"><i class="fa fa-github"></i></a>
+                    <!-- <a href=""><i class="fa fa-rss" target="_blank"></i></a> -->
+                </h2>
+                <!-- <p>THINGS I'VE DONE, LEARNED, OR THOUGHT ABOUT.</p> -->
+            </header>
+            <nav class="site-nav">
+                <a href="/" {% if page.active == 'home' %}class="active"{% endif %}>Home</a>
+                <!-- <a href="/archives" {% if page.active == 'archives' %}class="active"{% endif %}>Archives</a> -->
+                <a href="/works" {% if page.active == 'works' %}class="active"{% endif %}>Works</a>
+                <a href="/about" {% if page.active == 'about' %}class="active"{% endif %}>About</a>
+            </nav>
+            {{ content }}
         </div>
-    </footer>
+
+        <footer role="contentinfo">
+            <div class="container">
+                <p>
+                    &copy; <a rel="license" href="//creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US" target="_blank">Praseetha KR 2015</a> <span class="credit">built with &hearts;&nbsp;<a href="http://jekyllrb.com/" target="_blank">Jekyll</a></span>
+                </p>
+            </div>
+        </footer>
+    </div>
     <script type="text/javascript" src="/assets/js/app.min.js"></script>
 
   </body>
