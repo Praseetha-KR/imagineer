@@ -18,7 +18,7 @@ body{
     font-family: 'Source Sans Pro', serif;
 	font-weight: 400;
 	font-size: 1em;
-	line-height: 1.5em;
+	line-height: 1.5;
 }
 blockquote {
     border-left: 4px solid rgb(38, 173, 228);
@@ -64,8 +64,8 @@ article.post-content {
 header[role="banner"] {
     background-color: $body-bg;
     box-shadow: 1px 0 3px rgba(0,0,0,0.37);
-    padding: 1em;
-    margin-bottom: 8.5em;
+    padding: 1em 0 1em 1em;
+    margin-bottom: 2em;
     h1, h2 {
         display: inline-block;
         vertical-align: middle;
@@ -78,6 +78,7 @@ header[role="banner"] {
     h1 {
         text-transform: uppercase;
         font-family: 'Montserrat', sans-serif;
+        font-size: 0.8em;
     }
     h2 {
         margin-left: 1em;
@@ -117,6 +118,29 @@ header[role="banner"] {
                 border-radius: 0.2em;
             }
         }
+        span {
+            display: none;
+        }
+        i {
+            display: inline;
+        }
+    }
+}
+@media screen and (min-width: 35em) {
+    header[role="banner"] {
+        padding: 1em;
+        margin-bottom: 8.5em
+        h1 {
+            font-size: 1.2em;
+        }
+        .site-nav {
+            span {
+                display: inline;
+            }
+            i {
+                display: none;
+            }
+        }
     }
 }
 header[role="entity-title"] {
@@ -125,11 +149,11 @@ header[role="entity-title"] {
         font-family: 'Montserrat', sans-serif;
         text-transform: uppercase;
         font-size: 2.2em;
-        line-height: 1.2em;
+        line-height: 1.2;
     }
     h3 {
         font-size: 2.2em;
-        line-height: 1.2em;
+        line-height: 1.2;
         margin: 0;
         color: $primary;
     }
@@ -166,8 +190,8 @@ div.blog-archives {
             border-bottom: 1px dotted #CCC;
             font-family: 'Montserrat', sans-serif;
             text-transform: uppercase;
-            line-height: 0.9em;
-            font-size: 1.2em;
+            line-height: 1.5;
+            font-size: 0.8em;
         }
    }
 }
@@ -185,7 +209,7 @@ div.blog-archives {
                 white-space: nowrap;
                 overflow: hidden;
                 font-size: 1em;
-                line-height: 1em;
+                line-height: 1;
             }
        }
     }
@@ -307,10 +331,45 @@ code {
 .highlight {
     background: #E2E8EA;
     padding: 0.5em;
+    overflow: scroll;
     code {
         background: transparent;
         padding: 0;
         border-radius: 0;
+    }
+}
+.work-frame {
+    background: #E2E8EA;
+    padding: 1em;
+    border-radius: 0.3em;
+    margin-bottom: 3em;
+    h4 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1em;
+        text-transform: uppercase;
+        margin: 1em 0 .4em;
+    }
+    time {
+        font-size: 0.8em;
+        text-transform: uppercase;
+        color: $secondary;
+    }
+    p {
+        font-size: 0.9em;
+        margin: 0.5em 0 0 0;
+    }
+}
+.works-content {
+    img {
+        max-width: 100%;
+    }
+    header[role="entity-title"] h3{
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        font-size: 2em;
+        background-color: $secondary;
+        color: white;
+        text-align: center;
     }
 }
 

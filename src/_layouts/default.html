@@ -19,7 +19,7 @@
     <meta name="twitter:image" content="https://imagineer.in/assets/img/me.jpg" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/css/app.min.css">
     <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro|Montserrat' rel='stylesheet' type='text/css'>
   </head>
@@ -37,9 +37,9 @@
             <!-- <p>THINGS I'VE DONE, LEARNED, OR THOUGHT ABOUT.</p> -->
 
             <nav class="site-nav">
-                <a href="/" {% if page.active == 'home' %}class="active"{% endif %}>Home</a>
-                <a href="/works" {% if page.active == 'works' %}class="active"{% endif %}>Works</a>
-                <a href="/about" {% if page.active == 'about' %}class="active"{% endif %}>About</a>
+                <a href="/" {% if page.active == 'home' %}class="active"{% endif %}><i class="fa fa-rss"></i><span>Blog</span></a>
+                <a href="/works" {% if page.active == 'works' %}class="active"{% endif %}><i class="fa fa-paint-brush"></i><span>Works</span></a>
+                <a href="/about" {% if page.active == 'about' %}class="active"{% endif %}><i class="fa fa-street-view"></i><span>About</span></a>
             </nav>
         </header>
 
