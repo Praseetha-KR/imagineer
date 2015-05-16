@@ -9,19 +9,22 @@
 
     <title>{{ page.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Weblog of Praseetha KR"/>
+    <meta name="description" content="Weblog of Praseetha KR, a frontend developer and designer from Bangalore."/>
     <meta name="keywords" content="praseetha, praseetha kr, praseethakr, blog, imagineer, void_imagineer, web developer, frontend developer, bangalore">
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@void_imagineer" />
-    <meta name="twitter:title" content="{{ page.title }}" />
-    <meta name="twitter:description" content="{{ page.blurb }}" />
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}Imagineer.in{% endif %}" />
+    <meta name="twitter:description" content="{% if page.blurb %}{{ page.blurb }}{% else %}Weblog of Praseetha KR, a frontend developer and designer from Bangalore.{% endif %}" />
     <meta name="twitter:image" content="https://imagineer.in/assets/img/me.jpg" />
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/css/app.min.css">
     <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro|Montserrat' rel='stylesheet' type='text/css'>
+
   </head>
   <body>
     <div class="wrapper">
@@ -39,6 +42,7 @@
             <nav class="site-nav">
                 <a href="/" {% if page.active == 'home' %}class="active"{% endif %}><i class="fa fa-rss"></i><span>Blog</span></a>
                 <a href="/works" {% if page.active == 'works' %}class="active"{% endif %}><i class="fa fa-paint-brush"></i><span>Works</span></a>
+                <a href="/experiments" {% if page.active == 'experiments' %}class="active"{% endif %}><i class="fa fa-flask"></i><span>Experiments</span></a>
                 <a href="/about" {% if page.active == 'about' %}class="active"{% endif %}><i class="fa fa-street-view"></i><span>About</span></a>
             </nav>
         </header>

@@ -86,9 +86,6 @@ header[role="banner"] {
             margin: 0 0.1em;
         }
         a:hover {
-            -moz-animation: shake 0.5s alternate;
-            -webkit-animation: shake 0.5s alternate;
-            animation: shake 0.5s alternate;
             & > .fa-twitter {
                 color: $twitter;
             }
@@ -129,7 +126,7 @@ header[role="banner"] {
 @media screen and (min-width: 35em) {
     header[role="banner"] {
         padding: 1em;
-        margin-bottom: 8.5em
+        margin-bottom: 8.5em;
         h1 {
             font-size: 1.2em;
         }
@@ -348,6 +345,11 @@ code {
         font-size: 1em;
         text-transform: uppercase;
         margin: 1em 0 .4em;
+    }
+    h3 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.5em;
+        margin: 0 0 .4em;
     }
     time {
         font-size: 0.8em;
