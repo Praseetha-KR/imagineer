@@ -3,6 +3,7 @@ layout: post
 title:  "Stacking context with opacity"
 date:   2014-09-25 08:15:00
 categories: blog
+blurb: "How the opacity affects stacking context in browsers"
 ---
 
 CSS box model is a stack of 2-dimensional layers in which the default behaviour is:
@@ -16,7 +17,7 @@ Recently I came to know that `opacity` can also make changes in stacking context
 
 <blockquote>Since an element with opacity less than 1 is composited from a single offscreen image, content outside of it cannot be layered in z-order between pieces of content inside of it. For the same reason, implementations must create a new stacking context for any element with opacity less than 1. If an element with opacity less than 1 is not positioned, implementations must paint the layer it creates, within its parent stacking context, at the same stacking order that would be used if it were a positioned element with ‘z-index: 0’ and ‘opacity: 1’. <br><br>- <a href="http://www.w3.org/TR/css3-color/#transparency">W3C CSS Color Module Level 3 - Transparency</a></blockquote>
 
-Here is an example: in the following <a href="http://codepen.io/Praseetha-KR/pen/BotKr">codepen sample code</a>, Fig. A shows the default stacking with respect to the root of the document. (There are 3 divs - red, green and blue, each surrounded by div containers.) 
+Here is an example: in the following <a href="http://codepen.io/Praseetha-KR/pen/BotKr">codepen sample code</a>, Fig. A shows the default stacking with respect to the root of the document. (There are 3 divs - red, green and blue, each surrounded by div containers.)
 
 In Fig. B, red has got `z-index: 1` which introduces a new stacking context. All elements are stacked up against root with `z-index: auto`(or `z-index: 0`), while red will be raised from the that layer. So it appears on topmost layer.
 

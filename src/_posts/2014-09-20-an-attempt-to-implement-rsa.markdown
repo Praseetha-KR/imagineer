@@ -5,6 +5,7 @@ date:   2014-09-20 19:40:00
 categories: blog
 theme: "#234870"
 masthead: "/assets/img/posts/encryption.jpg"
+blurb: "Implementation of mock RSA algorithm in python"
 ---
 
 Though we have studied [RSA algorithm][1] in college, it was just for the sake of theory examination. I never had thought about its practical implementation and how it is successfully existing over these many years. Here is an attempt to implement RSA encryption/decryption using python:

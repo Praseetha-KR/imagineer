@@ -4,6 +4,7 @@ title:  "Cognitive Radio Animation"
 date:   2011-08-21 10:33:45
 categories: blog
 status: draft
+blurb: "An interesting animation about cognitive radio"
 ---
 
 <div class="video-wrapper">

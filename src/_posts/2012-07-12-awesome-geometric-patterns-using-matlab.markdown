@@ -3,11 +3,12 @@ layout: post
 title:  "Awesome Geometric Patterns Using Matlab"
 date:   2012-07-12 08:15:28
 categories: blog
+blurb: "Generating line patterns with a matlab script"
 ---
 
 <a href="/assets/img/media/pattern-chess.png"><img class="aligncenter size-full wp-image-334" title="pattern-chess" src="/assets/img/media/pattern-chess.png" alt="" width="598" height="422" /></a>
 
-Do you think it is difficult to make 3 dimensional patterns like this one? then you are wrong. Its absolutely not! 
+Do you think it is difficult to make 3 dimensional patterns like this one? then you are wrong. Its absolutely not!
 
 The basic line pattern of this chess pattern is as shown below:
 

@@ -3,6 +3,7 @@ layout: post
 title:  "Death of a river"
 date:   2011-05-20 09:45:00
 categories: blog, thoughts
+blurb: "A death song to my river.."
 ---
 
 To see the river.. just to enrich mind with its unique beauty...

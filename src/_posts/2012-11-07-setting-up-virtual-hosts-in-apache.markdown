@@ -3,6 +3,7 @@ layout: post
 title:  "Setting up Virtual Hosts in Apache"
 date:   2012-11-07 10:41:29
 categories: blog
+blurb: "How to set up virtual hosts for website testing in windows"
 ---
 
 I have a Windows7 PC with <a href="http://www.apachefriends.org/en/xampp-windows.html">XAMPP</a> installed in it. Whenever I need to setup multiple sites in my machine, I used to put the site folders under <code>C:\\xampp\\htdocs\\</code> folder, which is the default <code>localhost</code> directory. The reason is that dynamically linked files need a host to run perfectly.
@@ -46,7 +47,7 @@ Virtual host is actually localhost itself, but with a different alias. Every vir
 	            Order allow,deny
 	            Allow from all
 	        </Directory>
-	    </VirtualHost> 
+	    </VirtualHost>
 	{% endhighlight %}
 Don’t forget to save the httpd-vhosts.conf file.
 
@@ -63,6 +64,6 @@ add the virtual host ip as same as localhost after that line.
 	127.0.0.1       localhost
 	127.0.0.1       testhost #this is the virtual host name
 {% endhighlight %}
-    
+
 
 8) Restart Apache and type ‘testhost‘ in addressbar of browser. You can see your website running in the new virtual host!

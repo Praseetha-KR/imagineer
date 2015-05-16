@@ -3,12 +3,13 @@ layout: post
 title:  "Flexbox, you are the next!"
 date:   2013-05-24 18:17:46
 categories: blog
+blurb: "In the shiny edge of flexbox!"
 ---
 
 Time has come to get rid of the complexity of layouting with float and position properties, its the turn for flexbox. We are able to create more complex layouts with float, position properties, plus a little bit of javascript. But the complexity to implement it in the wide variety of browsers is also awful. Flexible box or in short, flexbox is the property in CSS which make the layout model much easier.
 
 Technically flexbox is not a new concept, but it has got a remarkable evolution over the past few years. The problem still persist with flexbox is the browser compatibility. With the support of CSS3, flexbox may take some time to get support across browsers; even though if we combine both "old" and "new" flexboxes together, we can accomplish a decent browser support. There are mainly 3 versions:
-	
+
 *	2009 : `display: box;` and properties as `box-{*}`
 *	2011: `display: flexbox;` and flex() function
 *	current: `display: flex;` and `flex-{*}`
@@ -190,7 +191,7 @@ header, footer{
 	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: flex;
-  
+
 	width: 100%;
 }
 .box1{
@@ -199,13 +200,13 @@ header, footer{
 	-ms-flex-order: 2;
 	-webkit-order: 2;
 	order: 2;
-  
+
 	-webkit-box-flex: 3;
-	-moz-box-flex: 3;	
+	-moz-box-flex: 3;
 	-webkit-flex: 3;
 	-ms-flex: 3;
 	flex: 3;
-  
+
 	background-color: #BCD39B;
 }
 .box2{
@@ -214,13 +215,13 @@ header, footer{
 	-ms-flex-order: 1;
 	-webkit-order: 1;
 	order: 1;
-  
+
 	-webkit-box-flex: 1;
-	-moz-box-flex: 1;	
+	-moz-box-flex: 1;
 	-webkit-flex: 1;
 	-ms-flex: 1;
 	flex: 1;
-  
+
 	background-color: #CE9B64;
 }
 .box3{
@@ -229,13 +230,13 @@ header, footer{
 	-ms-flex-order: 3;
 	-webkit-order: 3;
 	order: 3;
-  
+
 	-webkit-box-flex: 1;
 	-moz-box-flex: 1;
 	-webkit-flex: 1;
 	-ms-flex: 1;
 	flex: 1;
-  
+
 	background-color: #62626D;
 }
 .box1, .box2, .box3{
@@ -250,9 +251,9 @@ header, footer{
 		display: -ms-flexbox;
 		display: -webkit-flex;
 		display: flex;
-  
+
 		width: 100%;
-  
+
 		-webkit-box-orient: vertical;
 		-moz-box-orient: vertical;
                 -ms-flex-orient: vertical;
@@ -277,7 +278,7 @@ header, footer{
 		-moz-box-ordinal-group: 3;
 		-ms-flex-order: 3;
 		-webkit-order: 3;
-		order: 3;	
+		order: 3;
         }
 }
 {% endhighlight %}

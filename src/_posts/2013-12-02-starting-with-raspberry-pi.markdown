@@ -5,9 +5,10 @@ date:   2013-12-02 07:14:30
 categories: blog
 theme: "#396948"
 masthead: "/assets/img/posts/rpi.jpg"
+blurb: "Getting started notes on installing Raspbian OS & SSHing to RPi"
 ---
 
-I have started using Raspberry Pi today, and I can't control myself from saying that it is AWESOME! 
+I have started using Raspberry Pi today, and I can't control myself from saying that it is AWESOME!
 
 RPi has got a ARM1176JZF-S 700 MHz processor with 512MB RAM. I have attached a 8GB class 10 SD card to it.
 
@@ -37,7 +38,7 @@ RPi has got a ARM1176JZF-S 700 MHz processor with 512MB RAM. I have attached a 8
 
 Thats all! Raspbian has booted up running on RPi!
 <div class="row">
-	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">	
+	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 		<img src="http://i844.photobucket.com/albums/ab6/voidimagineer/RPi_connection_to_monitor_zps775c7904.jpg" width="100%" alt="RPi_connection_to_monitor">
 	</div>
 	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -55,7 +56,7 @@ To get IP address of RPi, you can either get LAN IP from `ipconfig` and run a pi
 
 Once the IP of RPi is known, you can SSH using <a href="http://www.putty.org/">Putty</a>.
 <div class="row">
-	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">	
+	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 <img src="http://i844.photobucket.com/albums/ab6/voidimagineer/RPi_ssh_with_LAN_cable_zpse9cd5e61.jpg" width="100%" alt="RPi_ssh_with_LAN_cable">
 	</div>
 	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">

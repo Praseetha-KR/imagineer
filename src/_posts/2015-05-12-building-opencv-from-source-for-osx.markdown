@@ -3,6 +3,7 @@ layout: post
 title:  "Building OpenCV from source for OSX"
 date:   2015-05-12 11:52:00
 categories: blog
+blurb: "Setting up of python version of Open CV, a computer vision library, in Mac OSX"
 ---
 
 Today I have been trying to figure out installation of [OpenCV](http://opencv.org/) (a computer vision library) in my laptop. This article explain how I did the setup of OpenCV in Mac OSX (Mavericks).

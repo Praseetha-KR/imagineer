@@ -4,9 +4,10 @@ title:  "My Favourite Color Duos"
 date:   2014-01-23 14:50:00
 categories: blog
 theme: "#F5AD70"
+blurb: "Some of my recent favourite color duos"
 ---
 
-Just like ideation, layouting & typography, another most important factor in design is selection of colours. 
+Just like ideation, layouting & typography, another most important factor in design is selection of colours.
 
 Feel and effect of design is strongly dependent on color domain. We select cool and warm colors from color wheel according to the nature of design. Even a slight variation on shade of a color can affect the entire design positively/negatively. So, selection of colors should be done carefully and is definitely a time consuming process.
 

@@ -4,6 +4,7 @@ title:  "Numb"
 date:   2011-06-21 10:33:45
 categories: blog
 status: draft
+blurb: "My favourite so far!"
 ---
 
 <div class="video-wrapper">
