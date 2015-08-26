@@ -47,6 +47,9 @@ a {
     width: 90%;
     margin: auto;
 }
+.secondary, .secondary a, article.post-content a {
+    color: $secondary;
+}
 
 article.post-content {
     font-size: 1.1em;
