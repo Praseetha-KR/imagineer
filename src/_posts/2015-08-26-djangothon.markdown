@@ -6,16 +6,15 @@ categories: blog
 blurb: "About the experience of Djangothon 2015"
 ---
 
-I have participated in the Djangothon on 22-23 August - a 24hr hackathon organized by HackerEarth as a part of the 10 year anniversary celebration of Django web framework. I got the awesome team partner [Sharat MR](https://twitter.com/cosmos_genius) and also [Devyani Kota](https://twitter.com/Devyani_kush). The core idea of hackathon was to contribute back to Django framework.
+I participated in Djangothon on 22-23 August - a 24hr hackathon organized by HackerEarth as a part of 10 year anniversary celebrations of Django web framework. I got the awesome team partner [Sharat MR](https://twitter.com/cosmos_genius) and also [Devyani Kota](https://twitter.com/Devyani_kush). The core idea of hackathon was to contribute back to Django framework.
 
-This was the first time for me to be in an offline hackathon neither as a part of organizing committee nor as a company partner. So I was pretty much excited to be a participant.
+I was very excited, it was the first time for me to be in an offline hackathon as a participant.
 
-We had absolutely no idea what to build. But I wanted something to build using web sockets. Sharat gave a +1 for that. After so many discussions finally decided - and thus came up with Django-engage (we realized then that already 4 hours had passed since the start of hackathon!)
+We had absolutely no idea what to build, but I wanted something to be build using web sockets. Sharat gave a +1 for that. After so many discussions finally decided - and thus came up with Django-engage (we realized then that already 4 hours had passed since the start of hackathon!)
 
-Planning, getting stuck, trash the idea, come up with another idea, working on it, getting stuck, meeting silly errors which seems to be huge at first, thinking of stopping and going back to home, then again sit and fix the issue, the happiness of getting a non-broken model at the end.. the crazy times!. Sharat and me did all the coding and bug fixing. And finally for the presentation session, Devyani introduced our team and we have done the demo.
+Planning, getting stuck, trashing that idea, coming up with another idea, working on it, getting stuck, meeting silly errors which seems to be huge at first, thinking of stopping and going back to home, then again sitting and fixing the issue, getting a non-broken model at the end.. all crazy times!. Sharat and me did all the coding and bug fixing. And finally for the presentation session, Devyani introduced our team and we have done the demo.
 
 We didn't won, but the outcomes are fun, energy, inspiration, satisfaction and a lot more! We nailed it!!
-
 
 ####Our project: django-engage
 
