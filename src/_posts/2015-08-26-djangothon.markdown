@@ -12,7 +12,7 @@ This was the first time for me to be in an offline hackathon neither as a part o
 
 We had absolutely no idea what to build. But I wanted something to build using web sockets. Sharat gave a +1 for that. After so many discussions finally decided - and thus came up with Django-engage (we realized then that already 4 hours had passed since the start of hackathon!)
 
-Planning, getting stuck, trash the idea, come up with another idea, working on it, getting stuck, meeting silly errors which seems to be huge at first, thinking of stopping and going back to home, then again sit and fix the issue - pretty much everything happened!. Sharat and me did all the coding and bug fixing. And finally for the presentation session, Devyani introduced our team and we have done the demo.
+Planning, getting stuck, trash the idea, come up with another idea, working on it, getting stuck, meeting silly errors which seems to be huge at first, thinking of stopping and going back to home, then again sit and fix the issue, the happiness of getting a non-broken model at the end.. the crazy times!. Sharat and me did all the coding and bug fixing. And finally for the presentation session, Devyani introduced our team and we have done the demo.
 
 We didn't won, but the outcomes are fun, energy, inspiration, satisfaction and a lot more! We nailed it!!
 
@@ -20,6 +20,8 @@ We didn't won, but the outcomes are fun, energy, inspiration, satisfaction and a
 ####Our project: django-engage
 
 Django-engage is a solution for real time communication between user and admin, we have build a chat system using websockets.
+
+The realtime connection is achieved with [Django-SwampDragon](http://swampdragon.net/), a websocket supporting lib; and authentication check is done with [SwampDragon-Auth](https://github.com/jonashagstedt/swampdragon-auth) lib.
 
 #####Source code
 
