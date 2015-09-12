@@ -401,3 +401,13 @@ figcaption {
     margin-bottom: 2em;
     margin-top: 0.25em;
 }
+.btn-tweet {
+    background: $twitter;
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 0.2em;
+    &:hover {
+        background-color: #52A3E0;
+        color: white;
+    }
+}

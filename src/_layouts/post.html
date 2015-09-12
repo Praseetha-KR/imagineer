@@ -11,6 +11,11 @@ comments: true
     <article class="post-content">
         {{ content }}
     </article>
+    <section>
+        <div class="space-one-top space-three-bottom">
+            <a class="btn-tweet" href=""><i class="fa fa-twitter"></i>&nbsp;&nbsp;Tweet</a>
+        </div>
+    </section>
 </div>
 
 <nav class="page-nav">
@@ -25,3 +30,19 @@ comments: true
         <a href="//disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
     {% endif %}
 </div>
+
+ <script>
+    'use strict';
+    window.onload = function(){
+        var postUrl = '{{ site.url }}{{ page.url }}';
+        var postTitle = '{{ page.title }}';
+        var twitterHandle = '{{ site.twitter_username }}';
+        var twitterShareUrl = 'https://twitter.com/intent/tweet?original_referer=' + postUrl + '%2F&amp;text=' + postTitle + '&amp;tw_p=tweetbutton&amp;url=' + postUrl + '%2F&amp;via=' + twitterHandle;
+
+        document.querySelector('.btn-tweet').onclick = function() {
+            var popUp = window.open(twitterShareUrl, 'popupwindow', 'scrollbars=yes,width=600,height=400');
+            popUp.focus();
+            return false;
+        };
+    };
+</script>
