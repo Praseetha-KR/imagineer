@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "NaCl Crystals"
-date:   2015-09-11 23:18:00
+date:   2015-09-13 01:18:00
 categories: blog
 blurb: "Experiments"
 ---
