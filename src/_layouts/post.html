@@ -39,8 +39,13 @@ comments: true
         var twitterHandle = '{{ site.twitter_username }}';
         var twitterShareUrl = 'https://twitter.com/intent/tweet?original_referer=' + postUrl + '%2F&amp;text=' + postTitle + '&amp;tw_p=tweetbutton&amp;url=' + postUrl + '%2F&amp;via=' + twitterHandle;
 
+        var width = 600;
+        var height = 400;
+        var left = (window.screen.width / 2) - ((width / 2) + 10);
+        var top = (window.screen.height / 2) - ((height / 2) + 50);
+
         document.querySelector('.btn-tweet').onclick = function() {
-            var popUp = window.open(twitterShareUrl, 'popupwindow', 'scrollbars=yes,width=600,height=400');
+            var popUp = window.open(twitterShareUrl, 'popupwindow', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=no, copyhistory=no, width=' + width + ',height='+ height +', top='+top+', left='+left);
             popUp.focus();
             return false;
         };
