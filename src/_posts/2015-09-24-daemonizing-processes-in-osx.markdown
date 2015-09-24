@@ -75,17 +75,13 @@ storage:
 launchctl list | grep "mongo"
 {% endhighlight %}
 <br>
-3) Load agent:
+3) Load & start agent job:
 {% highlight bash %}
 launchctl load ~/Library/LaunchAgents/mongo.plist
+launchctl start mongod
 {% endhighlight %}
 <br>
-4) Start agent job:
-{% highlight bash %}
-launchctl mongod
-{% endhighlight %}
-<br>
-Ensure the user agent is running:
+Ensure if the user agent is running:
 {% highlight bash %}
 ps aux | grep mongod
 {% endhighlight %}
