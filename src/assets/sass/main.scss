@@ -36,17 +36,21 @@ p{
 }
 a {
 	text-decoration: none;
-    color: $primary;
+    color: $dark;
     &:hover {
         color: $secondary;
     }
 }
 .btn {
     background-color: white;
-    padding: 0.4em 1em;
+    padding: .6em 1.3em;
     border: 1px solid $dark;
     border-radius: 2em;
     color: $dark;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.8em;
+
     &:hover, &:active, &:focus {
         color: $secondary;
         border-color: $secondary;
@@ -81,7 +85,7 @@ header[role="nav"] {
     padding: 1em 0 1em 1em;
     margin-bottom: 2em;
     font-family: 'Montserrat', sans-serif;
-    h1, h2 {
+    h1 {
         display: inline-block;
         vertical-align: middle;
         margin: 0;
@@ -89,27 +93,15 @@ header[role="nav"] {
         font-size: 1.2em;
         font-weight: normal;
         line-height: 1;
-    }
-    h1 {
         text-transform: uppercase;
         font-size: 0.8em;
-    }
-    h2 {
-        margin-left: 1em;
         a {
-            margin: 0 0.1em;
-        }
-        a:hover {
-            & > .fa-twitter {
-                color: $twitter;
-            }
-            & > .fa-github {
-                color: $github;
-            }
-            & > .fa-rss {
-                color: $rss;
+            color: $primary;
+            &:hover, &:focus, &:active {
+                color: $secondary;
             }
         }
+
     }
     .site-nav {
         display: inline-block;
@@ -160,7 +152,7 @@ header[role="nav"] {
 }
 .banner {
     h1 {
-        font-family: 'Lobster', 'Abril Fatface', sans-serif;
+        font-family: 'Lobster', sans-serif;
     }
     img {
         border-bottom: 0.3em solid $mediumgray;
