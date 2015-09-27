@@ -30,15 +30,18 @@ h1,h2,h3,h4,h5,h6{
 	font-weight: 400;
 	font-size: 1.6em;
 }
+a {
+    text-decoration: none;
+    color: $primary;
+    &:hover {
+        color: $secondary;
+    }
+}
 p{
 	font-size: 1em;
     margin: 0 0 1.5em 0;
-}
-a {
-	text-decoration: none;
-    color: $dark;
-    &:hover {
-        color: $secondary;
+    a {
+        color: $dark;
     }
 }
 .btn {
@@ -95,13 +98,6 @@ header[role="nav"] {
         line-height: 1;
         text-transform: uppercase;
         font-size: 0.8em;
-        a {
-            color: $primary;
-            &:hover, &:focus, &:active {
-                color: $secondary;
-            }
-        }
-
     }
     .site-nav {
         display: inline-block;
@@ -444,9 +440,16 @@ figcaption {
 .btn-secondary {
     background: $secondary;
     color: white;
-    padding: 0.5em 1em;
-    border-radius: 0.2em;
     &:hover {
         color: white;
+    }
+}
+
+.profile {
+    img {
+        width: 5em;
+        height: 5em;
+        border-radius: 50%;
+        margin: auto;
     }
 }
