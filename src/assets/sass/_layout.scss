@@ -134,7 +134,13 @@
   padding-right: 4em;
 }
 
-
+.text-center {
+    text-align: center;
+}
+.centered {
+    margin: 0 auto;
+    display: block;
+}
 .flushright { float: right !important; }
 .clearall { clear: both; }
 

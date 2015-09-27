@@ -2,6 +2,7 @@
 @import 'colors';
 @import 'layout';
 @import 'themes';
+@import 'typography';
 @import 'compass/css3/transform';
 
 * {
@@ -15,8 +16,8 @@ html, body {
 }
 body{
 	background: $body-bg;
-    font-family: 'Source Sans Pro', serif;
-	font-weight: 400;
+    font-family: 'Merriweather', 'Source Sans Pro', serif;
+	font-weight: 300;
 	font-size: 1em;
 	line-height: 1.5;
 }
@@ -38,6 +39,17 @@ a {
     color: $primary;
     &:hover {
         color: $secondary;
+    }
+}
+.btn {
+    background-color: white;
+    padding: 0.4em 1em;
+    border: 1px solid $dark;
+    border-radius: 2em;
+    color: $dark;
+    &:hover, &:active, &:focus {
+        color: $secondary;
+        border-color: $secondary;
     }
 }
 
@@ -64,11 +76,11 @@ article.post-content {
     }
 }
 
-header[role="banner"] {
-    background-color: $body-bg;
-    box-shadow: 1px 0 3px rgba(0,0,0,0.37);
+header[role="nav"] {
+    background-color: white;
     padding: 1em 0 1em 1em;
     margin-bottom: 2em;
+    font-family: 'Montserrat', sans-serif;
     h1, h2 {
         display: inline-block;
         vertical-align: middle;
@@ -80,7 +92,6 @@ header[role="banner"] {
     }
     h1 {
         text-transform: uppercase;
-        font-family: 'Montserrat', sans-serif;
         font-size: 0.8em;
     }
     h2 {
@@ -108,39 +119,56 @@ header[role="banner"] {
             margin-right: 0.5em;
             font-size: 0.8em;
             color: $primary;
-            padding: 0.2em 1em;
+            padding: 2em 1em;
             &:hover {
-                color: $secondary;
+                color: $dark;
             }
             &.active {
-                color: white;
-                background-color: $secondary;
-                border-radius: 0.2em;
+                color: $secondary;
             }
-        }
-        span {
-            display: none;
-        }
-        i {
-            display: inline;
         }
     }
 }
+.mob-icon-only {
+    span {
+        display: none;
+    }
+    i {
+        display: inline;
+    }
+}
 @media screen and (min-width: 35em) {
-    header[role="banner"] {
-        padding: 1em;
+    header[role="nav"] {
+        padding: 1.5em;
         margin-bottom: 8.5em;
         h1 {
             font-size: 1.2em;
         }
-        .site-nav {
-            span {
-                display: inline;
-            }
-            i {
-                display: none;
-            }
+    }
+    .mob-icon-only {
+        span {
+            display: inline;
         }
+        i {
+            display: none;
+        }
+        &.icon-visible-always i{
+            display: inline;
+            padding-right: 0.4em;
+        }
+    }
+}
+.banner {
+    h1 {
+        font-family: 'Lobster', 'Abril Fatface', sans-serif;
+    }
+    img {
+        border-bottom: 0.3em solid $mediumgray;
+        max-width: 100%;
+    }
+    p {
+        font-size: 1.2em;
+        line-height: 1.7;
     }
 }
 header[role="entity-title"] {
@@ -408,6 +436,25 @@ figcaption {
     border-radius: 0.2em;
     &:hover {
         background-color: #52A3E0;
+        color: white;
+    }
+}
+.btn-github {
+    background: $github;
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 0.2em;
+    &:hover {
+        background-color: $primary;
+        color: white;
+    }
+}
+.btn-secondary {
+    background: $secondary;
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 0.2em;
+    &:hover {
         color: white;
     }
 }

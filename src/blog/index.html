@@ -1,0 +1,19 @@
+---
+layout: default
+title: imagineer
+active: blog
+---
+<div class="content blog-archives">
+    {% for post in paginator.posts %}
+        {% if post.status != 'draft' %}
+            <article>
+                <time>{{ post.date | date_to_string }}</time>
+                <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            </article>
+        {% endif %}
+    {% endfor %}
+</div>
+<nav class="page-nav">
+    <a href="{{ paginator.next_page_path }}">{% if paginator.next_page %}<i class="fa fa-chevron-left fa-2x"></i>{% endif %}</a>
+    <a href="{{ paginator.previous_page_path }}">{% if paginator.previous_page %}<i class="fa fa-chevron-right fa-2x"></i>{% endif %}</a>
+</nav>
