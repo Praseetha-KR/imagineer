@@ -16,7 +16,7 @@ html, body {
 }
 body{
 	background: $body-bg;
-    font-family: 'Merriweather', 'Source Sans Pro', serif;
+    font-family: 'Merriweather', sans-serif;
 	font-weight: 300;
 	font-size: 1em;
 	line-height: 1.5;
@@ -258,7 +258,7 @@ footer {
     }
 }
 ol, ul {
-    margin: 0.5em 0 0.5em 2em;
+    margin: 0 0 1.5em 2em;
 }
 .page-nav {
     position: relative;
@@ -348,6 +348,7 @@ code {
     background: #E2E8EA;
     padding: 0.5em;
     overflow: scroll;
+    margin-bottom: 1.5em;
     code {
         background: transparent;
         padding: 0;
