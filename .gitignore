@@ -4,3 +4,8 @@ _site
 node_modules
 /dev
 /prod
+main.css
+app.css
+app.min.css
+app.js
+app.min.js

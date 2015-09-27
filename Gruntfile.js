@@ -99,5 +99,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
     grunt.registerTask('default', ['uglify', 'concurrent:target']);
-    grunt.registerTask('production', ['compass', 'jekyll:prod']);
+    grunt.registerTask('production', ['compass', 'concat', 'cssmin', 'uglify', 'jekyll:prod']);
 };
