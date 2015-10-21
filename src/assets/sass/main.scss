@@ -23,6 +23,12 @@ article.post-content {
         max-width: 100%;
     }
 }
+.sr-only {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}
 
 header[role="nav"] {
     background-color: white;
