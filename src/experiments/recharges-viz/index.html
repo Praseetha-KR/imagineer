@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Recharges Viz</title>
+        <link rel="stylesheet" href="chartist.min.css">
+        <style>
+            body {
+                background-color: #E9F2F9;
+                font-family: sans-serif;
+            }
+            header{
+                text-align: center;
+            }
+            p, a {
+                color: #F26C4F;
+            }
+            h1, span {
+                color: #3A89C9;
+            }
+            .ct-series-a .ct-bar {
+              stroke: #9CC4E4;
+              stroke-width: 4px;
+            }
+            .ct-series-a .ct-slice-pie {
+                fill: #F26C4F;
+            }
+        </style>
+        <script src="chartist.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Mobile recharges</h1>
+            <p>A visualization of my mobile recharges during APR 2014 - JAN 2016</p>
+            <p>&copy; <a target="_blank" href="https://twitter.com/void_imagineer">void_imagineer</a></p>
+        </header>
+        <div class="ct-chart ct-perfect-fourth"></div>
+
+        <script type="text/javascript" src="app.js"></script>
+    </body>
+</html>
