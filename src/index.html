@@ -1,38 +1,41 @@
 ---
 layout: default
 title: imagineer
-active: home
+active: blog
 ---
-<div class="content banner">
-    <h1 class="primary text-center extralarge push-two-bottom">Imagineering the web!</h1>
-    <img src="/assets/img/imagineer.svg" onerror="this.onerror=null; this.src='/assets/img/imagineer.png'" alt="Praseetha KR" class="centered masthead">
-    <p class="pad-three push-four-top push-one-bottom">Hi there! I'm Praseetha, a computer science engineer, currently living in Bangalore, India. I work as a web developer/designer, and have been at two of the awesome startups - <a href="https://hasgeek.com" target="_blank">HasGeek</a> &amp; <a href="http://eventifier.com" target="_blank">Eventifier</a> for the last 3 years. As any programmers out there, I also spend my days in learning, coding, designing, experimenting and imagineering!</p>
-    <div class="text-center">
-        <ul class="nopad-ul tablecell mob-icon-only icon-visible-always">
-            <li>
-                <a href="/blog" target="_blank" class="btn">
-                    <i class="fa fa-rss"></i>
-                    <span>Blog</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://github.com/Praseetha-KR" target="_blank" class="btn">
-                    <i class="fa fa-github"></i>
-                    <span>Github</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://twitter.com/void_imagineer" target="_blank" class="btn">
-                    <i class="fa fa-twitter"></i>
-                    <span>Twitter</span>
-                </a>
-            </li>
-            <li>
-                <a href="mailto:voidimagineer@yahoo.com?subject=Mail from imagineer.in" class="btn">
-                    <i class="fa fa-paper-plane"></i>
-                    <span>Email</span>
-                </a>
-            </li>
-        </ul>
-    </div>
+<!-- <section role="banner">
+    <h1>Imagineering The Web.</h1>
+    <h4>Notes on frontend development, design &amp; other thoughts by <a href="https://twitter.com/void_imagineer" target="_blank">Praseetha KR</a></h4>
+    <img src="/assets/img/imagineer.svg" onerror="this.onerror=null; this.src='/assets/img/imagineer.png'" alt="Praseetha KR" class="centered masthead push-three-top">
+</section> -->
+<div class="content blog-archives">
+{% for post in site.posts limit:6 %}
+    {% if post.status != 'draft' %}
+            <article>
+                <div class="container centered">
+                    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                    <time>{{ post.date | date_to_string }}</time>
+                    <p>{{ post.excerpt }}</p>
+                </div>
+            </article>
+        {% endif %}
+    {% endfor %}
 </div>
+<div class="text-center push-two">
+    <a href="/blog" class="btn">More posts&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></a>
+</div>
+<!-- <nav class="page-nav regular">
+    <a href="{{ paginator.next_page_path }}">
+        {% if paginator.next_page %}
+            <i class="fa fa-chevron-left"></i>
+            <span>Old posts</span>
+        {% endif %}
+    </a>
+    <a href="{{ paginator.previous_page_path }}">
+        {% if paginator.previous_page %}
+            <span>New posts</span>
+            <i class="fa fa-chevron-right"></i>
+        {% endif %}
+    </a>
+</nav>
+ -->

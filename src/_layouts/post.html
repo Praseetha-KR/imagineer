@@ -1,50 +1,67 @@
 ---
 layout: default
+active: blog
 comments: true
 ---
-
-<div class="content">
-    <header role="entity-title">
+<header role="entity-title">
+    <div class="container container-left">
         <h1>{{ page.title }}</h1>
         <small>Published on </small><time>{{ page.date | date_to_string }}</time>&nbsp;&nbsp;&nbsp;<small>by <a href="https://twitter.com/void_imagineer" target="_blank">@void_imagineer</a></small>
-    </header>
-    <article class="post-content">
-        {{ content }}
-    </article>
-    <section>
-        <div class="push-one">
-            <a class="btn-tweet" href=""><i class="fa fa-twitter"></i>&nbsp;&nbsp;Tweet</a>
+    </div>
+</header>
+
+<section class="block push-three-top">
+    <div class="container container-left">
+        <div class="content">
+            <article class="post-content">
+                {{ content }}
+            </article>
+            <section>
+                <div class="push-one">
+                    <a class="btn-tweet" href=""><i class="fa fa-twitter"></i>&nbsp;&nbsp;Tweet</a>
+                </div>
+            </section>
         </div>
+
+        <nav class="page-nav regular space-line-top">
+            {% if page.next.url %}
+                <a href="{{page.next.url}}">
+                    <i class="fa fa-chevron-left"></i>
+                    <span>{{ page.next.title }}</span>
+                </a>
+            {% endif %}
+            {% if page.previous.url %}
+                <a href="{{page.previous.url}}" class="text-right">
+                    <span>{{ page.previous.title }}</span>
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+            {% endif %}
+        </nav>
+
         <div class="push-two-top push-four-bottom text-center profile">
             <img src="/assets/img/praseetha_kr.jpg" alt="">
             <p>Hi there! I'm Praseetha KR, a web developer/designer from Bangalore.</p>
             <div class="mob-icon-only icon-visible-always">
-                <a href="https://twitter.com/void_imagineer" target="_blank" class="btn">
+                <a href="https://twitter.com/void_imagineer" target="_blank" class="btn btn-twitter">
                     <i class="fa fa-twitter"></i>
                     <span>Twitter</span>
                 </a>&nbsp;&nbsp;
-                <a href="https://github.com/Praseetha-KR" target="_blank" class="btn">
+                <a href="https://github.com/Praseetha-KR" target="_blank" class="btn btn-github">
                     <i class="fa fa-github"></i>
                     <span>Github</span>
                 </a>
             </div>
         </div>
-    </section>
-</div>
-
-<nav class="page-nav">
-    <a href="{{page.next.url}}">{% if page.next.url %}<i class="fa fa-chevron-left fa-2x"></i>{% endif %}</a>
-    <a href="{{page.previous.url}}">{% if page.previous.url %}<i class="fa fa-chevron-right fa-2x"></i>{% endif %}</a>
-</nav>
-<div class="content">
-    {% if page.comments %}
-        <div id="disqus_thread"></div>
-        <script type="text/javascript" src="//disqus.com/forums/imagineer/embed.js"></script>
-        <noscript><a href="//imagineer.disqus.com/?url=ref">View the discussion thread.</a></noscript>
-        <a href="//disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-    {% endif %}
-</div>
-
+        <div class="content push-two-bottom">
+            {% if page.comments %}
+                <div id="disqus_thread"></div>
+                <script type="text/javascript" src="//disqus.com/forums/imagineer/embed.js"></script>
+                <noscript><a href="//imagineer.disqus.com/?url=ref">View the discussion thread.</a></noscript>
+                <a href="//disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+            {% endif %}
+        </div>
+    </div>
+</section>
  <script>
     'use strict';
     window.onload = function(){

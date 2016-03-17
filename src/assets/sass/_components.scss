@@ -8,15 +8,38 @@ html, body {
     height: 100%;
     box-sizing: content-box;
 }
+
+table {
+    border-collapse: collapse;
+    th {
+        background-color: $color__table-head-bg;
+        color: $color__table-head-text;
+    }
+    thead tr {
+        color: $color__table-head-bg;
+    }
+    &, td {
+        border-color: $color__table-border;
+    }
+    &.table-striped tbody {
+        tr:nth-child(2n+1) {
+            background-color: $color__table-stripe;
+        }
+    }
+}
+
+
 body{
     background: $body-bg;
-    font-family: 'Merriweather', sans-serif;
-    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
     font-size: 1em;
     line-height: 1.5;
+    color: $color__paragraph;
 }
 blockquote {
-    border-left: 4px solid rgb(38, 173, 228);
+    border-left: 4px solid $color__blockquote-border;
+    background-color: $color__blockquote-bg;
     padding: 0.5em 1em;
     margin-bottom: 1em;
 }
@@ -25,37 +48,38 @@ h1,h2,h3,h4,h5,h6{
 }
 a {
     text-decoration: none;
-    color: $primary;
+    color: $color__paragraph;
     &:hover {
-        color: $secondary;
+        color: $color__active;
     }
 }
 p{
-    font-size: 1em;
+    font-size: 1.1em;
     margin: 0 0 1.5em 0;
     a {
-        color: $dark;
+        color: $color__link;
     }
 }
 .btn {
-    background-color: white;
-    padding: .6em 1.3em;
-    border: 1px solid $dark;
-    border-radius: 2em;
-    color: $dark;
+    background-color: $color__btn-secondary-bg;
+    border-color: $color__btn-secondary-bg;
+    color: $color__btn-secondary-text;
     font-family: 'Montserrat', sans-serif;
+    padding: .6em 1.3em 0.5em;
+    border-radius: 0.2em;
     text-transform: uppercase;
-    font-size: 0.8em;
+    font-size: 0.9em;
 
     &:hover, &:active, &:focus {
-        color: $secondary;
-        border-color: $secondary;
+        color: $color__btn-secondary-text;
+        background-color: $color__btn-secondary-bg-alt;
+        border-color: $color__btn-secondary-bg-alt;
     }
 }
+
 .container {
     position: relative;
     width: 90%;
-    margin: auto;
 }
 .video-wrapper   {width:100%;height:100%;margin:0 auto auto 0;background:#CCC}
 .h_iframe        {position:relative;}
@@ -71,7 +95,7 @@ figcaption {
     margin-top: 0.25em;
 }
 .btn-tweet {
-    background: $twitter;
+    background-color: $twitter;
     color: white;
     padding: 0.5em 1em;
     border-radius: 0.2em;
@@ -81,7 +105,7 @@ figcaption {
     }
 }
 .btn-github {
-    background: $github;
+    background-color: $github;
     color: white;
     padding: 0.5em 1em;
     border-radius: 0.2em;

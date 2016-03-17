@@ -9,19 +9,19 @@ blurb: "Implements blend modes generetor in Javascript"
 Ever since I dabbled around [css blend modes](https://imagineer.in/blog/pixr-css-image-editor/), I wanted to look into the math behind it.
 
 ##Compositing in CSS
-Compositing is combining separate visual elements into a single image. There have been 2 types of compositing techniques used in CSS so far.
+Compositing is <strong>combining separate visual elements into a single image</strong>. There have been 2 types of compositing techniques used in CSS so far.
 
 <table>
     <thead>
         <tr>
-            <th width="50%" class="fill-white secondary">Simple Alpha Compositing</th>
-            <th class="fill-white secondary">Porter-Duff Compositing <a href="http://keithp.com/~keithp/porterduff/"><i class="fa fa-external-link"></i></a></th>
+            <th width="50%">Simple Alpha Compositing</th>
+            <th>Porter-Duff Compositing <a href="http://keithp.com/~keithp/porterduff/"><i class="fa fa-external-link"></i></a></th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>Mixing effect is obtained by overlapping of transparent layers</td>
-            <td>Colors are mixed by blending functions and resultant region is obtained by Porter-Duff <em>source-over</em> operator</td>
+            <td>Mixing effect is obtained by <strong>overlapping</strong> of transparent layers</td>
+            <td>Colors are mixed by <strong>blending functions</strong> and resultant region is obtained by Porter-Duff <em>source-over</em> operator</td>
         </tr>
         <tr>
             <td>Used by old versions of CSS</td>
@@ -38,24 +38,25 @@ When 2 pixels get combined, 4 subpixel regions are formed:
    - only destination is present
    - both are present
    - neither is present (always empty)
+
 <div class="push-two">
     <img src="/assets/img/posts/porter-duff-compositing/subpixel_regions.png" alt="">
 </div>
 
 There are 12 of operators which decides the behaviour in these regions.
 
-<table class="space-one">
+<table class="space-one table-striped">
     <thead>
         <tr>
-            <th colspan="5">Porter-Duff Operations (source S on backdrop B)</th>
+            <th colspan="6">Porter-Duff Operations (source S on backdrop B)</th>
         </tr>
         <tr>
-            <td width="2%" class="fill-white secondary">No.</td>
-            <td width="25%" class="fill-white secondary">Operation</td>
-            <td width="25%" class="fill-white secondary">Quadraple</td>
-            <td width="8%" class="fill-white secondary">Diagram</td>
-            <td width="20%" class="fill-white secondary">F<sub>S</sub></td>
-            <td width="20%" class="fill-white secondary">F<sub>B</sub></td>
+            <td width="2%">No.</td>
+            <td width="25%">Operation</td>
+            <td width="25%">Quadraple</td>
+            <td width="8%">Diagram</td>
+            <td width="20%">F<sub>S</sub></td>
+            <td width="20%">F<sub>B</sub></td>
         </tr>
     </thead>
     <tbody>

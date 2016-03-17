@@ -23,37 +23,30 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/css/app.min.css">
-    <link href='//fonts.googleapis.com/css?family=Merriweather|Montserrat|Lobster' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lora|Merriweather|Montserrat|Alegreya+Sans+SC|Open+Sans:100,300,600|Passion+One' rel='stylesheet' type='text/css'>
 
   </head>
   <body>
-    <div class="wrapper">
-        <header role="nav">
-            <h1>
-                <a href="/">Praseetha KR</a>
-            </h1>
+    <header role="banner">
+        <h1><a href="/">Praseetha KR</a></h1>
+        <h4>Notes on frontend development, design &amp; other thoughts by <a href="https://twitter.com/void_imagineer" target="_blank">Praseetha KR</a></h4>
 
-            <nav class="site-nav mob-icon-only">
-                <a href="/blog" {% if page.active == 'blog' %}class="active"{% endif %}><i class="fa fa-rss"></i><span>Blog</span></a>
-                <a href="/works" {% if page.active == 'works' %}class="active"{% endif %}><i class="fa fa-paint-brush"></i><span>Work</span></a>
-                <a href="/experiments" {% if page.active == 'experiments' %}class="active"{% endif %}><i class="fa fa-flask"></i><span>Lab</span></a>
-            </nav>
-        </header>
-
-        <div class="container">
-            {{ content }}
+        <nav role="menubar">
+            <a role="menuitem" href="/blog" {% if page.active == 'blog' %}class="active"{% endif %}><i class="fa fa-rss"></i><span>Blog</span></a>
+            <a role="menuitem" href="/works" {% if page.active == 'works' %}class="active"{% endif %}><i class="fa fa-paint-brush"></i><span>Work</span></a>
+            <a role="menuitem" href="/experiments" {% if page.active == 'experiments' %}class="active"{% endif %}><i class="fa fa-flask"></i><span>Lab</span></a>
+        </nav>
+    </header>
+    <main role="main">
+        {{ content }}
+    </main>
+    <footer role="contentinfo">
+        <img src="/assets/img/logo_white.png" class="footer-logo" alt="">
+        <div class="secondary">
+            &copy; Praseetha KR 2011 - 2015</span>
         </div>
+    </footer>
 
-        <footer role="contentinfo">
-            <img src="/assets/img/logo_white.png" class="footer-logo" alt="">
-            <div class="container">
-                <p class="secondary">
-                    &copy; Praseetha KR 2011 - 2015</span>
-                </p>
-            </div>
-        </footer>
-    </div>
     <script type="text/javascript" src="/assets/js/app.min.js"></script>
-
   </body>
 </html>
