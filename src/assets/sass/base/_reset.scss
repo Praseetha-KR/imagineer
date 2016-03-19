@@ -38,3 +38,18 @@ q {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
+
+
+// Addition
+* {
+    box-sizing: border-box;
+}
+html, body {
+    box-sizing: content-box;
+}
+a {
+    text-decoration: none;
+}
+em {
+  font-style: italic;
+}

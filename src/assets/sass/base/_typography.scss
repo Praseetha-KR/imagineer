@@ -1,0 +1,72 @@
+$font-stack__text: (
+    'Open Sans',
+    sans-serif,
+);
+$font-stack__title: (
+    'Montserrat',
+    serif,
+);
+$font-stack__heading: (
+    'Gentium Book Basic',
+    'Vollkorn',
+    'Merriweather',
+    serif,
+);
+$font-stack__handwriting: (
+    'Coming Soon',
+    'Open Sans',
+    sans-serif
+);
+$font-stack__code: (
+    monospace,
+    sans-serif
+);
+
+body {
+    font-family: $font-stack__text;
+    font-size: $base__font;
+    line-height: $base__line-height;
+}
+strong {
+    font-weight: 600;
+}
+
+.title-type {
+    font-family: $font-stack__title;
+}
+
+.header-type {
+    font-family: $font-stack__heading;
+}
+
+.informal-type {
+    font-family: $font-stack__handwriting;
+}
+.highlight {
+    font-family: $font-stack__code;
+}
+
+article[role="article"] {
+    line-height: 1.5;
+    h1, h2, h3, h4, h5, h6 {
+        font-family: $font-stack__heading;
+    }
+    h1 {
+        font-size: 3em;
+    }
+    h2 {
+        font-size: 2.3em;
+    }
+    h3 {
+        font-size: 1.9em;
+    }
+    h4 {
+        font-size: 1.6em;
+    }
+    h5 {
+        font-size: 1.3em;
+    }
+    h6 {
+        font-size: 1.1em;
+    }
+}

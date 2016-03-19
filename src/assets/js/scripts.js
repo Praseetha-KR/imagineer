@@ -1,17 +1,17 @@
 // Disqus
 //<![CDATA[
-(function() {
-  var links = document.getElementsByTagName('a');
-  var query = '?';
-  for(var i = 0; i < links.length; i++) {
-    if(links[i].href.indexOf('#disqus_thread') >= 0) {
-      query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
-    }
-  }
-  document.write('<script charset="utf-8" type="text/javascript" src="//disqus.com/forums/imagineer/get_num_replies.js' + query + '"></' + 'script>');
-  })();
+// (function() {
+//   var links = document.getElementsByTagName('a');
+//   var query = '?';
+//   for(var i = 0; i < links.length; i++) {
+//     if(links[i].href.indexOf('#disqus_thread') >= 0) {
+//       query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+//     }
+//   }
+//   document.write('<script charset="utf-8" type="text/javascript" src="//disqus.com/forums/imagineer/get_num_replies.js' + query + '"></' + 'script>');
+//   })();
 //]]>
-  
+
 // Google Analytics
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

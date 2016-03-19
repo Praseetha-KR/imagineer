@@ -2,3 +2,10 @@ body {
     background-color: $color__body-bg;
     color: $color__body-text;
 }
+
+a {
+    color: $color__link;
+    &:hover, &:focus, &:active {
+        color: $color__link-active;
+    }
+}

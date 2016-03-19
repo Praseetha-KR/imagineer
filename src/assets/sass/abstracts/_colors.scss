@@ -1,6 +1,43 @@
-$color__primary: hsla(300, 27, 62, 1);
-$color__secondary: hsla(187, 100, 42, 1);
-$color__tertiary: hsla(87, 49, 53, 1);
+$color__primary: hsl(300, 27%, 62%);
+$color__secondary: hsl(188,78%,50%);
+$color__tertiary: hsl(87, 49%, 53%);
+$color__silver: hsl(0,0%,95%);
+
+$color__link: light-variant($color__primary);
+$color__link-active: dark-variant($color__primary);
 
 $color__body-bg: white;
-$color__body-text: hsla(300, 7, 28, 1);
+$color__body-text: hsl(300, 7%, 28%);
+
+$color__header-bg: $color__silver;
+$color__header-title: lighten($color__primary, 10%);
+$color__header-desc: $color__primary;
+
+$color__footer-bg: $color__silver;
+$color__footer-links-gray: #D0D0D0;
+$color__footer-links-gray-alt: lighten($color__primary, 20%);
+
+$color__table-head-bg: $color__primary;
+$color__table-head-text: white;
+$color__table-border: #ECDFEC;
+$color__table-stripe: lighten($color__primary, 35%);
+
+$color__aside-bg: $color__silver;
+$color__aside-fold: darken($color__silver, 10%);
+
+$color__bullet-ol: $color__primary;
+$color__bullet-ul: $color__primary;
+
+$color__btn-primary-text: white;
+$color__btn-primary-bg: $color__secondary;
+$color__btn-primary-bg-alt: lighten($color__secondary, 10%);
+
+$color__page-nav-text: $color__body-text;
+$color__page-nav-text-alt: $color__primary;
+$color__page-nav-bg: rgba(255,255,255,0.5);
+$color__page-nav-bg-hover: #F5E8F5;
+$color__page-nav-border: #ECDFEC;
+
+$color__btn-tweet-text: white;
+$color__btn-tweet-bg: hsl(203,89%,53%);
+$color__btn-tweet-bg-alt: lighten($color__btn-tweet-bg, 10%);

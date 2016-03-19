@@ -1,0 +1,29 @@
+%btn--base {
+    padding: $btn__base-padding;
+    border-radius: $btn__base-radius;
+    display: inline-block;
+}
+%btn--primary {
+    @extend %btn--base;
+    color: $color__btn-primary-text;
+    background-color: $color__btn-primary-bg;
+    &:hover, &:focus, &:active, &.active {
+        color: white;
+        background-color: $color__btn-primary-bg-alt;
+    }
+}
+%btn--tweet {
+    @extend %btn--base;
+    color: $color__btn-tweet-text;
+    background-color: $color__btn-tweet-bg;
+    &:hover, &:focus, &:active, &.active {
+        color: white;
+        background-color: $color__btn-tweet-bg-alt;
+    }
+}
+.btn-theme {
+    @extend %btn--primary;
+}
+.btn-tweet {
+    @extend %btn--tweet;
+}

@@ -1,0 +1,7 @@
+@function light-variant($color) {
+    @return change-color($color, $hue: (hue($color) + 13), $lightness: (lightness($color) + 3%));
+}
+
+@function dark-variant($color) {
+    @return change-color($color, $saturation: (saturation($color) - 5%), $lightness: (lightness($color) - 9%));
+}

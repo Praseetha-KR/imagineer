@@ -1,0 +1,10 @@
+footer[role="contentinfo"] {
+    background-color: $color__footer-bg;
+    .social a {
+        display: inline-block;
+        color: $color__footer-links-gray;
+        &:hover, &:focus, &:active {
+            color: $color__footer-links-gray-alt;
+        }
+    }
+}

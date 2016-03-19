@@ -1,0 +1,27 @@
+.table {
+    display: table;
+    .cell {
+        display: table-cell;
+    }
+}
+
+.clearall {
+    clear: both;
+}
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+.centered {
+    margin: auto;
+}
+
+.highlight {
+    padding: $btn__code-padding;
+    border-radius: $btn__code-radius;
+}
+.overflowhidden {
+    overflow: hidden;
+}

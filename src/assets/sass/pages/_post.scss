@@ -1,0 +1,52 @@
+header[role="heading"] {
+    h1 {
+        font-size: $article__heading;
+    }
+}
+article[role="article"] {
+    font-size: $article__font;
+    line-height: $article__line-height;
+    img {
+        width: 100%;
+    }
+    p {
+        padding-bottom: 1em;
+    }
+    h1, h2, h3, h4, h5, h6, table {
+        margin: 0.5em 0 0.2em;
+    }
+}
+
+.wrapper {
+    width: 78vw;
+}
+aside[role="definition"] {
+    float: left;
+    padding: 1em;
+    width: 16%;
+    background: $color__aside-bg;
+    position: relative;
+    &:after {
+        content: '';
+        display: block;
+        height: 0;
+        width: 0;
+        border-width: 0.7em;
+        border-style: solid;
+        border-color: $color__aside-fold $color__body-bg $color__body-bg $color__aside-fold;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
+.container {
+    width: 73%;
+    float: right;
+    margin-right: 6%;
+}
+.profile {
+    img {
+        border-radius: 50%;
+        width: 6em;
+    }
+}
