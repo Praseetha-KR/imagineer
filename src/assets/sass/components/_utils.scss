@@ -17,7 +17,7 @@
 .centered {
     margin: auto;
 }
-.contain-width {
+.contain-width, .full-width {
     width: 100%;
 }
 
@@ -66,4 +66,11 @@ aside {
         border-radius: 50%;
         width: 6em;
     }
+}
+%time {
+    text-transform: uppercase;
+    font-size: 0.8em;
+    color: $color__archive-time;
+    padding-bottom: 0.8em;
+    display: block;
 }

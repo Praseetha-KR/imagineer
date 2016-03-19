@@ -1,0 +1,16 @@
+.work {
+    &__item {
+        margin-bottom: 3em;
+        padding: 1em;
+        background-color: $color__work-item-bg;
+        time {
+            @extend %time;
+        }
+    }
+    &__category {
+        background-color:$color__work-category-bg;
+        color:$color__work-category-text;
+        text-align: center;
+        margin-bottom: 1em;
+    }
+}
