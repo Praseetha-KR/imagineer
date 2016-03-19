@@ -17,11 +17,53 @@
 .centered {
     margin: auto;
 }
+.contain-width {
+    width: 100%;
+}
 
+.contain-height {
+    height: 100%;
+}
 .highlight {
     padding: $btn__code-padding;
     border-radius: $btn__code-radius;
 }
 .overflowhidden {
     overflow: hidden;
+}
+
+.wrapper {
+    width: 78vw;
+}
+.container {
+    width: 73%;
+    float: right;
+    margin-right: 6%;
+}
+aside {
+    float: left;
+    width: 16%;
+    div[role="note"] {
+        background: $color__aside-bg;
+        position: relative;
+        padding: 1em;
+        &:after {
+            content: '';
+            display: block;
+            height: 0;
+            width: 0;
+            border-width: 0.7em;
+            border-style: solid;
+            border-color: $color__aside-fold $color__body-bg $color__body-bg $color__aside-fold;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+}
+.profile {
+    img {
+        border-radius: 50%;
+        width: 6em;
+    }
 }

@@ -1,0 +1,23 @@
+.home {
+    ul[role="list"] {
+        list-style-type: none;
+        li[role="listitem"] {
+            padding: 0.5em 0 1.2em 0;
+            overflow: hidden;
+            border-bottom: 1px solid $color__silver;
+            h2 {
+                font-size: 1.8em;
+            }
+        }
+    }
+    time {
+        text-transform: uppercase;
+        font-size: 0.8em;
+        color: $color__archive-time;
+        padding-bottom: 0.8em;
+        display: block;
+    }
+    aside img {
+        background-color: $color__masthead-fill;
+    }
+}

@@ -3,39 +3,57 @@ layout: default
 title: imagineer
 active: blog
 ---
-<!-- <section role="banner">
-    <h1>Imagineering The Web.</h1>
-    <h4>Notes on frontend development, design &amp; other thoughts by <a href="https://twitter.com/void_imagineer" target="_blank">Praseetha KR</a></h4>
-    <img src="/assets/img/imagineer.svg" onerror="this.onerror=null; this.src='/assets/img/imagineer.png'" alt="Praseetha KR" class="centered masthead push-three-top">
-</section> -->
-<div class="content blog-archives">
-{% for post in site.posts limit:6 %}
-    {% if post.status != 'draft' %}
-            <article>
-                <div class="container centered">
-                    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-                    <time>{{ post.date | date_to_string }}</time>
-                    <p>{{ post.excerpt }}</p>
-                </div>
-            </article>
-        {% endif %}
-    {% endfor %}
+<div class="home wrapper centered">
+    <aside>
+        <img src="/assets/img/imagineer.svg" onerror="this.onerror=null; this.src='/assets/img/imagineer.png'" alt="Praseetha KR" class="contain-width space-4-top">
+    </aside>
+    <div class="container">
+        <ul role="list" class="list-silent archives push-3-top">
+            {% for post in paginator.posts %}
+                {% if post.status != 'draft' %}
+                    <li role="listitem">
+                        <div>
+                            <h2 class="header-type">
+                                <a href="{{ post.url }}">{{ post.title }}</a>
+                            </h2>
+                            <time>{{ post.date | date_to_string }}</time>
+                            <p>{{ post.excerpt }}</p>
+                        </div>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <section>
+            <nav class="space-3-top contain-width table">
+                {% if paginator.next_page %}
+                    <a class="cell" href="{{ paginator.next_page_path }}">
+                        <i class="fa fa-angle-left"></i>
+                        <span>Old posts</span>
+                    </a>
+                {% endif %}
+                <!-- <a class="all-caps">Posts</a> -->
+                {% if paginator.previous_page %}
+                    <a class="cell text-right" href="{{ paginator.previous_page_path }}">
+                        <span>New posts</span>
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                {% endif %}
+            </nav>
+        </section>
+        <nav role="navigation" class="space-3-top">
+            {% if paginator.next_page %}
+                <a href="{{ paginator.next_page_path }}" class="dark">
+                    <i class="fa fa-chevron-left"></i>
+                    <!-- <span>Old posts</span> -->
+                </a>
+            {% endif %}
+            <!-- <a class="all-caps">Posts</a> -->
+            {% if paginator.previous_page %}
+                <a href="{{ paginator.previous_page_path }}" class="dark text-right">
+                    <!-- <span>New posts</span> -->
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+            {% endif %}
+        </nav>
+    </div>
 </div>
-<div class="text-center push-two">
-    <a href="/blog" class="btn">More posts&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></a>
-</div>
-<!-- <nav class="page-nav regular">
-    <a href="{{ paginator.next_page_path }}">
-        {% if paginator.next_page %}
-            <i class="fa fa-chevron-left"></i>
-            <span>Old posts</span>
-        {% endif %}
-    </a>
-    <a href="{{ paginator.previous_page_path }}">
-        {% if paginator.previous_page %}
-            <span>New posts</span>
-            <i class="fa fa-chevron-right"></i>
-        {% endif %}
-    </a>
-</nav>
- -->

@@ -8,7 +8,7 @@ ol, ul {
         }
     }
 }
-ol {
+ol:not(.list-silent) {
     padding-left: $list__bullet-width-ol + $list__bullet-padding-ol;
     counter-reset: listitem;
     & > li:before {
@@ -21,7 +21,7 @@ ol {
         font-weight: 700;
     }
 }
-ul {
+ul:not(.list-silent) {
     padding-left: $list__bullet-width-ul + $list__bullet-padding-ul;
     & > li:before {
         content: '';
