@@ -20,6 +20,8 @@ nav[role="navigation"] {
         display: inline-block;
         padding-left: 0.1em;
         padding-right: 0.1em;
+        color: $color__page-nav-text;
+        // background-color: $color__page-nav-bg;
         &:hover, &:focus, &:active {
             color: $color__page-nav-text-alt;
         }
