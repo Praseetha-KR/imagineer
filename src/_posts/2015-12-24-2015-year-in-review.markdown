@@ -4,6 +4,8 @@ title:  "2015: year in review"
 date:   2015-12-24 10:50:00
 categories: blog
 blurb: "Personal experiences for the year 2015"
+theme1: 'tan'
+theme2: 'beige'
 ---
 
 2015 has almost reached EOL.

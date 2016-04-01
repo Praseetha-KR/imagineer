@@ -1,12 +1,13 @@
-$color__primary: hsl(300, 27%, 62%);
-$color__secondary: hsl(188,78%,50%);
-$color__tertiary: hsl(87, 49%, 53%);
+$color__primary: #00BCD4;
+$color__secondary: #4CAF50;
+
 $color__silver: hsl(0,0%,95%);
 $color__dark: #333;
 $color__gray: #9E9E9E;
+$color__gray-medium: #E8E8E8;
 
-$color__link: light-variant($color__primary);
-$color__link-active: dark-variant($color__primary);
+$color__link: $color__primary;
+$color__link-active: $color__secondary;
 
 $color__body-bg: white;
 $color__body-text: hsl(300, 7%, 28%);
@@ -21,8 +22,8 @@ $color__footer-links-gray-alt: lighten($color__primary, 20%);
 
 $color__table-head-bg: $color__primary;
 $color__table-head-text: white;
-$color__table-border: #ECDFEC;
-$color__table-stripe: lighten($color__primary, 35%);
+$color__table-border: $color__gray-medium;
+$color__table-stripe: lighten($color__gray-medium, 6%);
 
 $color__aside-bg: $color__silver;
 $color__aside-fold: darken($color__silver, 10%);

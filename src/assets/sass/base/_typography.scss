@@ -58,52 +58,27 @@ main {
         font-family: $font-stack__heading;
     }
     h1 {
-        font-size: 1.8em;
+        font-size: 1.6em;
+        line-height: 2.5;
     }
     h2 {
-        font-size: 1.6em;
+        font-size: 1.4em;
+        line-height: 2.5;
     }
     h3 {
-        font-size: 1.4em;
+        font-size: 1.2em;
+        line-height: 2.3;
     }
     h4 {
-        font-size: 1.2em;
+        font-size: 1em;
+        line-height: 2.3;
     }
     h5 {
-        font-size: 1em;
+        font-size: 0.8em;
+        line-height: 2;
     }
     h6 {
-        font-size: 0.8em;
+        font-size: 0.6em;
+        line-height: 2;
     }
 }
-
-
-//
-.extralarge{
-    font-size: 4em;
-}
-.large{
-    font-size: 3em;
-}
-.legible{
-    font-size: 2.3em;
-}
-.legible-prose{
-    font-size: 1.5em;
-}
-.regular{
-    font-size: 1.2em;
-}
-.tiny{
-    font-size: 0.8em;
-}
-.link-silent a, a.link-silent {
-    text-decoration: none;
-}
-.title-type {
-    font-family: 'Montserrat', sans-serif;
-}
-.all-caps {
-    text-transform: uppercase;
-}
-

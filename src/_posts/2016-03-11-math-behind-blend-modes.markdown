@@ -4,6 +4,8 @@ title:  "Math behind blend modes"
 date:   2016-03-11 02:03:30
 categories: blog
 blurb: "Implements blend modes generetor in Javascript"
+theme1: 'deeppink'
+theme2: 'orange'
 ---
 
 Ever since I dabbled around [css blend modes](https://imagineer.in/blog/pixr-css-image-editor/), I wanted to look into the math behind it.

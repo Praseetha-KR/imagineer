@@ -3,6 +3,29 @@ layout: default
 active: blog
 comments: true
 ---
+<style>
+    a,
+    table thead tr,
+    ol:not(.list-silent)>li:before,
+    nav[role=navigation] a:active,
+    nav[role=navigation] a:focus,
+    nav[role=navigation] a:hover {
+        color: {{ page.theme1 }};
+    }
+    a:hover,
+    a:focus,
+    a:active {
+        color: {{ page.theme2 }};
+    }
+    header[role="banner"] {
+        background-image: linear-gradient(90deg, {{ page.theme1 }}, {{ page.theme2 }});
+    }
+    table th,
+    ul:not(.list-silent)>li:before {
+        background-color: {{ page.theme1 }};
+    }
+</style>
+
 <header role="banner">
     <section role="navigation">
         <a href="/" class="logo title-type">Praseetha KR</a>

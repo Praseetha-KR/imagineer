@@ -30,7 +30,7 @@ active: blog
         <ul role="list" class="list-silent archives push-3-top">
             {% for post in paginator.posts %}
                 {% if post.status != 'draft' %}
-                    <li role="listitem" class="push-5-bottom">
+                    <li role="listitem" class="push-3-bottom">
                         <h4 class="header-type push-h-bottom inlineblock">
                             <a class="dark" href="{{ post.url }}">{{ post.title }}</a>
                         </h4>
