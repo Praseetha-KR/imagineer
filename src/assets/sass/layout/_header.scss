@@ -1,20 +1,38 @@
 header[role="banner"] {
-    width: 100%;
-    background-color: $color__header-bg;
-    a {
-        text-decoration: none;
+    background-image: linear-gradient(90deg, #00BCD4, #4CAF50);
+    // background-image: url(http://lorempixel.com/g/400/200/);
+    background-size: cover;
+    color: white;
+    section[role="navigation"] {
+        padding: 2em;
+        font-size: 1.1em;
+        a {
+            color: white;
+        }
+        .logo {
+            font-size: 1em;
+            display: inline-block;
+        }
+        nav[role="menubar"] {
+            float: right;
+            display: inline-block;
+        }
     }
-    h1 {
-        color: $color__header-title;
-        font-size: 9vw;
-        line-height: 0.73;
-        font-weight: 800;
-        text-transform: uppercase;
+    section[role="heading"] {
+        padding: 7em 3em;
+        text-align: center;
+        h1 {
+            font-size: 3em;
+        }
+        a {
+            color: #333;
+        }
     }
-    h4[role="note"] {
-        line-height: 1.4;
-    }
-    & > * {
-        vertical-align: middle;
-    }
+}
+section[role="note"] {
+    background-color: $color__dark;
+    color: white;
+    padding: 2em 30%;
+    text-align: center;
+    font-size: 1.2em;
 }

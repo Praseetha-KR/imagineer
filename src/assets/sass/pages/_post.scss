@@ -1,9 +1,4 @@
 .post {
-    header[role="heading"] {
-        h1 {
-            font-size: $article__heading;
-        }
-    }
     article[role="article"] {
         font-size: $article__font;
         line-height: $article__line-height;

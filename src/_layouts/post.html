@@ -3,25 +3,31 @@ layout: default
 active: blog
 comments: true
 ---
-<div class="post">
-    <header role="heading" class="push-6-top push-5-bottom">
-        <div class="wrapper centered">
+<header role="banner">
+    <section role="navigation">
+        <a href="/" class="logo title-type">Praseetha KR</a>
+        <nav role="menubar" class="title-type text-right">
+            <a role="menuitem" href="/" {% if page.active == 'blog' %}class="active"{% endif %}>Blog</a>
+            <a role="menuitem" href="/works" {% if page.active == 'works' %}class="active"{% endif %}>Work</a>
+            <a role="menuitem" href="/experiments" {% if page.active == 'experiments' %}class="active"{% endif %}>Experiments</a>
+        </nav>
+    </section>
+    <section role="heading">
             <h1 class="header-type">{{ page.title }}</h1>
             <div>
                 <em><small>Published on </small>
                 <time>{{ page.date | date_to_string }}</time></em>
-                <!-- &nbsp;&nbsp;&nbsp;<small>by <a href="https://twitter.com/void_imagineer" target="_blank">@void_imagineer</a></small> -->
+                &nbsp;&nbsp;&nbsp;<small>by <a href="https://twitter.com/void_imagineer" target="_blank">@void_imagineer</a></small>
             </div>
-        </div>
-    </header>
+    </section>
+</header>
+<section role="note">
+    <div class="desc-type">{{ page.blurb }}</div>
+</section>
 
-    <div class="wrapper centered clearall">
-        <aside>
-            <div role="note" class="informal-type">
-                {{page.blurb}}
-            </div>
-        </aside>
-        <div class="container">
+<section class="post">
+    <div class="wrapper centered clearall push-4">
+        <div class="">
             <article role="article">
                 {{ content }}
             </article>
@@ -72,8 +78,7 @@ comments: true
             </section> -->
         </div>
     </div>
-
-</div>
+</section>
 
 <!-- Twitter share button -->
 <script>

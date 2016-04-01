@@ -4,7 +4,11 @@
         padding: 1em;
         background-color: $color__work-item-bg;
         time {
-            @extend %time;
+            text-transform: uppercase;
+            font-size: 0.8em;
+            color: $color__archive-time;
+            padding-bottom: 0.8em;
+            display: block;
         }
     }
     &__category {

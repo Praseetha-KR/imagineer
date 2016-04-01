@@ -1,13 +1,11 @@
 nav[role="menubar"] {
-    text-align: right;
     a[role="menuitem"] {
-        display: block;
         padding: 0 1em;
         text-transform: uppercase;
         font-size: 0.85em;
         color: $color__body-text;
         &:hover, &:active, &:focus, &.active {
-            color: $color__link-active;
+            color: $color__dark;
         }
     }
 }
@@ -15,13 +13,14 @@ nav[role="menubar"] {
 nav[role="navigation"] {
     font-size: 2em;
     position: fixed;
-    bottom: 0.8em;
+    bottom: 1em;
     left: 1em;
+    right: 1em;
     a {
         display: inline-block;
         padding-left: 0.1em;
         padding-right: 0.1em;
-        // color: $color__page-nav-text;
+        color: $color__page-nav-text;
         // background-color: $color__page-nav-bg;
         &:hover, &:focus, &:active {
             color: $color__page-nav-text-alt;
@@ -29,10 +28,12 @@ nav[role="navigation"] {
         &:first-child {
             border-top-left-radius: 0.5em;
             border-bottom-left-radius: 0.5em;
+            float: left;
         }
         &:last-child {
             border-top-right-radius: 0.5em;
             border-bottom-right-radius: 0.5em;
+            float: right;
         }
     }
 }

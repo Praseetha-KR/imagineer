@@ -3,22 +3,39 @@ layout: default
 title: imagineer
 active: blog
 ---
-<div class="home wrapper centered">
-    <aside>
-        <img src="/assets/img/imagineer.svg" onerror="this.onerror=null; this.src='/assets/img/imagineer.png'" alt="Praseetha KR" class="contain-width space-4-top">
-    </aside>
-    <div class="container">
+<header role="banner">
+    <section role="navigation">
+        <a href="/" class="logo title-type">Praseetha KR</a>
+        <nav role="menubar" class="title-type text-right">
+            <a role="menuitem" href="/" {% if page.active == 'blog' %}class="active"{% endif %}>Blog</a>
+            <a role="menuitem" href="/works" {% if page.active == 'works' %}class="active"{% endif %}>Work</a>
+            <a role="menuitem" href="/experiments" {% if page.active == 'experiments' %}class="active"{% endif %}>Experiments</a>
+        </nav>
+    </section>
+    <section role="heading">
+            <h1 class="header-type">Imagineering the web!</h1>
+
+    </section>
+</header>
+<section role="note">
+    <div class="desc-type">Notes on frontend development, design &amp; other musings by Praseetha KR (<a href="https://twitter.com/void_imagineer">@void_imagineer</a>)</div>
+</section>
+<div class="wrapper">
+    <div class="home">
+        <!-- <header role="heading" class="push-6-top push-5-bottom">
+            <div class="wrapper centered">
+                <h1 class="header-type">Hi there!</h1>
+            </div>
+        </header> -->
         <ul role="list" class="list-silent archives push-3-top">
             {% for post in paginator.posts %}
                 {% if post.status != 'draft' %}
-                    <li role="listitem">
-                        <div>
-                            <h2 class="header-type">
-                                <a href="{{ post.url }}">{{ post.title }}</a>
-                            </h2>
-                            <time>{{ post.date | date_to_string }}</time>
-                            <p>{{ post.excerpt }}</p>
-                        </div>
+                    <li role="listitem" class="push-5-bottom">
+                        <h4 class="header-type push-h-bottom inlineblock">
+                            <a class="dark" href="{{ post.url }}">{{ post.title }}</a>
+                        </h4>
+                        <time class="inlineblock gray pad-h-left">{{ post.date | date_to_string }}</time>
+                        <div class="gray">{{ post.blurb }}</div>
                     </li>
                 {% endif %}
             {% endfor %}
@@ -40,20 +57,17 @@ active: blog
                 {% endif %}
             </nav>
         </section>
-        <nav role="navigation" class="space-3-top">
-            {% if paginator.next_page %}
-                <a href="{{ paginator.next_page_path }}" class="dark">
+        <!-- <nav role="navigation" class="space-3-top">
+            <a href="{{ paginator.next_page_path }}" class="dark">
+                {% if paginator.next_page %}
                     <i class="fa fa-chevron-left"></i>
-                    <!-- <span>Old posts</span> -->
-                </a>
-            {% endif %}
-            <!-- <a class="all-caps">Posts</a> -->
-            {% if paginator.previous_page %}
-                <a href="{{ paginator.previous_page_path }}" class="dark text-right">
-                    <!-- <span>New posts</span> -->
+                {% endif %}
+            </a>
+            <a href="{{ paginator.previous_page_path }}" class="dark text-right">
+                {% if paginator.previous_page %}
                     <i class="fa fa-chevron-right"></i>
-                </a>
-            {% endif %}
-        </nav>
+                {% endif %}
+            </a>
+        </nav> -->
     </div>
 </div>

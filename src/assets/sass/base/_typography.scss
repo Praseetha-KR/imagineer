@@ -7,10 +7,14 @@ $font-stack__title: (
     serif,
 );
 $font-stack__heading: (
-    'Gentium Book Basic',
-    'Vollkorn',
     'Merriweather',
+    'EB Garamond',
     serif,
+);
+$font-stack__desc: (
+    'Merriweather',
+    'Georgia',
+    serif
 );
 $font-stack__handwriting: (
     'Coming Soon',
@@ -38,7 +42,9 @@ strong {
 .header-type {
     font-family: $font-stack__heading;
 }
-
+.desc-type {
+    font-family: $font-stack__desc;
+}
 .informal-type {
     font-family: $font-stack__handwriting;
 }
@@ -52,21 +58,21 @@ main {
         font-family: $font-stack__heading;
     }
     h1 {
-        font-size: 3em;
+        font-size: 2em;
     }
     h2 {
-        font-size: 2.3em;
+        font-size: 1.8em;
     }
     h3 {
-        font-size: 1.9em;
-    }
-    h4 {
         font-size: 1.6em;
     }
+    h4 {
+        font-size: 1.4em;
+    }
     h5 {
-        font-size: 1.3em;
+        font-size: 1.2em;
     }
     h6 {
-        font-size: 1.1em;
+        font-size: 1em;
     }
 }

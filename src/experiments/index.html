@@ -5,11 +5,26 @@ comments: true
 active: experiments
 ---
 
+<header role="banner">
+    <section role="navigation">
+        <a href="/" class="logo title-type">Praseetha KR</a>
+        <nav role="menubar" class="title-type text-right">
+            <a role="menuitem" href="/" {% if page.active == 'blog' %}class="active"{% endif %}>Blog</a>
+            <a role="menuitem" href="/works" {% if page.active == 'works' %}class="active"{% endif %}>Work</a>
+            <a role="menuitem" href="/experiments" {% if page.active == 'experiments' %}class="active"{% endif %}>Experiments</a>
+        </nav>
+    </section>
+    <section role="heading">
+            <h1 class="header-type">Experiments</h1>
+
+    </section>
+</header>
+<section role="note">
+    <div class="desc-type">Few of my code experiments</div>
+</section>
+
 <div class="wrapper centered">
-    <header class="space-3">
-        <h2>Experiments</h2>
-    </header>
-    <article role="article" class="container">
+    <article role="article">
         <div class="work__item">
             <h3>CSS3 Background Pattern Generator</h3>
             <div class="space-one-bottom">
