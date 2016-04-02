@@ -71,3 +71,10 @@ figcaption {
     margin-bottom: 2em;
     margin-top: 0.25em;
 }
+
+blockquote {
+    font-style: italic;
+    border-left: 0.5em solid $color__primary;
+    padding-left: 1.2em;
+    margin: 0.8em 0 2em;
+}

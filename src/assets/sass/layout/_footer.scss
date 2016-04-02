@@ -9,3 +9,9 @@ footer[role="contentinfo"] {
         }
     }
 }
+.footer-lining {
+    height: 0.4em;
+    width: 100%;
+    background: linear-gradient(to right, $color__primary, $color__primary 50%, $color__secondary 50%, $color__secondary);
+    background-size: 12em 100%;
+}

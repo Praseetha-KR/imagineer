@@ -24,6 +24,13 @@ comments: true
     ul:not(.list-silent)>li:before {
         background-color: {{ page.theme1 }};
     }
+    .footer-lining {
+        background: linear-gradient(to right, {{ page.theme1 }}, {{ page.theme1 }} 50%, {{ page.theme2 }} 50%, {{ page.theme2 }});
+        background-size: 12em 100%;
+    }
+    blockquote {
+        border-left-color: $color__primary;
+    }
 </style>
 
 <header role="banner">
