@@ -1,14 +1,14 @@
 $font-stack__text: (
     'Open Sans',
-    sans-serif,
+    sans-serif
 );
 $font-stack__title: (
     'Montserrat',
-    serif,
+    serif
 );
 $font-stack__heading: (
     'Merriweather',
-    'EB Garamond',
+    'Georgia',
     serif,
 );
 $font-stack__desc: (
@@ -20,11 +20,11 @@ $font-stack__quote: (
     'Georgia',
     serif
 );
-$font-stack__handwriting: (
-    'Coming Soon',
-    'Open Sans',
-    sans-serif
-);
+// $font-stack__handwriting: (
+//     'Coming Soon',
+//     'Open Sans',
+//     sans-serif
+// );
 $font-stack__code: (
     monospace,
     sans-serif
@@ -49,9 +49,9 @@ strong {
 .desc-type {
     font-family: $font-stack__desc;
 }
-.informal-type {
-    font-family: $font-stack__handwriting;
-}
+// .informal-type {
+//     font-family: $font-stack__handwriting;
+// }
 .highlight {
     font-family: $font-stack__code;
 }
