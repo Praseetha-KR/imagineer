@@ -6,29 +6,16 @@ active: about
 theme1: 'rgba(0, 188, 212, 0.7)'
 theme2: 'rgba(76, 175, 80, 0.7)'
 ---
+
 <style>
     header[role="banner"] {
         background-image: linear-gradient(90deg, {{ page.theme1 }}, {{ page.theme2 }}), url(/assets/img/hills.jpg);
         background-position: center bottom;
     }
 </style>
-<header role="banner">
-    <section role="navigation">
-        <a href="/" class="logo title-type">Praseetha KR</a>
-        <nav role="menubar" class="title-type text-right">
-            <a role="menuitem" href="/" {% if page.active == 'blog' %}class="active"{% endif %}>Blog</a>
-            <a role="menuitem" href="/works" {% if page.active == 'works' %}class="active"{% endif %}>Work</a>
-            <a role="menuitem" href="/experiments" {% if page.active == 'experiments' %}class="active"{% endif %}>Experiments</a>
-            <a role="menuitem" href="/about" {% if page.active == 'about' %}class="active"{% endif %}>About</a>
-        </nav>
-    </section>
-    <section role="heading">
-            <h1 class="header-type">About me</h1>
-    </section>
-</header>
-<section role="note">
-    <div class="desc-type">Engineer living in a world of imaginations.<br><abbr>A.K.A</abbr> imagineer!</div>
-</section>
+
+{% include banner.html posttitle="About me" %}
+{% include blurb.html blurb="Engineer living in a world of imaginations. A.K.A imagineer!" %}
 
 <div class="wrapper centered push-3-top article">
     <article role="article">

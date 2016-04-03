@@ -1,0 +1,7 @@
+<nav role="menubar" class="title-type text-right">
+    <a role="menuitem" href="/" {% if page.active == 'blog' %}class="active"{% endif %}>Blog</a>
+    <a role="menuitem" href="/works" {% if page.active == 'works' %}class="active"{% endif %}>Work</a>
+    <a role="menuitem" href="/experiments" {% if page.active == 'experiments' %}class="active"{% endif %}>Experiments</a>
+    <a role="menuitem" href="/about" {% if page.active == 'about' %}class="active"{% endif %}>About</a>
+    <a role="menuitem" href="/feed.xml">Feed</a>
+</nav>

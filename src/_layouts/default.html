@@ -27,54 +27,10 @@
 
   </head>
   <body>
-    <!-- <header role="banner" class="table pad-3 push-3">
-        <span class="cell push-1 pad-1">
-            <a href="/"><h1 class="title-type">Praseetha KR</h1></a>
-        </span>
-
-        <nav role="menubar" class="cell title-type text-right">
-            <a role="menuitem" href="/" {% if page.active == 'blog' %}class="active"{% endif %}>Blog</a>
-            <a role="menuitem" href="/works" {% if page.active == 'works' %}class="active"{% endif %}>Work</a>
-            <a role="menuitem" href="/experiments" {% if page.active == 'experiments' %}class="active"{% endif %}>Lab</a>
-        </nav>
-    </header> -->
     <main role="main">
         {{ content }}
     </main>
-    <div class="footer-lining space-4-top"></div>
-    <footer role="contentinfo" class="push-1 pad-1">
-        <div class="wrapper centered overflowhidden">
-            <div class="row space-3">
-                <div class="col-sm-9">
-                    <section class="profile">
-                       <div class="row">
-                           <div class="col-sm-4 text-right">
-                                <img src="/assets/img/praseetha_kr.jpg" alt="">
-                           </div>
-                           <div class="col-sm-8">
-                                <p>Hey there! I'm <strong>Praseetha KR</strong>, a web developer/designer from Bangalore. <a href="/about">more <i class="fa fa-angle-right"></i></a></p>
-                           </div>
-                       </div>
-
-                    </section>
-                </div>
-                <div class="col-sm-3">
-                    <div class="social">
-                        <a href="https://twitter.com/void_imagineer" target="_blank">
-                            <i class="fa fa-twitter fa-4x"></i>
-                        </a>&nbsp;&nbsp;
-                        <a href="https://github.com/Praseetha-KR" target="_blank">
-                            <i class="fa fa-github fa-4x"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- <img src="/assets/img/logo_white.png" class="footer-logo" alt="Logo"> -->
-        <div class="text-center"> &copy; 2011 - 2016</div>
-    </footer>
-
+    {% include footer.html %}
     <script type="text/javascript" src="/assets/js/app.min.js"></script>
   </body>
 </html>

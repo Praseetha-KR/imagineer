@@ -3,32 +3,11 @@ layout: default
 title: imagineer
 active: blog
 ---
-<header role="banner">
-    <section role="navigation">
-        <a href="/" class="logo title-type">Praseetha KR</a>
-        <nav role="menubar" class="title-type text-right">
-            <a role="menuitem" href="/" {% if page.active == 'blog' %}class="active"{% endif %}>Blog</a>
-            <a role="menuitem" href="/works" {% if page.active == 'works' %}class="active"{% endif %}>Work</a>
-            <a role="menuitem" href="/experiments" {% if page.active == 'experiments' %}class="active"{% endif %}>Experiments</a>
-            <a role="menuitem" href="/about" {% if page.active == 'about' %}class="active"{% endif %}>About</a>
-            <a role="menuitem" href="/feed.xml">Feed</a>
-        </nav>
-    </section>
-    <section role="heading">
-            <h1 class="header-type">Imagineering the web!</h1>
+{% include banner.html posttitle="Imagineering the web!" %}
+{% include blurb.html blurb="Notes on frontend development, design & other thoughts by Praseetha KR" %}
 
-    </section>
-</header>
-<section role="note">
-    <div class="desc-type">Notes on frontend development, design &amp; other musings by Praseetha KR (<a href="https://twitter.com/void_imagineer" target="_blank">@void_imagineer</a>)</div>
-</section>
 <div class="wrapper">
     <div class="home">
-        <!-- <header role="heading" class="push-6-top push-5-bottom">
-            <div class="wrapper centered">
-                <h1 class="header-type">Hi there!</h1>
-            </div>
-        </header> -->
         <ul role="list" class="list-silent archives push-3-top">
             {% for post in paginator.posts %}
                 {% if post.status != 'draft' %}
@@ -43,33 +22,7 @@ active: blog
             {% endfor %}
         </ul>
         <section>
-            <nav class="pagination-nav space-3-top contain-width table">
-                {% if paginator.next_page %}
-                    <a class="cell" href="{{ paginator.next_page_path }}">
-                        <i class="fa fa-angle-left"></i>
-                        <span>Old posts</span>
-                    </a>
-                {% endif %}
-                <!-- <a class="all-caps">Posts</a> -->
-                {% if paginator.previous_page %}
-                    <a class="cell text-right" href="{{ paginator.previous_page_path }}">
-                        <span>New posts</span>
-                        <i class="fa fa-angle-right"></i>
-                    </a>
-                {% endif %}
-            </nav>
+            {% include pagination.html prev_title=paginator.previous_page prev_url=paginator.previous_page_path next_title=paginator.next_page next_url=paginator.next_page_path %}
         </section>
-        <!-- <nav role="navigation" class="space-3-top">
-            <a href="{{ paginator.next_page_path }}" class="dark">
-                {% if paginator.next_page %}
-                    <i class="fa fa-chevron-left"></i>
-                {% endif %}
-            </a>
-            <a href="{{ paginator.previous_page_path }}" class="dark text-right">
-                {% if paginator.previous_page %}
-                    <i class="fa fa-chevron-right"></i>
-                {% endif %}
-            </a>
-        </nav> -->
     </div>
 </div>

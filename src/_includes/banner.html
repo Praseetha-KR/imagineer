@@ -1,0 +1,13 @@
+<header role="banner">
+    {% include header.html %}
+    <section role="heading">
+        <h1 class="header-type">{{ include.posttitle }}</h1>
+        {% if include.postdate %}
+            <div>
+                <em><small>Published on </small>
+                <time>{{ include.postdate }}</time></em>
+                &nbsp;&nbsp;&nbsp;<small>by <a href="https://twitter.com/void_imagineer" target="_blank">@void_imagineer</a></small>
+            </div>
+        {% endif %}
+    </section>
+</header>
