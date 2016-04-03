@@ -12,11 +12,11 @@ active: works
             <a role="menuitem" href="/" {% if page.active == 'blog' %}class="active"{% endif %}>Blog</a>
             <a role="menuitem" href="/works" {% if page.active == 'works' %}class="active"{% endif %}>Work</a>
             <a role="menuitem" href="/experiments" {% if page.active == 'experiments' %}class="active"{% endif %}>Experiments</a>
+            <a role="menuitem" href="/about" {% if page.active == 'about' %}class="active"{% endif %}>About</a>
         </nav>
     </section>
     <section role="heading">
             <h1 class="header-type">Works</h1>
-
     </section>
 </header>
 <section role="note">
@@ -35,13 +35,32 @@ active: works
         <header class="work__category">
             <h3>Web Design &amp; Development</h3>
         </header>
+
+        <div class="work__item">
+            <div class="space-one-bottom">
+                <a href="https://pothi.com/" target="_blank"><img class="full-width" src="/assets/img/media/work_pothi.jpg" alt="Pothi.com Redesign"></a>
+            </div>
+            <h4>Rewamp design+code: Pothi.com</h4>
+            <time>July 2015</time>
+            <p><a href="https://pothi.com/" target="_blank">pothi.com</a></p>
+        </div>
+
+        <div class="work__item">
+            <div class="space-one-bottom">
+                <a href="https://droidcon.in/2014/" target="_blank"><img class="full-width" src="/assets/img/media/work_droidcon2014.jpg" alt="Droidcon 2014"></a>
+            </div>
+            <h4>Design/Code: Droidcon 2014</h4>
+            <time>December 2014</time>
+            <p>UI Design &amp; HTML+CSS initial code for <a href="https://droidcon.in/2014/" target="_blank">Droidcon 2014 website</a>. Here is the <a href="https://github.com/hasgeek/droidcon/tree/2014-eventframe" target="_blank">source code</a>.</p>
+        </div>
+
         <div class="work__item">
             <div class="space-one-bottom">
                 <a href="https://jsfoo.in/2014/" target="_blank"><img class="full-width" src="/assets/img/media/work_jsfoo2014.jpg" alt="JSFoo 2014"></a>
             </div>
             <h4>Design/Code: JSFoo 2014</h4>
             <time>September 2014</time>
-            <p>UI Design &amp; HTML+CSS code for <a href="https://jsfoo.in/2014/">JSFoo 2014 website</a> on top of modified <a href="https://github.com/hasgeek/jsfoo/tree/2013-eventframe">eventframe template</a>. Here is the <a href="https://github.com/hasgeek/jsfoo/tree/2014-eventframe">source code</a>.</p>
+            <p>UI Design &amp; HTML+CSS code for <a href="https://jsfoo.in/2014/" target="_blank">JSFoo 2014 website</a> on top of modified <a href="https://github.com/hasgeek/jsfoo/tree/2013-eventframe" target="_blank">eventframe template</a>. Here is the <a href="https://github.com/hasgeek/jsfoo/tree/2014-eventframe" target="_blank">source code</a>.</p>
         </div>
 
         <div class="work__item">
@@ -52,7 +71,7 @@ active: works
                 Design/Code: Rootconf 2014
             </h4>
             <time>April 2014</time>
-            <p>UI Design &amp; HTML+CSS code for <a href="https://rootconf.in/2014/">Rootconf 2014 website</a> on top of modified <a href="https://github.com/hasgeek/jsfoo/tree/2013-eventframe">JSFoo eventframe template</a>. Here is the <a href="https://github.com/hasgeek/rootconf/tree/2014-eventframe">source code</a>.</p>
+            <p>UI Design &amp; HTML+CSS code for <a href="https://rootconf.in/2014/" target="_blank">Rootconf 2014 website</a> on top of modified <a href="https://github.com/hasgeek/jsfoo/tree/2013-eventframe" target="_blank">JSFoo eventframe template</a>. Here is the <a href="https://github.com/hasgeek/rootconf/tree/2014-eventframe" target="_blank">source code</a>.</p>
         </div>
 
         <div class="work__item">
@@ -63,7 +82,7 @@ active: works
                 Design/Code: Meta Refresh 2014
             </h4>
             <time>January 2014</time>
-            <p>UI Design &amp; HTML+CSS code for <a href="https://metarefresh.in/2014/">Meta Refresh 2014 website</a> on top of modified <a href="https://github.com/hasgeek/jsfoo/tree/2013-eventframe">JSFoo eventframe template</a>. Here is the <a href="https://github.com/hasgeek/metarefresh/tree/2014-eventframe">source code</a>.</p>
+            <p>UI Design &amp; HTML+CSS code for <a href="https://metarefresh.in/2014/" target="_blank">Meta Refresh 2014 website</a> on top of modified <a href="https://github.com/hasgeek/jsfoo/tree/2013-eventframe" target="_blank">JSFoo eventframe template</a>. Here is the <a href="https://github.com/hasgeek/metarefresh/tree/2014-eventframe" target="_blank">source code</a>.</p>
         </div>
 
         <div class="work__item">
@@ -74,7 +93,7 @@ active: works
                 Design/Code: Droidcon 2013
             </h4>
             <time>November 2013</time>
-            <p>UI Design &amp; HTML+CSS code for <a href="https://droidcon.in/2013/">Droidcon 2013 website</a> on top of modified <a href="https://github.com/hasgeek/jsfoo/tree/2013-eventframe">JSFoo eventframe template</a>. Here is the <a href="https://github.com/hasgeek/droidcon/tree/2013-eventframe">source code</a>.</p>
+            <p>UI Design &amp; HTML+CSS code for <a href="https://droidcon.in/2013/" target="_blank">Droidcon 2013 website</a> on top of modified <a href="https://github.com/hasgeek/jsfoo/tree/2013-eventframe" target="_blank">JSFoo eventframe template</a>. Here is the <a href="https://github.com/hasgeek/droidcon/tree/2013-eventframe" target="_blank">source code</a>.</p>
         </div>
 
         <div class="work__item">
@@ -171,7 +190,40 @@ active: works
 
         <div class="work__item">
             <div class="space-one-bottom">
-                <img class="full-width" src="/assets/img/media/work_gitwslogo.jpg" alt="Droidcon India 2014 logo">
+                <img class="full-width" src="/assets/img/media/work_pythonexpress.jpg" alt="Python Express logo">
+            </div>
+            <h4>
+                Logo: Python Express
+            </h4>
+            <time>Oct 2015</time>
+            <p>Designed logo for <a href="https://pythonexpress.in/" target="_blank">pythonexpress.in</a>.</p>
+        </div>
+
+        <div class="work__item">
+            <div class="space-one-bottom">
+                <img class="full-width" src="/assets/img/media/work_pssi.jpg" alt="PSSI logo">
+            </div>
+            <h4>
+                Logo: PSSI (Python Software Society of India)
+            </h4>
+            <time>Feb 2015</time>
+            <p>Designed logo for <a href="https://pssi.org.in/" target="_blank">pssi.org.in</a>.</p>
+        </div>
+
+        <div class="work__item">
+            <div class="space-one-bottom">
+                <img class="full-width" src="/assets/img/media/work_bangpypers.jpg" alt="PSSI logo">
+            </div>
+            <h4>
+                Bangpypers logo &amp; 10th anniversary sticker
+            </h4>
+            <time>Oct 2014 &amp; Sept 2015</time>
+            <p>Designed logo for <a href="http://www.meetup.com/BangPypers/" target="_blank">Bangpypers</a> - Bangalore Python Users Group. Also stickers for 10th anniversary.</p>
+        </div>
+
+        <div class="work__item">
+            <div class="space-one-bottom">
+                <img class="full-width" src="/assets/img/media/work_gitwslogo.jpg" alt="Git workshop 2013 logo">
             </div>
             <h4>
                 Logo: Git Workshop - May 2013
@@ -182,7 +234,7 @@ active: works
 
         <div class="work__item">
             <div class="space-one-bottom">
-                <img class="full-width" src="/assets/img/media/work_droidconlogo.jpg" alt="Droidcon India 2014 logo">
+                <img class="full-width" src="/assets/img/media/work_droidconlogo.jpg" alt="Droidcon India 2013 logo">
             </div>
             <h4>
                 Logo: Droidcon India 2013

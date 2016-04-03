@@ -31,8 +31,7 @@ Compositing is <strong>combining separate visual elements into a single image</s
         </tr>
     </tbody>
 </table>
-<br>
-<br>
+
 ##Porter-Duff Compositing
 When 2 pixels get combined, 4 subpixel regions are formed:
 
@@ -41,7 +40,7 @@ When 2 pixels get combined, 4 subpixel regions are formed:
    - both are present
    - neither is present (always empty)
 
-<div class="push-two">
+<div class="push-two half-width">
     <img src="/assets/img/posts/porter-duff-compositing/subpixel_regions.png" alt="">
 </div>
 
