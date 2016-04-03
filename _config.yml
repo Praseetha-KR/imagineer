@@ -11,3 +11,5 @@ paginate: 12
 paginate_path: "/page:num"
 permalink: /blog/:title
 twitter_username: void_imagineer
+# relative_permalinks: true
+future: true
