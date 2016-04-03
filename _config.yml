@@ -18,7 +18,7 @@ highlighter: rouge
 
 paginate: 12
 paginate_path: "/page:num"
-permalink: /blog/:title
+permalink: /blog/:title/
 
 # relative_permalinks: true
 
