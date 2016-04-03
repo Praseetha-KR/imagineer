@@ -4,6 +4,8 @@ title:  "Daemonizing processes in OSX"
 date:   2015-09-24 23:35:00
 categories: blog
 blurb: "Experiments"
+theme1: '#AE448A'
+theme2: '#5879CF'
 ---
 
 Processes such as `redis` and `mongodb` have to be started manually each time after system restart on *Mac* and they occupy a terminal instance each. Daemonizing them will make the process to start automatically & without the need for a dedicated terminal.

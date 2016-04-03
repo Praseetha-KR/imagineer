@@ -4,6 +4,8 @@ title:  "Pixr - CSS image editor"
 date:   2015-11-16 03:35:00
 categories: blog
 blurb: "Experiments"
+theme1: '#E9C938'
+theme2: '#F58077'
 ---
 I'm definitely late to the party! though it is better than not to show up at all 😎
 
