@@ -9,7 +9,7 @@ $font-stack__title: (
 $font-stack__heading: (
     'Merriweather',
     'Georgia',
-    serif,
+    serif
 );
 $font-stack__desc: (
     'Merriweather',
@@ -20,11 +20,6 @@ $font-stack__quote: (
     'Georgia',
     serif
 );
-// $font-stack__handwriting: (
-//     'Coming Soon',
-//     'Open Sans',
-//     sans-serif
-// );
 $font-stack__code: (
     monospace,
     sans-serif
@@ -49,9 +44,6 @@ strong {
 .desc-type {
     font-family: $font-stack__desc;
 }
-// .informal-type {
-//     font-family: $font-stack__handwriting;
-// }
 .highlight {
     font-family: $font-stack__code;
 }
