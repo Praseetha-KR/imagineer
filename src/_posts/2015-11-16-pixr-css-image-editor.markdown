@@ -14,7 +14,6 @@ There are a ton of articles on internet about the *moderately latest* CSS proper
 ### tl;dr
 <a class="btn btn-theme" href="http://praseetha-kr.github.io/pixr/" target="_blank">Pixr - CSS Image Editor</a>
 
-<br>
 ## filter
 
 Applies different filters on top of image. [Browser support](http://caniuse.com/#search=filter)
