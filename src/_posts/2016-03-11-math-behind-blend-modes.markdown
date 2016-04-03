@@ -10,7 +10,7 @@ theme2: 'orange'
 
 Ever since I dabbled around [css blend modes](https://imagineer.in/blog/pixr-css-image-editor/), I wanted to look into the math behind it.
 
-##Compositing in CSS
+## Compositing in CSS
 Compositing is <strong>combining separate visual elements into a single image</strong>. There have been 2 types of compositing techniques used in CSS so far.
 
 <table>
@@ -32,7 +32,7 @@ Compositing is <strong>combining separate visual elements into a single image</s
     </tbody>
 </table>
 
-##Porter-Duff Compositing
+## Porter-Duff Compositing
 When 2 pixels get combined, 4 subpixel regions are formed:
 
    - Region where only source is present
@@ -170,7 +170,7 @@ co = αs x Fs x Cs + αb x Fb x Cb
 ```
 
 
-##Blending
+## Blending
 Blending is the aspect of compositing that calculates the mixing of colors where the source element and backdrop overlap.
 
 ``` bash

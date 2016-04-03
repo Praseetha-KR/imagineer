@@ -26,29 +26,30 @@ A pixel is the unit of display screen. Typically pixel is represented by RGB plu
 Consider a HD image, it is having resolution of 1920 x 1080.
 
 Total number of pixels for an HD image:
-{% highlight bash %}
+
+```bash
 1920 * 1080 = 2073600 pixels = 1.977 Mega pixels ~ 2 Mega pixels
-{% endhighlight %}
+```
 
-<br>Memory required to represent an HD image:
+Memory required to represent an HD image:
 
-{% highlight bash %}
+```bash
 2073600 * 4 = 8294400 bytes = 7.910 MB ~ 8 MB
-{% endhighlight %}
+```
 
-<br>Since the persistence of vision is 1/16th of a second, there should be atleast 16 picture frames to make a video out of sequence of pictures. Usually this frequency is 24 fps or 30 fps (frames per second).
+Since the persistence of vision is 1/16th of a second, there should be atleast 16 picture frames to make a video out of sequence of pictures. Usually this frequency is 24 fps or 30 fps (frames per second).
 
-{% highlight bash %}
+```bash
 24 fps * 5 min = 24 fps * 5 * 60 s = 7200 frames
-{% endhighlight %}
+```
 
-<br>5 min requires 7200 pictures.
+5 min requires 7200 pictures.
 
-{% highlight bash %}
+```bash
 7200 pictures * 8 MB = 57600 MB = 56.25 GB ~ 56 GB
-{% endhighlight %}
+```
 
-<br>So a **5 min video require 56 GB memory!** This is even without audio!!
+So a **5 min video require 56 GB memory!** This is even without audio!!
 
 Usually a **5 min youtube video is of 120 MB** size. This size reduction is done with video compression.
 

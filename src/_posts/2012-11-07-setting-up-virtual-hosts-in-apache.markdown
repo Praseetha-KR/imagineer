@@ -17,53 +17,58 @@ Virtual host is actually localhost itself, but with a different alias. Every vir
 2) Open file <code>C:\xampp\apache\conf\extra\httpd-vhosts.conf</code> with a text editor.
 
 3) Uncomment the line 19 “<code># NameVirtualHost *:80</code>“. So, we will get,
-{% highlight bash %}
-	NameVirtualHost *:80
-{% endhighlight %}
+
+```bash
+NameVirtualHost *:80
+```
 
 4) Concatenate the following snippet at the end of the file. This will help you to access ‘localhost’ all time.
-{% highlight bash %}
+
+```bash
+<VirtualHost *>
+    ServerAdmin admin@localhost.com
+    DocumentRoot "C:/xampp/htdocs"
+    ServerName localhost
+    ServerAlias localhost
+    <Directory "C:/xampp/htdocs">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+```
+
+5) For any additional virtual host, add the code to the bottom of the above file. For example, I want to setup a virtual host ‘testhost’ at D:\websites\
+
+```bash
     <VirtualHost *>
         ServerAdmin admin@localhost.com
-        DocumentRoot "C:/xampp/htdocs"
-        ServerName localhost
-        ServerAlias localhost
-        <Directory "C:/xampp/htdocs">
-            Options Indexes FollowSymLinks Includes ExecCGI
+        DocumentRoot "D:\website"
+        ServerName testhost
+        ServerAlias testhost
+        <Directory "D:\website">
             Order allow,deny
             Allow from all
         </Directory>
     </VirtualHost>
-{% endhighlight %}
-
-5) For any additional virtual host, add the code to the bottom of the above file. For example, I want to setup a virtual host ‘testhost’ at D:\websites\
-	{% highlight bash %}
-	    <VirtualHost *>
-	        ServerAdmin admin@localhost.com
-	        DocumentRoot "D:\website"
-	        ServerName testhost
-	        ServerAlias testhost
-	        <Directory "D:\website">
-	            Order allow,deny
-	            Allow from all
-	        </Directory>
-	    </VirtualHost>
-	{% endhighlight %}
+```
 Don’t forget to save the httpd-vhosts.conf file.
 
 6) Now we have to set the IP for virtual host. For that, open Windows hosts file (C:\Windows\System32\drivers\etc\hosts) with a text editor.
 
 7) Find the following lines in hosts file:
-{% highlight bash %}
+
+```bash
 # localhost name resolution is handled within DNS itself.
 #	127.0.0.1       localhost
-{% endhighlight %}
+```
 add the virtual host ip as same as localhost after that line.
-{% highlight bash %}
+
+```bash
 # localhost name resolution is handled within DNS itself.
 	127.0.0.1       localhost
 	127.0.0.1       testhost #this is the virtual host name
-{% endhighlight %}
+```
 
 
 8) Restart Apache and type ‘testhost‘ in addressbar of browser. You can see your website running in the new virtual host!

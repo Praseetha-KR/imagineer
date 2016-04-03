@@ -12,7 +12,7 @@ I have started using Raspberry Pi today, and I can't control myself from saying 
 
 RPi has got a ARM1176JZF-S 700 MHz processor with 512MB RAM. I have attached a 8GB class 10 SD card to it.
 
-###Setting up RPi in Windows 7:###
+### Setting up RPi in Windows 7:###
 
 1. Preparing SD Card:
 	- Download the SD Formatting Tool from <a target="_blank" href="https://www.sdcard.org/downloads/formatter_4/eula_windows/">https://www.sdcard.org/downloads/formatter_4/eula_windows/</a>
@@ -48,7 +48,7 @@ Thats all! Raspbian has booted up running on RPi!
 </div>
 
 
-###SSHing to RPi:###
+### SSHing to RPi:
 I have connected a ethernet cable from laptop to RPi. Laptop have WiFi access, which has to be shared to LAN. So, on start button, search for 'View network connections', from the opened window right click on 'Wireless Network Connection' and choose 'properties'. Goto 'sharing' tab and check 'Allow other network users to connect through this computer's internet connection' along with selecting Home networking connection as 'Local Area Connection'.
 Now the RPi has got LAN Access.
 
@@ -65,7 +65,7 @@ Once the IP of RPi is known, you can SSH using <a href="http://www.putty.org/">P
 	</div>
 </div>
 
-### Troubleshooting###
+### Troubleshooting
 If the monitor shows 'No Signal' even after its connected to RPi with bootable SD card, then the problem may be because RPi deliver weak HDMI signals than it required to function. Using a short HDMI cable can solve problem. Also, making the following changes to config.txt in SD card can help:
 `hdmi_force_hotplug=1` --> makes sure the Pi believes the monitor/TV is really there
 

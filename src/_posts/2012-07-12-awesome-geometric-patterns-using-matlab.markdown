@@ -16,7 +16,7 @@ The basic line pattern of this chess pattern is as shown below:
 
 Such line patterns can be easily generated using this simple Matlab script:
 
-{% highlight matlab %}
+```matlab
 function pattern(angle)
 	lower = 2;
 	upper = 12;
@@ -45,7 +45,7 @@ function pattern(angle)
 	set(gca,'YLim',[0 line1(lastindex)+1]);
 	set(findobj('Type','line'),'Color','black');
 end
-{% endhighlight %}
+```
 
 Run this script as:
 {% highlight bash %}
@@ -54,9 +54,9 @@ Run this script as:
 
 For example,
 
-{% highlight bash %}
+```bash
 >> pattern(45)
-{% endhighlight %}
+```
 
 This will generate the pattern shown below:
 
@@ -66,9 +66,9 @@ You can also generate colorful thread patterns using this script! Choose an angl
 
 For example,
 
-{% highlight bash %}
+```bash
 >> pattern(145)
-{% endhighlight %}
+```
 
 Generate the following multicolor pattern:
 

@@ -8,8 +8,12 @@ blurb: "Check top 10 most-used commands in terminal"
 
 This small piece of code lets you know the top 10 most-used commands in terminal.
 
-`history | awk ‘{print $2}’| sort | uniq -c | sort -rn | head -10`
+```bash
+history | awk ‘{print $2}’| sort | uniq -c | sort -rn | head -10
+```
 
 We can also do the same using the following code:
 
-`cut -d\  -f 1 ~/.bash_history | sort | uniq -c | sort -rn | head -n 10 | sed ‘s/.*/  &/g’`
+```bash
+cut -d\  -f 1 ~/.bash_history | sort | uniq -c | sort -rn | head -n 10 | sed ‘s/.*/  &/g’
+```

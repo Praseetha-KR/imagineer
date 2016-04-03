@@ -1,10 +1,18 @@
-.highlighter-rouge {
+code.highlighter-rouge {
+    font-family: $font-stack__code;
+    background-color: $color__silver;
+    border-radius: 0.2em;
+    padding: 0 0.2em;
+}
+div.highlighter-rouge {
     // display: block;
+    font-family: $font-stack__code;
     padding: $btn__code-padding;
     border-radius: $btn__code-radius;
     background: #272822;
     color: #f8f8f2;
     overflow-x: auto;
+    margin-bottom: 1em;
     .hll {
         background-color: #49483e;
     }

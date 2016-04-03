@@ -8,7 +8,7 @@ blurb: "A tiny python script for finding the current external IP"
 
 Here is a simple python program for finding the current external IP address.
 
-{% highlight python %}
+```python
 import httplib
 import string
 
@@ -24,6 +24,4 @@ else:
 startstr = string.find(data1,': ')+2
 endstr = string.find(data1,'</b')
 print data1[startstr:endstr]
-
-{% endhighlight %}
-
+```

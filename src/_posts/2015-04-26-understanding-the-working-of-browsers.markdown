@@ -20,7 +20,7 @@ A browser have the following main parts:
 6. Data storage
 
 
-###1. User Interface Window
+### 1. User Interface Window
 The major components of browser interface include:
 
 - **Address bar**: to input the web address (URI)
@@ -29,7 +29,7 @@ The major components of browser interface include:
 - **Back and Forward buttons**: to navigate between recently loaded pages
 - **Bookmark**: option to save the URI for later reference
 
-###2. Web Browser Engine (Layout engine or Rendering engine)
+### 2. Web Browser Engine (Layout engine or Rendering engine)
 It takes marked up content (such as HTML, XML, image files, etc.) and formatting information (such as CSS, XSL, etc.) from the networking layer, parse it and then displays the formatted content on the screen.
 
 Parsing includes tokenization and parse tree (DOM tree and render tree) formation, which is followed by layout and paint events on the content window.
@@ -43,10 +43,10 @@ Here is a list of recent browser engines:
 
 Chrome runs multiple instances of rendering engine one for each tab. (Each tab runs a separate process).
 
-###3. Networking
+### 3. Networking
 Responsible for network calls such as HTTP requests, REST etc.
 
-###4. Javascript Engine
+### 4. Javascript Engine
 It interprets and executes javascript.
 List of js engines:
 
@@ -55,10 +55,10 @@ List of js engines:
 - **Chakra**: Internet Explorer
 - **JavaScriptCore**: Safari
 
-###5. UI Backend
+### 5. UI Backend
 This draws OS specific widgets such as input fields, windows, combo boxes etc.
 
-###6. Data Storage
+### 6. Data Storage
 It is a small database saved on client computer which store cache, cookies, etc. Browsers support storage mechanisms such as localStorage, IndexedDB, WebSQL and FileSystem.
 
 Here is an illustration of these processes:

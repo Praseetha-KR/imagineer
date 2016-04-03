@@ -11,11 +11,11 @@ I'm definitely late to the party! though it is better than not to show up at all
 
 There are a ton of articles on internet about the *moderately latest* CSS properties such as `filter`, `background-blend-mode` and `mix-blend-mode`. Neglecting the fact that it is not possible to use these features in production apps in near future (due to lack of old browsers support), I just wanted to look how it works.
 
-###tl;dr
+### tl;dr
 <a class="btn btn-theme" href="http://praseetha-kr.github.io/pixr/" target="_blank">Pixr - CSS Image Editor</a>
 
 <br>
-##filter
+## filter
 
 Applies different filters on top of image. [Browser support](http://caniuse.com/#search=filter)
 
@@ -41,7 +41,7 @@ Applies different filters on top of image. [Browser support](http://caniuse.com/
 }
 ```
 
-##background-blend-mode
+## background-blend-mode
 Background image is blended with background color of the same element. [Browser support](http://caniuse.com/#search=background-blend-mode)
 
 <br>Eg:
@@ -54,7 +54,7 @@ Background image is blended with background color of the same element. [Browser 
 }
 ```
 
-##mix-blend-mode
+## mix-blend-mode
 A div is blended on top of another div with background image. [Browser support](http://caniuse.com/#search=mix-blend-mode)
 
 <br>Eg:
@@ -91,5 +91,5 @@ A div is blended on top of another div with background image. [Browser support](
 | luminosity                 |
 
 
-###Here is a demo for all these three properties.
+### Here is a demo for all these three properties.
 <a class="btn btn-theme" href="http://praseetha-kr.github.io/pixr/" target="_blank">Pixr - CSS Image Editor</a>

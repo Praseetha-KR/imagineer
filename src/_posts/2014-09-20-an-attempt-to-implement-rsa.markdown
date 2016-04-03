@@ -10,18 +10,18 @@ blurb: "Implementation of mock RSA algorithm in python"
 
 Though we have studied [RSA algorithm][1] in college, it was just for the sake of theory examination. I never had thought about its practical implementation and how it is successfully existing over these many years. Here is an attempt to implement RSA encryption/decryption using python:
 
-###Step 1:
+### Step 1:
 Generate 2 distinct random prime numbers `p` and `q`
 
-{% highlight python %}
+```python
 p = generate_prime()
 while True:
 	q = generate_prime()
 	if q != p:
 		break
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # generate random prime function
 def generate_prime():
 	x = randint(100, 9999)
@@ -41,52 +41,53 @@ def is_prime(x):
 			return False
 		i += 1
 	return True
-{% endhighlight %}
+```
 
-###Step 2:
+### Step 2:
 Compute `n = pq`. n is used as the modulus for both the public and private keys. Its length is the *key length*.
 
-{% highlight python %}
+```python
 n = p * q
-{% endhighlight %}
+```
 
-###Step 3:
+### Step 3:
 Compute `φ(n) = φ(p)φ(q) = (p − 1)(q − 1)` where φ is [Euler's totient function][2].
 
-{% highlight python %}
+```python
 n1 = (p - 1) * (q - 1)
-{% endhighlight %}
+```
 
-###Step 4:
+### Step 4:
 Choose an integer e such that `1 < e < φ(n)` and `gcd(e, φ(n)) = 1`; i.e., e and φ(n) are coprime. e is released as the *public key exponent*.
 
-{% highlight python %}
+```python
 r = randint(2,100) # For efficiency 2 < e < 100
 while True:
 	if gcd(r, n1) == 1:
-			break
+		break
 	else:
 		r += 1
 e = r
-{% endhighlight %}
-{% highlight python %}
+```
+
+```python
 # function to find gcd
 def gcd(a, b):
 	while b:
 		a, b = b, a%b
 	return a
-{% endhighlight %}
+```
 
-###Step 5:
+### Step 5:
 Determine d as `d ≡ e−1 (mod φ(n))`; i.e., d is the [multiplicative inverse][3] of `e (modulo φ(n))`.
 
-{% highlight python %}
+```python
 d = modinv(e, n1)
-{% endhighlight %}
+```
 
 modinv is calculated using Extended Euclidean Algorithm.
 
-{% highlight python %}
+```python
 # function to find modular inverse
 def modinv(a,m):
 	g,x,y = egcd(a,m)
@@ -102,25 +103,25 @@ def egcd(a, b):
 	else:
 		g, y, x = egcd(b % a, a)
 		return (g, x - (b // a) * y, y)
-{% endhighlight %}
+```
 
-###Step 6: Encryption
+### Step 6: Encryption
 If 'm' is the message to be transmitted, it is encrypted as `c ≡ m^e * (mod n)` and c is send over network.
 
-{% highlight python %}
+```python
 c = (m**e) % n
-{% endhighlight %}
+```
 
-###Step 7: Decryption
+### Step 7: Decryption
 Upon recieving the encrypted message c, it is descrypted as `m ≡ c^d * (mod n)` to retrieve original message m.
 
-{% highlight python %}
+```python
 m = (c**d) % n
-{% endhighlight %}
+```
 
 **********
 
-##Practical limitations:
+## Practical limitations:
 With my Macbook Pro of 4GB & Ci5 2.4GHz, to run this decryption function successfully,
 
 +   The random primes generated `p` & `q` are kept below 10000.
@@ -132,7 +133,7 @@ As the size of the `p` and `q` increases, the value of `d` increases rapidly. Si
 
 Here is the complete python program:
 
-{% highlight python %}
+```python
 # coding=utf-8
 from random import randint
 import math
@@ -221,7 +222,7 @@ if __name__ == "__main__":
 	m1 = (c**d) % n
 	print("Decrypted message = %d" % m1)
 
-{% endhighlight %}
+```
 
 [1]: http://en.wikipedia.org/wiki/RSA_(cryptosystem)
 [2]: http://en.wikipedia.org/wiki/Euler%27s_totient_function
