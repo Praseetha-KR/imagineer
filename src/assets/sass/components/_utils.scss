@@ -47,8 +47,13 @@
 }
 
 .wrapper {
-    width: 60%;
+    width: 90%;
     margin: auto;
+}
+@media (min-width: 768px) {
+    .wrapper {
+        width: 60%;
+    }
 }
 
 .profile {

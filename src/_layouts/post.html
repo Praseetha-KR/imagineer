@@ -40,6 +40,7 @@ comments: true
             <a role="menuitem" href="/" {% if page.active == 'blog' %}class="active"{% endif %}>Blog</a>
             <a role="menuitem" href="/works" {% if page.active == 'works' %}class="active"{% endif %}>Work</a>
             <a role="menuitem" href="/experiments" {% if page.active == 'experiments' %}class="active"{% endif %}>Experiments</a>
+            <a role="menuitem" href="/about" {% if page.active == 'about' %}class="active"{% endif %}>About</a>
         </nav>
     </section>
     <section role="heading">
@@ -67,7 +68,7 @@ comments: true
             </section>
 
             <section>
-                <nav class="space-3-top contain-width table">
+                <nav class="pagination-nav space-3-top contain-width table">
                     {% if page.next.url %}
                     <a class="cell" href="{{page.next.url}}">
                         <i class="fa fa-angle-left pad-h-right"></i>

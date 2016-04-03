@@ -1,5 +1,6 @@
 table {
     border-collapse: collapse;
+    table-layout: fixed;
     th {
         background-color: $color__table-head-bg;
         color: $color__table-head-text;
@@ -21,5 +22,9 @@ table {
         tr:nth-child(2n+1) {
             background-color: $color__table-stripe;
         }
+    }
+    td pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
     }
 }

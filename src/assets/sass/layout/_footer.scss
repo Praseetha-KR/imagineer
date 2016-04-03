@@ -9,6 +9,19 @@ footer[role="contentinfo"] {
         }
     }
 }
+@media (max-width: 768px) {
+    footer[role="contentinfo"] {
+        &, .text-right {
+            text-align: center;
+        }
+        .social {
+            padding-top: 2em;
+        }
+        .fa-4x {
+            font-size: 3em;
+        }
+    }
+}
 .footer-lining {
     height: 0.4em;
     width: 100%;

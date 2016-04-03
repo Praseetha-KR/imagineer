@@ -1,5 +1,6 @@
 nav[role="menubar"] {
     a[role="menuitem"] {
+        display: block;
         padding: 0 1em;
         text-transform: uppercase;
         font-size: 0.85em;
@@ -9,7 +10,13 @@ nav[role="menubar"] {
         }
     }
 }
-
+@media (min-width: 768px) {
+    nav[role="menubar"] {
+        a[role="menuitem"] {
+            display: inline;
+        }
+    }
+}
 nav[role="navigation"] {
     font-size: 2em;
     position: fixed;
@@ -36,4 +43,12 @@ nav[role="navigation"] {
             float: right;
         }
     }
+}
+@media (max-width: 768px) {
+    nav[role="navigation"] {
+        display: none;
+    }
+}
+.pagination-nav {
+    font-size: 1.3em;
 }

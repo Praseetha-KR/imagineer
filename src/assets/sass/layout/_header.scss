@@ -19,10 +19,16 @@ header[role="banner"] {
         }
     }
     section[role="heading"] {
-        padding: 7em 3em;
+        padding: 7em 3em 8em;
         text-align: center;
         h1 {
-            font-size: 3em;
+            padding: 0;
+            font-size: 2em;
+            line-height: 1.5;
+            word-break: break-all;
+            word-break: break-word; /* Non standard for webkit */
+            hyphens: auto;
+            -webkit-hyphens: auto;
         }
         a {
             color: #333;
@@ -32,7 +38,20 @@ header[role="banner"] {
 section[role="note"] {
     background-color: $color__dark;
     color: white;
-    padding: 2em 30%;
+    padding: 2em;
     text-align: center;
     font-size: 1.2em;
+}
+@media (min-width: 768px) {
+    section[role="note"] {
+        padding: 2em 30%;
+    }
+    header[role="banner"] {
+        section[role="heading"] {
+            h1 {
+                padding: 0.5em;
+                font-size: 3em;
+            }
+        }
+    }
 }
