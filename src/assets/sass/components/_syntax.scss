@@ -1,4 +1,7 @@
-.highlight {
+.highlighter-rouge {
+    // display: block;
+    padding: $btn__code-padding;
+    border-radius: $btn__code-radius;
     background: #272822;
     color: #f8f8f2;
     overflow-x: auto;
