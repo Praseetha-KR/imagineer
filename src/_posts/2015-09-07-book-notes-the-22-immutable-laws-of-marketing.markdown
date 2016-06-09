@@ -4,6 +4,7 @@ title:  "Book notes: The 22 Immutable Laws of Marketing"
 date:   2015-09-07 03:02:01
 categories: blog
 blurb: "Notes for later reference"
+theme: '#82ACC2'
 ---
 
 **The 22 Immutable Laws of Marketing** [[1](#book)] is a book written by *Al Ries and Jack Trout*, with simple yet powerful tips for Marketing.  I had postponed reading the book at least for a year now just because I thought marketing was not an interesting topic for me. Well, I was wrong!

@@ -5,6 +5,7 @@ date:   2013-05-24 18:17:46
 categories: blog
 blurb: "In the shiny edge of flexbox!"
 status: 'draft'
+theme: '#F6547C'
 ---
 
 Time has come to get rid of the complexity of layouting with float and position properties, its the turn for flexbox. We are able to create more complex layouts with float, position properties, plus a little bit of javascript. But the complexity to implement it in the wide variety of browsers is also awful. Flexible box or in short, flexbox is the property in CSS which make the layout model much easier.

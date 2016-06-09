@@ -4,6 +4,7 @@ title:  "Make your own Animation clip Using Stopmotion"
 date:   2011-09-26 10:00:00
 categories: blog, opensource
 blurb: "Notes on starting with stopmotion"
+theme: '#87609C'
 ---
 
 The fundamental concept behind animation is ‘Persistence of vision’. An animated film is fundamentally a bunch of images changing rapidly on-screen, at a fixed frame rate- usually above 12fps. For making your own animation you don’t need to buy expensive and professional photographic or processing hardware or software, all you need is the following:

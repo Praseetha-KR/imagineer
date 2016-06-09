@@ -4,6 +4,7 @@ title:  "NaCl Crystals"
 date:   2015-09-13 01:18:00
 categories: blog
 blurb: "Experiments"
+theme: '#262533'
 ---
 
 This is about a serendipity that happened recently for me :P. I had kept a bit of salt water in a glass for 3-4 days and forgotten about it. When I finally noticed it and checked something amazing happened. There were these beautiful salt crystals formed inside it. I wanted to test the formation again so I tried it with a saturated salt solution on a dish for again for 3 days, and bam! the results.

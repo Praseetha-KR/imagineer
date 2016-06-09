@@ -3,9 +3,9 @@ layout: post
 title:  "Huawei E303C not detecting in MacBook Pro"
 date:   2014-01-07 21:40:30
 categories: blog
-theme: "#515E57"
 masthead: "/assets/img/posts/e303c.jpg"
 blurb: "Glitches of plugging in E303C huawei datacard in Macbook Pro Retina laptop"
+theme: "#7A6861"
 ---
 
 I have been trying to get my Huawei E303C 3G datacard to be working in MacBook Pro (15" retina i7 with OSX 10.8.3). Device showed a blinking green light, otherwise there was no sign of a connected USB device.

@@ -4,6 +4,7 @@ title:  "Djangothon"
 date:   2015-08-26 10:05:00
 categories: blog
 blurb: "About the experience of Djangothon 2015"
+theme: '#89BD9C'
 ---
 
 I participated in Djangothon on 22-23 August - a 24hr hackathon organized by HackerEarth as a part of 10 year anniversary celebrations of Django web framework. I got the awesome team partner [Sharat MR](https://twitter.com/cosmos_genius) and also [Devyani Kota](https://twitter.com/Devyani_kush). The core idea of hackathon was to contribute back to Django framework.

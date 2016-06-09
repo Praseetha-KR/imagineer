@@ -4,6 +4,7 @@ title:  "Stacking context with opacity"
 date:   2014-09-25 08:15:00
 categories: blog
 blurb: "How the opacity affects stacking context in browsers"
+theme: '#B4AB7E'
 ---
 
 CSS box model is a stack of 2-dimensional layers in which the default behaviour is:

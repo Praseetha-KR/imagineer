@@ -5,6 +5,7 @@ date:   2013-12-01 01:33:45
 categories: blog
 theme: "#8DCCAD"
 blurb: "My experience with Droidcon India conference"
+theme: '#78AEB9'
 ---
 
 This year's Droidcon India was the most memorable HasGeek event since I joined HasGeek one year ago. The sleepless nights extending over a month have come to an end.

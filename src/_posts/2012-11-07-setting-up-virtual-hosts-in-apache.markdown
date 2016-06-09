@@ -4,6 +4,7 @@ title:  "Setting up Virtual Hosts in Apache"
 date:   2012-11-07 10:41:29
 categories: blog
 blurb: "How to set up virtual hosts for website testing in windows"
+theme: '#7191C9'
 ---
 
 I have a Windows7 PC with <a href="http://www.apachefriends.org/en/xampp-windows.html">XAMPP</a> installed in it. Whenever I need to setup multiple sites in my machine, I used to put the site folders under <code>C:\\xampp\\htdocs\\</code> folder, which is the default <code>localhost</code> directory. The reason is that dynamically linked files need a host to run perfectly.

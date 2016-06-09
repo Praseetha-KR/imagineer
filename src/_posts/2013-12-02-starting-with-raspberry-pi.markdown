@@ -3,9 +3,9 @@ layout: post
 title:  "Starting with Raspberry Pi"
 date:   2013-12-02 07:14:30
 categories: blog
-theme: "#396948"
 masthead: "/assets/img/posts/rpi.jpg"
 blurb: "Getting started notes on installing Raspbian OS & SSHing to RPi"
+theme: '#4C7C66'
 ---
 
 I have started using Raspberry Pi today, and I can't control myself from saying that it is AWESOME!

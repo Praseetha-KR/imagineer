@@ -4,6 +4,7 @@ title:  "Installing XAMPP and WordPress"
 date:   2011-09-03 12:45:00
 categories: blog, opensource, web
 blurb: "Notes on setting up XAMPP server and WordPress in windows laptop"
+theme: '#A27B56'
 ---
 
 The easiest way to setup a website and to test it before publishing to web is using XAMPP and WordPress.

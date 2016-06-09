@@ -4,6 +4,7 @@ title:  "Winged Friends"
 date:   2011-04-19 09:45:00
 categories: blog, thoughts
 blurb: "Vacation time with my birdie friends!"
+theme: '#C6BA5A'
 ---
 
 One of my favourite hobbies during the summer vacation is bird watching. The world of winged friends is really amazing, I can’t express through words that how much it give pleasure to me. Their wide variety of colours, sweet voices, cute beaks, soft feathers, and above all, their wings which enable them to fly over the sky... everything make me so jealous of them.

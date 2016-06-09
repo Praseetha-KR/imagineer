@@ -4,6 +4,7 @@ title:  "Python script to find the current External IP"
 date:   2011-09-26 01:17:50
 categories: blog
 blurb: "A tiny python script for finding the current external IP"
+theme: '#623F41'
 ---
 
 Here is a simple python program for finding the current external IP address.
