@@ -3,19 +3,11 @@ layout: default
 title: imagineer
 comments: true
 active: about
-theme1: 'rgba(0, 188, 212, 0.7)'
-theme2: 'rgba(76, 175, 80, 0.7)'
 ---
 
-<style>
-    header[role="banner"] {
-        background-image: linear-gradient(90deg, {{ page.theme1 }}, {{ page.theme2 }}), url(/assets/img/hills.jpg);
-        background-position: center bottom;
-    }
-</style>
-
-{% include banner.html posttitle="About me" %}
-{% include blurb.html blurb="Engineer living in a world of imaginations. A.K.A imagineer!" %}
+<header role="banner">
+    {% include header.html %}
+</header>
 
 <div class="wrapper centered push-3-top article">
     <article role="article">
@@ -25,9 +17,13 @@ theme2: 'rgba(76, 175, 80, 0.7)'
 
         <p>I <a href="https://github.com/Praseetha-KR">code</a> most of the time and occasionally <a href="https://twitter.com/void_imagineer">tweet</a>. Besides computers I love travel, photography, electronics, physics and almost all kinds of breaking-and-making of stuff!</p>
 
-        <!-- <figure id="about-image">
-            <img src="/assets/img/me.jpg" alt="Praseetha KR">
-            <figcaption>That's me ^</figcaption>
-        </figure> -->
+        <div class="push-1-top">
+            <span class="pad-1-right">
+                <a href="https://twitter.com/void_imagineer" class="btn-theme"><i class="fa fa-twitter pad-h-right"></i>@void_imagineer</a>
+            </span>
+            <span class="pad-1-right">
+                <a href="https://github.com/Praseetha-KR" class="btn-theme"><i class="fa fa-github pad-h-right"></i>Praseetha-KR</a>
+            </span>
+        </div>
     </article>
 </div>

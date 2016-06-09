@@ -10,23 +10,19 @@ comments: true
     nav[role=navigation] a:active,
     nav[role=navigation] a:focus,
     nav[role=navigation] a:hover {
-        color: {{ page.theme1 }};
+        color: {{ page.theme }};
     }
     a:hover,
     a:focus,
     a:active {
-        color: {{ page.theme2 }};
+        color: {{ page.theme }};
     }
     header[role="banner"] {
-        background-image: linear-gradient(90deg, {{ page.theme1 }}, {{ page.theme2 }});
+        background-color: {{ page.theme }};
     }
     table th,
     ul:not(.list-silent)>li:before {
-        background-color: {{ page.theme1 }};
-    }
-    .footer-lining {
-        background: linear-gradient(to right, {{ page.theme1 }}, {{ page.theme1 }} 50%, {{ page.theme2 }} 50%, {{ page.theme2 }});
-        background-size: 12em 100%;
+        background-color: {{ page.theme }};
     }
     blockquote {
         border-left-color: $color__primary;

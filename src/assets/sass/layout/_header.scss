@@ -1,7 +1,7 @@
 header[role="banner"] {
-    background-image: linear-gradient(90deg, #00BCD4, #4CAF50);
+    background-color: #00BCD4;
     // background-image: url(http://lorempixel.com/g/400/200/);
-    background-size: cover;
+    // background-size: cover;
     color: white;
     section[role="navigation"] {
         padding: 2em;
@@ -19,7 +19,7 @@ header[role="banner"] {
         }
     }
     section[role="heading"] {
-        padding: 7em 3em 8em;
+        padding: 4em 3em 5em;
         text-align: center;
         h1 {
             padding: 0;
@@ -31,13 +31,12 @@ header[role="banner"] {
             -webkit-hyphens: auto;
         }
         a {
-            color: #333;
+            color: $color__silver;
         }
     }
 }
 section[role="note"] {
-    background-color: $color__dark;
-    color: white;
+    background-color: $color__silver;
     padding: 2em;
     text-align: center;
     font-size: 1.2em;

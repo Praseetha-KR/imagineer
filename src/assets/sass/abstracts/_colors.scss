@@ -1,14 +1,14 @@
 $color__primary: #00BCD4;
 $color__secondary: #4CAF50;
 
-$color__silver: #F6F8F9;
+$color__silver: #EFEFEF;
 $color__dark: #333;
 $color__gray-dark: #505050;
 $color__gray: #9E9E9E;
 $color__gray-medium: #E8E8E8;
 
 $color__link: $color__primary;
-$color__link-active: $color__secondary;
+$color__link-active: darken($color__primary, 10%);
 
 $color__body-bg: white;
 $color__body-text: hsl(300, 7%, 28%);
@@ -17,10 +17,10 @@ $color__header-bg: $color__silver;
 $color__header-title: $color__dark;
 $color__header-desc: #999;
 
-$color__footer-bg: $color__dark;
-$color__footer-text: $color__gray-medium;
-$color__footer-links-gray: $color__gray-dark;
-$color__footer-links-gray-alt: $color__gray;
+$color__footer-bg: #EFEFEF;
+$color__footer-text: $color__dark;
+$color__footer-links-gray: #E0E0E0;
+$color__footer-links-gray-alt: rgba($color__primary, 0.3);
 
 $color__table-head-bg: $color__primary;
 $color__table-head-text: white;
@@ -34,8 +34,8 @@ $color__bullet-ol: $color__primary;
 $color__bullet-ul: $color__primary;
 
 $color__btn-primary-text: white;
-$color__btn-primary-bg: $color__secondary;
-$color__btn-primary-bg-alt: lighten($color__secondary, 10%);
+$color__btn-primary-bg: $color__primary;
+$color__btn-primary-bg-alt: darken($color__primary, 3%);
 
 $color__page-nav-text: #EFEFEF;
 $color__page-nav-text-alt: $color__primary;
@@ -48,7 +48,7 @@ $color__btn-tweet-bg: hsl(203,89%,53%);
 $color__btn-tweet-bg-alt: lighten($color__btn-tweet-bg, 10%);
 
 $color__masthead-fill: lighten($color__primary, 10%);
-$color__archive-time: $color__secondary;
+$color__archive-time: $color__primary;
 
 $color__work-item-bg: $color__silver;
 $color__work-category-bg: $color__primary;
