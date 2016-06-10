@@ -1,14 +1,14 @@
 <nav class="pagination-nav space-3-top contain-width table">
-    {% if include.next_title %}
+    {% if include.next_url %}
         <a class="cell" href="{{ include.next_url }}">
-            <i class="fa fa-angle-left"></i>
-            <span>Old posts</span>
+            <i class="fa fa-long-arrow-left"></i>
+            <span>{{ include.next_title }}</span>
         </a>
     {% endif %}
-    {% if include.prev_title %}
+    {% if include.prev_url %}
         <a class="cell text-right" href="{{ include.prev_url }}">
-            <span>New posts</span>
-            <i class="fa fa-angle-right"></i>
+            <span>{{ include.prev_title}}</span>
+            <i class="fa fa-long-arrow-right"></i>
         </a>
     {% endif %}
 </nav>

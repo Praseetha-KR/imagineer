@@ -23,7 +23,7 @@ active: blog
             {% endfor %}
         </ul>
         <section>
-            {% include pagination.html prev_title=paginator.previous_page prev_url=paginator.previous_page_path next_title=paginator.next_page next_url=paginator.next_page_path %}
+            {% include pagination.html prev_title='New Posts' prev_url=paginator.previous_page_path next_title='Old Posts' next_url=paginator.next_page_path %}
         </section>
     </div>
 </div>
