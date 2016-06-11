@@ -1,7 +1,9 @@
 .home {
     ul[role="list"] {
         li[role="listitem"] {
-            overflow: hidden;
+            padding-top: 1.5em;
+            padding-bottom: 2em;
+            border-bottom: 1px dashed darken($color__silver, 10%);
             time {
                 font-size: 0.8em;
             }
