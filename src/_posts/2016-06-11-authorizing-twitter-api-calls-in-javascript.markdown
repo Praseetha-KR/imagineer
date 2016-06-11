@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Authorizing Twitter API Calls in Javascript"
-date:   2016-06-12 03:10:20
+date:   2016-06-11 03:10:20
 categories: blog
 blurb: "How to generate OAuth 1.0 signature & configure request header"
 theme: '#27A4DD'
