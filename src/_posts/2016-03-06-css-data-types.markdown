@@ -4,6 +4,7 @@ title:  "CSS Data Types"
 date:   2016-03-07 01:23:45
 categories: blog
 blurb: "A note on CSS data types"
+theme: '#69B869'
 ---
 
 Here is a quick reference for CSS data types:
