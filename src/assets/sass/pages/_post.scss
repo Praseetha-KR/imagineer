@@ -12,13 +12,25 @@
             margin: 0.5em 0 0.2em;
         }
         & > *:not(.highlighter-rouge) {
-            width: 60%;
+            width: 90%;
             margin: auto;
         }
         & > .highlighter-rouge .highlight {
-            width: 60%;
+            width: 90%;
             margin: auto;
             white-space: pre-wrap;
+        }
+    }
+}
+@media (min-width: 768px) {
+    .post, .article {
+        article[role="article"] {
+            & > *:not(.highlighter-rouge) {
+                width: 60%;
+            }
+            & > .highlighter-rouge .highlight {
+                width: 60%;
+            }
         }
     }
 }

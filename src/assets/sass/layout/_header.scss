@@ -1,20 +1,18 @@
 header[role="banner"] {
     background-color: #00BCD4;
+    z-index: 2;
+    position: relative;
     // background-image: url(http://lorempixel.com/g/400/200/);
     // background-size: cover;
     color: white;
     section[role="navigation"] {
-        padding: 2em;
+        padding: 2em 0;
         font-size: 1.1em;
         a {
             color: white;
         }
         .logo {
             font-size: 1em;
-            display: inline-block;
-        }
-        nav[role="menubar"] {
-            float: right;
             display: inline-block;
         }
     }
@@ -46,6 +44,9 @@ section[role="note"] {
         padding: 2em 30%;
     }
     header[role="banner"] {
+        section[role="navigation"] {
+            padding: 2em;
+        }
         section[role="heading"] {
             h1 {
                 padding: 0.5em;

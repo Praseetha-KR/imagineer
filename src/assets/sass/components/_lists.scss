@@ -1,36 +1,37 @@
-ol, ul {
-    list-style-type: none;
-    line-height: 1.5;
-    & > li {
-        position: relative;
-        &:before {
-            position: absolute;
+.post {
+    ol, ul {
+        list-style-type: none;
+        line-height: 1.5;
+        & > li {
+            position: relative;
+            &:before {
+                position: absolute;
+            }
+        }
+    }
+    ol:not(.list-silent) {
+        padding-left: $list__bullet-width-ol + $list__bullet-padding-ol;
+        counter-reset: listitem;
+        & > li:before {
+            content: counter(listitem) '. ';
+            counter-increment: listitem;
+            width: $list__bullet-width-ol;
+            left: -($list__bullet-width-ol + $list__bullet-padding-ol);
+            color: $color__bullet-ol;
+            text-align: right;
+            font-weight: 700;
+        }
+    }
+    ul:not(.list-silent) {
+        padding-left: $list__bullet-width-ul + $list__bullet-padding-ul;
+        & > li:before {
+            content: '';
+            height: $list__bullet-size;
+            width: $list__bullet-size;
+            left: -($list__bullet-width-ul + $list__bullet-padding-ul);
+            top: $list__bullet-size + ($list__bullet-size / 20);
+            background: $color__bullet-ul;
+            display: block;
         }
     }
 }
-ol:not(.list-silent) {
-    padding-left: $list__bullet-width-ol + $list__bullet-padding-ol;
-    counter-reset: listitem;
-    & > li:before {
-        content: counter(listitem) '. ';
-        counter-increment: listitem;
-        width: $list__bullet-width-ol;
-        left: -($list__bullet-width-ol + $list__bullet-padding-ol);
-        color: $color__bullet-ol;
-        text-align: right;
-        font-weight: 700;
-    }
-}
-ul:not(.list-silent) {
-    padding-left: $list__bullet-width-ul + $list__bullet-padding-ul;
-    & > li:before {
-        content: '';
-        height: $list__bullet-size;
-        width: $list__bullet-size;
-        left: -($list__bullet-width-ul + $list__bullet-padding-ul);
-        top: $list__bullet-size + ($list__bullet-size / 20);
-        background: $color__bullet-ul;
-        display: block;
-    }
-}
-

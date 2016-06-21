@@ -17,7 +17,7 @@ comments: true
     a:active {
         color: {{ page.theme }};
     }
-    header[role="banner"] {
+    header[role="banner"], .nav__right-wrapper {
         background-color: {{ page.theme }};
     }
     table th,
@@ -59,7 +59,7 @@ comments: true
                     </a>
                 {% endif %}
             </nav>
-            <section class="push-2-top">
+            <section class="push-2-top push-4-bottom">
                 <div id="disqus_thread"></div>
                 <script type="text/javascript" src="//disqus.com/forums/imagineer/embed.js"></script>
                 <noscript><a href="//imagineer.disqus.com/?url=ref">View the discussion thread.</a></noscript>
