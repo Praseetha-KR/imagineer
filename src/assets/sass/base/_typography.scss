@@ -44,7 +44,7 @@ strong {
 .desc-type {
     font-family: $font-stack__desc;
 }
-blockquote {
+blockquote, .quote-text {
     font-family: $font-stack__quote;
 }
 

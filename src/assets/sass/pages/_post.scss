@@ -3,13 +3,22 @@
         font-size: $article__font;
         line-height: $article__line-height;
         img {
-            width: 100%;
+            max-width: 100%;
         }
         p, ul, ol {
             padding-bottom: 0.8em;
         }
         h1, h2, h3, h4, h5, h6, table {
             margin: 0.5em 0 0.2em;
+        }
+        & > *:not(.highlighter-rouge) {
+            width: 60%;
+            margin: auto;
+        }
+        & > .highlighter-rouge .highlight {
+            width: 60%;
+            margin: auto;
+            white-space: pre-wrap;
         }
     }
 }

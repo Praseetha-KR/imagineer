@@ -39,8 +39,8 @@ When 2 pixels get combined, 4 subpixel regions are formed:
    - both are present
    - neither is present (always empty)
 
-<div class="push-two half-width">
-    <img src="/assets/img/posts/porter-duff-compositing/subpixel_regions.png" alt="">
+<div class="push-two">
+    <img src="/assets/img/posts/porter-duff-compositing/subpixel_regions.png" alt="" class="half-width centered">
 </div>
 
 There are 12 of operators which decides the behaviour in these regions.
@@ -280,6 +280,9 @@ with
     </tbody>
 </table>
 
-<br><br>Here is a demo for blend mode generator in javascript:
+<br><br>
+
+<p>Here is a demo for blend mode generator in javascript:</p>
+
 <p data-height="350" data-theme-id="8104" data-slug-hash="grrWba" data-default-tab="result" data-user="Praseetha-KR" class="codepen">See the Pen <a href="http://codepen.io/Praseetha-KR/pen/grrWba/">CSS Blend Modes: Generator in JS</a> by Praseetha KR (<a href="http://codepen.io/Praseetha-KR">@Praseetha-KR</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>

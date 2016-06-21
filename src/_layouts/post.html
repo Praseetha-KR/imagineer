@@ -34,12 +34,11 @@ comments: true
 {% include blurb.html blurb=page.blurb variable-blurb=page.blurb %}
 
 <section class="post">
-    <div class="wrapper centered clearall push-4">
-        <div class="">
-            <article role="article">
-                {{ content }}
-            </article>
-
+    <div class="clearall push-4">
+        <article role="article">
+            {{ content }}
+        </article>
+        <div class="wrapper centered">
             <section class="share space-2-top">
                 <a class="btn-tweet" href=""><i class="fa fa-twitter"></i>&nbsp;&nbsp;Tweet</a>
             </section>
@@ -61,12 +60,10 @@ comments: true
                 {% endif %}
             </nav>
             <section class="push-2-top">
-                {% if page.comments %}
-                    <div id="disqus_thread"></div>
-                    <script type="text/javascript" src="//disqus.com/forums/imagineer/embed.js"></script>
-                    <noscript><a href="//imagineer.disqus.com/?url=ref">View the discussion thread.</a></noscript>
-                    <a href="//disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-                {% endif %}
+                <div id="disqus_thread"></div>
+                <script type="text/javascript" src="//disqus.com/forums/imagineer/embed.js"></script>
+                <noscript><a href="//imagineer.disqus.com/?url=ref">View the discussion thread.</a></noscript>
+                <a href="//disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
             </section>
         </div>
     </div>

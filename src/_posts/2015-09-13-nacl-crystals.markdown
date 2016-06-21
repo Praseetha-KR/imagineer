@@ -3,7 +3,7 @@ layout: post
 title:  "NaCl Crystals"
 date:   2015-09-13 01:18:00
 categories: blog
-blurb: "Experiments"
+blurb: "DIY salt crystals"
 theme: '#262533'
 ---
 
