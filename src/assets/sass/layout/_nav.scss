@@ -154,10 +154,8 @@ $nav-dropdown-bg-mob: #00BCD4;
         }
         .item {
             border: none;
-            // height: 100%;
             &:hover {
                 background: transparent;
-                color: $nav-color-hover;
             }
             &-logo {
                 color: $nav-color;
