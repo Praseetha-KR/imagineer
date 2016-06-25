@@ -1,6 +1,7 @@
 table {
     border-collapse: collapse;
     table-layout: fixed;
+    background-color: #f9f9f9;
     th {
         background-color: $color__table-head-bg;
         color: $color__table-head-text;

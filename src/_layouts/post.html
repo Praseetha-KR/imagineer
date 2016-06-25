@@ -6,7 +6,7 @@ comments: true
 <style>
     a,
     table thead tr,
-    ol:not(.list-silent)>li:before,
+    .post ol:not(.list-silent)>li:before,
     nav[role=navigation] a:active,
     nav[role=navigation] a:focus,
     nav[role=navigation] a:hover {
@@ -21,11 +21,11 @@ comments: true
         background-color: {{ page.theme }};
     }
     table th,
-    ul:not(.list-silent)>li:before {
+    .post ul:not(.list-silent)>li:before {
         background-color: {{ page.theme }};
     }
     blockquote {
-        border-left-color: $color__primary;
+        border-left-color: {{ page.theme }};
     }
 </style>
 

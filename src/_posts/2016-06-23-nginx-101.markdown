@@ -1,0 +1,196 @@
+---
+layout: post
+title:  "NGINX 101"
+date:   2016-06-23 10:04:20
+categories: blog, programming, sysadmin
+blurb: "Getting started with nginx"
+theme: '#16953E'
+---
+
+## What is NGINX?
+
+Nginx is a http reverse proxy & load balancer. It acts like a middle-man between client & server.
+
+## But why?
+
+Client can directly make connections with server. Why there is need for a middle-man? That was my first question. The main reasons are listed below:
+
+1. **Routing**
+2. **Load balancer**
+3. **HTTP Reverse Proxy**
+4. **Manage SSL**
+5. **Handle all types of connection speeds**
+
+
+### 1. Routing
+
+nginx can be configured so that it can pinpoint to any urls from the requested route. (This was my initial requirement)
+
+```nginx
+upstream backend
+   server api.mywebsite.com;
+}
+location /api {
+  proxy_pass  http://backend;
+}
+location /module1 {
+    try_files $uri /module1.html;
+}
+location /module2 {
+    try_files $uri /module2.html;
+}
+```
+
+### 2. Load balancing
+
+You can have multiple server instances with a single entry point. Nginx will distribute traffic to the list of upstream servers according to the traffic control algorithm configured. If one server goes down, it will distribute traffic to other instances.
+
+```nginx
+upstream backend {
+   least_conn;
+
+   server host1.mywebsite.com weight=3;
+   server host2.mywebsite.com;
+   server host3.mywebsite.com;
+}
+location / {
+  proxy_pass  http://backend;
+}
+```
+- Load to `/` will be distributed among host1, host2 & host3 of upstream context.
+- Assigning `weight` will route *weight* times traffic to that server w.r.t. other servers in upstream. In this case host1 will get 3 times traffic compared to other two.
+- By default connections are distributed with *round robin*. It can be changed to `least_conn`, `ip_hash` or `hash` as per usecase.
+
+### 3. HTTP Reverse Proxy
+
+Server protocol need not be the same as client. Client http requests can be routed to server http/https/uwsgi/memcached/..or whatever, nginx will do the mapping and thus act like a HTTP reverse proxy to the client.
+
+```nginx
+upstream uwsgi_backend {
+   server 127.0.0.1:8000;
+}
+server {
+    location / {
+        include uwsgi_params;
+        uwsgi_pass uwsgi_backend;
+        proxy_redirect     off;
+        proxy_set_header   Host $host;
+        proxy_set_header   X-Real-IP $remote_addr;
+        proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header   X-Forwarded-Host $server_name;
+    }
+}
+```
+Client request is http and is redirected to uwsgi server. Nginx can modify request headers.
+
+### 4. Manage SSL
+
+You can configure SSL for multiple domains/subdomains.
+
+```nginx
+server {
+   listen               443;
+   ssl                  on;
+   ssl_certificate      /ssl/local.crt;
+   ssl_certificate_key  /ssl/local.key;
+   ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+   ssl_ciphers HIGH:!aNULL:!MD5;
+   ssl_prefer_server_ciphers on;
+}
+```
+For https servers, SSL certificate, key, protocols & cipher suites can be configured.
+
+### 5. Handle all types of connection speeds
+
+Nginx is super fast, it process connections with event loop. It can handle wide variety of client/server connection speeds using buffer & cache.
+
+```nginx
+server {
+    proxy_buffering on;
+    proxy_buffer_size 1k;
+    proxy_buffers 24 4k;
+    proxy_busy_buffers_size 8k;
+    proxy_max_temp_file_size 2048m;
+    proxy_temp_file_write_size 32k;
+    location /api {
+        proxy_cache backcache;
+        proxy_cache_bypass $http_cache_control;
+        add_header X-Proxy-Cache $upstream_cache_status;
+        proxy_pass http://backend;
+    }
+}
+```
+Buffer is used when client is slow, fast response from server is buffered and will send to client on availability. There are many options to configure buffer size, number of buffers & size of buffer on a busy pool. If the server response doesn't fit inside buffer, it get written to a temp file, that file size can also be configured.
+
+Processing is made faster by use of cache. Response from servers are cached, nginx can check cache before making actual request to server.
+
+## How to setup?
+
+You can [download](http://nginx.org/en/download.html?) & install nginx. I did installation with homebrew that in OSX 10.11.5 El Capitan.
+
+#### Install & run
+
+```shell
+$ brew install nginx
+$ sudo nginx
+```
+Now you can listen to `http://localhost:8080`
+
+#### Check the version & location
+
+```shell
+$ nginx -v
+nginx version: nginx/1.10.1
+
+$ which nginx
+/usr/local/bin/nginx
+```
+
+#### Basic command options
+
+Here is a list of flags for `nginx` command:
+
+| options | use             |
+|---------|----------------|
+| -?, -h    | help              |
+| -v        | version           |
+| -V        | Print nginx version, compiler version and configure parameters |
+| -t        | test run the config file for syntax check. |
+| -q        | Suppress non-error messages during configuration testing. |
+| -s        | send signal to a master process: stop, quit, reopen, reload |
+| -p        | set prefix path (default: /usr/local/nginx/) |
+| -c filename | Overriding config filename |
+| -g directives | Set global directives |
+
+Eg:
+
+```shell
+$ nginx -s reload
+$ nginx -s stop
+```
+Refer to the index of [Directives](http://nginx.org/en/docs/dirindex.html) & [Variables](http://nginx.org/en/docs/varindex.html)
+
+#### Edit config
+You can edit the configuration in `/usr/local/etc/nginx/nginx.conf` file. For example, to change default port to `8090`, edit `listen 8080` in the server context of nginx.conf.
+
+```nginx
+server {
+   listen       8090;
+   server_name  localhost;
+}
+```
+
+#### Custom config file
+If you don't want to alter default file and keep a separete custom config file, go for it. Create `nginx_custom.conf` file and run it:
+
+```shell
+$ sudo /usr/local/bin/nginx -c /path/to/file/nginx_custom.conf
+```
+
+## Where to learn more?
+
+A few links to refer:
+
+1. [NGINX Docs](http://nginx.org/en/docs/)
+2. [Understanding Nginx HTTP Proxying, Load Balancing, Buffering, and Caching](https://www.digitalocean.com/community/tutorials/understanding-nginx-http-proxying-load-balancing-buffering-and-caching)
+3. NGINX+HTTPS 101 [Slides](http://www.slideshare.net/NicholasSullivan/nginx-https-101-the-basics-getting-started) & [Video](https://youtu.be/dsTub1_4Upg)
