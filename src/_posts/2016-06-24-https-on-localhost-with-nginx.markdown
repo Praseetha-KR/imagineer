@@ -54,6 +54,7 @@ Optionally you can add an alias to your local_website in `/etc/hosts`
 # Setting Up HTTPS for localhost
 
 Websites need an SSL certificate to work on HTTPS. Usually it is signed & issued by CAs(Certificate Authorities). We will generate a self-signed certificate for our local testing.
+<br><br>
 
 ### STEP 1: Generate Self-signed SSL Certificate
 
@@ -85,6 +86,7 @@ The generated certificate will be in x509 container format with SHA256 signature
 ```shell
 $ openssl x509 -text -noout -in localhost.crt
 ```
+<br>
 
 ### STEP 2: Trust authority of the certificate
 
@@ -99,6 +101,7 @@ $ sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.ke
 ```
 
 *Note: this will work only on chrome & safari, because those browsers check keychain access to get list of CAs. Firefox stores its own list of trusted CAs in the browser, so firefox will still throw the security error.*
+<br><br>
 
 ### STEP 3: Configure &amp; Reload nginx
 
@@ -139,6 +142,7 @@ $ sudo nginx -c /path/to/file/nginx_custom.conf
 $ sudo nginx -c /path/to/file/nginx_custom.conf -s reload
 ```
 
+<br>
 
 ## Final step
 
