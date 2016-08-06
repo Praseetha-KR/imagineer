@@ -3,18 +3,16 @@ layout: post
 title:  "HTTPS on localhost with NGINX"
 date:   2016-06-24 10:45:20
 categories: blog, programming, sysadmin
-blurb: "How to get https for a website running on localhost"
+blurb: "How to get https for a website running on localhost in OSX"
 theme: '#7ebb61'
 ---
 
-This article gives a walkdown through setting up of **HTTPS protocol for localhost**.
+This article gives a walkdown through setting up of **HTTPS protocol for localhost using NGINX** in OSX (10.11.5).
 
-What the..? yeah even I don't know what is the purpose of encrypting & securing connections to my own localhost 😜. Well, I just did it when I was learning NGINX.
+(What the.. why? yeah even I don't know what is the purpose of encrypting & securing connections to my own localhost 😜. Well, I tried it when I was attempting to learn NGINX SSL configs).
 
 
 # Prerequisites:
-
-This was done in OSX 10.11.5.
 
 ### 1. openssl
 OSX by default comes with [openssl](https://www.openssl.org/).
