@@ -49,7 +49,7 @@ TWITTER_ACCESS_TOKEN_SECRET = XXXxxXXxxXXXXXxxxxxXXXXxxxxXXxxxxXX;
 ```
 
 ```javascript
-getAuthorization = (httpMethod, baseUrl, reqParams) => {
+function getAuthorization(httpMethod, baseUrl, reqParams) {
     // Get acces keys
     let keysJson            = require('keys.json');
     const consumerKey       = keysJson.TWITTER_CONSUMER_KEY,
@@ -102,7 +102,7 @@ OAuth 1.0 signature is created by HMAC-SHA1 encryption, where base string and si
 #### 1. Base string
 
 ```javascript
-let oAuthBaseString = (method, url, params, key, token, timestamp, nonce) => {
+function oAuthBaseString(method, url, params, key, token, timestamp, nonce) {
     return method
             + '&' + percentEncode(url)
             + '&' + percentEncode(genSortedParamStr(params, key, token, timestamp, nonce));
@@ -112,7 +112,7 @@ let oAuthBaseString = (method, url, params, key, token, timestamp, nonce) => {
 #### 2. Signing key
 
 ```javascript
-let oAuthSigningKey = function(consumer_secret, token_secret) {
+function oAuthSigningKey(consumer_secret, token_secret) {
     return consumer_secret + '&' + token_secret;
 };
 ```
@@ -120,7 +120,7 @@ let oAuthSigningKey = function(consumer_secret, token_secret) {
 #### 3. Signature
 
 ```javascript
-let oAuthSignature = function(base_string, signing_key) {
+function oAuthSignature(base_string, signing_key) {
     var signature = hmac_sha1(base_string, signing_key);
     return percentEncode(signature);
 };
@@ -130,7 +130,7 @@ let oAuthSignature = function(base_string, signing_key) {
 
 ```javascript
 // Percent encoding
-let percentEncode = (str) => {
+function percentEncode(str) {
   return encodeURIComponent(str).replace(/[!*()']/g, (character) => {
     return '%' + character.charCodeAt(0).toString(16);
   });
@@ -140,7 +140,7 @@ let percentEncode = (str) => {
 ```javascript
 // HMAC-SHA1 Encoding, uses jsSHA lib
 var jsSHA = require('jssha');
-let hmac_sha1 = (string, secret) => {
+function hmac_sha1(string, secret) {
     let shaObj = new jsSHA("SHA-1", "TEXT");
     shaObj.setHMACKey(secret, "TEXT");
     shaObj.update(string);
@@ -151,7 +151,7 @@ let hmac_sha1 = (string, secret) => {
 
 ```javascript
 // Merge two objects
-let mergeObjs = (obj1, obj2) => {
+function mergeObjs(obj1, obj2) {
     for (var attr in obj2) {
         obj1[attr] = obj2[attr];
     }
@@ -161,7 +161,7 @@ let mergeObjs = (obj1, obj2) => {
 
 ```javascript
 // Generate Sorted Parameter String for base string params
-let genSortedParamStr = (params, key, token, timestamp, nonce) => {
+function genSortedParamStr(params, key, token, timestamp, nonce)  {
     // Merge oauth params & request params to single object
     let paramObj = mergeObjs(
         {
