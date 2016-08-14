@@ -33,5 +33,15 @@
             background: $color__bullet-ul;
             display: block;
         }
+        & > li > ul:not(.list-silent) > li:before {
+            content: '';
+            height: $list__bullet-size - 0.15em;
+            width: $list__bullet-size - 0.15em;
+            left: -($list__bullet-width-ul + $list__bullet-padding-ul);
+            top: $list__bullet-size + ($list__bullet-size / 20);
+            background: white;
+            display: block;
+            border: 0.15em solid #CCC;
+        }
     }
 }

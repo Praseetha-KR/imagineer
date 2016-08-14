@@ -27,6 +27,9 @@ comments: true
     blockquote {
         border-left-color: {{ page.theme }};
     }
+    .post ul:not(.list-silent) > li > ul:not(.list-silent) > li:before {
+        border-color: {{ page.theme }};
+    }
 </style>
 
 {% assign date = page.date | date_to_string %}

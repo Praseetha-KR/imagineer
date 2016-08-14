@@ -29,3 +29,10 @@ table {
         word-wrap: break-word;
     }
 }
+.table {
+    &__size {
+        &--small {
+            font-size: 0.8em;
+        }
+    }
+}
