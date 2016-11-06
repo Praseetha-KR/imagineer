@@ -1,28 +1,40 @@
 {
   "name": "imagineer",
-  "version": "0.0.2",
-  "description": "Imagineer Website",
+  "version": "1.0.1",
+  "description": "Portfolio of Praseetha KR",
+  "main": "index.js",
   "dependencies": {
-    "grunt": "0.4.x",
-    "grunt-jekyll": "0.x",
-    "grunt-contrib-watch": "0.x",
-    "grunt-concurrent": "0.x",
-    "grunt-contrib-compass": "0.x"
-  },
-  "scripts": {
-    "test": "grunt production"
+    "gulp": "^3.9.1"
   },
   "devDependencies": {
-    "grunt-contrib-concat": "^0.5.0",
-    "grunt-contrib-cssmin": "^0.10.0",
-    "grunt-contrib-uglify": "^0.6.0"
+    "browser-sync": "^2.17.5",
+    "child_process": "^1.0.2",
+    "del": "^2.2.2",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-bytediff": "^1.0.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-size": "^2.1.0",
+    "gulp-sourcemaps": "^2.2.0",
+    "gulp-uglify": "^2.0.0",
+    "run-sequence": "^1.2.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/Praseetha-KR/imagineer.git"
+    "url": "git+https://github.com/Praseetha-KR/imagineer.git"
   },
-  "author": "Praseetha K R",
+  "keywords": [
+    "portfolio",
+    "blog"
+  ],
+  "author": "Praseetha-KR",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Praseetha-KR/imagineer/issues"
-  }
+  },
+  "homepage": "https://github.com/Praseetha-KR/imagineer#readme"
 }
