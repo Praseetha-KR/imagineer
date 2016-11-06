@@ -3,6 +3,6 @@ node_js:
     - 5.9.1
 before_install:
     - rvm install 2.2.0
-    - gem install jekyll compass jekyll-paginate kramdown rouge
+    - gem install jekyll jekyll-paginate kramdown rouge
     - npm install -g grunt-cli
 install: npm install
