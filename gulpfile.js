@@ -31,8 +31,8 @@ gulp.task('jekyll-build', (cb) => {
     return cp.spawn(
         'jekyll', [
             'build',
-            '--source=' + paths.src, 
-            '--destination=' + dest, 
+            '--source=' + paths.src,
+            '--destination=' + dest,
             '--config=_config.yml'
         ],
         { stdio: 'inherit' }
@@ -75,12 +75,11 @@ gulp.task('watch', () => {
     is_prod = false;
     gulp.watch(paths.src + paths.scss + '/**/*.scss', () => {
         runSequence(
-            'scss', 
-            'minify-css'
+            'scss'
         );
     });
     gulp.watch([
-        paths.src + '/**/*.html', 
+        paths.src + '/**/*.html',
         paths.src + '/**/*.markdown'
     ], ['jekyll-rebuild']);
 });
@@ -103,6 +102,7 @@ gulp.task('prodbuild', () => {
     is_prod = true;
     runSequence(
         'scss',
+        'minify-css',
         'jekyll-build'
     );
 });
