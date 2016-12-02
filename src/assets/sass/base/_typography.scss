@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700|Mandali|Playfair+Display:700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700|Mandali|Playfair+Display:700);
 
 $open-sans: 'Open Sans', sans-serif;
 $mandali: 'Mandali', sans-serif;
@@ -16,79 +16,7 @@ body {
     line-height: $font__base-line-height;
 }
 
-// $font-stack__text: (
-//     'Mandali',
-//     sans-serif
-// );
-// $font-stack__title: (
-//     'Palanquin Dark',
-//     serif
-// );
-// $font-stack__heading: (
-//     'Palanquin Dark',
-//     'Georgia',
-//     serif
-// );
-// $font-stack__desc: (
-//     'Palanquin Dark',
-//     'Georgia',
-//     serif
-// );
-// $font-stack__quote: (
-//     'Georgia',
-//     serif
-// );
 $font-stack__code: (
     monospace,
     sans-serif
 );
-
-
-// strong {
-//     font-weight: 600;
-// }
-
-// .title-type {
-//     font-family: $font-stack__title;
-// }
-
-// .header-type {
-//     font-family: $font-stack__heading;
-// }
-// .desc-type {
-//     font-family: $font-stack__desc;
-// }
-// blockquote, .quote-text {
-//     font-family: $font-stack__quote;
-// }
-
-// main {
-//     line-height: 1.5;
-//     h1, h2, h3, h4, h5, h6 {
-//         font-family: $font-stack__heading;
-//     }
-//     h1 {
-//         font-size: 1.6em;
-//         line-height: 2.5;
-//     }
-//     h2 {
-//         font-size: 1.4em;
-//         line-height: 2.5;
-//     }
-//     h3 {
-//         font-size: 1.2em;
-//         line-height: 2.3;
-//     }
-//     h4 {
-//         font-size: 1em;
-//         line-height: 2.3;
-//     }
-//     h5 {
-//         font-size: 0.8em;
-//         line-height: 2;
-//     }
-//     h6 {
-//         font-size: 0.6em;
-//         line-height: 2;
-//     }
-// }
