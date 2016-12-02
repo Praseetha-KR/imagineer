@@ -4,7 +4,7 @@ active: blog
 comments: true
 ---
 <style>
-    a,
+    /*a,
     table thead tr,
     .post ol:not(.list-silent)>li:before,
     nav[role=navigation] a:active,
@@ -16,11 +16,11 @@ comments: true
     a:focus,
     a:active {
         color: {{ page.theme }};
-    }
-    header[role="banner"], .nav__right-wrapper {
+    }*/
+    /*.post__header {
         background-color: {{ page.theme }};
-    }
-    table th,
+    }*/
+    /*table th,
     .post ul:not(.list-silent)>li:before {
         background-color: {{ page.theme }};
     }
@@ -29,12 +29,15 @@ comments: true
     }
     .post ul:not(.list-silent) > li > ul:not(.list-silent) > li:before {
         border-color: {{ page.theme }};
-    }
+    }*/
 </style>
 
 {% assign date = page.date | date_to_string %}
-{% include banner.html posttitle=page.title postdate=date %}
-{% include blurb.html blurb=page.blurb variable-blurb=page.blurb %}
+
+<section class="post__header push-1-top push-3-bottom">
+    {% include banner.html posttitle=page.title postdate=date %}
+    {% include blurb.html blurb=page.blurb variable-blurb=page.blurb %}
+</section>
 
 <section class="post">
     <div class="clearall push-4">
@@ -50,7 +53,7 @@ comments: true
                 {% include pagination.html prev_title=page.previous.title prev_url=page.previous.url next_title=page.next.title next_url=page.next.url %}
             </section>
 
-            <nav role="navigation" class="space-3-top">
+            <nav role="navigation" class="arrow-navigation space-3-top">
                 {% if page.next.url %}
                     <a href="{{page.next.url}}" class="dark">
                         <i class="fa fa-chevron-left"></i>

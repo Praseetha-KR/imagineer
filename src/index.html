@@ -4,21 +4,16 @@ title: 'imagineer'
 active: blog
 theme: '#00BCD4'
 ---
-<header role="banner">
-    {% include header.html %}
-</header>
 
-<div class="wrapper">
-    <div class="home">
-        <ul role="list" class="list-silent archives push-3-top">
+<div class="home">
+    <main role="main" class="home__main">
+        <h2 class="home__heading">Blog</h2>
+        <ul role="list" class="home__archives archive push-3-top">
             {% for post in paginator.posts %}
                 {% if post.status != 'draft' %}
-                    <li role="listitem" class="block">
-                        <h4 class="header-type push-h-bottom inlineblock">
-                            <a class="dark" href="{{ post.url }}">{{ post.title }}</a>
-                        </h4>
-                        <time class="inlineblock gray pad-h-left">{{ post.date | date_to_string }}</time>
-                        <div class="gray">{{ post.blurb }}</div>
+                    <li role="listitem" class="archive__item">
+                        <a class="archive__item__link" href="{{ post.url }}">{{ post.title }}</a>
+                        <time class="archive__item__time">{{ post.date | date_to_string }}</time>
                     </li>
                 {% endif %}
             {% endfor %}
@@ -26,5 +21,21 @@ theme: '#00BCD4'
         <section class="push-4-bottom">
             {% include pagination.html prev_title='New Posts' prev_url=paginator.previous_page_path next_title='Old Posts' next_url=paginator.next_page_path %}
         </section>
-    </div>
+    </main>
+    <aside class="home__sidebar">
+        <div class="home__sidebar__about">
+            <h2 class="home__heading">Hello!</h2>
+            <p>I'm Praseetha KR, this is my weblog.</p>
+            <p>I <a href="https://github.com/Praseetha-KR">write code</a> most of the time, and occasionally <a href="https://twitter.com/void_imagineer">tweet</a>.
+        </div>
+        <div class="home__sidebar__avatar">
+            <img src="/assets/img/praseethakr.jpg" alt="">
+        </div>
+        <div class="home__sidebar__github">
+            <iframe src="http://githubbadge.appspot.com/Praseetha-KR?a=0" frameBorder="0" width="100%"></iframe>
+        </div>
+        <div class="home__sidebar__twitter">
+            <a class="twitter-timeline" data-height="400" href="https://twitter.com/void_imagineer"></a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+    </aside>
 </div>

@@ -28,9 +28,10 @@
 
   </head>
   <body>
-    <main role="main">
-        {{ content }}
-    </main>
+    {% include header.html %}
+
+    {{ content }}
+
     {% include footer.html %}
     <script type="text/javascript" src="/assets/js/app.js"></script>
   </body>

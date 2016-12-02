@@ -1,18 +1,17 @@
-nav[role="navigation"] {
+.arrow-navigation {
     font-size: 2em;
     position: fixed;
     bottom: 1em;
     left: 1em;
     right: 1em;
+    @media (max-width: 768px) {
+        display: none;
+    }
     a {
         display: inline-block;
         padding-left: 0.1em;
         padding-right: 0.1em;
-        color: $color__page-nav-text;
-        // background-color: $color__page-nav-bg;
-        &:hover, &:focus, &:active {
-            color: $color__page-nav-text-alt;
-        }
+        color: $color__gray;
         &:first-child {
             border-top-left-radius: 0.5em;
             border-bottom-left-radius: 0.5em;
@@ -25,150 +24,25 @@ nav[role="navigation"] {
         }
     }
 }
-@media (max-width: 768px) {
-    nav[role="navigation"] {
-        display: none;
-    }
-}
-.pagination-nav {
-    font-size: 1.1em;
-    font-weight: 600;
-}
 
 
-$nav-height: 5.5em;
-$nav-bg: rgba(0,0,0,0);
-$nav-color: white;
-$nav-color-hover: lighten($nav-bg, 40%);
-$nav-color-active: $color__dark;
-$nav-dropdown-bg-mob: #00BCD4;
-
-.nav input#toggle {
-    display: none;
-}
-.nav input#toggle:checked + .nav__right-wrapper {
-    display: block;
-}
-.nav {
-    display: block;
-    width: 100%;
-    background: $nav-bg;
-    height: $nav-height;
-    font-size: 1.1em;
-    position: relative;
-    z-index: 3;
-    .item {
-        text-decoration: none;
-        color: $nav-color;
-        &.active {
-            color: $nav-color-active;
+.pagination {
+    padding-top: 2em;
+    display: flex;
+    justify-content: space-between;
+    &__nav {
+        border: 0.1em solid $color__gray;
+        color: $color__gray;
+        padding: 0.3em 1em;
+        border-radius: 2em;
+        display: block;
+        &:hover {
+            background-color: $color__secondary;
+            color: white;
+            border-color: $color__secondary;
         }
-    }
-    &__left, &__right {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
-    &__left {
-        display: flex;
-        height: 100%;
-        &-wrapper {
-            display: inline-block;
-            height: 100%;
-        }
-        .nav__list {
-            display: flex;
-            align-items: center;
-        }
-        .item {
-            padding: 1em;
-            &-logo {
-                color: $nav-color;
-            }
-        }
-    }
-    &__right-wrapper {
-        display: none;
-        text-align: center;
-        background: $nav-dropdown-bg-mob;
-        .item {
-            padding: 1em 0;
-            display: block;
-            border-top: 1px solid rgba(255,255,255,0.3);
-            width: 100%;
-            &:hover {
-                background: rgba(255,255,255,0.1);
-            }
-        }
-    }
-    &__toggle {
-        display: inline-block;
-        float: right;
-        width: $nav-height;
-        background: darken($nav-bg, 5%);
-        z-index: 2;
-        .flex {
-            height: 100%;
-            justify-content: center;
-        }
-        &-text {
-            display: block;
-            height: 100%;
-            width: 100%;
-            cursor: pointer;
-            line-height: $nav-height;
-            text-align: center;
-            color: $nav-color;
-            &:hover, &:active, &:focus {
-                color: $nav-color;
-            }
+        &--left + &--right {
+            margin-left: 1em;
         }
     }
 }
-@media screen and (min-width: 768px) {
-    .nav {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background: $nav-bg;
-        font-family: sans-serif;
-        padding: 0 1em;
-        &__left, &__right {
-            display: flex;
-            height: 100%;
-        }
-        &__right {
-            justify-content: flex-end;
-            &-wrapper {
-                display: flex;
-                background: transparent;
-            }
-            .nav__list {
-                padding: 0 1em;
-                display: flex;
-            }
-        }
-        &__toggle {
-            display: none;
-        }
-        .item {
-            border: none;
-            &:hover {
-                background: transparent;
-            }
-            &-logo {
-                color: $nav-color;
-            }
-            &:not(.item-logo) {
-                color: $nav-color;
-                text-transform: uppercase;
-                font-size: .85em;
-                &.active {
-                    color: $nav-color-active;
-                }
-            }
-        }
-    }
-}
-

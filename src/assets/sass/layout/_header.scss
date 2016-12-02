@@ -1,57 +1,24 @@
-header[role="banner"] {
-    background-color: #00BCD4;
-    z-index: 2;
-    position: relative;
-    // background-image: url(http://lorempixel.com/g/400/200/);
-    // background-size: cover;
-    color: white;
-    section[role="navigation"] {
-        padding: 2em 0;
-        font-size: 1.1em;
-        a {
-            color: white;
-        }
-        .logo {
-            font-size: 1em;
-            display: inline-block;
-        }
-    }
-    section[role="heading"] {
-        padding: 4em 3em 5em;
-        text-align: center;
-        h1 {
-            padding: 0;
-            font-size: 2em;
-            line-height: 1.5;
-            word-break: break-all;
-            word-break: break-word; /* Non standard for webkit */
-            hyphens: auto;
-            -webkit-hyphens: auto;
-        }
-        a {
-            color: $color__silver;
-        }
-    }
-}
-section[role="note"] {
-    background-color: $color__silver;
-    padding: 2em;
+$color__header-bg: $color__silver;
+$color__nav-link: $color__gray;
+
+.header {
+    background-color: $color__header-bg;
     text-align: center;
-    font-size: 1.2em;
-}
-@media (min-width: 768px) {
-    section[role="note"] {
-        padding: 2em 30%;
+    &__siteinfo {
+        padding: 2em 0 1em;
     }
-    header[role="banner"] {
-        section[role="navigation"] {
-            padding: 2em;
-        }
-        section[role="heading"] {
-            h1 {
-                padding: 0.5em;
-                font-size: 3em;
-            }
+    &__caption {
+        margin: 0;
+    }
+}
+.nav {
+    padding: 0;
+    margin: 0;
+    &__item {
+        display: inline-block;
+        padding: 1em;
+        &__link {
+            color: $color__nav-link;
         }
     }
 }

@@ -1,55 +1,82 @@
+$home__sidebar-width: 18em;
+
 .home {
-    ul[role="list"] {
-        li[role="listitem"] {
-            padding-top: 1.5em;
-            padding-bottom: 2.3em;
-            border-bottom: 1px dashed darken($color__silver, 10%);
-            h4 {
-                font-size: 1.3em;
+    float: none;
+    overflow: hidden;
+    padding: 2em;
+    @media (min-width: 768px) {
+        width: 80%;
+        padding: 0;
+        margin: auto;
+    }
+
+    &__main {
+        width: 100%;
+        display: block;
+        padding-bottom: 4em;
+        @media (min-width: 768px) {
+            float: left;
+            margin-right: -$home__sidebar-width;
+            padding-right: $home__sidebar-width + 2em;
+            padding-bottom: 3em;
+        }
+    }
+    &__sidebar {
+        display: block;
+        padding-bottom: 3em;
+        @media (min-width: 768px) {
+            width: $home__sidebar-width;
+            float: left;
+        }
+        &__avatar {
+            width: 50%;
+            margin: auto;
+            @media (min-width: 768px) {
+                width: 100%;
             }
-            time {
-                font-size: 0.8em;
-            }
-            p {
-                font-size: 1.1em;
+        }
+        &__github {
+            padding-top: 2.5em;
+        }
+        &__twitter {
+            width: 80%;
+            margin: auto;
+            @media (min-width: 768px) {
+                width: 100%;
             }
         }
     }
-    ol, ul {
-        list-style-type: none;
-        line-height: 1.5;
-        & > li {
-            position: relative;
-            &:before {
-                position: absolute;
-            }
-        }
-    }
-    ol:not(.list-silent) {
-        padding-left: $list__bullet-width-ol + $list__bullet-padding-ol;
-        counter-reset: listitem;
-        & > li:before {
-            content: counter(listitem) '. ';
-            counter-increment: listitem;
-            width: $list__bullet-width-ol;
-            left: -($list__bullet-width-ol + $list__bullet-padding-ol);
-            color: $color__bullet-ol;
-            text-align: right;
-            font-weight: 700;
-        }
-    }
-    ul:not(.list-silent) {
-        padding-left: $list__bullet-width-ul + $list__bullet-padding-ul;
-        & > li:before {
+    &__heading {
+        padding-left: 0.7em;
+        padding-bottom: 1em;
+        position: relative;
+        &::before {
             content: '';
-            height: $list__bullet-size;
-            width: $list__bullet-size;
-            left: -($list__bullet-width-ul + $list__bullet-padding-ul);
-            top: $list__bullet-size + ($list__bullet-size / 20);
-            background: $color__bullet-ul;
+            display: block;
+            width: 0.3em;
+            height: 1em;
+            background-color: $color__secondary;
+            position: absolute;
+            left: 0;
+        }
+    }
+}
+
+.archive {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    &__item {
+        padding-bottom: 1em;
+        &__link {
+            font-size: 1.1em;
+            font-weight: 700;
+            clear: both;
+        }
+        &__time {
+            color: darken($color__gray, 10%);
+            font-size: 0.8em;
             display: block;
         }
     }
-
-
 }

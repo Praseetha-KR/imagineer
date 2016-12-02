@@ -7,9 +7,11 @@ code.highlighter-rouge {
 div.highlighter-rouge {
     // display: block;
     font-family: $font-stack__code;
-    padding: $btn__code-padding;
-    background: #1d2027;
-    color: #95a2b3;
+    padding: 1em;
+    background-color: rgba(darken($color__silver, 8%), 0.6);
+    color: darken($color__silver, 40%);
+    // background: #1d2027;
+    // color: #95a2b3;
     overflow-x: auto;
     margin-bottom: 1em;
     font-size: 0.8em;

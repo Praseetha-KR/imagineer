@@ -12,6 +12,15 @@
         background-color: $color__btn-primary-bg-alt;
     }
 }
+%btn--secondary {
+    @extend %btn--base;
+    color: $color__btn-primary-text;
+    background-color: $color__secondary;
+    &:hover, &:focus, &:active, &.active {
+        color: white;
+        background-color: darken($color__secondary, 5%);
+    }
+}
 %btn--tweet {
     @extend %btn--base;
     color: $color__btn-tweet-text;
@@ -22,7 +31,7 @@
     }
 }
 .btn-theme {
-    @extend %btn--primary;
+    @extend %btn--secondary;
 }
 .btn-tweet {
     @extend %btn--tweet;

@@ -1,3 +1,8 @@
+$color__body-bg: $color__silver;
+$color__body-text: $color__dark;
+$color__link: $color__primary;
+$color__link-active: darken($color__primary, 10%);
+
 body {
     background-color: $color__body-bg;
     color: $color__body-text;
@@ -10,15 +15,15 @@ a {
     }
 }
 
-.primary {
-    color: $color__primary;
-}
-.dark {
-    color: $color__body-text;
-}
-.light {
-    color: $color__silver;
-}
+// .primary {
+//     color: $color__primary;
+// }
+// .dark {
+//     color: $color__body-text;
+// }
+// .light {
+//     color: $color__silver;
+// }
 .gray {
     color: $color__gray;
 }

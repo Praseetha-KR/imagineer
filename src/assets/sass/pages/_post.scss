@@ -1,3 +1,23 @@
+$article__font: 1.2em;
+$article__line-height: 1.5;
+
+.post__header {
+    text-align: center;
+    // background: $color__secondary;
+    width: 80%;
+    margin: auto;
+    // border: 0.3em solid $color__dark;
+    // color: $color__silver;
+    &__title {
+        font-size: 3em;
+        line-height: 1.5;
+        font-family: $title-type;
+        font-weight: 700;
+        @media (min-width: 768px) {
+            font-size: 5em;
+        }
+    }
+}
 .post, .article {
     article[role="article"] {
         font-size: $article__font;
@@ -7,6 +27,19 @@
         }
         p, ul, ol {
             padding-bottom: 0.8em;
+        }
+        a {
+            position: relative;
+            display: inline-block;
+            &:hover::after {
+                content: '';
+                display: block;
+                height: 0.3em;
+                width: 100%;
+                background: rgba($color__secondary, 0.8);
+                position: absolute;
+                bottom: 0;
+            }
         }
         h1, h2, h3, h4, h5, h6, table {
             margin: 0.5em 0 0.2em;
