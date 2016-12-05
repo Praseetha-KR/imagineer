@@ -82,7 +82,7 @@ function renderData(data, prefix) {
         },
         {
             attr: 'href',
-            value: data.avatar_url,
+            value: data.html_url,
             class: `${prefix}__link`
         }
     ];
