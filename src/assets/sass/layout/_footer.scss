@@ -1,11 +1,15 @@
-$color__footer-bg: white;
+$color__footer-bg: $color__light;
 $color__footer: rgba($color__gray, 0.6);
 
 .footer {
     background-color: $color__footer-bg;
+    border-top: 1px solid darken($color__light, 2%);
     color: $color__footer;
     text-align: center;
     padding: 2em 0;
+    &__copyright {
+        font-size: 0.7em;
+    }
 }
 // footer[role="contentinfo"] {
 //     background-color: $color__footer-bg;

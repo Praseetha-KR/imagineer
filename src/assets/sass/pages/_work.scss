@@ -2,7 +2,8 @@
     &__item {
         margin-bottom: 3em;
         padding: 1em;
-        background-color: $color__work-item-bg;
+        border: 0.1em solid rgba($color__secondary, 0.3);
+        background-color: rgba($color__secondary, 0.05);
         time {
             text-transform: uppercase;
             font-size: 0.8em;

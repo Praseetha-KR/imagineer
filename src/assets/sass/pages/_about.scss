@@ -1,0 +1,15 @@
+.about {
+    &__avatar {
+        width: 12em;
+        float: right;
+        padding-left: 1em;
+        & > img {
+            border: 0.7em solid white;
+            box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            transform: rotateZ(-5deg);
+            &:hover {
+                transform: rotateZ(0deg);
+            }
+        }
+    }
+}

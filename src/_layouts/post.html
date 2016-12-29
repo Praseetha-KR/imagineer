@@ -3,77 +3,46 @@ layout: default
 active: blog
 comments: true
 ---
-<style>
-    /*a,
-    table thead tr,
-    .post ol:not(.list-silent)>li:before,
-    nav[role=navigation] a:active,
-    nav[role=navigation] a:focus,
-    nav[role=navigation] a:hover {
-        color: {{ page.theme }};
-    }
-    a:hover,
-    a:focus,
-    a:active {
-        color: {{ page.theme }};
-    }*/
-    /*.post__header {
-        background-color: {{ page.theme }};
-    }*/
-    /*table th,
-    .post ul:not(.list-silent)>li:before {
-        background-color: {{ page.theme }};
-    }
-    blockquote {
-        border-left-color: {{ page.theme }};
-    }
-    .post ul:not(.list-silent) > li > ul:not(.list-silent) > li:before {
-        border-color: {{ page.theme }};
-    }*/
-</style>
 
-{% assign date = page.date | date_to_string %}
-
-<section class="post__header push-1-top push-3-bottom">
-    {% include banner.html posttitle=page.title postdate=date %}
-    {% include blurb.html blurb=page.blurb variable-blurb=page.blurb %}
-</section>
-
-<section class="post">
-    <div class="clearall push-4">
-        <article role="article">
-            {{ content }}
-        </article>
-        <div class="wrapper centered">
-            <section class="share space-2-top">
-                <a class="btn-tweet" href=""><i class="fa fa-twitter"></i>&nbsp;&nbsp;Tweet</a>
-            </section>
-
-            <section>
-                {% include pagination.html prev_title=page.previous.title prev_url=page.previous.url next_title=page.next.title next_url=page.next.url %}
-            </section>
-
-            <nav role="navigation" class="arrow-navigation space-3-top">
-                {% if page.next.url %}
-                    <a href="{{page.next.url}}" class="dark">
-                        <i class="fa fa-chevron-left"></i>
-                    </a>
-                {% endif %}
-                {% if page.previous.url %}
-                    <a href="{{page.previous.url}}" class="dark">
-                        <i class="fa fa-chevron-right"></i>
-                    </a>
-                {% endif %}
-            </nav>
-            <section class="push-2-top push-4-bottom">
-                <div id="disqus_thread"></div>
-                <script type="text/javascript" src="//disqus.com/forums/imagineer/embed.js"></script>
-                <noscript><a href="//imagineer.disqus.com/?url=ref">View the discussion thread.</a></noscript>
-                <a href="//disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-            </section>
+<main role="main">
+    <section class="post__intro">
+        <div class="post__header">
+            <h1 role="heading" class="post__heading">{{ page.title }}</h1>
+            <time class="post__date">{{ page.date | date_to_string }}</time>
         </div>
-    </div>
-</section>
+    </section>
+    <article role="article" class="post">
+        {{ content }}
+
+        <section class="post__share">
+            <a class="btn-tweet" href=""><i class="fa fa-twitter"></i>&nbsp;&nbsp;Tweet</a>
+        </section>
+
+        <section class="post__navigation">
+            {% include pagination.html prev_title=page.previous.title prev_url=page.previous.url next_title=page.next.title next_url=page.next.url %}
+        </section>
+
+        <section class="post__comments">
+            <!-- <div id="disqus_thread"></div>
+            <script type="text/javascript" src="//disqus.com/forums/imagineer/embed.js"></script>
+            <noscript><a href="//imagineer.disqus.com/?url=ref">View the discussion thread.</a></noscript>
+            <a href="//disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a> -->
+        </section>
+    </article>
+
+    <nav role="navigation" class="arrow-navigation space-3-top">
+        {% if page.next.url %}
+            <a href="{{page.next.url}}" class="dark">
+                <i class="fa fa-chevron-left"></i>
+            </a>
+        {% endif %}
+        {% if page.previous.url %}
+            <a href="{{page.previous.url}}" class="dark">
+                <i class="fa fa-chevron-right"></i>
+            </a>
+        {% endif %}
+    </nav>
+</main>
 
 <!-- Twitter share button -->
 <script>

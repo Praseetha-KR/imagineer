@@ -1,0 +1,16 @@
+---
+layout: default
+title: 'Blog | imagineer'
+active: blog
+theme: '#00BCD4'
+---
+<ul role="list" class="home__archives archive push-3-top">
+    {% for post in site.posts %}
+        {% if post.status != 'draft' %}
+            <li role="listitem" class="archive__item">
+                <a class="archive__item__link" href="{{ post.url }}">{{ post.title }}</a>
+                <time class="archive__item__time">{{ post.date | date_to_string }}</time>
+            </li>
+        {% endif %}
+    {% endfor %}
+</ul>

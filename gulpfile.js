@@ -44,6 +44,10 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], () => {
     browserSync.reload();
 });
 
+gulp.task('reload', () => {
+    browserSync.reload();
+});
+
 gulp.task('scss', () => {
     var dest = is_prod ? paths.prod : paths.dev;
     return gulp.src(paths.src + paths.scss + '/**/*.scss')
@@ -75,7 +79,8 @@ gulp.task('watch', () => {
     is_prod = false;
     gulp.watch(paths.src + paths.scss + '/**/*.scss', () => {
         runSequence(
-            'scss'
+            'scss',
+            'reload'
         );
     });
     gulp.watch([

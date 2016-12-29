@@ -5,15 +5,29 @@ active: blog
 theme: '#00BCD4'
 ---
 
+
 <div class="home">
+    <section class="home__banner">
+        <div class="banner">
+            <h1 class="banner__title">Imagineering the web!</h1>
+            <img class="banner__image" src="/assets/img/imagineer.svg" alt="">
+            <!-- <div class="banner__intro">
+                <p>Hello there! I'm Praseetha KR, this is my weblog.</p>
+                <p>I'm an engineer, programmer &amp; designer, specialized in web.</p>
+                <p>I <a href="https://github.com/Praseetha-KR">write code</a> most of the time, and occasionally <a href="https://twitter.com/void_imagineer">tweet</a>.
+            </div> -->
+        </div>
+    </section>
+
     <main role="main" class="home__main">
-        <h2 class="home__heading">Blog</h2>
+        <h2 class="home__heading sr-only">Blog</h2>
         <ul role="list" class="home__archives archive push-3-top">
             {% for post in paginator.posts %}
                 {% if post.status != 'draft' %}
                     <li role="listitem" class="archive__item">
                         <a class="archive__item__link" href="{{ post.url }}">{{ post.title }}</a>
                         <time class="archive__item__time">{{ post.date | date_to_string }}</time>
+                        <p>{{ post.blurb }}</p>
                     </li>
                 {% endif %}
             {% endfor %}
@@ -22,20 +36,4 @@ theme: '#00BCD4'
             {% include pagination.html prev_title='New Posts' prev_url=paginator.previous_page_path next_title='Old Posts' next_url=paginator.next_page_path %}
         </section>
     </main>
-    <aside class="home__sidebar">
-        <div class="home__sidebar__about">
-            <h2 class="home__heading">Hello!</h2>
-            <p>I'm Praseetha KR, this is my weblog.</p>
-            <p>I <a href="https://github.com/Praseetha-KR">write code</a> most of the time, and occasionally <a href="https://twitter.com/void_imagineer">tweet</a>.
-        </div>
-        <div class="home__sidebar__avatar">
-            <img src="/assets/img/praseethakr.jpg" alt="">
-        </div>
-        <div class="home__sidebar__github">
-            <div class="github-widget" data-username="Praseetha-KR"></div>
-        </div>
-        <div class="home__sidebar__twitter">
-            <a class="twitter-timeline" data-height="400" href="https://twitter.com/void_imagineer"></a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
-    </aside>
 </div>

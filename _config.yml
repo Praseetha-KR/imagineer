@@ -16,7 +16,7 @@ highlighter: rouge
 
 # future: true
 
-paginate: 15
+paginate: 6
 paginate_path: "/page:num"
 permalink: /blog/:title/
 
