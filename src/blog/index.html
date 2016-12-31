@@ -5,7 +5,7 @@ active: blog
 ---
 
 <main role="main" class="wrapper">
-    <h2 class="sr-only">Blog</h2>
+    <h1 class="page__heading sr-only">Blog</h1>
     <ul role="list" class="blog push-3-top">
         {% for post in paginator.posts %}
             {% if post.status != 'draft' %}
