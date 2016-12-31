@@ -1,4 +1,4 @@
-.work {
+.project {
     &__item {
         margin-bottom: 1.5em;
         // padding: 1em;
@@ -18,7 +18,7 @@
             background-color: rgba($color__gray, 0.1);
             text-align: center;
             @media (min-width: 768px) {
-                flex: 5;
+                flex: 1;
             }
             img {
                 display: block;
@@ -26,10 +26,9 @@
         }
         &__details {
             padding: 0.2em 1em;
-            text-align: center;
             height: 100%;
             @media (min-width: 768px) {
-                flex: 3;
+                flex: 1;
             }
         }
         &__title {
@@ -49,22 +48,5 @@
             margin: 0;
             display: none;
         }
-    }
-    &__category {
-        visibility: hidden;
-        height: 0;
-        // background-color:$color__work-category-bg;
-        // color: $color__work-category-text;
-        // text-align: center;
-        // margin-top: 1em;
-        // margin-bottom: 1em;
-        // font-family: $heading-type;
-        // font-size: 2em;
-        // padding: 0.3em;
-    }
-    &__mentions {
-        border: 0.1em solid rgba($color__secondary, 0.3);
-        background-color: rgba($color__secondary, 0.05);
-        padding: 1em;
     }
 }
