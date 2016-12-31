@@ -4,16 +4,14 @@ code.highlighter-rouge {
     border-radius: 0.2em;
     padding: 0 0.2em;
 }
+pre.highlight {
+    white-space: pre-wrap;
+}
 div.highlighter-rouge {
-    // display: block;
     font-family: $font-stack__code;
-    padding: 1em;
+    padding: 0 1.5em;
     background-color: #f5f6f9;
     color: #95a2b3;
-    // background: #1d2027;
-    // color: #95a2b3;
-    // background: #384454;
-    // color: #c4d1e1;
     overflow-x: auto;
     margin-bottom: 1em;
     font-size: 0.8em;

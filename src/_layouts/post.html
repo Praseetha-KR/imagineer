@@ -22,14 +22,14 @@ comments: true
         </section> -->
     </article>
 
-    <nav role="navigation" class="arrow-navigation space-3-top">
+    <nav role="navigation" class="post__navigation">
         {% if page.next.url %}
-            <a href="{{page.next.url}}" class="dark">
+            <a href="{{page.next.url}}" class="post__navigation__link">
                 <i class="fa fa-chevron-left"></i>
             </a>
         {% endif %}
         {% if page.previous.url %}
-            <a href="{{page.previous.url}}" class="dark">
+            <a href="{{page.previous.url}}" class="post__navigation__link">
                 <i class="fa fa-chevron-right"></i>
             </a>
         {% endif %}

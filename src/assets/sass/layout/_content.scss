@@ -1,3 +1,5 @@
+$content-width: 56%;
+
 html {
     height: 100%;
 }
@@ -9,4 +11,14 @@ body {
 .content-wrapper {
     margin: 0 auto;
     padding-bottom: $footer-height;
+}
+
+.wrapper {
+    width: 90%;
+    margin: auto;
+}
+@media (min-width: 768px) {
+    .wrapper {
+        width: $content-width;
+    }
 }

@@ -23,4 +23,24 @@
             font-size: 0.9em;
         }
     }
+    &__pagination {
+        padding: 2em 0;
+        display: flex;
+        justify-content: space-between;
+        &__nav {
+            border: 0.1em solid $color__gray;
+            color: $color__gray;
+            padding: 0.3em 1em;
+            border-radius: 2em;
+            display: block;
+            &:hover {
+                background-color: $color__secondary;
+                color: white;
+                border-color: $color__secondary;
+            }
+            &--left + &--right {
+                margin-left: 1em;
+            }
+        }
+    }
 }

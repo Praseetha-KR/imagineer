@@ -1,12 +1,12 @@
-<nav class="pagination">
+<nav class="blog__pagination">
     {% if include.next_url %}
-        <a class="pagination__nav pagination__nav--left" href="{{ include.next_url }}">
+        <a class="blog__pagination__nav blog__pagination__nav--left" href="{{ include.next_url }}">
             <i class="fa fa-long-arrow-left"></i>
             <span>{{ include.next_title }}</span>
         </a>
     {% endif %}
     {% if include.prev_url %}
-        <a class="pagination__nav pagination__nav--right" href="{{ include.prev_url }}">
+        <a class="blog__pagination__nav blog__pagination__nav--right" href="{{ include.prev_url }}">
             <span>{{ include.prev_title}}</span>
             <i class="fa fa-long-arrow-right"></i>
         </a>
