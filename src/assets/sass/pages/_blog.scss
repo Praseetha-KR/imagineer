@@ -1,0 +1,26 @@
+.blog {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    &__item {
+        padding: 1em 0;
+        padding: 1em 0;
+        &:not(:last-child) {
+            border-bottom: 1px dashed #EEE;
+        }
+        &__link {
+            font-size: 1.4em;
+            font-weight: 900;
+            clear: both;
+            font-family: $heading-type;
+        }
+        &__time {
+            color: darken($color__gray, 10%);
+            font-size: 0.8em;
+            display: block;
+        }
+        &__blurb {
+            font-size: 0.9em;
+        }
+    }
+}

@@ -6,7 +6,7 @@
 @import 'base/reset';
 @import 'base/typography';
 
-@import 'components/syntax';
+@import 'components/syntax-highlight';
 @import 'components/buttons';
 @import 'components/utils';
 @import 'components/table';
@@ -15,10 +15,11 @@
 @import 'layout/spacing';
 @import 'layout/nav';
 @import 'layout/header';
-@import 'layout/main';
 @import 'layout/footer';
+@import 'layout/content';
 
 @import 'pages/home';
+@import 'pages/blog';
 @import 'pages/post';
 @import 'pages/work';
 @import 'pages/about';

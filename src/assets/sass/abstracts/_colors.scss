@@ -1,43 +1,17 @@
 $color__primary: #41b7d8;
 $color__secondary: #85D2F3;
 
-$color__silver: #F7F7F5;
+$color__silver: #f9fafb;
 $color__gray: #cbced1;
 $color__dark: #4a4b52;
 $color__light: #f9fafb;
-// $color__dark: #33384A;
-
-// $color__primary: #00BCD4;
-// $color__secondary: #4CAF50;
-
-// $color__silver: #EFEFEF;
-// $color__dark: #333;
 $color__gray-dark: #505050;
-// $color__gray: #9E9E9E;
 $color__gray-medium: #E8E8E8;
-
-// $color__link: $color__primary;
-// $color__link-active: darken($color__primary, 10%);
-
-// $color__body-bg: #f0f2f5;
-// $color__body-text: hsl(300, 7%, 28%);
-
-// $color__header-bg: $color__silver;
-// $color__header-title: $color__dark;
-// $color__header-desc: #999;
-
-// $color__footer-bg: #EFEFEF;
-// $color__footer-text: $color__dark;
-// $color__footer-links-gray: #E0E0E0;
-// $color__footer-links-gray-alt: rgba($color__primary, 0.3);
 
 $color__table-head-bg: $color__secondary;
 $color__table-head-text: white;
 $color__table-border: $color__gray-medium;
 $color__table-stripe: lighten($color__gray-medium, 6%);
-
-// $color__aside-bg: $color__silver;
-// $color__aside-fold: darken($color__silver, 10%);
 
 $color__bullet-ol: $color__primary;
 $color__bullet-ul: $color__primary;
@@ -46,17 +20,10 @@ $color__btn-primary-text: white;
 $color__btn-primary-bg: $color__primary;
 $color__btn-primary-bg-alt: darken($color__primary, 3%);
 
-// $color__page-nav-text: #bdbdbd;
-// $color__page-nav-text-alt: $color__primary;
-// $color__page-nav-bg: rgba(255,255,255,0.5);
-// $color__page-nav-bg-hover: #F5E8F5;
-// $color__page-nav-border: #ECDFEC;
-
 $color__btn-tweet-text: white;
 $color__btn-tweet-bg: hsl(203,89%,53%);
 $color__btn-tweet-bg-alt: lighten($color__btn-tweet-bg, 10%);
 
-// $color__masthead-fill: lighten($color__primary, 10%);
 $color__archive-time: $color__primary;
 
 $color__work-item-bg: $color__silver;

@@ -1,39 +1,11 @@
 ---
 layout: default
 title: 'imagineer'
-active: blog
-theme: '#00BCD4'
+active: home
 ---
 
-
 <div class="home">
-    <section class="home__banner">
-        <div class="banner">
-            <h1 class="banner__title">Imagineering the web!</h1>
-            <img class="banner__image" src="/assets/img/imagineer.svg" alt="">
-            <!-- <div class="banner__intro">
-                <p>Hello there! I'm Praseetha KR, this is my weblog.</p>
-                <p>I'm an engineer, programmer &amp; designer, specialized in web.</p>
-                <p>I <a href="https://github.com/Praseetha-KR">write code</a> most of the time, and occasionally <a href="https://twitter.com/void_imagineer">tweet</a>.
-            </div> -->
-        </div>
+    <section class="banner">
+        <img class="banner__image" src="/assets/img/imagineer.svg" alt="">
     </section>
-
-    <main role="main" class="home__main">
-        <h2 class="home__heading sr-only">Blog</h2>
-        <ul role="list" class="home__archives archive push-3-top">
-            {% for post in paginator.posts %}
-                {% if post.status != 'draft' %}
-                    <li role="listitem" class="archive__item">
-                        <a class="archive__item__link" href="{{ post.url }}">{{ post.title }}</a>
-                        <time class="archive__item__time">{{ post.date | date_to_string }}</time>
-                        <p>{{ post.blurb }}</p>
-                    </li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-        <section class="push-4-bottom">
-            {% include pagination.html prev_title='New Posts' prev_url=paginator.previous_page_path next_title='Old Posts' next_url=paginator.next_page_path %}
-        </section>
-    </main>
 </div>

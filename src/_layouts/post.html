@@ -14,20 +14,12 @@ comments: true
     <article role="article" class="post">
         {{ content }}
 
-        <section class="post__share">
-            <a class="btn-tweet" href=""><i class="fa fa-twitter"></i>&nbsp;&nbsp;Tweet</a>
-        </section>
-
-        <section class="post__navigation">
-            {% include pagination.html prev_title=page.previous.title prev_url=page.previous.url next_title=page.next.title next_url=page.next.url %}
-        </section>
-
-        <section class="post__comments">
-            <!-- <div id="disqus_thread"></div>
+        <!-- <section class="post__comments">
+            <div id="disqus_thread"></div>
             <script type="text/javascript" src="//disqus.com/forums/imagineer/embed.js"></script>
             <noscript><a href="//imagineer.disqus.com/?url=ref">View the discussion thread.</a></noscript>
-            <a href="//disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a> -->
-        </section>
+            <a href="//disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section> -->
     </article>
 
     <nav role="navigation" class="arrow-navigation space-3-top">
@@ -43,25 +35,3 @@ comments: true
         {% endif %}
     </nav>
 </main>
-
-<!-- Twitter share button -->
-<script>
-    'use strict';
-    window.onload = function(){
-        var postUrl = '{{ site.url }}{{ page.url }}';
-        var postTitle = '{{ page.title }}';
-        var twitterHandle = '{{ site.twitter_username }}';
-        var twitterShareUrl = 'https://twitter.com/intent/tweet?original_referer=' + postUrl + '%2F&amp;text=' + postTitle + '&amp;tw_p=tweetbutton&amp;url=' + postUrl + '%2F&amp;via=' + twitterHandle;
-
-        var width = 600;
-        var height = 400;
-        var left = (window.screen.width / 2) - ((width / 2) + 10);
-        var top = (window.screen.height / 2) - ((height / 2) + 50);
-
-        document.querySelector('.btn-tweet').onclick = function() {
-            var popUp = window.open(twitterShareUrl, 'popupwindow', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=no, copyhistory=no, width=' + width + ',height='+ height +', top='+top+', left='+left);
-            popUp.focus();
-            return false;
-        };
-    };
-</script>

@@ -1,84 +1,12 @@
 $home__sidebar-width: 18em;
 
-.home {
-    float: none;
-    overflow: hidden;
-    @media (min-width: 768px) {
-        // width: 80%;
-        padding: 0;
-        margin: auto;
-    }
-
-    &__main {
-        margin: auto;
-        width: 90%;
-        display: block;
-        // padding-bottom: 4em;
-        @media (min-width: 768px) {
-            width: 60%;
-        }
-    }
-    &__heading {
-        padding-left: 0.7em;
-        padding-bottom: 1em;
-        position: relative;
-        &::before {
-            content: '';
-            display: block;
-            width: 0.3em;
-            height: 1em;
-            background-color: $color__secondary;
-            position: absolute;
-            left: 0;
-        }
-    }
-}
-
 .banner {
     text-align: center;
-    border-bottom: 1px solid $color__silver;
-    background: $color__light;
-    &__title {
-        font-size: 2.5em;
-        margin: 0;
-        padding: 1em;
-        line-height: 1.5;
-        @media (min-width: 768px) {
-            padding: 1em 0;
-            font-size: 3.5em;
-        }
-    }
     &__image {
-        width: 25em;
+        width: $content-width;
         margin-bottom: -0.5em;
-    }
-    &__intro {
-        padding-top: 1.5em;
-        padding-bottom: 4em;
-    }
-}
-.archive {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    &__item {
-        padding: 1em 0;
-        // border-bottom: 1px solid #EEE;
-        padding: 1em 0;
-        // &:hover {
-        //     background: $color__silver;
-        // }
-        &__link {
-            font-size: 1.4em;
-            font-weight: 900;
-            clear: both;
-            font-family: $heading-type;
-            // color: lighten($color__dark, 10%);
-        }
-        &__time {
-            color: darken($color__gray, 10%);
-            font-size: 0.8em;
-            display: block;
+        @media (min-width: 768px) {
+            width: 25em;
         }
     }
 }

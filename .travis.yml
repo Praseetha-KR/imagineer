@@ -4,5 +4,5 @@ node_js:
 before_install:
     - rvm install 2.2.0
     - gem install jekyll jekyll-paginate kramdown rouge
-    - npm install -g grunt-cli
+    - npm install -g gulp-cli
 install: npm install

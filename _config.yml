@@ -1,26 +1,22 @@
 name: imagineer
 description: Weblog of Praseetha KR including notes on development, design & other thoughts.
 keywords: Web, Development, Design
-author: Praseetha KR
+
 url: http://imagineer.in
+author: Praseetha KR
 twitter_username: void_imagineer
+github_username: Praseetha-KR
 
 markdown: kramdown
 kramdown:
     input: GFM
     hard_wrap: false
     syntax_highlighter: rouge
-# redcarpet:
-#     extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+
 highlighter: rouge
 
-# future: true
-
 paginate: 6
-paginate_path: "/page:num"
+paginate_path: "/blog/page:num"
 permalink: /blog/:title/
-
-# relative_permalinks: true
-
 
 gems: [jekyll-paginate]

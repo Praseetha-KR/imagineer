@@ -8,12 +8,12 @@ div.highlighter-rouge {
     // display: block;
     font-family: $font-stack__code;
     padding: 1em;
-    // background-color: rgba(darken($color__silver, 8%), 0.6);
-    // color: darken($color__silver, 40%);
+    background-color: #f5f6f9;
+    color: #95a2b3;
     // background: #1d2027;
     // color: #95a2b3;
-    background: #384454;
-    color: #c4d1e1;
+    // background: #384454;
+    // color: #c4d1e1;
     overflow-x: auto;
     margin-bottom: 1em;
     font-size: 0.8em;
@@ -41,14 +41,14 @@ div.highlighter-rouge {
     .gu    { color: #aaa; } // Generic.Subheading
     .gt    { color: #a00; } // Generic.Traceback
     .kc    { color: #95a2b3; } // Keyword.Constant
-    .kd    { color: $color__secondary; } // Keyword.Declaration
+    .kd    { color: #b95ad8; } // Keyword.Declaration
     .kp    { color: #95a2b3; } // Keyword.Pseudo
     .kr    { color: #95a2b3; } // Keyword.Reserved
     .kt    { color: #458; } // Keyword.Type
     .m     { color: #45a8b6; } // Literal.Number
     .s     { color: #7ebb61; } // Literal.String
     .na    { color: #c88247; } // Name.Attribute
-    .nb    { color: #d5515d; } // Name.Builtin
+    .nb    { color: #45a8b6; } // Name.Builtin
     .nc    { color: #c88247; } // Name.Class
     .nd    { color: #4FB6BE; } // Name.Decorator
     .no    { color: #4FB6BE; } // Name.Constant
@@ -56,9 +56,9 @@ div.highlighter-rouge {
     .ne    { color: #900; } // Name.Exception
     .nf    { color: #52A5EB; } // Name.Function
     .nn    { color: #555; } // Name.Namespace
-    .nt    { color: #b7c3d2; } // Name.Tag
-    .nv    { color: #b7c3d2; } // Name.Variable
-    .nx    { color: #b7c3d2; } // Name.Function declaration
+    .nt    { color: #d7515e; } // Name.Tag
+    .nv    { color: #d7515e; } // Name.Variable
+    .nx    { color: #d5515d; } // Name.Function declaration
     .ow    { color: #95a2b3; } // Operator.Word
     .w     { color: #bbb; } // Text.Whitespace
     .mf    { color: #45a8b6; } // Literal.Number.Float

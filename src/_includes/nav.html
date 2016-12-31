@@ -1,0 +1,19 @@
+<nav role="navigation">
+    <ul class="nav list-silent">
+        <li class="nav__item">
+            <a role="menuitem" href="/blog" class="nav__item__link {% if page.active == 'blog' %}active{% endif %}">Blog</a>
+        </li>
+        <li class="nav__item">
+            <a role="menuitem" href="/works" class="nav__item__link {% if page.active == 'works' %}active{% endif %}">Works</a>
+        </li>
+        <li class="nav__item">
+            <a role="menuitem" href="/experiments" class="nav__item__link {% if page.active == 'experiments' %}active{% endif %}">Experiments</a>
+        </li>
+        <li class="nav__item">
+            <a role="menuitem" href="/about" class="nav__item__link {% if page.active == 'about' %}active{% endif %}">About</a>
+        </li>
+        <li class="nav__item">
+            <a role="menuitem" class="nav__item__link" href="/feed.xml" target="_blank"><i class="fa fa-rss"></i></a>
+        </li>
+    </ul>
+</nav>

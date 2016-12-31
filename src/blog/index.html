@@ -1,0 +1,24 @@
+---
+layout: default
+title: 'Blog | imagineer'
+active: blog
+---
+
+<main role="main" class="wrapper">
+    <h2 class="sr-only">Blog</h2>
+    <ul role="list" class="blog push-3-top">
+        {% for post in paginator.posts %}
+            {% if post.status != 'draft' %}
+                <li role="listitem" class="blog__item">
+                    <a class="blog__item__link" href="{{ post.url }}">{{ post.title }}</a>
+                    <time class="blog__item__time">{{ post.date | date_to_string }}</time>
+                    <!-- <p class="blog__item__blurb">{{ post.blurb }}</p> -->
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    <section class="push-4-bottom">
+        {% include pagination.html prev_title='New Posts' prev_url=paginator.previous_page_path next_title='Old Posts' next_url=paginator.next_page_path %}
+    </section>
+</main>
+

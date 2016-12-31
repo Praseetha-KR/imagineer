@@ -9,32 +9,27 @@
 
     <title>{{ page.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Weblog of Praseetha KR, a frontend developer and designer from Bangalore."/>
-    <meta name="keywords" content="praseetha, praseetha kr, praseethakr, blog, imagineer, void_imagineer, web developer, frontend developer, bangalore">
+    <meta name="description" content="Weblog of Praseetha KR, a software engineer + designer from Bangalore."/>
+    <meta name="keywords" content="praseetha, praseetha kr, praseethakr, blog, imagineer, void_imagineer, web developer, frontend developer, programmer, software engineer, bangalore">
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@void_imagineer" />
     <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}Imagineer.in{% endif %}" />
-    <meta name="twitter:description" content="{% if page.blurb %}{{ page.blurb }}{% else %}Weblog of Praseetha KR, a frontend developer and designer from Bangalore.{% endif %}" />
+    <meta name="twitter:description" content="{% if page.blurb %}{{ page.blurb }}{% else %}Weblog of Praseetha KR.{% endif %}" />
     <meta name="twitter:image" content="https://imagineer.in/assets/img/imagineer_card.jpg" />
 
     <meta name="theme-color" content="#FFFFFF">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/css/app.css">
-    <!-- <link rel="stylesheet" href="/assets/vendors/gw/gw.css"> -->
-    <link href='//fonts.googleapis.com/css?family=Mandali|Palanquin+Dark' rel='stylesheet' type='text/css'>
-
   </head>
   <body>
-    {% include header.html %}
-
-    {{ content }}
-
+    <div class="content-wrapper">
+        <!-- {% include nav.html %} -->
+        {% include header.html %}
+        {{ content }}
+    </div>
     {% include footer.html %}
     <script type="text/javascript" src="/assets/js/app.js"></script>
-    <!-- <script type="text/javascript" src="/assets/vendors/gw/gw.js"></script> -->
   </body>
 </html>

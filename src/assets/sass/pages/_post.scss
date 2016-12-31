@@ -1,6 +1,4 @@
-$article__font: 1.2em;
-$article__line-height: 1.5;
-$article-width: 63%;
+$article-width: $content-width;
 $article-edge-spacing: (100% - $article-width) / 2;
 
 .post {
@@ -8,28 +6,28 @@ $article-edge-spacing: (100% - $article-width) / 2;
     margin: auto;
     font-weight: 400;
     line-height: 1.7;
-    padding-top: 2em;
+    padding: 2em 0 4em;
     @media (min-width: 768px) {
         width: $article-width;
     }
     &__intro {
         text-align: center;
-        color: #EEE;
-        background-color: #41b7d8;
-        background-image: url("/assets/img/clean-textile.png");
+        // color: #EEE;
+        // background-color: #41b7d8;
+        // background-image: url("/assets/img/clean-textile.png");
         padding: 4em 1em;
         @media (min-width: 768px) {
-            padding: 0;
-            height: 25em;
-            position: relative;
+            // padding: 0;
+            // height: 25em;
+            // position: relative;
         }
     }
     &__header {
-        @media (min-width: 768px) {
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%);
-        }
+        // @media (min-width: 768px) {
+        //     position: relative;
+        //     top: 50%;
+        //     transform: translateY(-50%);
+        // }
     }
     &__heading {
         margin: 0;
@@ -37,9 +35,9 @@ $article-edge-spacing: (100% - $article-width) / 2;
         line-height: 1.2;
         width: $article-width;
         margin: auto;
-        // font-family: $title-type;
+        font-family: $title-font;
         @media (min-width: 768px) {
-            font-size: 3.5em;
+            font-size: 3em;
         }
     }
     &__date {

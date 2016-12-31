@@ -2,20 +2,16 @@ $color__header-bg: $color__silver;
 $color__nav-link: $color__gray;
 
 .header {
-    display: flex;
-    justify-content: center;
-    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
     z-index: 1;
     position: relative;
-    flex-direction: column;
     &__siteinfo {
-        padding: 0.5em 1.5em;
+        padding: 2.5em 1.5em;
         text-align: center;
     }
     &__caption {
-        margin: -1.8em 0 0 0.5em;
+        margin: -1em 0 0 0.5em;
         font-size: 0.7em;
-        color: darken($color__gray, 10%);
+        color: #b7c0c7;
     }
     &__logo {
         display: block;
@@ -24,10 +20,6 @@ $color__nav-link: $color__gray;
             height: 3em;
             margin-top: 0.3em;
         }
-    }
-    &__nav {
-        display: flex;
-        align-items: center;
     }
 }
 .nav {
