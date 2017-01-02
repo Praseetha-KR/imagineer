@@ -4,6 +4,7 @@ title:  "HTTPS on localhost with NGINX"
 date:   2016-06-24 10:45:20
 categories: blog, programming, sysadmin
 blurb: "How to get https for a website running on localhost in OSX"
+image: "/assets/img/posts/https_localhost.jpg"
 theme: '#7ebb61'
 ---
 

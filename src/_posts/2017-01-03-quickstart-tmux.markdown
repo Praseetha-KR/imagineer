@@ -3,7 +3,7 @@ layout: post
 title:  "Quickstart tmux"
 date:   2017-01-03 01:15:20
 categories: blog, programming, sysadmin
-blurb: "Tmuxifying terminal"
+blurb: "Tmuxifying terminal life"
 image: "/assets/img/posts/tmux.png"
 theme: '#7ebb61'
 ---

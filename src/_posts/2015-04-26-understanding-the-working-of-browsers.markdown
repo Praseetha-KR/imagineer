@@ -4,6 +4,7 @@ title:  "Understanding the working of browsers"
 date:   2015-04-26 11:21:00
 categories: blog
 blurb: "A brief note on the basic internal working of web browsers"
+image: "/assets/img/posts/browser.jpg"
 theme: '#E3A976'
 ---
 

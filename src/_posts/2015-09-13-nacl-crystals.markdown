@@ -4,6 +4,7 @@ title:  "NaCl Crystals"
 date:   2015-09-13 01:18:00
 categories: blog
 blurb: "DIY salt crystals"
+image: "/assets/img/posts/nacl_cubic_crystals.jpg"
 theme: '#262533'
 ---
 

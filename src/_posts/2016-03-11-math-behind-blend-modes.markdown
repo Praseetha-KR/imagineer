@@ -4,6 +4,7 @@ title:  "Math behind blend modes"
 date:   2016-03-11 02:03:30
 categories: blog
 blurb: "Implements blend modes generetor in Javascript"
+image: "/assets/img/posts/porter-duff-compositing/subpixel_regions.png"
 theme: '#8913E7'
 ---
 
