@@ -39,6 +39,12 @@ $article-edge-spacing: (100% - $article-width) / 2;
         padding-top: 2em;
     }
 
+    &__index {
+        border: 0.1em solid rgba($color__secondary, 0.3);
+        background-color: rgba($color__secondary, 0.05);
+        padding: 1em 3em !important;
+    }
+
     &__navigation {
         font-size: 2em;
         z-index: 2;

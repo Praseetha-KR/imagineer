@@ -11,10 +11,10 @@ div.highlighter-rouge {
     font-family: $font-stack__code;
     padding: 0 1.5em;
     background-color: #f5f6f9;
-    color: #95a2b3;
+    color: #8391a2;
     overflow-x: auto;
     margin-bottom: 1em;
-    font-size: 0.8em;
+    font-size: 0.95em;
     .hll {
         background-color: #1d2027;
     }
@@ -34,7 +34,7 @@ div.highlighter-rouge {
     .gi    { color: #a6e22e; background-color: #dfd; } // Generic.Inserted
     .gi .x { color: #a6e22e; background-color: #afa; } // Generic.Inserted.Specific
     .go    { color: #888; } // Generic.Output
-    .gp    { color: #555; } // Generic.Prompt
+    .gp    { color: #a6e22e; } // Generic.Prompt
     .gs    { color: #95a2b3; } // Generic.Strong
     .gu    { color: #aaa; } // Generic.Subheading
     .gt    { color: #a00; } // Generic.Traceback

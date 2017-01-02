@@ -15,7 +15,7 @@ table {
         border: 1px solid $color__table-border;
     }
     th, td {
-        padding: $table-padding;
+        padding: $table-padding/2 $table-padding;
         vertical-align: middle;
     }
     td > img {
@@ -34,7 +34,16 @@ table {
 .table {
     &__size {
         &--small {
-            font-size: 0.8em;
+            font-size: 0.9em;
         }
+    }
+    &__subtitle {
+        background-color: darken($color__silver, 6%);
+        background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.498039) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.498039) 50%, rgba(255, 255, 255, 0.498039) 75%, transparent 75%, transparent);
+        background-size: 6px 6px;
+        padding: $table-padding/3 $table-padding;
+        font-size: 0.8em;
+        font-weight: 600;
+        text-align: center;
     }
 }
