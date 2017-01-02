@@ -30,10 +30,7 @@ gulp.task('jekyll-build', (cb) => {
     var dest = is_prod ? paths.prod : paths.dev;
     return cp.spawn(
         'jekyll', [
-            'build',
-            '--source=' + paths.src,
-            '--destination=' + dest,
-            '--config=_config.yml'
+            'build'
         ],
         { stdio: 'inherit' }
     )

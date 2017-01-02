@@ -7,6 +7,9 @@ author: Praseetha KR
 twitter_username: void_imagineer
 github_username: Praseetha-KR
 
+source: src
+destination: dev
+
 markdown: kramdown
 kramdown:
     input: GFM
@@ -14,6 +17,8 @@ kramdown:
     syntax_highlighter: rouge
 
 highlighter: rouge
+
+future: true
 
 paginate: 10
 paginate_path: "/blog/page:num"
