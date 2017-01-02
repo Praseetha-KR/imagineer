@@ -47,7 +47,8 @@ comments: true
         var postUrl = '{{ site.url }}{{ page.url }}';
         var postTitle = '{{ page.title }}';
         var twitterHandle = '{{ site.twitter_username }}';
-        var twitterShareUrl = 'https://twitter.com/intent/tweet?original_referer=' + postUrl + '%2F&amp;text=' + postTitle + '&amp;tw_p=tweetbutton&amp;url=' + postUrl + '%2F&amp;via=' + twitterHandle;
+        var twitterShareUrl = 'https://twitter.com/intent/tweet?original_referer=' + postUrl + '&amp;text=' + postTitle + '&amp;tw_p=tweetbutton&amp;url=' + postUrl + '&amp;via=' + twitterHandle;
+        console.log('posturl', twitterShareUrl);
         var width = 600;
         var height = 400;
         var left = (window.screen.width / 2) - ((width / 2) + 10);
