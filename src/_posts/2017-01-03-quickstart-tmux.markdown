@@ -62,7 +62,7 @@ Here is a list of useful commands,
     </thead>
     <tbody>
         <tr>
-            <td rowspan="30"><code>&nbsp;CTRL+B&nbsp;</code></td>
+            <td rowspan="28"><code>&nbsp;CTRL+B&nbsp;</code></td>
             <td colspan="2" class="table__subtitle">Sessions</td>
         </tr>
         <tr>
