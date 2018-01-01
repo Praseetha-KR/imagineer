@@ -11,7 +11,7 @@ One of my favourite hobbies during the summer vacation is bird watching. The wor
 
 Jungle Babbler, Indian Treepie, Black Drongo, Indian Oriole, Wire tailed swallow, Bulbul, Magpie Robin, Roseringed Parakeet, Indian Woodpecker, Common Kingfisher, Indian Koel, Yellow Throated, Tailor bird, Jungle crow, House crow, Common Myna, Paradise Flycatcher, Green Warbler, Eagle, Sunbird,  Heron, ... the list is endless!
 
-<img src="http://i844.photobucket.com/albums/ab6/voidimagineer/bird_zps7a0e3e71.jpg" class="small-img" alt="Winged friends">
+<img src="/assets/img/posts/winged_friend.jpg">
 
 But for the past 2 years, the major change i noticed around my house is the abrupt decrement in the number of birds. The concrete forest destroyed all greenary. Unpredictable climatic changes and deforestation destroyed all of their lives.
 

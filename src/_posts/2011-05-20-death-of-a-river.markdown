@@ -43,7 +43,7 @@ I wondered it is that river where govt. planned to build dams before!
 
 Water is now unavailable even to the wells that so much closer to river. So, some of the social workers have made mesh type hindrances at some points in river. But due to weeds and wastes inside water, the flow of water has been completely stopped.. Now water has become completely mud.. Wastes can be seen here and there everywhere. I scared even to touch the water of our river..
 
-<img src="http://i844.photobucket.com/albums/ab6/voidimagineer/dsci150_zps7f2a3c85.jpg" alt="Kunthi river">
+<img src="/assets/img/posts/kunthi_river.jpg" alt="Kunthi river">
 
 Is this a river!!!!? Or drainage???!!!
 

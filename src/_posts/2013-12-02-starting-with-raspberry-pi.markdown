@@ -39,11 +39,11 @@ RPi has got a ARM1176JZF-S 700 MHz processor with 512MB RAM. I have attached a 8
 Thats all! Raspbian has booted up running on RPi!
 <div class="row">
 	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		<img src="http://i844.photobucket.com/albums/ab6/voidimagineer/RPi_connection_to_monitor_zps775c7904.jpg" width="100%" alt="RPi_connection_to_monitor">
+		<img src="/assets/img/posts/rpi/RPi_connection_to_monitor_zps775c7904.jpg" width="100%" alt="RPi_connection_to_monitor">
 	</div>
 	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 		<br>
-		<img src="http://i844.photobucket.com/albums/ab6/voidimagineer/RPi_Raspbian_os_zps609d7ee6.jpg" width="100%" alt="RPi_Raspbian_os">
+		<img src="/assets/img/posts/rpi/RPi_Raspbian_os_zps609d7ee6.jpg" width="100%" alt="RPi_Raspbian_os">
 	</div>
 </div>
 
@@ -57,11 +57,11 @@ To get IP address of RPi, you can either get LAN IP from `ipconfig` and run a pi
 Once the IP of RPi is known, you can SSH using <a href="http://www.putty.org/">Putty</a>.
 <div class="row">
 	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-<img src="http://i844.photobucket.com/albums/ab6/voidimagineer/RPi_ssh_with_LAN_cable_zpse9cd5e61.jpg" width="100%" alt="RPi_ssh_with_LAN_cable">
+<img src="/assets/img/posts/rpi/RPi_ssh_with_LAN_cable_zpse9cd5e61.jpg" width="100%" alt="RPi_ssh_with_LAN_cable">
 	</div>
 	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 		<br>
-<img src="http://i844.photobucket.com/albums/ab6/voidimagineer/RPi_putty_ssh_access_zps757939cb.jpg" width="100%" alt="RPi_putty_ssh">
+<img src="/assets/img/posts/rpi/RPi_putty_ssh_zps37f2cb14.jpg" width="100%" alt="RPi_putty_ssh">
 	</div>
 </div>
 

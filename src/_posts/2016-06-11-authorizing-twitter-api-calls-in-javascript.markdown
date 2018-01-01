@@ -198,7 +198,7 @@ My idea was to **implement this app entirely on frontend**. This is **not feasib
 
 You can check out the code for Twick (Angular Twitter data fetch app) in Github.
 
-<a class="btn btn-theme space-1" target="_blank" href="https://github.com/Praseetha-KR/twick"><i class="fa fa-code pad-h-right"></i>Twick Code at Github</a>
+<a class="btn btn-theme m-1-v" target="_blank" href="https://github.com/Praseetha-KR/twick"><i class="fa fa-code p-h-right"></i>Twick Code at Github</a>
 
 
 #### References:

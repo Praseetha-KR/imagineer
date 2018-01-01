@@ -25,7 +25,7 @@ WordPress is a tool with which we can create a beautiful website or blog.
 
 * Start `Apache` and `MySQL` services from xampp control panel.
 
-	<img src="http://i844.photobucket.com/albums/ab6/voidimagineer/xampp-control-panel_zpse1a921d7.jpg" class="small-img" alt="XAMPP Control Panel">
+	<img src="/assets/img/posts/xampp-control-panel.jpg" class="small-img" alt="XAMPP Control Panel">
 
 * In your browser, enter the address `http://localhost/xampp/splash.php` and select language.
 

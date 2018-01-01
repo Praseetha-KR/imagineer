@@ -40,13 +40,13 @@ When 2 pixels get combined, 4 subpixel regions are formed:
    - both are present
    - neither is present (always empty)
 
-<div class="push-two">
+<div class="p-2-v">
     <img src="/assets/img/posts/porter-duff-compositing/subpixel_regions.png" alt="" class="half-width centered">
 </div>
 
 There are 12 of operators which decides the behaviour in these regions.
 
-<table class="space-one table-striped">
+<table class="m-1-v table-striped">
     <thead>
         <tr>
             <th colspan="6">Porter-Duff Operations (source S on backdrop B)</th>
