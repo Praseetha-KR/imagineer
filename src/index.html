@@ -4,8 +4,31 @@ title: 'imagineer'
 active: home
 ---
 
-<div class="home">
-    <section class="banner">
-        <img class="banner__image" src="/assets/img/imagineer.svg" alt="">
+<main class="main-container home p-3-top" role="main">
+
+    <!-- blurb -->
+    <section class="home__blurb blurb">
+        <p>Hey! I'm Praseetha KR. Welcome to my weblog. These posts are mostly notes on web development, and some random musings.</p>
     </section>
-</div>
+
+    <!-- posts -->
+    <section class="home__posts p-3-v">
+        <h3 class="prose-type textsize-small sr-only">Posts</h3>
+        <ul class="posts" role="list" >
+            {% for post in site.posts %}
+                {% if post.status != 'draft' %}
+                    <li class="postitem" role="listitem" >
+                        <time class="postitem__time">{{ post.date | date_to_string }}</time>
+                        <a class="postitem__link" href="{{ post.url }}">{{ post.title }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </section>
+
+    <!-- masthead -->
+    <section class="home__masthead masthead">
+        <img class="masthead__image" src="/assets/img/imagineer.svg" alt="imagineering the web!">
+    </section>
+
+</main>

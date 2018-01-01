@@ -1,26 +1,26 @@
 @for $i from 0 through 8 {
-    .space-#{$i}, .space-#{$i}-top {
+    .m-#{$i}-v, .m-#{$i}-top {
         margin-top: #{$i}em;
     }
-    .space-#{$i}, .space-#{$i}-bottom {
+    .m-#{$i}-v, .m-#{$i}-bottom {
         margin-bottom: #{$i}em;
     }
-    .push-#{$i}, .push-#{$i}-top {
+    .p-#{$i}-v, .p-#{$i}-top {
         padding-top: #{$i}em;
     }
-    .push-#{$i}, .push-#{$i}-bottom {
+    .p-#{$i}-v, .p-#{$i}-bottom {
         padding-bottom: #{$i}em;
     }
-    .gap-#{$i}, .gap-#{$i}-left {
+    .m-#{$i}-h, .m-#{$i}-left {
         margin-left: #{$i}em;
     }
-    .gap-#{$i}, .gap-#{$i}-right {
+    .m-#{$i}-h, .m-#{$i}-right {
         margin-right: #{$i}em;
     }
-    .pad-#{$i}, .pad-#{$i}-left {
+    .p-#{$i}-h, .p-#{$i}-left {
         padding-left: #{$i}em;
     }
-    .pad-#{$i}, .pad-#{$i}-right {
+    .p-#{$i}-h, .p-#{$i}-right {
         padding-right: #{$i}em;
     }
 }
@@ -33,28 +33,28 @@ $extra-spacing-list: (
     '2h': 2.5
 );
 @each $name, $value in $extra-spacing-list {
-    .space-#{$name}, .space-#{$name}-top {
+    .m-#{$name}-v, .m-#{$name}-top {
         margin-top: #{$value}em;
     }
-    .space-#{$name}, .space-#{$name}-bottom {
+    .m-#{$name}-v, .m-#{$name}-bottom {
         margin-bottom: #{$value}em;
     }
-    .push-#{$name}, .push-#{$name}-top {
+    .p-#{$name}-v, .p-#{$name}-top {
         padding-top: #{$value}em;
     }
-    .push-#{$name}, .push-#{$name}-bottom {
+    .p-#{$name}-v, .p-#{$name}-bottom {
         padding-bottom: #{$value}em;
     }
-    .gap-#{$name}, .gap-#{$name}-left {
+    .m-#{$name}-h, .m-#{$name}-left {
         margin-left: #{$value}em;
     }
-    .gap-#{$name}, .gap-#{$name}-right {
+    .m-#{$name}-h, .m-#{$name}-right {
         margin-right: #{$value}em;
     }
-    .pad-#{$name}, .pad-#{$name}-left {
+    .p-#{$name}-h, .p-#{$name}-left {
         padding-left: #{$value}em;
     }
-    .pad-#{$name}, .pad-#{$name}-right {
+    .p-#{$name}-h, .p-#{$name}-right {
         padding-right: #{$value}em;
     }
 }

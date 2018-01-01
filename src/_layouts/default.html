@@ -24,11 +24,11 @@
     <link rel="stylesheet" href="/assets/css/app.css">
   </head>
   <body>
-    <div class="content-wrapper">
-        {% include header.html %}
-        {{ content }}
-    </div>
+
+    {% include header.html %}
+    <div class="content-wrapper">{{ content }}</div>
     {% include footer.html %}
+
     <script type="text/javascript" src="/assets/js/app.js"></script>
   </body>
 </html>

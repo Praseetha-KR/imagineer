@@ -1,6 +1,6 @@
 code.highlighter-rouge {
     font-family: $font-stack__code;
-    background-color: $color__silver;
+    background-color: $color__bg-code-highlight;
     border-radius: 0.2em;
     padding: 0 0.2em;
 }
@@ -10,7 +10,7 @@ pre.highlight {
 div.highlighter-rouge {
     font-family: $font-stack__code;
     padding: 0 1.5em;
-    background-color: #f5f6f9;
+    background-color: $color__bg-code-highlight;
     color: #8391a2;
     overflow-x: auto;
     margin-bottom: 1em;

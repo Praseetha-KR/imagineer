@@ -1,11 +1,9 @@
-$color__body-bg: white;
-$color__body-text: $color__dark;
 $color__link: $color__primary;
 $color__link-active: darken($color__primary, 10%);
 
 body {
-    background-color: $color__body-bg;
-    color: $color__body-text;
+    background-color: $color__bg-silver;
+    color: $color__text-dark;
 }
 
 a {
@@ -13,8 +11,4 @@ a {
     &:hover, &:focus, &:active {
         color: $color__link-active;
     }
-}
-
-.gray {
-    color: $color__gray;
 }

@@ -1,4 +1,4 @@
-$content-width: 56%;
+$content-width: 40em;
 
 html {
     height: 100%;
@@ -10,15 +10,16 @@ body {
 }
 .content-wrapper {
     margin: 0 auto;
+    background: $color__bg-silver;
     padding-bottom: $footer-height;
 }
 
-.wrapper {
+.main-container {
     width: 90%;
     margin: auto;
 }
 @media (min-width: 768px) {
-    .wrapper {
+    .main-container {
         width: $content-width;
     }
 }

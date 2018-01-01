@@ -1,9 +1,8 @@
 .work {
     &__item {
         margin-bottom: 1.5em;
-        // padding: 1em;
-        border: 0.1em solid rgba($color__secondary, 0.3);
-        background-color: rgba($color__secondary, 0.05);
+        border: 1px solid $color__border-lightgrey;
+        background-color: white;
         overflow: hidden;
         float: none;
         clear: both;
@@ -25,11 +24,12 @@
             }
         }
         &__details {
-            padding: 0.2em 1em;
+            padding: 1em;
             text-align: center;
             height: 100%;
             @media (min-width: 768px) {
                 flex: 3;
+                padding: 0.2em 1em;
             }
         }
         &__title {
@@ -53,14 +53,6 @@
     &__category {
         visibility: hidden;
         height: 0;
-        // background-color:$color__work-category-bg;
-        // color: $color__work-category-text;
-        // text-align: center;
-        // margin-top: 1em;
-        // margin-bottom: 1em;
-        // font-family: $heading-type;
-        // font-size: 2em;
-        // padding: 0.3em;
     }
     &__mentions {
         border: 0.1em solid rgba($color__secondary, 0.3);

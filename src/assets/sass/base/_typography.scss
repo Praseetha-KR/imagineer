@@ -1,10 +1,11 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Alegreya+Sans+SC:700|Playfair+Display:700);
+@import url(https://fonts.googleapis.com/css?family=Merriweather|Questrial|Fira+Sans:700+800);
 
-$open-sans: 'Open Sans', sans-serif;
-$title-type: 'Playfair Display', sans-serif;
-$heading-type: 'Alegreya Sans SC', sans-serif;
+$para-type: 'Merriweather', sans-serif;
+$title-type: 'Fira Sans', sans-serif;
+$heading-type: 'Fira Sans', sans-serif;
+$label-type: 'Questrial', sans-serif;
 
-$body-font: $open-sans;
+$body-font: $para-type;
 $title-font: $title-type;
 
 $font__base-size: 16px;
@@ -43,3 +44,15 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+.prose-type {
+    font-family: $label-type;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.textsize-regular {
+    font-size: 1em;
+}
+.textsize-small {
+    font-size: 0.8em;
+}

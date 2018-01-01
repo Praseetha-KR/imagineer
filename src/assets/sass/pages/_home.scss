@@ -1,12 +1,35 @@
 $home__sidebar-width: 18em;
 
-.banner {
+.masthead {
     text-align: center;
     &__image {
-        width: $content-width;
+        width: $content-width - 6em;
         margin-bottom: -0.5em;
         @media (min-width: 768px) {
-            width: 25em;
+            width: $content-width / 1.8;
+        }
+    }
+}
+
+.posts {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.postitem {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+    @media (min-width: 768px) {
+        flex-direction: row;
+        margin-bottom: 0;
+    }
+    &__time {
+        width: 8em;
+        font-size: 0.8em;
+        @media (min-width: 768px) {
+            font-size: 1em;
         }
     }
 }

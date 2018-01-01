@@ -30,3 +30,23 @@ $color__work-item-bg: $color__silver;
 $color__work-category-bg: $color__primary;
 $color__work-category-text: white;
 
+// new colors
+
+$color__bg-logo: #21272d;
+$color__text-dark: #36404a;
+$color__bg-silver: #f8f9fa;
+$color__text-gray: darken($color__bg-silver, 35%);
+$color__text-lightgray: darken($color__bg-silver, 15%);
+$color__border-lightgrey: darken($color__bg-silver, 1.5%);
+$color__bg-code-highlight: darken($color__bg-silver, 2%);
+$color__text-code: #8391a2;
+
+$color__text--post-title: #21272d;// #444648;
+$color__text--post-date: #95a2b3;
+$color__text--post-body: #36404a;
+$color__text--post-link: #36404a;
+$color__bg--post-link: #b9e9f7;
+$color__text-sitenav: #828c96;
+
+
+$color__bg-highlight: #DFFB7B;

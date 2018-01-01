@@ -91,3 +91,25 @@ blockquote {
     font-size: 1.4em;
     margin: 2em auto;
 }
+
+.highlight-link {
+    color: $color__text--post-link;
+    position: relative;
+    display: inline-block;
+    z-index: 0;
+    &::before {
+        content: '';
+        display: block;
+        height: 0.3em;
+        width: 100%;
+        background: $color__bg--post-link;
+        position: absolute;
+        bottom: 0.3em;
+        z-index: -1;
+        transition: all 0.25s;
+    }
+    &:hover::before {
+        height: 0.8em;
+        transition: all 0.25s;
+    }
+}

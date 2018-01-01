@@ -7,14 +7,14 @@ comments: true
 <main role="main">
     <section class="post__intro">
         <div class="post__header">
+            <time class="post__date">Published on {{ page.date | date_to_string }}</time>
             <h1 role="heading" class="post__heading">{{ page.title }}</h1>
-            <time class="post__date">{{ page.date | date_to_string }}</time>
         </div>
     </section>
     <article role="article" class="post">
-        {{ content }}
+        <section class="post__content">{{ content }}</section>
 
-        <section class="share space-2-top">
+        <section class="share m-2-top">
             <a class="btn-tweet" href=""><i class="fa fa-twitter"></i>&nbsp;&nbsp;Tweet</a>
         </section>
 

@@ -1,6 +1,5 @@
-$color__footer-bg: $color__light;
-$color__footer: rgba($color__gray, 0.6);
-$footer-height: 12.5em;
+$color__footer: $color__text-lightgray;
+$footer-height: 4.6em;
 
 .footer {
     overflow: hidden;
@@ -10,15 +9,12 @@ $footer-height: 12.5em;
     right: 0;
     bottom: 0;
     left: 0;
-    &__main {
-        background-color: $color__footer-bg;
-        border-top: 1px solid darken($color__light, 2%);
-        color: $color__footer;
-        text-align: center;
-        padding: 2em 0;
-        text-align: center;
-    }
+    border-top: 1px solid $color__border-lightgrey;
+    background: white;
+    color: $color__footer;
+    text-align: center;
     &__copyright {
-        font-size: 0.7em;
+        font-family: $label-type;
+        font-size: 0.75em;
     }
 }
