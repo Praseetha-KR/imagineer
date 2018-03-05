@@ -4,21 +4,23 @@ title: 'Blog | imagineer'
 active: blog
 ---
 
-<main role="main" class="main-container">
-    <h3 class="prose-type textsize-regular m-6-top m-3-bottom">Posts</h3>
-    <ul role="list" class="posts p-3-top">
-        {% for post in paginator.posts %}
-            {% if post.status != 'draft' %}
-                <li role="listitem" class="postitem">
-                    <time class="postitem__time">{{ post.date | date_to_string }}</time>
-                    <a class="postitem__link" href="{{ post.url }}">{{ post.title }}</a>
-                    <!-- <p class="postitem__blurb">{{ post.blurb }}</p> -->
-                </li>
-            {% endif %}
-        {% endfor %}
-    </ul>
-    <section class="p-4-bottom">
-        {% include pagination.html prev_title='New Posts' prev_url=paginator.previous_page_path next_title='Old Posts' next_url=paginator.next_page_path %}
-    </section>
-</main>
+<div class="main-container centered">
+    <h1 class="page__heading">weblog</h1>
+    <article role="article" class="p-q-top">
+        <ul role="list" class="posts">
+            {% for post in paginator.posts %}
+                {% if post.status != 'draft' %}
+                    <li role="listitem" class="postitem">
+                        <time class="postitem__time">{{ post.date | date_to_string }}</time>
+                        <a class="postitem__link" href="{{ post.url }}">{{ post.title }}</a>
+                        <!-- <p class="postitem__blurb">{{ post.blurb }}</p> -->
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <section class="p-4-bottom">
+            {% include pagination.html prev_title='New Posts' prev_url=paginator.previous_page_path next_title='Old Posts' next_url=paginator.next_page_path %}
+        </section>
+    </article>
+</div>
 
