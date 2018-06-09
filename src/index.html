@@ -9,27 +9,35 @@ active: home
 
     <!-- masthead -->
     <section class="home__masthead masthead">
+        <h1 class="masthead__title">Praseetha KR</h1>
+        <p class="masthead__tagline">Imagineering the web.</p>
         <img class="masthead__image" src="/assets/img/imagineer.svg" alt="imagineering the web!">
     </section>
 
-    <!-- blurb -->
-    <section class="home__blurb blurb">
-        <p>Hey! I'm Praseetha KR. Welcome to my weblog. These posts are mostly notes on web development, and some random musings.</p>
-    </section>
-
     <!-- posts -->
-    <section class="home__posts p-3-v">
+    <section class="home__posts p-4-v">
         <h3 class="prose-type textsize-small sr-only">Posts</h3>
         <ul class="posts" role="list" >
-            {% for post in site.posts %}
+            {% for post in site.posts limit:6 %}
                 {% if post.status != 'draft' %}
-                    <li class="postitem" role="listitem" >
-                        <time class="postitem__time">{{ post.date | date_to_string }}</time>
-                        <a class="postitem__link" href="{{ post.url }}">{{ post.title }}</a>
+                    <li class="posts__item">
+                        <div class="postcard" role="listtitem">
+                            <time class="postcard__time">{{ post.date | date_to_string }}</time>
+                            <h3 class="postcard__title">
+                                <a class="postcard__link" href="{{ post.url }}">{{ post.title }}</a>
+                            </h3>
+                            <p class="postcard__summary">{{ post.excerpt | strip_html | normalize_whitespace | truncate: 160 | escape }}</p>
+                        </div>
                     </li>
                 {% endif %}
             {% endfor %}
         </ul>
+        <section class="posts__more">
+            <a class="posts__more__btn" href="/blog">
+                <span>More posts</span>
+                <i class="fa fa-long-arrow-right"></i>
+            </a>
+        </section>
     </section>
 
 </main>

@@ -3,16 +3,20 @@
 
     <!-- sitelogo -->
     <a role="menuitem" href="/" class="sitelogo" title="Praseetha KR">
-        <span class="sitelogo__svg">{% include logo.html %}</span>
-        <h1 class="sitelogo__title sr-only">Praseetha KR</h1>
+        <span class="sitelogo__img">
+            <img src="/assets/img/logos/logo_pkr.png" alt="Praseetha KR">
+        </span>
+        <div class="sitelogo__text">
+            <h1 class="sitelogo__title sr-only">Praseetha KR</h1>
+            <h6 class="sitelogo__tagline sr-only">Imagineering the web.</h6>
+        </div>
     </a>
 
     <!-- sitenav -->
     {% assign current = page.url | downcase | split: '/' %}
     <nav class="sitenav">
-        <a href="/blog" class="sitenav__link {% if current[1] == 'blog' %}sitenav__link--active{% endif %}" role="menuitem">Weblog</a>
+        <a href="/blog" class="sitenav__link {% if current[1] == 'blog' %}sitenav__link--active{% endif %}" role="menuitem">Blog</a>
         <a href="/works" class="sitenav__link {% if current[1] == 'works' %}sitenav__link--active{% endif %}" role="menuitem">Works</a>
-        <a href="/projects" class="sitenav__link {% if current[1] == 'projects' %}sitenav__link--active{% endif %}" role="menuitem">Projects</a>
         <a href="/about" class="sitenav__link {% if current[1] == 'about' %}sitenav__link--active{% endif %}" role="menuitem">About</a>
         <a href="/feed.xml" class="sitenav__link" target="_blank" role="menuitem"><i class="fa fa-rss"></i></a>
     </nav>

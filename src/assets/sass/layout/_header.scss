@@ -1,7 +1,6 @@
-$color__header-bg: white;
 $color__nav-link: $color__gray;
 $color__nav-link-active: $color__bg--post-link;
-$header-height: 6em;
+$header-height: 10em;
 
 .header {
     position: relative;
@@ -9,39 +8,51 @@ $header-height: 6em;
     &__site {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        background: $color__header-bg;
-        padding: 0 $header-height / 3;
-        border-bottom: 1px solid $color__border-lightgrey;
+        background: $color__bg-sitenav;
+        color: $color__text-sitenav;
+        padding: 4em 0 0;
+        @media (min-width: 768px) {
+            flex-direction: row;
+            padding: 0 4em;
+            height: $header-height;
+        }
     }
 }
 
 .sitelogo {
-    &__title {
-        font-family: $label-type;
-        font-weight: 400;
-        text-transform: uppercase;
-        letter-spacing: 0.5em;
-        font-size: 1.1em;
-        margin: 0;
-        padding:
-            $header-height / 30
-            $header-height / 50
-            $header-height / 50
-            $header-height / 10;
-        color: $color__bg-silver;
-        border: 1px solid $color__bg-silver;
-        background: $color__bg-logo;
-        box-shadow: 0 0 0 3px $color__bg-logo;
-    }
-    &__svg {
-        display: block;
-        width: 10em;
-        margin: 1em 0 0.3em;
-        svg {
-            width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    &__img {
+        height: 4em;
+        margin-bottom: 3em;
+        @media (min-width: 768px) {
+            margin-bottom: 0;
         }
+        img {
+            height: 100%;
+        }
+    }
+    &__text {
+        display: flex;
+        flex-direction: column;
+        padding-left: 1em;
+    }
+    &__title {
+        letter-spacing: 0.05em;
+        font-size: 2em;
+        line-height: 1.5;
+        font-weight: bold;
+        font-family: $title-font;
+        margin: 0;
+        color: $color__text-sitenav;
+    }
+    &__tagline {
+        margin: 0;
+        font-size: 1em;
+        color: $color__text-sitenav;
     }
 }
 
@@ -51,17 +62,20 @@ $header-height: 6em;
     justify-content: center;
     align-items: center;
     &__link {
+        display: flex;
+        align-items: center;
         color: $color__text-sitenav;
-        text-transform: uppercase;
-        font-size: 0.8em;
+        font-size: 0.85em;
         margin: 0 1em;
-        padding: 0.5em 0 0.3em;
-        display: inline-block;
         font-family: $label-type;
         letter-spacing: 0.14em;
-        border-bottom: 0.25em solid transparent;
+        line-height: 0.5;
+        border-bottom: 0.6em solid transparent;
         &--active {
-            border-bottom: 0.25em solid $color__nav-link-active;
+            border-bottom: 0.6em solid $color__nav-link-active;
+        }
+        &:hover, &:active, &:focus {
+            color: darken($color__text-sitenav, 5%);
         }
     }
 }
