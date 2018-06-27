@@ -2,7 +2,8 @@
 layout: post
 title:  "SOund eXchange in Linux"
 date:   2011-09-02 09:45:00
-categories: blog, opensource
+tags:
+    - linux
 blurb: "Wanted to deal with audio files in linux? ‘sox‘ (Sound Exchange) is a powerful command for you. Here is some examples for sox command."
 theme: '#566C86'
 ---

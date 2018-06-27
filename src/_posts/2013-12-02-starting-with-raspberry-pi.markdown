@@ -2,7 +2,9 @@
 layout: post
 title:  "Starting with Raspberry Pi"
 date:   2013-12-02 07:14:30
-categories: blog
+tags:
+    - hardware
+    - electronics
 masthead: "/assets/img/posts/rpi.jpg"
 blurb: "Getting started notes on installing Raspbian OS & SSHing to RPi"
 theme: '#4C7C66'

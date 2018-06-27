@@ -2,7 +2,8 @@
 layout: post
 title:  "Reveal your Terminal’s most used Commands"
 date:   2011-09-11 09:45:00
-categories: blog, opensource
+tags:
+    - linux
 blurb: "Check top 10 most-used commands in terminal"
 theme: '#363C40'
 ---

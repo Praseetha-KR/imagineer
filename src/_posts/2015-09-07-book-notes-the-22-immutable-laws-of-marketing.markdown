@@ -2,7 +2,8 @@
 layout: post
 title:  "Book notes: The 22 Immutable Laws of Marketing"
 date:   2015-09-07 03:02:01
-categories: blog
+tags:
+    - books
 blurb: "Notes for later reference"
 theme: '#82ACC2'
 ---

@@ -2,7 +2,8 @@
 layout: post
 title:  "Djangothon"
 date:   2015-08-26 10:05:00
-categories: blog
+tags:
+    - experience
 blurb: "About the experience of Djangothon 2015"
 theme: '#89BD9C'
 ---

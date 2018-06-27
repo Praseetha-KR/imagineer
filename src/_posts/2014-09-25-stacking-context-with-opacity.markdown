@@ -2,7 +2,9 @@
 layout: post
 title:  "Stacking context with opacity"
 date:   2014-09-25 08:15:00
-categories: blog
+tags:
+    - css
+    - web
 blurb: "How the opacity affects stacking context in browsers"
 theme: '#B4AB7E'
 ---

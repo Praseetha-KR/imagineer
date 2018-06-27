@@ -2,7 +2,9 @@
 layout: post
 title:  "Daemonizing processes in OSX"
 date:   2015-09-24 23:35:00
-categories: blog
+tags:
+    - osx
+    - devops
 blurb: "How to create user agent/daemon in OSX"
 theme: '#A4AAB9'
 ---

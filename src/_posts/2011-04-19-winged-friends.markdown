@@ -2,7 +2,8 @@
 layout: post
 title:  "Winged Friends"
 date:   2011-04-19 09:45:00
-categories: blog, thoughts
+tags:
+    - thoughts
 blurb: "Vacation time with my birdie friends!"
 theme: '#C6BA5A'
 ---

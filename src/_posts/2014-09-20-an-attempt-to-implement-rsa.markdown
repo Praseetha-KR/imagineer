@@ -2,7 +2,9 @@
 layout: post
 title:  "An attempt to implement RSA Algorithm"
 date:   2014-09-20 19:40:00
-categories: blog
+tags:
+    - algorithm
+    - python
 masthead: "/assets/img/posts/encryption.jpg"
 blurb: "Implementation of mock RSA algorithm in python"
 theme: "#5A727D"

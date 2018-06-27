@@ -2,7 +2,8 @@
 layout: post
 title:  "Death of a river"
 date:   2011-05-20 09:45:00
-categories: blog, thoughts
+tags:
+    - thoughts
 blurb: "A death song to my river.."
 theme: '#D46E5A'
 ---

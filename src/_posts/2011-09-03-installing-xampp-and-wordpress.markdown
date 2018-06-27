@@ -2,7 +2,8 @@
 layout: post
 title:  "Installing XAMPP and WordPress"
 date:   2011-09-03 12:45:00
-categories: blog, opensource, web
+tags:
+    - web
 blurb: "Notes on setting up XAMPP server and WordPress in windows laptop"
 theme: '#A27B56'
 ---

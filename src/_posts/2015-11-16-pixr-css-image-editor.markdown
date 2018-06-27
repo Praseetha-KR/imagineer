@@ -2,7 +2,10 @@
 layout: post
 title:  "Pixr - CSS image editor"
 date:   2015-11-16 03:35:00
-categories: blog
+tags:
+    - css
+    - experiment
+    - web
 blurb: "Image effects with CSS filters & blend modes"
 image: "/assets/img/media/demo_pixr.jpg"
 theme: '#DF816A'
@@ -36,7 +39,7 @@ Applies different filters on top of image. [Browser support](http://caniuse.com/
 ```css
 .image {
     -webkit-filter: blur(2px) saturate(110%);
-    filter: blur(2px saturate(110%);
+    filter: blur(2px saturate(110%));
 }
 ```
 

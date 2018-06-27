@@ -2,7 +2,8 @@
 layout: post
 title:  "The why of video compression"
 date:   2015-05-11 11:52:00
-categories: blog
+tags:
+    - concepts
 blurb: "The importance of video compression through some interesting figures"
 theme: '#21639C'
 ---

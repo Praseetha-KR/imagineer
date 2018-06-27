@@ -2,7 +2,9 @@
 layout: post
 title:  "Design for promotions"
 date:   2015-06-01 10:05:00
-categories: blog
+tags:
+    - books
+    - design
 blurb: "Thoughts on design based on book of Ogilvy"
 theme: '#E95250'
 ---

@@ -2,7 +2,8 @@
 layout: post
 title:  "NaCl Crystals"
 date:   2015-09-13 01:18:00
-categories: blog
+tags:
+    - experiment
 blurb: "DIY salt crystals"
 image: "/assets/img/posts/nacl_cubic_crystals.jpg"
 theme: '#262533'

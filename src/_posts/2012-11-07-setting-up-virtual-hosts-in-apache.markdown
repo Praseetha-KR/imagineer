@@ -2,7 +2,9 @@
 layout: post
 title:  "Setting up Virtual Hosts in Apache"
 date:   2012-11-07 10:41:29
-categories: blog
+tags:
+    - web
+    - devops
 blurb: "How to set up virtual hosts for website testing in windows"
 theme: '#7191C9'
 ---

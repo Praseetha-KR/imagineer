@@ -2,7 +2,9 @@
 layout: post
 title:  "Building OpenCV from source for OSX"
 date:   2015-05-12 11:52:00
-categories: blog
+tags:
+    - osx
+    - tools
 blurb: "Setting up of python version of Open CV, a computer vision library, in Mac OSX"
 theme: '#33797C'
 ---

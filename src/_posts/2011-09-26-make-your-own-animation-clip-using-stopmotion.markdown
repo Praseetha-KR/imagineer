@@ -2,7 +2,8 @@
 layout: post
 title:  "Make your own Animation clip Using Stopmotion"
 date:   2011-09-26 10:00:00
-categories: blog, opensource
+tags:
+    - tools
 blurb: "Notes on starting with stopmotion"
 theme: '#87609C'
 ---

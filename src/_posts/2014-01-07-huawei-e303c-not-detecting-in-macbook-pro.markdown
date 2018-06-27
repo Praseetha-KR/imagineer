@@ -2,7 +2,9 @@
 layout: post
 title:  "Huawei E303C not detecting in MacBook Pro"
 date:   2014-01-07 21:40:30
-categories: blog
+tags:
+    - osx
+    - hardware
 masthead: "/assets/img/posts/e303c.jpg"
 blurb: "Glitches of plugging in E303C huawei datacard in Macbook Pro Retina laptop"
 theme: "#7A6861"

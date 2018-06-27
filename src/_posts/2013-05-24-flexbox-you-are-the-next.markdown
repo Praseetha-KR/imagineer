@@ -2,7 +2,9 @@
 layout: post
 title:  "Flexbox, you are the next!"
 date:   2013-05-24 18:17:46
-categories: blog
+tags:
+    - css
+    - web
 blurb: "In the shiny edge of flexbox!"
 status: 'draft'
 theme: '#F6547C'
@@ -144,7 +146,7 @@ For the child elements _box1, box2, box3_ to arranges inside the _container_ wit
 <div class="container" style="border-radius: 5px; padding: 1em; background-color: #6D899F; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; height: 80px; width: 100%; -webkit-box-align: baseline; -moz-box-align: baseline; -ms-flexbox-align: baseline; -webkit-flex-align: baseline; flex-align: baseline; -webkit-align-items: baseline; -moz-align-items: baseline; -ms-align-items: baseline; -align-items: baseline;">  <section class="box1" style="background-color: #CE9B64; padding: 0.5em;">    box 1 contents  </section>  <section class="box2" style="background-color: #BCD39B; padding: 0.5em;">    box 2 contents  </section>  <section class="box3" style="background-color: #62626D; padding: 0.5em;">    box 3 contents  </section></div>
 
 #### Stretch
-<div class="container" style="border-radius: 5px; padding: 1em; background-color: #6D899F; width: 100%; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; height: 80px; -webkit-box-align: stretch; -moz-box-align: stretch; -ms-flexbox-align: stretch; -webkit-flex-align: stretch; flex-align: stretch; -webkit-align-items: stretch; -moz-align-items: stretch -ms-align-items: stretch; -align-items: stretch;">  <section class="box1" style="background-color: #CE9B64; padding: 0.5em;">    box 1 contents  </section>  <section class="box2" style="background-color: #BCD39B; padding: 0.5em;">    box 2 contents  </section>  <section class="box3" style="background-color: #62626D; padding: 0.5em;">    box 3 contents  </section></div>
+<div class="container" style="border-radius: 5px; padding: 1em; background-color: #6D899F; width: 100%; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; height: 80px; -webkit-box-align: stretch; -moz-box-align: stretch; -ms-flexbox-align: stretch; -webkit-flex-align: stretch; flex-align: stretch; -webkit-align-items: stretch; -moz-align-items: stretch; -ms-align-items: stretch; -align-items: stretch;">  <section class="box1" style="background-color: #CE9B64; padding: 0.5em;">    box 1 contents  </section>  <section class="box2" style="background-color: #BCD39B; padding: 0.5em;">    box 2 contents  </section>  <section class="box3" style="background-color: #62626D; padding: 0.5em;">    box 3 contents  </section></div>
 
 ----------------------------------
 
