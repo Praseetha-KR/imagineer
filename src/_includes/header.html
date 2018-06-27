@@ -15,7 +15,7 @@
     <!-- sitenav -->
     {% assign current = page.url | downcase | split: '/' %}
     <nav class="sitenav">
-        <a href="/blog" class="sitenav__link {% if current[1] == 'blog' %}sitenav__link--active{% endif %}" role="menuitem">Blog</a>
+        <a href="/blog" class="sitenav__link {% if current[1] == 'blog' or current[1] == 'tag' %}sitenav__link--active{% endif %}" role="menuitem">Blog</a>
         <a href="/works" class="sitenav__link {% if current[1] == 'works' %}sitenav__link--active{% endif %}" role="menuitem">Works</a>
         <a href="/about" class="sitenav__link {% if current[1] == 'about' %}sitenav__link--active{% endif %}" role="menuitem">About</a>
         <a href="/feed.xml" class="sitenav__link" target="_blank" role="menuitem"><i class="fa fa-rss"></i></a>

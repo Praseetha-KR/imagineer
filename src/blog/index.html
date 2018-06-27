@@ -22,5 +22,10 @@ active: blog
             {% include pagination.html prev_title='New Posts' prev_url=paginator.previous_page_path next_title='Old Posts' next_url=paginator.next_page_path %}
         </section>
     </article>
+
+    <section class="m-6-bottom">
+        <h5>Filter by tags:</h5>
+        {% include taglist.html %}
+    </section>
 </div>
 
