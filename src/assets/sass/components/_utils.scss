@@ -77,6 +77,19 @@ figcaption {
     margin-top: 0.25em;
 }
 
+.figure-l {
+    @media (min-width: 992px) {
+        margin-left: -5em;
+        margin-right: -5em;
+    }
+}
+
+.figure-c {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 blockquote {
     font-style: italic;
     border-left: 0.5em solid $color__primary;
@@ -90,6 +103,10 @@ blockquote {
     padding: 1.5em 0 0.5em;
     font-size: 1.4em;
     margin: 2em auto;
+}
+
+.highlight-text {
+    background: $color__bg-highlight;
 }
 
 .highlight-link {

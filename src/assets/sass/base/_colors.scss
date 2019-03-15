@@ -38,7 +38,7 @@ $color__bg-silver: #ecf1f3;
 $color__text-gray: #95a2b3;
 $color__text-lightgray: darken($color__bg-silver, 15%);
 $color__border-lightgrey: darken($color__bg-silver, 1.5%);
-$color__bg-code-highlight: darken($color__bg-silver, 2%);
+$color__bg-code-highlight: rgba(mix($color__bg-silver, $color__gray, 8%), 0.4);
 $color__text-code: #748598;
 
 $color__text--post-title: #21272d;// #444648;
@@ -49,7 +49,7 @@ $color__bg--post-link: #b9e9f7;
 $color__text-sitenav: #404447;
 
 
-$color__bg-highlight: #DFFB7B;
+$color__bg-highlight: #efffc7; // #DFFB7B
 $color__bg-sitenav: $color__bg-silver;
 $color__text-sitenav: $color__text-dark;
 $colot__bg-blockquote: #dce9ec;
