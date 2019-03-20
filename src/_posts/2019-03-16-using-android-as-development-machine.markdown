@@ -11,13 +11,15 @@ theme: '#7ebb61'
 
 There had been many scenarios where I wished if mobile phone could be used as a development machine. Scenarios such as quick SSHing to servers or pushing a hotfix to Github while on the roads, testing out a snippet which just popped in mind while jogging, etc.
 
-I tried to make Nexus 5 as a pocket development machine. I was able to set it up, but with some limitations. Here is what all I did:
+I tried to make **Nexus 5** as a pocket development machine. I was able to set it up, but with some limitations. Here is what all I did:
 
-## 1. Lineage OS & Root user
+### Part A [optional]*: Full system access with Lineage OS & root user
 
-#### TWRP Installation
+<p>* This is required only if you need root access to your phone, otherwise proceed to part B.</p>
 
-1. Connect Nexus 5 to laptop via USB. Verify by listing connected devices:
+##### TWRP Installation
+
+1. Connect phone to laptop via USB. Verify by listing connected devices:
     ```
     adb devices
     ```
@@ -25,7 +27,7 @@ I tried to make Nexus 5 as a pocket development machine. I was able to set it up
     ```
     adb reboot bootloader
     ```
-3. Flash [TWRP image](https://dl.twrp.me/hammerhead/):
+3. Flash [TWRP image for Nexus 5](https://dl.twrp.me/hammerhead/):
     ```
     fastboot devices
     fastboot oem unlock
@@ -34,13 +36,14 @@ I tried to make Nexus 5 as a pocket development machine. I was able to set it up
 4. Now, from bootloader screen, reboot in recovery mode. This would load TWRP app.
 
 
-#### Install Lineage OS
-
-Optionally you can wipe existing data from TWRP Wipe option.
+##### Lineage OS
 
 Sideload Lineage OS & gapps files:
 - Lineage OS 15.1 can be downloaded from [XDA - unofficial build](https://forum.xda-developers.com/google-nexus-5/development/rom-lineageos-15-1-nexus-5-t3756643). (Current official build is [14.1](https://download.lineageos.org/hammerhead))
 - For Nexus 5 [GApps](https://opengapps.org/), I downloaded ARM 8.1 pico package.
+
+
+(Optionally you can wipe existing data from TWRP's **Wipe** option.)
 
 ```
 adb sideload lineage-15.1-20180923-UNOFFICIAL-hammerhead.zip
@@ -50,7 +53,7 @@ adb sideload open_gapps-arm-8.1-pico-20190312.zip
 Then reboot the system. You'll have to go through OS initial setup process.
 
 
-#### SU Addon for root access
+##### SU Addon for root access
 
 1. Download [`su` addon](https://download.lineageos.org/extras) `arm 15.1` and copy to phone.
     ```
@@ -62,13 +65,61 @@ Then reboot the system. You'll have to go through OS initial setup process.
 After that reboot the system. Lineage OS  with root access is ready now!
 
 
-## 2. Shell setup
+---
+## Part B: Development Setup
 
-There are many terminal apps available in Google Playstore. I chose [Termux](https://play.google.com/store/apps/details?id=com.termux), which has powerful terminal emulation with an extensive Linux package collection.
+There are many terminal apps available in Google Playstore. I chose [Termux](https://play.google.com/store/apps/details?id=com.termux), which has powerful terminal emulation with essential Linux package collection.
 
 The default location of Termux's bash is `/data/data/com.termux/files/home`.
 
-Let's switch to zsh.
+**Few basic commands:**
+```
+pkg search <term>
+pkg show <packages>
+
+pkg list-all
+pkg list-installed
+
+pkg install <packages>
+pkg reinstall <packages>
+pkg uninstall <packages>
+
+apt list --upgradable
+pkg upgrade
+
+pkg help
+
+```
+
+
+### 1. Text Editor
+
+`pkg search editor` can help you to get a glimpse of available editors in termux package repo.
+
+`vim`, `nano`, `emacs` are few choices.
+
+```
+pkg install -y vim
+```
+
+### 2. Git
+
+Install git:
+```
+pkg install -y git
+```
+
+##### Github setup:
+[Add public key to your Github account](https://github.com/settings/keys).
+
+```
+pkg install -y hub
+git config --global user.email "<email>"
+git config --global user.name "<username>"
+```
+
+
+### 3. zsh
 
 1. Installation:
     ```
@@ -76,7 +127,6 @@ Let's switch to zsh.
     ```
 2. oh-my-zsh:
     ```
-    pkg install -y git
     git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh --depth 1
     cp $HOME/.oh-my-zsh/templates/zshrc.zsh-template $HOME/.zshrc
     ```
@@ -95,59 +145,62 @@ Let's switch to zsh.
     exit
     ```
 
-## 3. SSH
+### 4. SSH
 
 ```
 pkg install -y openssh
 ssh-keygen -t rsa -b 4096 -C "<email>"
 ```
 
-
-## 4. Git setup
-
-We have already installed `git` package. Now let's add Github support.
-
-[Add public key to your Github account](https://github.com/settings/keys).
+##### Connect to remote servers from phone:
 
 ```
-pkg install -y hub
-git config --global user.email "<email>"
-git config --global user.name "<username>"
-```
-Now we can git clone repos & commit changes.
-
-## 5. Code Editors
-
-We can use in-built `nano` editor or install `vim`
-```
-pkg install -y vim
+ssh user@example.com
 ```
 
-## 6. Programming languages support
+##### SSH into phone:
 
-As of now termux has ~815 packages. You can view all with the following command:
+1. Start SSH server daemon in phone:
 
-```
-pkg list-all
-```
+    ```
+    sshd
+    ```
 
-There is `python`, `nodejs`, `ruby`, `golang` & `rust` packages available.
+2. Password SSHing is difficult, add your public key to `~/.ssh/authorized_keys` file.
+
+3. Then, from any other device:
+    ```
+    ssh -p 8022 <phone's IP address>
+    ```
+
+4. Stop SSH daemon:
+
+    ```
+    pkill sshd
+    ```
+
+
+### 5. Programming languages
+
+Language packages such as `clang`, `python`, `nodejs`, `ruby`, `golang`, `rust`, `erlang`, `lua`, `perl`, etc. are available.
+
 
 <br><br>
-
-Now we can clone any repo, edit in vim & commit to Github, SSH to a remote server and do a quick snippet compilation. Pretty much what all I needed 🎉
 
 <figure class="figure-c">
     <img src="/assets/img/posts/termux.jpg" width="75%" alt="Termux">
     <figcaption>Termux</figcaption>
 </figure>
 
+Now we can clone any repo, edit in vim & commit to Github, SSH to a remote server and do a quick snippet compilation. Pretty much what all I needed 🎉
+
 <br>
 
-## Pitfalls:
+## Limitations:
 
-- Termux packages are available only for that app. So projects folder outside of this app's location won't be able to use any termux package. **Because of that I had to create projects folder inside Termux's scope itself.** (`/data/data/com.termux/files/home/storage/projects/`)
+- Since Termux has access to only `/data/data/com.termux`, we can't create our `projects/` folder outside of that location.
 - Since project files are in app specific location, we can't use any code editor apps such as [DroidEdit](https://play.google.com/store/apps/details?id=com.aor.droidedit) which is running outside of that user scope.
+- `su` root shell can't run termux packages.
 
 
-If you know a better way to do this, let me know in comments :)
+If there is a way to solve these limitations, please let me know in comments.
