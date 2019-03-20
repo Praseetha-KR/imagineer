@@ -200,7 +200,16 @@ Now we can clone any repo, edit in vim & commit to Github, SSH to a remote serve
 
 - Since Termux has access to only `/data/data/com.termux`, we can't create our `projects/` folder outside of that location.
 - Since project files are in app specific location, we can't use any code editor apps such as [DroidEdit](https://play.google.com/store/apps/details?id=com.aor.droidedit) which is running outside of that user scope.
-- `su` root shell can't run termux packages.
+- `su` root shell can't run termux packages directly.
+> A workaround for using termux packages in root shell is to export `LD_LIBRARY_PATH` pointing to termux's `/usr/lib/` and execute package binaries by specifying path:
+>
+> ```
+> # export LD_LIBRARY_PATH=/data/data/com.termux/files/usr/lib/
+>
+> # /data/data/com.termux/files/usr/bin/python --version
+> # /data/data/com.termux/files/usr/bin/vim test.txt
+> ```
+>
 
 
 If there is a way to solve these limitations, please let me know in comments.
