@@ -7,7 +7,7 @@ tags:
     - devops
     - linux
 blurb: "How to allow/disallow SSH keys for instances launced from AWS EC2 AMIs"
-theme: '#7ebb61'
+theme: '#eaa349'
 ---
 
 AWS adds an SSH key on every EC2 instance creation, either by adding a new key-pair or using the existing one based on the user's choice. This gets a bit annoying while distributing a sealed (content-protected) AMI. Any user who has access to this AMI for deployment could create an instance by adding their key, thus gets access to the protected content residing inside the instance.
@@ -30,7 +30,7 @@ The easiest way to fix this is by removing user's SSH key as soon as the instanc
 
 `/opt/customssh/override_ssh_key`:
 
-```
+```bash
 #!/bin/bash
 
 allowed_key=<SSH_PUBLIC_KEY>
@@ -41,7 +41,7 @@ echo $allowed_key > ~/.ssh/allowed_keys
 
 `/etc/systemd/system/customssh.service`:
 
-```
+```ini
 [Unit]
 Description=custom ssh override service
 After=network-online.target cloud-final.service
@@ -61,7 +61,7 @@ WantedBy=cloud-init.target
 
 ##### STEP 3: Enabling the service
 
-```
+```console
 $ systemctl enable customssh.service
 
 Created symlink from /etc/systemd/system/cloud-init.target.wants/customssh.service to /etc/systemd/system/customssh.service.
@@ -69,7 +69,7 @@ Created symlink from /etc/systemd/system/cloud-init.target.wants/customssh.servi
 `enable` will hook the specified unit into relevant places, so that it will automatically start on boot.
 
 Check status:
-```
+```console
 $ systemctl status customssh.service
 ```
 

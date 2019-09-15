@@ -1,12 +1,18 @@
-@import url(https://fonts.googleapis.com/css?family=Merriweather|Questrial|Fira+Sans:700+800);
+@import url(https://fontlibrary.org/face/hk-grotesk);
+@import url(https://fonts.googleapis.com/css?family=Heebo:800+900|Fira+Code|Questrial|Roboto+Condensed:800|Amiri);
 
-$para-type: 'Merriweather', sans-serif;
-$title-type: 'Fira Sans', sans-serif;
-$heading-type: 'Fira Sans', sans-serif;
-$label-type: 'Questrial', sans-serif;
+$title-type: 'Heebo', sans-serif;
+$heading-type: 'HKGroteskBold', 'Heebo', sans-serif;
+$para-type: 'HKGroteskRegular', 'Heebo', sans-serif;
+
+$label-type: 'Questrial', 'Roboto', sans-serif;
+$annotation-type: 'Amiri', 'Georgia', serif;
+$alt-heading-type: 'Roboto Condensed', 'Heebo', sans-serif;
+$code-type: 'Fira Code', monospace, sans-serif;
 
 $body-font: $para-type;
 $title-font: $title-type;
+$font-stack__code: $code-type;
 
 $font__base-size: 16px;
 $font__base-line-height: 1.5em;
@@ -16,11 +22,6 @@ body {
     font-size: $font__base-size;
     line-height: $font__base-line-height;
 }
-
-$font-stack__code: (
-    monospace,
-    sans-serif
-);
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $heading-type;
@@ -48,6 +49,10 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $label-type;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+}
+
+.annotation-type {
+    font-family: $annotation-type;
 }
 
 .textsize-regular {

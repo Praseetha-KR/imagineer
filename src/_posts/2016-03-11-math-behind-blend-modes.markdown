@@ -9,6 +9,7 @@ tags:
 blurb: "Implements blend modes generetor in Javascript"
 image: "/assets/img/posts/porter-duff-compositing/subpixel_regions.png"
 theme: '#8913E7'
+title_color: '#ffaeec'
 ---
 
 Ever since I dabbled around [css blend modes](https://imagineer.in/blog/pixr-css-image-editor/), I wanted to look into the math behind it.

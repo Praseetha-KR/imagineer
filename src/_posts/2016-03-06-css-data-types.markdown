@@ -6,7 +6,7 @@ tags:
     - css
     - web
 blurb: "A note on CSS data types"
-theme: '#69B869'
+theme: '#84d2f2'
 ---
 
 Here is a quick reference for CSS data types:

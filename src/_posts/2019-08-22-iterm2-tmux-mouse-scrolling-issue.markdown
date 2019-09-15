@@ -6,7 +6,8 @@ tags:
     - osx
     - tools
 blurb: "Fixing mouse scrolling in tmux scroll mode"
-theme: '#7ebb61'
+theme: '#131214'
+title_color: '#66f96a'
 ---
 
 
@@ -28,10 +29,12 @@ Appraently there is a quick fix with iTerm2 in Mac.
 1. Goto **iTerm2 > Preferences > Advanced**
 2. In Mouse section, set ***Scroll wheel sends arrow keys when in alternate screen mode*** to `Yes`
 
-<figure class="figure-l">
-    <img src="/assets/img/posts/tmux_scroll/iterm_advanced_preferences.png" width="100%" alt="iTerm advanced preferences">
-    <figcaption>iTerm advanced preferences</figcaption>
-</figure>
+<div>
+    <figure class="figure-l">
+        <img src="/assets/img/posts/tmux_scroll/iterm_advanced_preferences.png" width="100%" alt="iTerm advanced preferences">
+        <figcaption>iTerm advanced preferences</figcaption>
+    </figure>
+</div>
 
 Done!
 

@@ -131,3 +131,23 @@ blockquote {
         transition: all 0.25s;
     }
 }
+
+.sideblock {
+    &--right {
+        @media (min-width: 768px) {
+            width: 80%;
+            padding-left: 8%;
+        }
+    }
+    &--for-h3 {
+        @media (min-width: 768px) {
+            margin-top: 2em;
+        }
+    }
+}
+
+.annotation {
+    font-family: $annotation-type;
+    font-size: 0.8em;
+    line-height: 1.4;
+}

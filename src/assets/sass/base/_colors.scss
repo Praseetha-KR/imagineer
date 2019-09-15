@@ -13,8 +13,6 @@ $color__table-head-text: white;
 $color__table-border: $color__gray-medium;
 $color__table-stripe: lighten($color__gray-medium, 6%);
 
-$color__bullet-ol: $color__primary;
-$color__bullet-ul: $color__primary;
 
 $color__btn-primary-text: white;
 $color__btn-primary-bg: $color__primary;
@@ -34,22 +32,29 @@ $color__work-category-text: white;
 
 $color__bg-logo: #21272d;
 $color__text-dark: #36404a;
-$color__bg-silver: #ecf1f3;
+$color__bg-silver: #f1f3f5;
 $color__text-gray: #95a2b3;
 $color__text-lightgray: darken($color__bg-silver, 15%);
 $color__border-lightgrey: darken($color__bg-silver, 1.5%);
-$color__bg-code-highlight: rgba(mix($color__bg-silver, $color__gray, 8%), 0.4);
-$color__text-code: #748598;
+$color__bg-code-highlight: #e3e8ea; // #343844;
+$color__text-code-highlight: #5a6873; // #ccd2d8;
+$color__bg-code: $color__bg-silver;
+$color__text-code: #242b31;
 
-$color__text--post-title: #21272d;// #444648;
-$color__text--post-date: $color__text-gray;
+$color__bg-post-header: $color__bg-silver;
+$color__title-post-header: #18252d;
+$color__text--post-title: #cdd7e2;// #444648;
+$color__text--post-date: #657c8a;
 $color__text--post-body: #36404a;
 $color__text--post-link: #36404a;
 $color__bg--post-link: #b9e9f7;
 $color__text-sitenav: #404447;
 
+$color__bullet-ol: $color__text-dark;
+$color__bullet-ul: $color__text-dark;
 
 $color__bg-highlight: #efffc7; // #DFFB7B
 $color__bg-sitenav: $color__bg-silver;
 $color__text-sitenav: $color__text-dark;
 $colot__bg-blockquote: #dce9ec;
+$color__hr-border: darken($color__bg-silver, 10%);

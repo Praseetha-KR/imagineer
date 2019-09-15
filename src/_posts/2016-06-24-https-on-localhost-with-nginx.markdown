@@ -6,7 +6,8 @@ tags:
     - devops
 blurb: "How to get https for a website running on localhost in OSX"
 image: "/assets/img/posts/https_localhost.jpg"
-theme: '#7ebb61'
+theme: '#0D974D'
+title_color: '#b0dac3'
 ---
 
 This article gives a walkdown through setting up of **HTTPS protocol for localhost using NGINX** in OSX (10.11.5).

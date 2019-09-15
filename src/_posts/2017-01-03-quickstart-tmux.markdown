@@ -7,7 +7,8 @@ tags:
     - tools
 blurb: "Tmuxifying terminal life"
 image: "/assets/img/posts/tmux.png"
-theme: '#7ebb61'
+theme: '#1a3f4a'
+title_color: '#93a42a'
 ---
 
 I haven't been using [tmux](https://tmux.github.io/) since I'm a happy user of [iTerm2](https://www.iterm2.com/). Eventhough tmux had been used in servers I used to work with, I preferred avoiding it because of the fallacious assumption that it would be hard to remember all those scary key-shortcuts. I gave it a try today, and totally regret for not learning it earlier.
@@ -35,15 +36,15 @@ Another advantage is that processes running inside tmux sessions can continue ev
 
 In OSX, tmux can be installed with homebrew.
 
-```bash
+```console
 $ brew install tmux
 ```
 
-## Usage
+## console
 
 Typing `tmux` will start a new session, you can see the session status displayed on the bottom bottom of the window in a green bar.
 
-```bash
+```console
 $ tmux
 ```
 
@@ -178,7 +179,7 @@ Here is a list of useful commands,
 
 As mentioned in the last entry of table above, `CTRL+B :` will give tmux prompt at the bottom of the window, you can enter commands there.
 
-```
+```console
 : <command>
 ```
 

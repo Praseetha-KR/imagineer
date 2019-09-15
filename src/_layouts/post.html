@@ -5,38 +5,56 @@ comments: true
 ---
 
 <main role="main">
-    <section class="post__intro">
+    <section class="post__intro" style="background: {{ page.theme }}; {% if page.title_color %}color: {{ page.title_color }}{% endif %}">
+        <div class="post__header__left">
+            {% if page.next.url %}
+                <a href="{{page.next.url}}" class="post__navigation__link">
+                    <i class="fa fa-chevron-left"></i>
+                </a>
+            {% endif %}
+        </div>
         <div class="post__header">
             <time class="post__date">Published on {{ page.date | date_to_string }}</time>
             <h1 role="heading" class="post__heading">{{ page.title }}</h1>
+            <div class="post__blurb">{{ page.blurb }}</div>
         </div>
-        <div class="post__tags">
-            <span class="post__tags__icon">
-                <i class="fa fa-tag" title="tags"></i>
-            </span>
-            <ul class="post__tags__list">
-                {% for tag in page.tags %}
-                    <li class="post__tag"><a href="{{ '/tag/' | append:tag }}">{{ tag }}</a></li>
-                {% endfor %}
-            </ul>
+        <div class="post__header__right">
+            {% if page.previous.url %}
+                <a href="{{page.previous.url}}" class="post__navigation__link">
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+            {% endif %}
         </div>
     </section>
     <article role="article" class="post">
         <section class="post__content">{{ content }}</section>
 
-        <section class="share m-2-top">
-            <a class="btn-tweet" href=""><i class="fa fa-twitter"></i>&nbsp;&nbsp;Tweet</a>
-        </section>
+        <div class="post__tags">
+            <span class="post__tags__icon">
+                <i class="fa fa-tag" title="tags"></i>
+            </span>
+            <div class="post__tags__list">
+                {% for tag in page.tags %}
+                    <span class="post__tag"><a href="{{ '/tag/' | append:tag }}">{{ tag }}</a></span>
+                {% endfor %}
+            </div>
+        </div>
 
-        <section class="post__comments p-2-top">
-            <div id="disqus_thread"></div>
-            <script type="text/javascript" src="//disqus.com/forums/imagineer/embed.js"></script>
-            <noscript><a href="//imagineer.disqus.com/?url=ref">View the discussion thread.</a></noscript>
-            <a href="//disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-        </section>
+        <div class="post__social">
+            <section class="share m-2-top">
+                <a class="btn-tweet" href=""><i class="fa fa-twitter"></i>&nbsp;&nbsp;Tweet</a>
+            </section>
+
+            <section class="post__comments p-2-top">
+                <div id="disqus_thread"></div>
+                <script type="text/javascript" src="//disqus.com/forums/imagineer/embed.js"></script>
+                <noscript><a href="//imagineer.disqus.com/?url=ref">View the discussion thread.</a></noscript>
+                <a href="//disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+            </section>
+        </div>
     </article>
 
-    <nav role="navigation" class="post__navigation">
+    <nav role="navigation" class="post__navigation--bottom">
         {% if page.next.url %}
             <a href="{{page.next.url}}" class="post__navigation__link">
                 <i class="fa fa-chevron-left"></i>

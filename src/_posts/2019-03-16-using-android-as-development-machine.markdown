@@ -13,25 +13,32 @@ There had been many scenarios where I wished if mobile phone could be used as a 
 
 I tried to make **Nexus 5** as a pocket development machine. I was able to set it up, but with some limitations. Here is what all I did:
 
-### Part A [optional]*: Full system access with Lineage OS & root user
-
-<p>* This is required only if you need root access to your phone, otherwise proceed to part B.</p>
+<div class="post__block post__block--2 post__block--right">
+    <div class="post__block__center">
+        <h3>Part A: Full system access with Lineage OS & root user</h3>
+    </div>
+    <div class="post__block__side">
+        <div class="sideblock sideblock--right sideblock--for-h3 ">
+            <div class="annotation">* This is required only if you need root access to your phone, otherwise proceed to <a href="#part-b-development-setup">part B</a>.</div>
+        </div>
+    </div>
+</div>
 
 ##### TWRP Installation
 
 1. Connect phone to laptop via USB. Verify by listing connected devices:
-    ```
-    adb devices
+    ```zsh
+    $ adb devices
     ```
 2. Reboot phone to bootloader screen:
-    ```
-    adb reboot bootloader
+    ```zsh
+    $ adb reboot bootloader
     ```
 3. Flash [TWRP image for Nexus 5](https://dl.twrp.me/hammerhead/):
-    ```
-    fastboot devices
-    fastboot oem unlock
-    fastboot flash recovery twrp-3.2.3-0-hammerhead.img
+    ```zsh
+    $ fastboot devices
+    $ fastboot oem unlock
+    $ fastboot flash recovery twrp-3.2.3-0-hammerhead.img
     ```
 4. Now, from bootloader screen, reboot in recovery mode. This would load TWRP app.
 
@@ -45,9 +52,9 @@ Sideload Lineage OS & gapps files:
 
 (Optionally you can wipe existing data from TWRP's **Wipe** option.)
 
-```
-adb sideload lineage-15.1-20180923-UNOFFICIAL-hammerhead.zip
-adb sideload open_gapps-arm-8.1-pico-20190312.zip
+```zsh
+$ adb sideload lineage-15.1-20180923-UNOFFICIAL-hammerhead.zip
+$ adb sideload open_gapps-arm-8.1-pico-20190312.zip
 ```
 
 Then reboot the system. You'll have to go through OS initial setup process.
@@ -56,16 +63,18 @@ Then reboot the system. You'll have to go through OS initial setup process.
 ##### SU Addon for root access
 
 1. Download [`su` addon](https://download.lineageos.org/extras) `arm 15.1` and copy to phone.
-    ```
-    adb push addonsu-15.1-arm-signed.zip /sdcard
+    ```zsh
+    $ adb push addonsu-15.1-arm-signed.zip /sdcard
     ```
 
 2. Reboot in recovery mode to go to TWRP app, Install > select `addonsu-15.1-arm-signed.zip`
 
 After that reboot the system. Lineage OS  with root access is ready now!
 
+<br>
 
 ---
+
 ## Part B: Development Setup
 
 There are many terminal apps available in Google Playstore. I chose [Termux](https://play.google.com/store/apps/details?id=com.termux), which has powerful terminal emulation with essential Linux package collection.
@@ -73,22 +82,21 @@ There are many terminal apps available in Google Playstore. I chose [Termux](htt
 The default location of Termux's bash is `/data/data/com.termux/files/home`.
 
 **Few basic commands:**
-```
-pkg search <term>
-pkg show <packages>
+```console
+$ pkg search <term>
+$ pkg show <packages>
 
-pkg list-all
-pkg list-installed
+$ pkg list-all
+$ pkg list-installed
 
-pkg install <packages>
-pkg reinstall <packages>
-pkg uninstall <packages>
+$ pkg install <packages>
+$ pkg reinstall <packages>
+$ pkg uninstall <packages>
 
-apt list --upgradable
-pkg upgrade
+$ apt list --upgradable
+$ pkg upgrade
 
-pkg help
-
+$ pkg help
 ```
 
 
@@ -98,37 +106,37 @@ pkg help
 
 `vim`, `nano`, `emacs` are few choices.
 
-```
-pkg install -y vim
+```console
+$ pkg install -y vim
 ```
 
 ### 2. Git
 
 Install git:
-```
-pkg install -y git
+```console
+$ pkg install -y git
 ```
 
 ##### Github setup:
 [Add public key to your Github account](https://github.com/settings/keys).
 
-```
-pkg install -y hub
-git config --global user.email "<email>"
-git config --global user.name "<username>"
+```console
+$ pkg install -y hub
+$ git config --global user.email "<email>"
+$ git config --global user.name "<username>"
 ```
 
 
 ### 3. zsh
 
 1. Installation:
-    ```
-    pkg install -y zsh
+    ```console
+    $ pkg install -y zsh
     ```
 2. oh-my-zsh:
-    ```
-    git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh --depth 1
-    cp $HOME/.oh-my-zsh/templates/zshrc.zsh-template $HOME/.zshrc
+    ```console
+    $ git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh --depth 1
+    $ cp $HOME/.oh-my-zsh/templates/zshrc.zsh-template $HOME/.zshrc
     ```
     >
     > Create `$HOME/.termux` folder & add the following files for theme customization:
@@ -140,43 +148,43 @@ git config --global user.name "<username>"
     <br>
 
 3. Restart Termux to make zsh as default shell.
-    ```
-    chsh -s zsh
-    exit
+    ```console
+    $ chsh -s zsh
+    $ exit
     ```
 
 ### 4. SSH
 
-```
-pkg install -y openssh
-ssh-keygen -t rsa -b 4096 -C "<email>"
+```console
+$ pkg install -y openssh
+$ ssh-keygen -t rsa -b 4096 -C "<email>"
 ```
 
 ##### Connect to remote servers from phone:
 
-```
-ssh user@example.com
+```console
+$ ssh user@example.com
 ```
 
 ##### SSH into phone:
 
 1. Start SSH server daemon in phone:
 
-    ```
-    sshd
+    ```console
+    $ sshd
     ```
 
 2. Password SSHing is difficult, add your public key to `~/.ssh/authorized_keys` file.
 
 3. Then, from any other device:
-    ```
-    ssh -p 8022 <phone's IP address>
+    ```zsh
+    $ ssh -p 8022 <IP_address_of_phone>
     ```
 
 4. Stop SSH daemon:
 
-    ```
-    pkill sshd
+    ```console
+    $ pkill sshd
     ```
 
 
@@ -187,10 +195,12 @@ Language packages such as `clang`, `python`, `nodejs`, `ruby`, `golang`, `rust`,
 
 <br><br>
 
-<figure class="figure-c">
-    <img src="/assets/img/posts/termux.jpg" width="75%" alt="Termux">
-    <figcaption>Termux</figcaption>
-</figure>
+<div>
+    <figure class="figure-c">
+        <img src="/assets/img/posts/termux.jpg" width="50%" alt="Termux">
+        <figcaption>Termux</figcaption>
+    </figure>
+</div>
 
 Now we can clone any repo, edit in vim & commit to Github, SSH to a remote server and do a quick snippet compilation. Pretty much what all I needed 🎉
 
@@ -203,11 +213,11 @@ Now we can clone any repo, edit in vim & commit to Github, SSH to a remote serve
 - `su` root shell can't run termux packages directly.
 > A workaround for using termux packages in root shell is to export `LD_LIBRARY_PATH` pointing to termux's `/usr/lib/` and execute package binaries by specifying path:
 >
-> ```
-> # export LD_LIBRARY_PATH=/data/data/com.termux/files/usr/lib/
+> ```console
+> $ export LD_LIBRARY_PATH=/data/data/com.termux/files/usr/lib/
 >
-> # /data/data/com.termux/files/usr/bin/python --version
-> # /data/data/com.termux/files/usr/bin/vim test.txt
+> $ /data/data/com.termux/files/usr/bin/python --version
+> $ /data/data/com.termux/files/usr/bin/vim test.txt
 > ```
 >
 

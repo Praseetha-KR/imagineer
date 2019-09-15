@@ -7,6 +7,7 @@ tags:
 blurb: "DIY salt crystals"
 image: "/assets/img/posts/nacl_cubic_crystals.jpg"
 theme: '#262533'
+title_color: '#8b8cd0'
 ---
 
 This is about a serendipity that happened recently for me :P. I had kept a bit of salt water in a glass for 3-4 days and forgotten about it. When I finally noticed it and checked something amazing happened. There were these beautiful salt crystals formed inside it. I wanted to test the formation again so I tried it with a saturated salt solution on a dish for again for 3 days, and bam! the results.
