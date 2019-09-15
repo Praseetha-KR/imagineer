@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-    - 12.9.0
+    - 11.15.0
 before_install:
     - rvm install 2.5.0
     - gem install jekyll jekyll-paginate kramdown rouge
