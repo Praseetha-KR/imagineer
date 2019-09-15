@@ -1,5 +1,16 @@
 $home__sidebar-width: 18em;
 
+.home {
+    &__banner {
+        padding: 3em 0 4em;
+        svg {
+            width: 80%;
+            @media (min-width: 768px) {
+                width: 60%;
+            }
+        }
+    }
+}
 .masthead {
     text-align: center;
     &__image {
@@ -12,10 +23,21 @@ $home__sidebar-width: 18em;
     }
     &__title {
         margin: 0;
+        font-family: $annotation-type;
     }
     &__tagline {
         color: $color__text-gray;
         padding-bottom: 2em;
+        font-family: $annotation-type;
+        font-size: 1.3em;
+    }
+    &__avatar {
+        width: 10em;
+        margin: auto;
+        img {
+            border: 0.5em solid #EEE;
+            border-radius: 50%;
+        }
     }
 }
 
