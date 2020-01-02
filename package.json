@@ -4,7 +4,9 @@
   "description": "Website of Praseetha KR",
   "main": "index.js",
   "dependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "natives": "^1.1.6",
+    "node-sass": "^4.12.0"
   },
   "devDependencies": {
     "browser-sync": "^2.24.4",

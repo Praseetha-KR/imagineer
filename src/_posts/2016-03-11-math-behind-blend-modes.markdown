@@ -164,8 +164,9 @@ There are 12 of operators which decides the behaviour in these regions.
     </tbody>
 </table>
 
-> CSS is using the Souce over Backdrop operation (4th entry in the table above) for blend modes.
-
+<div>
+<blockquote>CSS is using the Souce over Backdrop operation (4th entry in the table above) for blend modes.</blockquote>
+</div>
 Color obtained from compositing source color Cs and backdrop color Cb is given by general Porter Duff equation:
 
 ``` bash
@@ -192,15 +193,15 @@ where B(Cb, Cs) is the blending function.
     <tbody>
         <tr>
             <td>normal</td>
-            <td><pre>B(Cb, Cs) = Cs</td>
+            <td><pre>B(Cb, Cs) = Cs</pre></td>
         </tr>
         <tr>
             <td>multiply</td>
-            <td><pre>B(Cb, Cs) = Cb x Cs</td>
+            <td><pre>B(Cb, Cs) = Cb x Cs</pre></td>
         </tr>
         <tr>
             <td>screen</td>
-            <td><pre>B(Cb, Cs) = 1 - [(1 - Cb) x (1 - Cs)]<br>= Cb + Cs -(Cb x Cs)</td>
+            <td><pre>B(Cb, Cs) = 1 - [(1 - Cb) x (1 - Cs)]<br>= Cb + Cs -(Cb x Cs)</pre></td>
         </tr>
         <tr>
             <td>overlay</td>

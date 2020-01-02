@@ -32,6 +32,7 @@ and another remote at: [https://github.com/Praseetha-KR/django-engage](https://g
 
 #### Hackathon progress log from twitter
 
+<div>
 <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Proper Planning is definitely a metric of success for the teams. <a href="https://twitter.com/hashtag/djangothon2015?src=hash">#djangothon2015</a> <a href="https://twitter.com/HackerEarth">@HackerEarth</a> <a href="https://twitter.com/ThePSF">@ThePSF</a> <a href="https://twitter.com/djangoproject">@djangoproject</a> <a href="http://t.co/FxS6Ub6HD4">pic.twitter.com/FxS6Ub6HD4</a></p>&mdash; HackerEarth (@HackerEarth) <a href="https://twitter.com/HackerEarth/status/634985388981882880">August 22, 2015</a></blockquote>
 
 <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Hacking our way in, at <a href="https://twitter.com/hashtag/Djangothon?src=hash">#Djangothon</a> <a href="https://twitter.com/Devyani_kush">@Devyani_kush</a> <a href="https://twitter.com/void_imagineer">@void_imagineer</a> <a href="https://twitter.com/cosmos_genius">@cosmos_genius</a> <a href="http://t.co/8JqLgFraY8">pic.twitter.com/8JqLgFraY8</a></p>&mdash; HackerEarth (@HackerEarth) <a href="https://twitter.com/HackerEarth/status/634990857574203392">August 22, 2015</a></blockquote>
@@ -52,3 +53,4 @@ and another remote at: [https://github.com/Praseetha-KR/django-engage](https://g
 
 <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/djangothon?src=hash">#djangothon</a> comes to a spectacular end! Happy hacking guys. <a href="https://twitter.com/HackerEarth">@HackerEarth</a> <a href="http://t.co/b2LIAxuPkl">pic.twitter.com/b2LIAxuPkl</a></p>&mdash; Vivek Prakash (@vivekprakash) <a href="https://twitter.com/vivekprakash/status/635408510977617920">August 23, 2015</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
