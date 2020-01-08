@@ -6,8 +6,8 @@ tags:
     - networking
     - devops
 blurb: "Issue with DNS server list realtime sync between Ubuntu Host and Docker Containers running in bridge mode"
-theme: '#c3e4f7'
-title_color: '#077CBC'
+theme: '#3988ad'
+title_color: '#dfeef5'
 ---
 
 ### Problem
