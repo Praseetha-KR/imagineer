@@ -1,13 +1,12 @@
-@import url(https://fontlibrary.org/face/hk-grotesk);
-@import url(https://fonts.googleapis.com/css?family=Heebo:800+900|Fira+Code|Questrial|Roboto+Condensed:800|Amiri);
+@import url(https://fonts.googleapis.com/css?family=Heebo:300,400,500,700,800,900|Fira+Code|Questrial|Roboto+Condensed:800|Amiri);
 
 $title-type: 'Heebo', sans-serif;
-$heading-type: 'HKGroteskBold', 'Heebo', sans-serif;
-$para-type: 'HKGroteskRegular', 'Heebo', sans-serif;
+$heading-type: 'Heebo', sans-serif;
+$para-type: 'Heebo', sans-serif;
 
-$label-type: 'Questrial', 'Roboto', sans-serif;
+$label-type: 'Questrial', sans-serif;
 $annotation-type: 'Amiri', 'Georgia', serif;
-$alt-heading-type: 'Roboto Condensed', 'Heebo', sans-serif;
+$alt-heading-type: 'Roboto Condensed', sans-serif;
 $code-type: 'Fira Code', monospace, sans-serif;
 
 $body-font: $para-type;
@@ -21,11 +20,13 @@ body {
     font-family: $body-font;
     font-size: $font__base-size;
     line-height: $font__base-line-height;
+    font-weight: 300;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $heading-type;
-    font-weight: 900;
+    font-weight: 800;
+    margin: 0.5em 0;
 }
 @media (min-width: 768px) {
     h1 {
