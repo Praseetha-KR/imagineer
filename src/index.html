@@ -28,7 +28,8 @@ active: home
                             <h3 class="postcard__title">
                                 <a class="postcard__link" href="{{ post.url }}">{{ post.title }}</a>
                             </h3>
-                            <p class="postcard__summary">{{ post.excerpt | strip_html | normalize_whitespace | truncate: 160 | escape }}</p>
+                            <p class="postcard__summary">{{ post.blurb | strip_html | escape }}</p>
+                            <!-- <p class="postcard__summary">{{ post.excerpt | strip_html | normalize_whitespace | truncate: 160 | escape }}</p> -->
                         </div>
                     </li>
                 {% endif %}
