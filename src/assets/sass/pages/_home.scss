@@ -16,9 +16,12 @@ $home__sidebar-width: 18em;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2em 0 10em;
+    margin: 2em;
     @media (max-width: 767px) {
         transform: scale(0.6);
+    }
+    @media (min-width: 768px) {
+        margin: 2em 0 10em;
     }
 
     &__wrapper {
