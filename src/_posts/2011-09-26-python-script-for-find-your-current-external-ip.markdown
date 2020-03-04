@@ -7,6 +7,8 @@ tags:
     - web
 blurb: "A tiny python script for finding the current external IP"
 theme: '#623F41'
+title_color: '#537dca'
+luminance: light
 ---
 
 Here is a simple python program for finding the current external IP address.

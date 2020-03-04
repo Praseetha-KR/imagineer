@@ -1,8 +1,23 @@
-@import url(https://fonts.googleapis.com/css?family=Heebo:300,400,500,700,800,900|Fira+Code|Questrial|Roboto+Condensed:800|Amiri);
+@import url(https://fonts.googleapis.com/css?family=Fira+Code|Questrial|Roboto+Condensed:800|Amiri|La+Belle+Aurore);
 
-$title-type: 'Heebo', sans-serif;
-$heading-type: 'Heebo', sans-serif;
-$para-type: 'Heebo', sans-serif;
+@mixin font($font-family, $file-path, $font-weight, $font-style) {
+    @font-face {
+        font-family: $font-family;
+        src: url($file-path + '.otf') format('opentype');
+        font-weight: $font-weight;
+        font-style: $font-style;
+    }
+}
+
+@include font('Inter', '/assets/font/Inter/Inter-Regular', normal, normal);
+@include font('Inter-Medium', '/assets/font/Inter/Inter-Medium', 500, normal);
+@include font('Inter-SemiBold', '/assets/font/Inter/Inter-Semibold', 600, normal);
+@include font('Inter-Bold', '/assets/font/Inter/Inter-Semibold', bold, normal);
+@include font('Inter-Black', '/assets/font/Inter/Inter-Semibold', 900, normal);
+
+$title-type: 'Inter-Black', sans-serif;
+$heading-type: 'Inter-Bold', sans-serif;
+$para-type: 'Inter', sans-serif;
 
 $label-type: 'Questrial', sans-serif;
 $annotation-type: 'Amiri', 'Georgia', serif;
@@ -46,6 +61,14 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+.title-type {
+    font-family: $title-type;
+}
+
+.handwriting-type {
+    font-family: 'La Belle Aurore', cursive;
+}
+
 .prose-type {
     font-family: $label-type;
     letter-spacing: 0.1em;
@@ -61,4 +84,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 .textsize-small {
     font-size: 0.8em;
+}
+
+.bold {
+    font-family: 'Inter-Bold', sans-serif;
 }

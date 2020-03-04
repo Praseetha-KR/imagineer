@@ -8,6 +8,7 @@ blurb: "Personal experiences for the year 2015"
 image: "/assets/img/posts/github_2015.jpg"
 theme: '#867794'
 title_color: '#312424'
+luminance: dark
 ---
 
 2015 has almost reached EOL.

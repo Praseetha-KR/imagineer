@@ -1,5 +1,3 @@
-$color__nav-link: $color__gray;
-$color__nav-link-active: $color__bg--post-link;
 $header-height: 10em;
 
 .header {
@@ -10,7 +8,6 @@ $header-height: 10em;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        color: $color__text-sitenav;
         padding: 4em 0 0;
         @media (min-width: 768px) {
             flex-direction: row;
@@ -46,12 +43,10 @@ $header-height: 10em;
         font-weight: bold;
         font-family: $title-font;
         margin: 0;
-        color: $color__text-sitenav;
     }
     &__tagline {
         margin: 0;
         font-size: 1em;
-        color: $color__text-sitenav;
     }
 }
 
@@ -63,7 +58,6 @@ $header-height: 10em;
     &__link {
         display: flex;
         align-items: center;
-        color: $color__text-sitenav;
         font-size: 0.85em;
         margin: 0 1em;
         font-family: $label-type;
@@ -71,10 +65,7 @@ $header-height: 10em;
         line-height: 0.5;
         border-bottom: 0.6em solid transparent;
         &--active {
-            border-bottom: 0.6em solid $color__nav-link-active;
-        }
-        &:hover, &:active, &:focus {
-            color: darken($color__text-sitenav, 5%);
+            border-bottom: 0.6em solid transparent;
         }
     }
 }

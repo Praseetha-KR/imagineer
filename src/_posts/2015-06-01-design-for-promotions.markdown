@@ -7,6 +7,7 @@ tags:
     - design
 blurb: "Thoughts on design based on book of Ogilvy"
 theme: '#E95250'
+luminance: dark
 ---
 
 <!-- <style>strong{color:#f06;}</style> -->

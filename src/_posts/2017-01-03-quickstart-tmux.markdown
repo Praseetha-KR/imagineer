@@ -9,6 +9,7 @@ blurb: "Tmuxifying terminal life"
 image: "/assets/img/posts/tmux.png"
 theme: '#1a3f4a'
 title_color: '#93a42a'
+luminance: light
 ---
 
 I haven't been using [tmux](https://tmux.github.io/) since I'm a happy user of [iTerm2](https://www.iterm2.com/). Eventhough tmux had been used in servers I used to work with, I preferred avoiding it because of the fallacious assumption that it would be hard to remember all those scary key-shortcuts. I gave it a try today, and totally regret for not learning it earlier.

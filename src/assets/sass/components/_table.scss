@@ -3,28 +3,15 @@ $table-padding: 0.5em;
 table {
     border-collapse: collapse;
     table-layout: fixed;
-    background-color: lighten($color__silver, 2%);
     th {
-        background-color: $color__table-head-bg;
-        color: $color__table-head-text;
-    }
-    thead tr {
-        color: $color__table-head-bg;
+        padding: 0.5em;
     }
     &, td {
-        border: 1px solid $color__table-border;
-    }
-    th, td {
-        padding: $table-padding/2 $table-padding;
-        vertical-align: middle;
+        border: 1px solid transparent;
+        padding: 0.2em 0.5em;
     }
     td > img {
         width: 100%;
-    }
-    &.table-striped tbody {
-        tr:nth-child(2n+1) {
-            background-color: $color__table-stripe;
-        }
     }
     td pre {
         white-space: pre-wrap;
@@ -38,8 +25,6 @@ table {
         }
     }
     &__subtitle {
-        background-color: darken($color__silver, 6%);
-        background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.498039) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.498039) 50%, rgba(255, 255, 255, 0.498039) 75%, transparent 75%, transparent);
         background-size: 6px 6px;
         padding: $table-padding/3 $table-padding;
         font-size: 0.8em;

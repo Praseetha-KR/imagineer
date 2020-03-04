@@ -1,0 +1,5 @@
+[css, scss]
+indent_size = 4
+
+[html]
+indent_size = 2

@@ -9,6 +9,7 @@ tags:
 blurb: "Image effects with CSS filters & blend modes"
 image: "/assets/img/media/demo_pixr.jpg"
 theme: '#DF816A'
+luminance: dark
 ---
 I'm definitely late to the party! though it is better than not to show up at all 😎
 

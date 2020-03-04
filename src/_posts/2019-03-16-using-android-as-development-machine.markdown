@@ -7,6 +7,7 @@ tags:
     - programming
 blurb: "How to use Android phone as a quick development machine"
 theme: '#7ebb61'
+luminance: dark
 ---
 
 There had been many scenarios where I wished if mobile phone could be used as a development machine. Scenarios such as quick SSHing to servers or pushing a hotfix to Github while on the roads, testing out a snippet which just popped in mind while jogging, etc.

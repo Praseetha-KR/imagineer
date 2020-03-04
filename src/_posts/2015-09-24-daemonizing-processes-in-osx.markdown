@@ -7,6 +7,7 @@ tags:
     - devops
 blurb: "How to create user agent/daemon in OSX"
 theme: '#A4AAB9'
+luminance: dark
 ---
 
 Processes such as `redis` and `mongodb` have to be started manually each time after system restart on *Mac* and they occupy a terminal instance each. Daemonizing them will make the process to start automatically & without the need for a dedicated terminal.

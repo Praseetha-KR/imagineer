@@ -8,6 +8,7 @@ tags:
 blurb: "Fixing mouse scrolling in tmux scroll mode"
 theme: '#131214'
 title_color: '#66f96a'
+luminance: light
 ---
 
 

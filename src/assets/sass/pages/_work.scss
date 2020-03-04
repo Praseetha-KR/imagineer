@@ -1,8 +1,6 @@
 .work {
     &__item {
         margin-bottom: 1.5em;
-        border: 1px solid $color__border-lightgrey;
-        background-color: white;
         overflow: hidden;
         float: none;
         clear: both;
@@ -14,7 +12,6 @@
             flex-direction: row;
         }
         &__thumb {
-            background-color: rgba($color__gray, 0.1);
             text-align: center;
             @media (min-width: 768px) {
                 flex: 5;
@@ -36,14 +33,10 @@
             margin: 0;
             font-family: $body-font;
             font-size: 1em;
-            color: $color__primary;
-            // float: left;
         }
         &__duration {
             text-transform: uppercase;
             font-size: 0.7em;
-            color: $color__dark;
-            // float: right;
         }
         &__desc {
             margin: 0;
@@ -55,8 +48,7 @@
         height: 0;
     }
     &__mentions {
-        border: 0.1em solid rgba($color__secondary, 0.3);
-        background-color: rgba($color__secondary, 0.05);
+        border: 0.1em solid transparent;
         padding: 1em;
     }
 }

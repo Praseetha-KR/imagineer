@@ -7,10 +7,9 @@ $post-padding: 25%;
     font-weight: 300;
     line-height: 1.7;
     padding: 2em 0 4em;
-    color: $color__text--post-body;
 
     &__content {
-        font-size: 1.08em;
+        font-size: 1em;
         line-height: 1.54;
         margin-left: 2em;
         margin-right: 2em;
@@ -54,9 +53,6 @@ $post-padding: 25%;
     &__intro {
         margin: auto;
         text-align: center;
-        color: $color__text--post-title;
-        background: $color__bg-post-header;
-        color: $color__title-post-header;
         position: relative;
         display: flex;
         align-items: center;
@@ -77,7 +73,6 @@ $post-padding: 25%;
             align-items: center;
             .post__navigation__link {
                 font-size: 2em;
-                color: rgba(255,255,255,0.3);
             }
         }
         &__right {
@@ -123,9 +118,6 @@ $post-padding: 25%;
         list-style-type: none;
         &__icon {
             margin-right: 0.5em;
-            i {
-                color: rgba($color__text-dark, 0.8);
-            }
         }
         &__list {
             list-style-type: none;
@@ -135,13 +127,12 @@ $post-padding: 25%;
     }
     &__tag {
         display: inline-block;
-        border: 0.1em solid $color__text-dark;
+        border: 0.1em solid transparent;
         font-family: $alt-heading-type;
         font-weight: 800;
         text-transform: uppercase;
         margin: 0.3em 0.3em 0.3em 0;
         a {
-            color: $color__text-dark;
             display: block;
             font-size: 0.7em;
             line-height: 1;
@@ -151,8 +142,7 @@ $post-padding: 25%;
     }
 
     &__index {
-        border: 0.1em solid rgba($color__secondary, 0.3);
-        background-color: rgba($color__secondary, 0.05);
+        border: 0.1em solid transparent;
         padding: 1em 3em !important;
     }
 
@@ -178,19 +168,11 @@ $post-padding: 25%;
         &__link {
             display: inline-block;
             padding: 0.5em;
-            color: $color__primary;
-            border: 1px solid lighten($color__primary, 25%);
-            background: rgba(lighten($color__primary, 10%), 0.3);
             &:first-child {
                 float: left;
             }
             &:last-child {
                 float: right;
-            }
-            @media (min-width: 768px) {
-                background: transparent;
-                color: $color__gray;
-                border-color: transparent;
             }
         }
     }
