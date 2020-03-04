@@ -7,6 +7,7 @@ tags:
     - web
 blurb: "A note on CSS data types"
 theme: '#84d2f2'
+luminance: dark
 ---
 
 Here is a quick reference for CSS data types:

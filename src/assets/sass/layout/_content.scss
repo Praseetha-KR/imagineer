@@ -7,11 +7,9 @@ body {
     position: relative;
     margin: 0;
     min-height: 100%;
-    background: $color__bg-silver;
 }
 .content-wrapper {
     margin: 0 auto;
-    background: $color__bg-silver;
     padding-bottom: $footer-height;
 }
 
@@ -39,5 +37,4 @@ body {
     padding-bottom: 1.5em;
     margin: 0;
     font-size: 1.3em;
-    color: lighten($color__text-dark, 10%);
 }

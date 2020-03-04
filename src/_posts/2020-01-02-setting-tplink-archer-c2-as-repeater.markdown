@@ -8,6 +8,7 @@ tags:
 blurb: "How to run TP-Link Archer C2 AC750 Wireless Dual Band Gigabit Router in Repeater mode"
 theme: '#257d43'
 title_color: '#ececec'
+luminance: dark
 ---
 
 Since the introduction of a new router to our home premises the previous one was lying around unused - it is TP-Link Archer C2 AC750 Wireless Dual Band Gigabit Router. I changed it to run as a Repeater, so that it can strengthen WiFi signal to the weak spots; Here is a note on how to do that.

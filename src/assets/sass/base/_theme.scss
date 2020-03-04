@@ -1,19 +1,272 @@
-$color__link: $color__primary;
-$color__link-active: darken($color__primary, 10%);
-
-body {
-    background-color: white;
-    color: $color__text-dark;
-}
-
+// overrides
 a {
     color: $color__link;
     &:hover, &:focus, &:active {
         color: $color__link-active;
     }
 }
-
 hr {
     border: none;
     border-bottom: 0.05em solid $color__hr-border;
+}
+figcaption {
+    color: darken($color__text, 25%);
+}
+blockquote {
+    border-left-color: rgba($color__primary, 0.8);
+    background: $colot__bg-blockquote;
+}
+table {
+    background-color: $color__table-bg;
+    th {
+        background-color: $color__table-head-bg;
+        color: $color__table-head-text;
+    }
+    thead tr {
+        color: $color__table-head-bg;
+    }
+    &, td {
+        border-color: $color__table-border;
+    }
+    &.table-striped tbody {
+        tr:nth-child(2n+1) {
+            background-color: $color__table-stripe;
+        }
+    }
+}
+
+// _content
+body, .content-wrapper {
+    background: $color__bg;
+    color: $color__text;
+}
+
+// _footer
+.footer {
+    color: $color__text;
+}
+
+// table
+.table {
+    &__subtitle {
+        background-color: $color__table-stripe;
+        background-image: linear-gradient(-45deg, $color__table-bg 25%, transparent 25%, transparent 50%, $color__table-bg 50%, $color__table-bg 75%, transparent 75%, transparent);
+    }
+}
+
+// button
+%btn--base {
+    padding: 0.4em 1em;
+    border-radius: 0.3em;
+    display: inline-block;
+}
+%btn--primary {
+    @extend %btn--base;
+    color: lighten($color__primary, 35%);
+    background-color: $color__primary;
+    &:hover, &:focus, &:active, &.active {
+        color: lighten($color__primary, 45%);
+        background-color: darken($color__primary, 5%);
+    }
+}
+%btn--tweet {
+    @extend %btn--base;
+    color: lighten($color__tweet-btn, 35%);
+    background-color: $color__tweet-btn;
+    &:hover, &:focus, &:active, &.active {
+        color: lighten($color__tweet-btn, 45%);
+        background-color: darken($color__tweet-btn, 5%);
+    }
+}
+.btn-theme {
+    @extend %btn--primary;
+}
+.btn-tweet {
+    @extend %btn--tweet;
+}
+
+// _syntax-highlight
+code.highlighter-rouge {
+    background-color: darken($color__bg, 8%);
+    color: $color__text;
+}
+.highlighter-rouge {
+    background-color: darken($color__bg, 8%);
+    color: $color__code-highlight-text;
+}
+
+// utils
+.video-wrapper {
+    background: darken($color__bg, 5%);
+}
+
+// header
+.sitenav__link {
+    &--active {
+        border-bottom-color: $color__secondary;
+    }
+}
+
+
+// _home
+.aboutbanner {
+    // background: #0d0e10;
+}
+.avatarstamp {
+    &__wrapper {
+        background-image: linear-gradient($color__stamp-bg-tint, $color__stamp-bg-tint), url('/assets/img/avatars/stamp_head.jpg');
+        border-color: $color__stamp-border;
+        &::before, &::after {
+            border-color: $color__bg;
+        }
+    }
+    &__star {
+        color: $color__stamp-star;
+    }
+}
+.intro {
+    &__title {
+        color: $color__stamp-computed-fill;
+    }
+}
+.postcards {
+    &__item {
+        &:hover {
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+    }
+    &__more__btn {
+        border-color: $color__text;
+        color: $color__text;
+        &:hover {
+            background-color: $color__primary;
+            color: lighten($color__primary, 40%);
+            border-color: $color__primary;
+        }
+    }
+}
+.postcard {
+    color: $color__postcard-text;
+    position: relative;
+    &:hover, &:active, &:focus {
+        color: $color__postcard-text;
+    }
+    &__content {
+        background: $color__postcard-bg-tint;
+    }
+    &__time--light {
+        color: $color__postcard-seal--light;
+    }
+    &__time--dark {
+        color: $color__postcard-seal--dark;
+    }
+    &__tag {
+        background: $color__postcard-text;
+        outline-color: $color__postcard-stamp-border;
+        border-color: $color__postcard-stamp-border;
+    }
+}
+
+
+// post
+.post {
+    color: $color__text--post-body;
+
+    &__intro {
+        background: darke($color__bg, 5%);
+        color: $color__title-post-header;
+    }
+    &__header {
+        &__left, &__right {
+            .post__navigation__link {
+                color: $color__icon-post-nav;
+            }
+        }
+    }
+    &__tags {
+        &__icon {
+            i {
+                color: rgba($color__primary, 0.8);
+            }
+        }
+    }
+    &__tag {
+        border-color: $color__primary;
+        a {
+            color: $color__primary;
+        }
+    }
+
+    &__index {
+        border-color: rgba($color__secondary, 0.3);
+        background-color: rgba($color__secondary, 0.05);
+    }
+
+    &__navigation {
+        &__link {
+            color: $color__primary;
+            border: 1px solid lighten($color__primary, 25%);
+            background: rgba(lighten($color__primary, 10%), 0.3);
+            @media (min-width: 768px) {
+                background: transparent;
+                color: rgba($color__text, 0.5);
+                border-color: transparent;
+            }
+        }
+    }
+}
+
+// blog
+.blogpost {
+    &__time {
+        color: darken($color__text, 5%);
+    }
+    &__pagination {
+        &__nav {
+            border-color: $color__text;
+            color: $color__text;
+            &:hover {
+                background-color: $color__secondary;
+                color: $color__text;
+                border-color: $color__secondary;
+            }
+        }
+    }
+}
+
+// work
+.work {
+    &__item {
+        background-color: lighten($color__bg, 3%);
+        &__thumb {
+            background-color: lighten($color__bg, 5%);
+        }
+        &__title {
+            color: $color__primary;
+        }
+        &__duration {
+            color: darken($color__text, 20%);
+        }
+    }
+    &__mentions {
+        border-color: rgba($color__secondary, 0.3);
+        background-color: rgba($color__secondary, 0.05);
+    }
+}
+
+// project
+.project {
+    &__item {
+        border-color: lighten($color__bg, 10%);
+        background-color: lighten($color__bg, 3%);
+    }
+    &__thumb {
+        background-color: lighten($color__bg, 5%);
+    }
+    &__title {
+        color: $color__primary;
+    }
+    &__duration {
+        color: darken($color__text, 20%);
+    }
 }

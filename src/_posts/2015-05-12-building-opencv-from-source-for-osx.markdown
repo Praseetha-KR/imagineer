@@ -7,6 +7,7 @@ tags:
     - tools
 blurb: "Setting up of python version of Open CV, a computer vision library, in Mac OSX"
 theme: '#33797C'
+luminance: light
 ---
 
 Today I have been trying to figure out installation of [OpenCV](http://opencv.org/) (a computer vision library) in my laptop. This article explain how I did the setup of OpenCV in Mac OSX (Mavericks).

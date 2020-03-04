@@ -8,6 +8,7 @@ tags:
 blurb: "Issue with DNS server list realtime sync between Ubuntu Host and Docker Containers running in bridge mode"
 theme: '#3988ad'
 title_color: '#dfeef5'
+luminance: dark
 ---
 
 ### Problem

@@ -6,6 +6,8 @@ tags:
     - linux
 blurb: "Check top 10 most-used commands in terminal"
 theme: '#363C40'
+title_color: '#999'
+luminance: light
 ---
 
 This small piece of code lets you know the top 10 most-used commands in terminal.

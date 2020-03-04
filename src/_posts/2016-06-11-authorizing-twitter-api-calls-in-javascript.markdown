@@ -10,6 +10,7 @@ blurb: "How to generate OAuth 1.0 signature & configure request header"
 image: "/assets/img/posts/encryption.jpg"
 theme: '#27A4DD'
 title_color: '#edf7fb'
+luminance: dark
 ---
 
 I have been thinking of playing around Twitter APIs since a long time, but never sat down patiently to get it done. Procrastination is at its highest 😥 Anyways, I did it finally, with [Twick - an Angular app to fetch and display Twitter data](https://github.com/Praseetha-KR/twick).

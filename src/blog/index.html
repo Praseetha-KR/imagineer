@@ -7,13 +7,13 @@ active: blog
 <div class="main-container centered">
     <h1 class="page__heading">weblog</h1>
     <article role="article" class="p-q-top">
-        <ul role="list" class="posts">
+        <ul role="list" class="blogposts">
             {% for post in paginator.posts %}
                 {% if post.status != 'draft' %}
-                    <li role="listitem" class="postitem">
-                        <time class="postitem__time">{{ post.date | date_to_string }}</time>
-                        <a class="postitem__link" href="{{ post.url }}">{{ post.title }}</a>
-                        <!-- <p class="postitem__blurb">{{ post.blurb }}</p> -->
+                    <li role="listitem" class="blogpost">
+                        <time class="blogpost__time">{{ post.date | date_to_string }}</time>
+                        <a class="blogpost__link" href="{{ post.url }}">{{ post.title }}</a>
+                        <!-- <p class="blogpost__blurb">{{ post.blurb }}</p> -->
                     </li>
                 {% endif %}
             {% endfor %}

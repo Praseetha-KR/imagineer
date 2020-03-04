@@ -1,26 +1,16 @@
-.blog {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    &__item {
-        padding: 1em 0;
-        padding: 1em 0;
-        &:not(:last-child) {
-            border-bottom: 1px dashed #EEE;
-        }
-        &__link {
-            font-size: 1.4em;
-            font-weight: 900;
-            clear: both;
-            font-family: $heading-type;
-        }
-        &__time {
-            color: darken($color__gray, 10%);
-            font-size: 0.8em;
-            display: block;
-        }
-        &__blurb {
-            font-size: 0.9em;
+.blogpost {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+    @media (min-width: 768px) {
+        flex-direction: row;
+        margin-bottom: 0;
+    }
+    &__time {
+        width: 8em;
+        font-size: 0.8em;
+        @media (min-width: 768px) {
+            font-size: 1em;
         }
     }
     &__pagination {
@@ -28,26 +18,13 @@
         display: flex;
         justify-content: space-between;
         &__nav {
-            border: 0.1em solid $color__gray;
-            color: $color__gray;
+            border: 0.1em solid transparent;
             padding: 0.3em 1em;
             border-radius: 2em;
             display: block;
-            &:hover {
-                background-color: $color__secondary;
-                color: white;
-                border-color: $color__secondary;
-            }
             &--left + &--right {
                 margin-left: 1em;
             }
         }
-    }
-}
-
-.tags {
-    &__back {
-        display: flex;
-        justify-content: flex-start;
     }
 }
