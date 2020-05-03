@@ -6,7 +6,7 @@ tags:
     - concepts
 blurb: "The importance of video compression through some interesting figures"
 theme: '#21639C'
-luminance: light
+# luminance: light
 ---
 
 This article explains the importance of video compression through some interesting figures.

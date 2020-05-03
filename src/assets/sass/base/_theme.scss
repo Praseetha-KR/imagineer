@@ -87,11 +87,11 @@ body, .content-wrapper {
 
 // _syntax-highlight
 code.highlighter-rouge {
-    background-color: darken($color__bg, 8%);
-    color: $color__text;
+    background-color: $color__code-highlight-bg;
+    color: rgba($color__text, 0.8);
 }
 .highlighter-rouge {
-    background-color: darken($color__bg, 8%);
+    background-color: $color__code-highlight-bg;
     color: $color__code-highlight-text;
 }
 
@@ -103,15 +103,16 @@ code.highlighter-rouge {
 // header
 .sitenav__link {
     &--active {
-        border-bottom-color: $color__secondary;
+        color: $color__secondary;
     }
 }
 
 
 // _home
-.aboutbanner {
-    // background: #0d0e10;
+.masthead {
+    background-image: linear-gradient(transparent, $color__bg-masthead);
 }
+
 .avatarstamp {
     &__wrapper {
         background-image: linear-gradient($color__stamp-bg-tint, $color__stamp-bg-tint), url('/assets/img/avatars/stamp_head.jpg');
@@ -126,7 +127,7 @@ code.highlighter-rouge {
 }
 .intro {
     &__title {
-        color: $color__stamp-computed-fill;
+        color: mix($color__text, $color__primary);
     }
 }
 .postcards {

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Flexbox, you are the next!"
+title:  "Flexbox, you are next!"
 date:   2013-05-24 18:17:46
 tags:
     - css

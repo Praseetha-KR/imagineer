@@ -8,7 +8,7 @@ tags:
     - linux
 blurb: "How to allow/disallow SSH keys for instances launced from AWS EC2 AMIs"
 theme: '#eaa349'
-luminance: dark
+# luminance: light
 ---
 
 AWS adds an SSH key on every EC2 instance creation, either by adding a new key-pair or using the existing one based on the user's choice. This gets a bit annoying while distributing a sealed (content-protected) AMI. Any user who has access to this AMI for deployment could create an instance by adding their key, thus gets access to the protected content residing inside the instance.

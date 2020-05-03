@@ -78,10 +78,13 @@ This command will ask for the following info:
 - **Common Name**<sup>*</sup>
 - Email Address
 
-> **Common Name** value should be the domain name of your website.
-> here it is `local.website.dev`
-> If you have multiple sub domains, use a wildcard `*.website.dev`
-
+<div>
+    <blockquote>
+        <strong>Common Name</strong> value should be the domain name of your website.
+        It is <code>local.website.dev</code> in our example.<br>
+        If you have multiple sub domains, use a wildcard <code>*.website.dev</code>
+    </blockquote>
+</div>
 
 The generated certificate will be in x509 container format with SHA256 signature algorithm, 2048bit RSA authentication key and is valid for 365 days.
 

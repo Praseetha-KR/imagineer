@@ -2,8 +2,10 @@ $color__primary: #5f7aa2; //#41b7d8;
 $color__secondary: #4E4353;
 $color__text: #98989e;
 $color__bg: #191a1d;
+$color__bg-masthead: #191a1d;
 $color__tweet-btn: #53A8E8;
 $color__code-highlight-text: #5a6873;
+$color__code-highlight-bg: darken($color__bg, 5%);
 $color__stamp-star: #25274c;
 $color__stamp-border: #969694;
 $color__stamp-bg-tint: rgba(16, 30, 70, 0.582); // rgba(16, 30, 70, 0.582)

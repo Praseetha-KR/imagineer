@@ -2,15 +2,12 @@
 <header class="header header__site" role="banner">
 
     <!-- sitelogo -->
-    <a role="menuitem" href="/" class="sitelogo" title="Praseetha KR">
-        <span class="sitelogo__img">
-            <img src="/assets/img/logos/logo_pkr.png" alt="Praseetha KR">
-        </span>
+    <div class="sitelogo">
         <div class="sitelogo__text">
-            <h1 class="sitelogo__title sr-only">Praseetha KR</h1>
-            <h6 class="sitelogo__tagline sr-only">Imagineering the web.</h6>
+            <h2 class="sitelogo__title"><a role="menuitem" href="/" title="Praseetha KR">Praseetha KR</a></h2>
+            <!-- <h3 class="sitelogo__alias"><a href="https://twitter.com/void_imagineer" target="_blank" title="Twitter">@void_imagineer</a></h3> -->
         </div>
-    </a>
+    </div>
 
     <!-- sitenav -->
     {% assign current = page.url | downcase | split: '/' %}

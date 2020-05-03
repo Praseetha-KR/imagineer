@@ -5,8 +5,11 @@ code.highlighter-rouge {
     border-radius: 0.2em;
     padding: 0 0.2em;
 }
-pre.highlight {
-    white-space: pre-wrap;
+// pre.highlight {
+//     white-space: pre-wrap;
+// }
+pre.highlight > code {
+    padding-right: 1.2em;
 }
 div.highlighter-rouge {
     font-family: $font-stack__code;

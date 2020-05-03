@@ -10,8 +10,20 @@ $home__sidebar-width: 18em;
     }
 }
 
+.masthead {
+    &__image {
+        display: block;
+        margin: auto;
+        width: 60%;
+        @media (min-width: 768px) {
+            width: 25rem;
+        }
+    }
+}
+
 // stamp
 .avatarstamp {
+    position: relative;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -124,7 +136,7 @@ $home__sidebar-width: 18em;
 // intro
 .intro {
     &__title {
-        font-size: 2.3em;
+        font-size: 2.8em;
         line-height: 1.5;
     }
 }

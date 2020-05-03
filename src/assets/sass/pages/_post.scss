@@ -51,11 +51,12 @@ $post-padding: 25%;
     }
 
     &__intro {
+        min-height: 30em;
         margin: auto;
         text-align: center;
         position: relative;
         display: flex;
-        align-items: center;
+        align-items: stretch;
         @media (min-width: 768px) {
             text-align: left;
         }
@@ -63,7 +64,7 @@ $post-padding: 25%;
     &__header {
         padding: 4em 1em;
         display: flex;
-        justify-content: flex-start;
+        justify-content: space-between;
         flex-direction: column;
         width: 100%;
         &__left, &__right {
@@ -94,7 +95,7 @@ $post-padding: 25%;
         text-transform: uppercase;
         font-size: 0.8em;
         letter-spacing: 0.15em;
-        opacity: 0.5;
+        opacity: 0.7;
         font-family: $label-type;
         margin-bottom: 1.3em;
     }
@@ -102,7 +103,7 @@ $post-padding: 25%;
         font-family: $annotation-type;
         font-size: 1.2em;
         padding-top: 2em;
-        opacity: 0.7;
+        opacity: 0.9;
         text-align: center;
         @media (min-width: 768px) {
             text-align: left;
