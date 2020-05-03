@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "PostgreSQL: upgrading major versions"
+title: "Migrating the data for PostgreSQL major version upgrade"
 date: 2020-03-07 01:26:00
 tags:
     - database
     - devops
-blurb: "How to upgrade postgres database from version 9.6 to 12 in Ubuntu"
+blurb: "How to upgrade postgres databases from version 9.6 to 12 in Ubuntu"
 theme: '#2b3544'
 title_color: '#6695bb'
 luminance: light
