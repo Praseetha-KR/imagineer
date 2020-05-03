@@ -7,7 +7,7 @@ tags:
     - devops
 blurb: "How to upgrade postgres database from version 9.6 to 12 in Ubuntu"
 theme: '#2b3544'
-title_color: '#336791'
+title_color: '#6695bb'
 luminance: light
 ---
 
@@ -53,14 +53,24 @@ Ver Cluster Port    Status  Owner       Data directory                  Log file
 
 Multiple versions of postgres can co-exist in a system.
 
-#### Installation:
+##### Installation:
 
-*(apt repo is already added during istallation of the existing version. You can check `/etc/apt/sources.list.d/pgdg.list`, if it doesn't exist, it can be added as follows)*
+<div class="post__block post__block--2 post__block--right">
+    <div class="post__block__center">
+    Install postgres 12 via apt (<a href="https://www.postgresql.org/download/linux/ubuntu" target="_blank">postgresql.org/download/linux/ubuntu</a>)
+    </div>
+    <div class="post__block__side">
+        <div class="sideblock sideblock--right">
+            <div class="annotation">* note that apt repo is already added during istallation of the existing version</div>
+        </div>
+    </div>
+</div>
 
 ```bash
 $ cat /etc/apt/sources.list.d/pgdg.list
 deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main
 ```
+
 ```bash
 $ wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 $ apt-get update
@@ -69,7 +79,7 @@ $ apt-get install postgresql-12
 Postgres 12 cluster will start automatically after the installation.
 
 
-#### Verify status:
+##### Verify status:
 
 You'll be seeing version 12 in packages list:
 ```bash
