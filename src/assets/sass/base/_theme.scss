@@ -69,6 +69,15 @@ body, .content-wrapper {
         background-color: darken($color__primary, 5%);
     }
 }
+%btn--secondary {
+    @extend %btn--base;
+    color: lighten($color__secondary, 55%);
+    background-color: $color__secondary;
+    &:hover, &:focus, &:active, &.active {
+        color: lighten($color__secondary, 45%);
+        background-color: darken($color__secondary, 5%);
+    }
+}
 %btn--tweet {
     @extend %btn--base;
     color: lighten($color__tweet-btn, 35%);
@@ -80,6 +89,9 @@ body, .content-wrapper {
 }
 .btn-theme {
     @extend %btn--primary;
+}
+.btn-accent {
+    @extend %btn--secondary;
 }
 .btn-tweet {
     @extend %btn--tweet;

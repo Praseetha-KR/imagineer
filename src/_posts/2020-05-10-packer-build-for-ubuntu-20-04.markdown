@@ -5,7 +5,7 @@ date: 2020-05-10 02:38:00
 tags:
     - linux
     - devops
-blurb: "Packer build config for Ubuntu server 20.04: subiquity vs debian installer"
+blurb: "Packer build config for Ubuntu server: subiquity vs debian-installer"
 theme: '#C44227'
 title_color: '#29001C'
 luminance: light
@@ -17,21 +17,19 @@ Ubuntu is discontinuing support for the Debian-installer based classic server in
     <blockquote>Ubuntu 20.04 <a href="http://cdimage.ubuntu.com/ubuntu/releases/20.04/release/" target="_blank">live server</a> has only subiquity support. For debian-installer you can use <a href="http://cdimage.ubuntu.com/ubuntu-legacy-server/releases/20.04/release/" target="_blank">legacy server</a> version.</blockquote>
 </div>
 
-<!-- Diferennce between live & legacy: https://ubuntuforums.org/showthread.php?t=2390785 -->
-
 ## subiquity
 
-Automated installation, autoinstallation for short, for ubuntu is implemented via [subiquity](https://github.com/CanonicalLtd/subiquity) - the server counterpart of ubiquity installer used by desktop live CD installation.
+[subiquity](https://github.com/CanonicalLtd/subiquity) is the Ubuntu server's new automated installer, which was introduced in `18.04`. It is the server counterpart of [ubiquity](https://wiki.ubuntu.com/Ubiquity) installer used by desktop live CD installation.
 
 Autoinstallation lets you answer all those configuration questions ahead of time with autoinstall config and lets the installation process run without any external interaction. The autoinstall config is provided via cloud-init configuration. Values are taken from the config file if set, else default values are used.
 
-There are multiple ways to provide configuration data for cloud-init. Typically user config is stored in `user-data` and cloud specific config in `meta-data` file. The list of supported clod datasources can be found in [cloudinit docs](https://cloudinit.readthedocs.io/en/latest/topics/datasources.html#known-sources). Since packer builds it locally, data source is <a href="https://cloudinit.readthedocs.io/en/latest/topics/datasources/nocloud.html" target="_blank">NoCloud</a> in our case and the config files will served to the installer over http.
+There are multiple ways to provide configuration data for cloud-init. Typically user config is stored in `user-data` and cloud specific config in `meta-data` file. The list of supported cloud datasources can be found in [cloudinit docs](https://cloudinit.readthedocs.io/en/latest/topics/datasources.html#known-sources). Since packer builds it locally, data source is <a href="https://cloudinit.readthedocs.io/en/latest/topics/datasources/nocloud.html" target="_blank">NoCloud</a> in our case and the config files will served to the installer over http.
 
 
 #### Packer config to build a VMWare virtual machine from Ubuntu 20.04 live server ISO
 
 
-1) *packer.json*:
+1) *ubuntu-20.04-live-server-packer.json*:
 
 <div class="highlighter-rouge">
 {% highlight json %}
@@ -116,6 +114,49 @@ autoinstall:
     - echo 'ubuntu ALL=(ALL) NOPASSWD:ALL' > /target/etc/sudoers.d/ubuntu
 ```
 
+<br>
+Run the packer build:
+```bash
+$ packer build -force ubuntu-20.04-live-server-packer.json
+
+==> Retrieving ISO
+==> Trying iso/ubuntu-20.04-live-server-amd64.iso
+==> Trying iso/ubuntu-20.04-live-server-amd64.iso?checksum=sha256%3Acaf3fd69c77c439f162e2ba6040e9c320c4ff0d69aad1340a514319a9264df9f
+==> iso/ubuntu-20.04-live-server-amd64.iso?checksum=sha256%3Acaf3fd69c77c439f162e2ba6040e9c320c4ff0d69aad1340a514319a9264df9f => /path/to/packer-ubuntu/iso/ubuntu-20.04-live-server-amd64.iso
+==> Deleting previous output directory...
+==> Creating required virtual machine disks
+==> Building and writing VMX file
+==> Starting HTTP server on port 8100
+==> Starting virtual machine...
+==> Waiting 5s for boot...
+==> Connecting to VM via VNC (127.0.0.1:5984)
+==> Typing the boot command over VNC...
+==> Using ssh communicator to connect: 172.16.255.203
+==> Waiting for SSH to become available...
+
+==> Connected to SSH!
+==> Provisioning with shell script: /var/folders/lw/n4rl9vm16t38zzv2x_kl74xc0000gn/T/packer-shell298726450
+    bin   cdrom  etc   lib	  lib64   lost+found  mnt  proc  run   snap  sys  usr
+    boot  dev    home  lib32  libx32  media       opt  root  sbin  srv   tmp  var
+
+==> Gracefully halting virtual machine...
+    Waiting for VMware to clean up after itself...
+==> Deleting unnecessary VMware files...
+    Deleting: output/live-server/packer-ubuntu-20.04-live-server.plist
+    Deleting: output/live-server/startMenu.plist
+    Deleting: output/live-server/vmware.log
+==> Compacting all attached virtual disks...
+    Compacting virtual disk 1
+==> Cleaning VMX prior to finishing up...
+    Detaching ISO from CD-ROM device ide0:0...
+    Disabling VNC server...
+==> Skipping export of virtual machine (export is allowed only for ESXi)...
+Build 'ubuntu-20.04-live-server' finished.
+
+==> Builds finished. The artifacts of successful builds are:
+--> VM files in directory: output/live-server
+```
+
 #### Notes
 
 ##### ⏳ Boot interaction sequence for live server
@@ -146,7 +187,6 @@ autoinstall:
     </div>
 </div>
 
-
 ##### 🔐 Generating hashed password
 
 ```
@@ -168,26 +208,20 @@ Since there is no option to set `dhcp-identifier` via cloud config, this is appe
 Cloud config `identity` doesn't provide a way to set sudo `NOPASSWD` option. That is also being directly written to to `sudoers.d/ubuntu` file.
 
 
-#### References
-- <a href="https://wiki.ubuntu.com/FoundationsTeam/AutomatedServerInstalls/ConfigReference" target="_blank">Automated server install config referece</a>
-- <a href="https://cloudinit.readthedocs.io/en/latest/index.html" target="_blank">Cloud-init documentation</a>
-- <a href="https://netplan.io/reference#common-properties-for-all-device-types" target="_blank">Netplan reference</a>
-- <a href="https://www.packer.io/docs/builders/vmware/iso/" target="_blank">Packer VMware Builder (from ISO)</a>
-
 <br>
 <hr>
 
-## debian-installer:
+## debian-installer
 
-`debian-installer` or just `d-i` is an automated installation process with little user interaction. It consists of a number of components to perform each installation task. Component asks questions to the user based on the priority set.
+`debian-installer` or just `d-i` is a text-based automated installer with little user interaction. It consists of a number of components to perform each installation task. Component asks questions to the user based on the priority set.
 
 Preseeding is a way to set answers to questions asked during the installation process, without having to manually enter the answers while the installation is running. We can create a preseed.cfg file and pass it to the debian-installer. In the default mode, when the answer to a question is not present in a preseed, `d-i` stops and asks the user for input.
 
-It is way slower compared to subiquity.
+Installation process is quite slow compared to subiquity.
 
 #### Packer config to build a VMWare virtual machine from Ubuntu 20.04 legacy server ISO
 
-1) *packer.json*:
+1) *ubuntu-20.04-legacy-server-packer.json*:
 
 <div class="highlighter-rouge">
 {% highlight json %}
@@ -345,15 +379,27 @@ d-i preseed/late_command string \
     </div>
 </div>
 
-#### References
+
+#### Related Links
+- <a href="https://wiki.ubuntu.com/FoundationsTeam/AutomatedServerInstalls/ConfigReference" target="_blank">Automated server install config referece</a>
+- <a href="https://cloudinit.readthedocs.io/en/latest/index.html" target="_blank">Cloud-init documentation</a>
+- <a href="https://netplan.io/reference#common-properties-for-all-device-types" target="_blank">Netplan reference</a>
+- <a href="https://www.packer.io/docs/builders/vmware/iso/" target="_blank">Packer VMware Builder (from ISO)</a>
+- <a href="https://www.packer.io/guides/automatic-operating-system-installs/preseed_ubuntu/" target="_blank">Packer Unattended Installation for Debian</a>
+- <a href="https://ubuntuforums.org/showthread.php?t=2390785" target="_blank">Difference between live and alternative</a>
 - <a href="https://help.ubuntu.com/lts/installation-guide/i386/ch06s01.html" target="_blank">How the debian-installer works</a>
 - <a href="https://www.debian.org/releases/jessie/amd64/apbs02.html.en" target="_blank">Using preseeding</a>
 - <a href="https://www.debian.org/releases/stable/example-preseed.txt" target="_blank">Preseed file example</a>
-- <a href="https://www.packer.io/guides/automatic-operating-system-installs/preseed_ubuntu/" target="_blank">Packer Unattended Installation for Debian</a>
 
-<br><br>
-
-Code examples repo: <br>
-<div class="m-h-top"><a class="btn btn-theme" href="https://github.com/Praseetha-KR/packer-ubuntu" target="_blank">github.com/Praseetha-KR/packer-ubuntu</a></div>
-
-<br>
+<div class="p-2-top p-1-bottom">
+    <table class="contain-width">
+        <tbody>
+            <tr>
+                <td class="align-center p-1h-v">
+                    Code examples repo:
+                    <div class="m-1-left"><a class="btn btn-accent" href="https://github.com/Praseetha-KR/packer-ubuntu" target="_blank">github.com/Praseetha-KR/packer-ubuntu</a></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
