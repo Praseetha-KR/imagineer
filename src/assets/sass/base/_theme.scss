@@ -62,7 +62,7 @@ body, .content-wrapper {
 }
 %btn--primary {
     @extend %btn--base;
-    color: lighten($color__primary, 35%);
+    color: lighten($color__primary, 55%);
     background-color: $color__primary;
     &:hover, &:focus, &:active, &.active {
         color: lighten($color__primary, 45%);
