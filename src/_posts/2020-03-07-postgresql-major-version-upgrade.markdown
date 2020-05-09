@@ -14,7 +14,8 @@ luminance: light
 PostgreSQL databases can be migrated without doing database dump-and-restore.
 Here are the steps to migrate from Postgres 9.6 to 12 in Ubuntu 18.04
 <br>
-## Existing PostgreSQL 9.6
+
+### Existing PostgreSQL 9.6
 
 Let's first check the list of installed postgres related packages, service status and the running cluster details.
 
@@ -49,7 +50,7 @@ Ver Cluster Port    Status  Owner       Data directory                  Log file
 <br>
 <hr>
 
-## Installig PostgreSQL 12
+### Installig PostgreSQL 12
 
 Multiple versions of postgres can co-exist in a system.
 
