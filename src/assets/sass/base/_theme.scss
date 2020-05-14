@@ -16,7 +16,7 @@ blockquote {
     border-left-color: rgba($color__primary, 0.8);
     background: $colot__bg-blockquote;
 }
-table {
+.table, .post__content > table {
     background-color: $color__table-bg;
     th {
         background-color: $color__table-head-bg;
@@ -32,6 +32,9 @@ table {
         tr:nth-child(2n+1) {
             background-color: $color__table-stripe;
         }
+    }
+    code {
+        background-color: transparent;
     }
 }
 
@@ -110,6 +113,23 @@ code.highlighter-rouge {
 // utils
 .video-wrapper {
     background: darken($color__bg, 5%);
+}
+
+.block {
+    &--primary{
+        border-color: lighten($color__block__primary, 12%);
+        background: lighten($color__block__primary, 18%);
+        .highlighter-rouge {
+            background-color: lighten($color__block__primary, 22%);
+        }
+    }
+    &--secondary{
+        background-color: lighten($color__secondary, 43%);
+        border-color: lighten($color__secondary, 35%);
+        .highlighter-rouge {
+            background-color: lighten($color__secondary, 40%);
+        }
+    }
 }
 
 // header

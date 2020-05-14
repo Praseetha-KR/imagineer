@@ -28,3 +28,4 @@ $color__table-head-text: $color__bg;
 $color__table-border: lighten($color__secondary, 30%);
 $color__table-stripe: lighten($color__secondary, 39%);
 $colot__bg-blockquote: rgba($color__primary, 0.2);
+$color__block__primary: mix($color__bg, $color__primary, 60%);

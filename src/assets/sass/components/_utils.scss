@@ -116,6 +116,13 @@ blockquote {
     margin: 2em auto;
 }
 
+.block {
+    padding: 1em;
+    border: 1px solid;
+    & > .highlighter-rouge:last-child {
+        margin: 0;
+    }
+}
 
 .sideblock {
     &--right {

@@ -17,6 +17,10 @@ table {
         white-space: pre-wrap;
         word-wrap: break-word;
     }
+    td pre.noprewrap {
+        white-space: pre;
+        word-wrap: break-word;
+    }
 }
 .table {
     &__size {
