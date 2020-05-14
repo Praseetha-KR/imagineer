@@ -282,6 +282,14 @@ root@ubuntu-squid-proxy:~# tail -f /var/log/squid/access.log
     </div>
 </div>
 
+Be aware that you could be getting lot of spam requests to the publicly open proxy port.
+<div>
+    <figure class="figure-c">
+        <img src="/assets/img/posts/squid-spam-reqs.png" class="contain-width" alt="Spam requests in squid port">
+        <figcaption>Spam requests in squid port</figcaption>
+    </figure>
+</div>
+
 
 ### Delete droplet
 
