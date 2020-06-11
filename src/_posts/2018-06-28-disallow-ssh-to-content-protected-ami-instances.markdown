@@ -29,20 +29,31 @@ The easiest way to fix this is by removing user's SSH key as soon as the instanc
 
 ##### STEP 1: Script to override allowed_keys
 
-`/opt/customssh/override_ssh_key`:
-
-```bash
+<div class="m-1-top">
+    <div class="code-snippet">
+        <div class="highlighter-filename">/opt/customssh/override_ssh_key</div>
+        <div class="highlighter-rouge highlighter-linenos">
+{% highlight sh linenos %}
+{% raw %}
 #!/bin/bash
 
 allowed_key=<SSH_PUBLIC_KEY>
 echo $allowed_key > ~/.ssh/allowed_keys
-```
+{% endraw %}
+{% endhighlight %}
+        </div>
+    </div>
+</div>
+
 
 ##### STEP 2: Service to execute the above script
 
-`/etc/systemd/system/customssh.service`:
-
-```ini
+<div class="m-1-top">
+    <div class="code-snippet">
+        <div class="highlighter-filename">/etc/systemd/system/customssh.service</div>
+        <div class="highlighter-rouge highlighter-linenos">
+{% highlight ini linenos %}
+{% raw %}
 [Unit]
 Description=custom ssh override service
 After=network-online.target cloud-final.service
@@ -54,7 +65,11 @@ ExecStart=/opt/customssh/override_ssh_key
 
 [Install]
 WantedBy=cloud-init.target
-```
+{% endraw %}
+{% endhighlight %}
+        </div>
+    </div>
+</div>
 
 - `Type` is `oneshot` because the service should just execute an action without keeping active processes.
 - This `customssh` is executed by `cloud-init.target` as soon as `cloud-final.service` is completed.

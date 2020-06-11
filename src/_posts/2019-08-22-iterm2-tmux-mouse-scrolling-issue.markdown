@@ -9,6 +9,9 @@ blurb: "Fixing mouse scrolling in tmux scroll mode"
 theme: '#131214'
 title_color: '#66f96a'
 luminance: light
+graphic:
+    url: '/assets/img/posts/tmux_scroll.png'
+    overlap: '9.5'
 ---
 
 

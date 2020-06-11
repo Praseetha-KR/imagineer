@@ -9,6 +9,9 @@ blurb: "Squid proxy in Ubuntu 20.04 configued via cloud-init, hosted in DigitalO
 theme: '#212285'
 title_color: '#3B60ED'
 luminance: light
+graphic:
+    url: '/assets/img/posts/squid-droplet.png'
+    overlap: '7'
 ---
 
 This post shows how to quickly run Squid proxy server on a DigitalOcean droplet via command line interface.
@@ -65,7 +68,7 @@ Required flags info can be obtained with the following commands:
                 <td>
                     <details>
                         <summary><code>doctl compute image list-distribution</code></summary>
-                            <div class="highlighter-rouge">
+                            <div class="highlighter-rouge language-bash">
 <pre class="highlight noprewrap">
 ID          Name                 Type        Distribution    Slug                  Public    Min Disk
 53893572    18.04.3 (LTS) x64    snapshot    Ubuntu          ubuntu-18-04-x64      true      20
@@ -87,7 +90,7 @@ ID          Name                 Type        Distribution    Slug               
                 <td>
                     <details>
                         <summary><code>doctl compute region list</code></summary>
-                            <div class="highlighter-rouge">
+                            <div class="highlighter-rouge language-bash">
 <pre class="highlight noprewrap">
 Slug    Name               Available
 blr1    Bangalore 1        true
@@ -109,7 +112,7 @@ sfo2    San Francisco 2    true
                 <td>
                     <details>
                         <summary><code>doctl compute size list</code></summary>
-                            <div class="highlighter-rouge">
+                            <div class="highlighter-rouge language-bash">
 <pre class="highlight noprewrap">
 Slug               Memory    VCPUs    Disk    Price Monthly    Price Hourly
 s-1vcpu-1gb        1024      1        25      5.00             0.007440
@@ -131,7 +134,7 @@ s-3vcpu-1gb        1024      3        60      15.00            0.022320
                 <td>
                     <details>
                         <summary><code>doctl compute ssh-key list</code></summary>
-                            <div class="highlighter-rouge">
+                            <div class="highlighter-rouge language-bash">
 <pre class="highlight noprewrap">
 ID          Name        FingerPrint
 01234567    mykey1      00:11:22:33:44:55:66:77:88:99:aa:bb:cc:dd:ee:ff
@@ -149,7 +152,7 @@ ID          Name        FingerPrint
                 <td>
                     <details>
                         <summary><code>doctl compute tag list</code></summary>
-                            <div class="highlighter-rouge">
+                            <div class="highlighter-rouge language-bash">
 <pre class="highlight noprewrap">
 Name         Droplet Count
 cli          0
@@ -206,7 +209,7 @@ Once the droplet is created, there will be few minutes delay for config init to 
         <div class="p-1-bottom">
             <strong>Tip:</strong> Use netcat to probe proxy port <code>3128</code> to check whether the proxy server is running.
         </div>
-        <div class="highlighter-rouge">
+        <div class="highlighter-rouge language-bash">
 {% highlight bash %}
 $ nc -zv XXX.XXX.XXX.XXX 3128
 nc: connectx to XXX.XXX.XXX.XXX port 3128 (tcp) failed: Connection refused
@@ -243,7 +246,7 @@ $ curl https://imagineer.in --proxy http://USERNAME:PASSWORD@XXX.XXX.XXX.XXX:312
         <div class="p-q-bottom">
             <strong>Verify status of squid inside the droplet:</strong>
         </div>
-        <div class="highlighter-rouge">
+        <div class="highlighter-rouge language-bash">
 {% highlight bash %}
 root@ubuntu-squid-proxy:~# systemctl status squid
 ● squid.service - Squid Web Proxy Server
@@ -263,7 +266,7 @@ root@ubuntu-squid-proxy:~# systemctl status squid
              └─14827 (basic_ncsa_auth) /etc/squid/htpasswd
 {% endhighlight %}
         </div>
-        <div class="highlighter-rouge">
+        <div class="highlighter-rouge language-bash">
 {% highlight bash %}
 root@ubuntu-squid-proxy:~# netstat -tuplan | grep squid
 tcp        0      0 0.0.0.0:3128            0.0.0.0:*               LISTEN      14604/(squid-1)
@@ -272,7 +275,7 @@ udp6       0      0 :::49608                :::*                                
 udp6       0      0 ::1:52717               ::1:54193               ESTABLISHED 14604/(squid-1)
 {% endhighlight %}
         </div>
-        <div class="highlighter-rouge">
+        <div class="highlighter-rouge language-bash">
 {% highlight bash %}
 root@ubuntu-squid-proxy:~# tail -f /var/log/squid/access.log
 1589459665.565    113 XXX.XXX.XXX.XXX TCP_DENIED/407 4084 CONNECT imagineer.in:443 USERNAME HIER_NONE/- text/html
@@ -280,14 +283,6 @@ root@ubuntu-squid-proxy:~# tail -f /var/log/squid/access.log
 {% endhighlight %}
         </div>
     </div>
-</div>
-
-Be aware that you could be getting lot of spam requests to the publicly open proxy port.
-<div>
-    <figure class="figure-c">
-        <img src="/assets/img/posts/squid-spam-reqs.png" class="contain-width" alt="Spam requests in squid port">
-        <figcaption>Spam requests in squid port</figcaption>
-    </figure>
 </div>
 
 

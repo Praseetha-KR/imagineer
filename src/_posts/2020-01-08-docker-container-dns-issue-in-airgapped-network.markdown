@@ -9,6 +9,9 @@ blurb: "Issue with DNS server list realtime sync between Ubuntu Host and Docker 
 theme: '#3988ad'
 title_color: '#dfeef5'
 luminance: dark
+graphic:
+    url: '/assets/img/posts/docker-dns-issue.png'
+    overlap: '6'
 ---
 
 ### Problem

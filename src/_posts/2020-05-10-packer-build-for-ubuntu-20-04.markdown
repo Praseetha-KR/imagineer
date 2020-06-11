@@ -9,6 +9,9 @@ blurb: "Packer build config for Ubuntu server: subiquity vs debian-installer"
 theme: '#C44227'
 title_color: '#29001C'
 luminance: light
+graphic:
+    url: '/assets/img/posts/packer-ubuntu.png'
+    overlap: '8.2'
 ---
 
 Ubuntu is discontinuing support for the Debian-installer based classic server installer from 20.04 LTS (Focal Fossa) making the way for subiquity server installer. This post shows how the [Packer](https://www.packer.io) build config vary for both installers.
@@ -31,8 +34,11 @@ There are multiple ways to provide configuration data for cloud-init. Typically 
 
 1) *ubuntu-20.04-live-server-packer.json*:
 
-<div class="highlighter-rouge">
-{% highlight json %}
+<div>
+<div class="code-snippet">
+<div class="highlighter-filename">ubuntu-20.04-live-server-packer.json</div>
+<div class="highlighter-rouge highlighter-linenos">
+{% highlight json linenos %}
 {% raw %}
 {
   "builders": [
@@ -78,13 +84,19 @@ There are multiple ways to provide configuration data for cloud-init. Typically 
 {% endraw %}
 {% endhighlight %}
 </div>
+</div>
+</div>
 
 2) *http/meta-data*: *empty file*
 
 
 3) *http/user-data*:
 
-```yml
+<div>
+<div class="code-snippet">
+<div class="highlighter-filename">http/user-data</div>
+<div class="highlighter-rouge highlighter-linenos">
+{% highlight yml linenos %}
 #cloud-config
 autoinstall:
   version: 1
@@ -112,7 +124,10 @@ autoinstall:
   late-commands:
     - 'sed -i "s/dhcp4: true/&\n      dhcp-identifier: mac/" /target/etc/netplan/00-installer-config.yaml'
     - echo 'ubuntu ALL=(ALL) NOPASSWD:ALL' > /target/etc/sudoers.d/ubuntu
-```
+{% endhighlight %}
+</div>
+</div>
+</div>
 
 <br>
 Run the packer build:
@@ -170,15 +185,15 @@ Build 'ubuntu-20.04-live-server' finished.
     initrd=/casper/initrd quiet --- autoinstall ds=nocloud-net;seedfrom=http://<ip>:<port>
     ```
 
-<div class="p-1-top p-h-bottom">
-    <div class="align-center figure-l">
-        <div class="p-h-right">
+<div class="p-3-top p-2-bottom full-width">
+    <div class="align-center">
+        <div class="p-q-right">
             <figure class="figure-c">
                 <img src="/assets/img/posts/packer-ubuntu/live-server-init-screen.png" class="contain-width" alt="Initial empty screen of live server">
                 <figcaption>Initial empty screen</figcaption>
             </figure>
         </div>
-        <div class="p-h-left">
+        <div class="p-q-left">
             <figure class="figure-c">
                 <img src="/assets/img/posts/packer-ubuntu/live-server-boot-command.png" class="contain-width" alt="Live server boot command">
                 <figcaption>Live server boot command</figcaption>
@@ -223,8 +238,8 @@ Installation process is quite slow compared to subiquity.
 
 1) *ubuntu-20.04-legacy-server-packer.json*:
 
-<div class="highlighter-rouge">
-{% highlight json %}
+<div class="highlighter-rouge highlighter-linenos">
+{% highlight json linenos %}
 {% raw %}
 {
   "builders": [
@@ -279,7 +294,9 @@ Installation process is quite slow compared to subiquity.
 </div>
 
 2) *http/preseed.cfg*:
-```nix
+
+<div class="highlighter-rouge highlighter-linenos">
+{% highlight nix linenos %}
 # Localization
 d-i debian-installer/locale string en_US.UTF-8
 
@@ -344,7 +361,8 @@ d-i passwd/user-default-groups ubuntu sudo
 d-i preseed/late_command string \
     echo 'ubuntu ALL=(ALL) NOPASSWD: ALL' > /target/etc/sudoers.d/ubuntu ; \
     in-target /bin/chmod 440 /etc/sudoers.d/ubuntu
-```
+{% endhighlight %}
+</div>
 
 #### Notes
 
@@ -358,8 +376,8 @@ d-i preseed/late_command string \
 /install/vmlinuz initrd=/install/initrd.gz auto-install/enable=true debconf/priority=critical preseed/url=http://<ip>:<port>/preseed.cfg --
     ```
 
-<div class="p-1-top p-h-bottom">
-    <div class="align-center figure-l">
+<div class="p-5-top p-3-bottom full-width">
+    <div class="align-center">
         <div class="p-h-right">
             <figure class="figure-c">
                 <img src="/assets/img/posts/packer-ubuntu/legacy-server-exit-graphical-menu.png" class="contain-width" alt="Exiting from graphical menu">
