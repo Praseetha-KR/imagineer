@@ -7,14 +7,21 @@ a {
 }
 hr {
     border: none;
-    border-bottom: 0.05em solid $color__hr-border;
+    height: 2rem;
+    background-image: repeating-linear-gradient(90deg,
+      transparent,
+      transparent 0.25rem,
+      $color__hr-stripe 0.25rem,
+      $color__hr-stripe 0.5rem
+    );
 }
 figcaption {
     color: darken($color__text, 25%);
 }
 blockquote {
-    border-left-color: rgba($color__primary, 0.8);
     background: $colot__bg-blockquote;
+    color: $colot__color-blockquote;
+    box-shadow: 0px 35px 35px 0px rgba(0, 0, 0, 0.12);
 }
 .table, .post__content > table {
     background-color: $color__table-bg;
@@ -101,13 +108,34 @@ body, .content-wrapper {
 }
 
 // _syntax-highlight
-code.highlighter-rouge {
-    background-color: $color__code-highlight-bg;
-    color: rgba($color__text, 0.8);
-}
 .highlighter-rouge {
     background-color: $color__code-highlight-bg;
     color: $color__code-highlight-text;
+    position: relative;
+    &.language-bash, &.language-zsh, &.language-console {
+        background-color: $color__code-highlight-dark-bg;
+        color: $color__code-highlight-dark-text;
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+}
+code.highlighter-rouge {
+    background-color: transparent;
+    color: darken($color__text, 5%);
+}
+.highlighter-filename {
+    background-color: $color__code-highlight-filename-bg;
+    color: $color__code-highlight-filename-color;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.24)
+}
+.highlighter-rouge.highlighter-linenos {
+    background-color: $color__code-highlight-lineno-code-bg;
+    color: $color__code-highlight-text;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+    .gutter {
+        background: $color__code-highlight-lineno-bg;
+        color: $color__code-highlight-lineno-color;
+    }
 }
 
 // utils
@@ -119,7 +147,7 @@ code.highlighter-rouge {
     &--primary{
         border-color: lighten($color__block__primary, 12%);
         background: lighten($color__block__primary, 18%);
-        .highlighter-rouge {
+        .highlighter-rouge:not(.language-bash) {
             background-color: lighten($color__block__primary, 22%);
         }
     }
@@ -133,6 +161,9 @@ code.highlighter-rouge {
 }
 
 // header
+.header__site {
+    background: $color__title-post-header-bg;
+}
 .sitenav__link {
     &--active {
         color: $color__secondary;
@@ -141,6 +172,9 @@ code.highlighter-rouge {
 
 
 // _home
+.home {
+    background: $color__title-post-header-bg;
+}
 .masthead {
     background-image: linear-gradient(transparent, $color__bg-masthead);
 }
@@ -159,11 +193,13 @@ code.highlighter-rouge {
 }
 .intro {
     &__title {
-        color: mix($color__text, $color__primary);
+        color: $color__heading;
     }
 }
 .postcards {
     &__item {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.08);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
         &:hover {
             box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
         }
@@ -180,23 +216,20 @@ code.highlighter-rouge {
 }
 .postcard {
     color: $color__postcard-text;
+    background: white;
     position: relative;
     &:hover, &:active, &:focus {
         color: $color__postcard-text;
-    }
-    &__content {
-        background: $color__postcard-bg-tint;
     }
     &__time--light {
         color: $color__postcard-seal--light;
     }
     &__time--dark {
         color: $color__postcard-seal--dark;
+        opacity: 0.3;
     }
     &__tag {
-        background: $color__postcard-text;
-        outline-color: $color__postcard-stamp-border;
-        border-color: $color__postcard-stamp-border;
+        color: $color__postcard-text;
     }
 }
 
@@ -205,8 +238,12 @@ code.highlighter-rouge {
 .post {
     color: $color__text--post-body;
 
+    h1, h2, h3, h4, h5 {
+        color: $color__heading;
+    }
+
     &__intro {
-        background: darke($color__bg, 5%);
+        background: $color__title-post-header-bg;
         color: $color__title-post-header;
     }
     &__header {
@@ -215,6 +252,9 @@ code.highlighter-rouge {
                 color: $color__icon-post-nav;
             }
         }
+    }
+    &__blurb {
+        color: $color__text--post-blurb;
     }
     &__tags {
         &__icon {
@@ -238,8 +278,8 @@ code.highlighter-rouge {
     &__navigation {
         &__link {
             color: $color__primary;
-            border: 1px solid lighten($color__primary, 25%);
-            background: rgba(lighten($color__primary, 10%), 0.3);
+            border: 1px solid lighten($color__primary, 45%);
+            background: rgba(lighten($color__primary, 10%), 0.1);
             @media (min-width: 768px) {
                 background: transparent;
                 color: rgba($color__text, 0.5);

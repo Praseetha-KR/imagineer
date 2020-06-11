@@ -1,3 +1,9 @@
+pre, code {
+    font-family: $font-stack__code;
+}
+.code-snippet {
+    position: relative;
+}
 code.highlighter-rouge {
     font-family: $font-stack__code;
     font-weight: 700;
@@ -11,13 +17,42 @@ code.highlighter-rouge {
 pre.highlight > code {
     padding-right: 1.2em;
 }
+.highlighter-filename {
+    font-weight: 400;;
+    padding: 0.3em 0.9em 0.4em;
+    font-size: 0.8rem;
+    text-align: center;
+    display: inline-block;
+    border-radius: 0.3em 0.3em 0 0;
+    & + .highlighter-rouge {
+        margin-top: 0;
+        border-top-left-radius: 0;
+    }
+}
+.highlighter-linenos {
+    pre {
+        margin: 0;
+    }
+    .rouge-table {
+        &, & td {
+            border: none;
+        }
+    }
+    .gutter {
+        text-align: right;
+    }
+}
+div.highlighter-rouge:not(.highlighter-linenos) {
+    padding: 0 1.2em;
+}
 div.highlighter-rouge {
     font-family: $font-stack__code;
-    padding: 0 1.2em;
     overflow-x: auto;
     margin-top: 0.5em;
     margin-bottom: 1em;
-    font-size: 0.9em;
+    font-size: 0.72em;
+    line-height: 1.2;
+    border-radius: 0.2rem;
 
     .hll {
         background-color: #1d2027;

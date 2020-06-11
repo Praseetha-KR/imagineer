@@ -5,43 +5,39 @@ active: home
 ---
 
 <main class="home" role="main">
-    <div class="home__masthead masthead">
+    <div class="home__masthead">
 
         <!-- intro -->
         <section class="home__intro intro p-3-top p-3-bottom p-3-h">
-            <h3 class="intro__title handwriting-type p-q-bottom">imagineering the web.</h3>
-            <div class="intro__desc">Hey, welcome to my weblog! I'm Praseetha, a Software Engineer based in Bangalore.<br>This website contains my notes on programming, software engineering, design, experiences and other musings.</div>
+            <h3 class="intro__title handwriting-type p-q-bottom">imagineering the web</h3>
+            <div class="intro__desc">Hi there, I'm Praseetha, a Software Engineer specialized in web application development. This website contains my notes on programming, design, experiences and other musings.</div>
         </section>
-        <section class="text-center">
-        <img class="masthead__image" src="/assets/img/imagineer-2019.svg" alt="imagineering the web!">
-    </section>
     </div>
     <!-- posts -->
     <section class="home__postcards p-6-top p-4-bottom">
         <h2 class="text-center m-1h-bottom">Recent Posts</h2>
         <ul class="postcards" role="list" >
-            {% for post in site.posts limit:15 %}
+            {% for post in site.posts limit:6 %}
                 {% if post.status != 'draft' %}
                     <li class="postcards__item">
                         <a
                             class="postcard"
                             role="listtitem"
                             href="{{ post.url }}"
-                            style="background-color: {{ post.theme }}; "
                         >
                             <div class="postcard__content">
-                                <div class="postcard__header">
-                                    <div class="postcard__tags">
-                                        {% for tag in post.tags %}
-                                            <span class="postcard__tag" style="color: {{post.title_color}}; background: {{post.theme}};">{{ tag }}</span>
-                                        {% endfor %}
-                                    </div>
-                                    <time class="postcard__time postcard__time--dark">{{ post.date | date: "%b %d %Y" }}</time>
+                                <div class="postcard__graphic">
+                                    <img src="{{ post.graphic.url }}" alt="">
                                 </div>
+
                                 <div class="postcard__bottom">
                                     <h3 class="postcard__title">{{ post.title }}</h3>
                                     <div class="postcard__summary">{{ post.blurb | strip_html | escape }}</div>
-                                    <!-- <p class="postcard__summary">{{ post.excerpt | strip_html | normalize_whitespace | truncate: 160 | escape }}</p> -->
+                                    <div class="postcard__tags">
+                                        {% for tag in post.tags %}
+                                            <span class="postcard__tag">#{{ tag }}</span>
+                                        {% endfor %}
+                                    </div>
                                 </div>
                             </div>
                         </a>
@@ -57,8 +53,8 @@ active: home
         </section>
     </section>
 
-    <!-- <section class="text-center">
+    <section class="text-center masthead">
         <img class="masthead__image" src="/assets/img/imagineer-2019.svg" alt="imagineering the web!">
-    </section> -->
+    </section>
 
 </main>

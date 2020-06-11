@@ -136,8 +136,21 @@ $home__sidebar-width: 18em;
 // intro
 .intro {
     &__title {
-        font-size: 2.8em;
+        font-size: 3.2em;
         line-height: 1.5;
+        font-weight: 300;
+        @media (min-width: 768px) {
+            font-size: 5.2em;
+        }
+    }
+    &__desc {
+        margin: auto;
+        font-size: 1.2em;
+        line-height: 1.5;
+        @media (min-width: 768px) {
+            width: 65%;
+            font-size: 1.4em;
+        }
     }
 }
 
@@ -238,10 +251,26 @@ $home__sidebar-width: 18em;
         }
     }
     &__title {
-        line-height: 1.2;
+        font-size: 1.6rem;
+        font-weight: 600;
+        line-height: 1.4;
+    }
+    &__summary {
+        font-size: 1em;
+        opacity: 0.7;
+        line-height: 1.4;
+    }
+    &__graphic {
+        padding: 3em 0.5em 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 50%;
+        }
     }
     &__bottom {
-        padding: 1em 1.5em 2em;
+        padding: 1em 1.5em 1.5em;
         min-height: 12em;
         display: flex;
         flex-direction: column;
@@ -254,16 +283,7 @@ $home__sidebar-width: 18em;
         padding-top: 0.5em;
     }
     &__tag {
-        font-size: 0.7em;
+        font-size: 0.85em;
         line-height: 0.8;
-        padding: 0.2em 0.4em;
-        outline: 0.2em dotted transparent;
-        border: 2px solid transparent;
-        margin: 0.2em;
-    }
-    &__summary {
-        font-size: 0.7em;
-        opacity: 0.7;
-        line-height: 1.4;
     }
 }

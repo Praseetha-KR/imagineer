@@ -1,25 +1,22 @@
 $article-width: $content-width;
-$post-padding: 25%;
+$post-padding: 23%;
 
 .post {
     width: 100%;
     margin: auto;
     font-weight: 300;
-    line-height: 1.7;
+    font-size: 1.2rem;
+    line-height: 1.55;
     padding: 2em 0 4em;
 
     &__content {
-        font-size: 1em;
-        line-height: 1.54;
         margin-left: 2em;
         margin-right: 2em;
 
         @media (min-width: 768px) {
-            & > * {
-                padding-left: $post-padding;
-                padding-right: $post-padding;
-            }
-            & > .highlighter-rouge, & > table, & > .post__index {
+            margin-left: 0;
+            margin-right: 0;
+            & > *:not(.full-width), & > .highlighter-rouge, & > table, & > .post__index {
                 margin-left: $post-padding;
                 margin-right: $post-padding;
             }
@@ -62,10 +59,12 @@ $post-padding: 25%;
         }
     }
     &__header {
-        padding: 4em 1em;
+        padding: 4em 2em 0;
+        position: relative;
         display: flex;
         justify-content: space-between;
         flex-direction: column;
+        align-items: center;
         width: 100%;
         &__left, &__right {
             width: 10%;
@@ -80,14 +79,20 @@ $post-padding: 25%;
             margin-left: auto;
         }
     }
+    &__meta {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
     &__heading {
         margin: 0;
-        font-size: 2em;
+        font-size: 2.8em;
         line-height: 1.2;
         font-family: $title-font;
         font-weight: 800;
         @media (min-width: 768px) {
-            font-size: 3.8em;
+            font-size: 5.5em;
         }
     }
     &__date {
@@ -97,17 +102,27 @@ $post-padding: 25%;
         letter-spacing: 0.15em;
         opacity: 0.7;
         font-family: $label-type;
-        margin-bottom: 1.3em;
+        margin-bottom: 3.3em;
     }
     &__blurb {
-        font-family: $annotation-type;
-        font-size: 1.2em;
-        padding-top: 2em;
-        opacity: 0.9;
+        font-family: $light-type;
+        font-size: 1.05em;
+        line-height: 1.6;
+        position: relative;
+        margin-top: 3.5em;
+        margin-bottom: 1.5em;
+        opacity: 0.8;
+        padding: 1em;
         text-align: center;
         @media (min-width: 768px) {
-            text-align: left;
-            width: 25%;
+            width: 65%;
+            font-size: 1.4em;
+        }
+    }
+    &__graphic {
+        width: 90%;
+        @media (min-width: 768px) {
+            width: 25rem;
         }
     }
     &__tags {

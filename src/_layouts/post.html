@@ -5,7 +5,7 @@ comments: true
 ---
 
 <main role="main">
-    <section class="post__intro" style="color: {% if page.luminance == 'light' %}#eeeeee{% else %}#39414a{% endif %}; background-image: linear-gradient(-45deg, {{ page.theme }}, {% if page.title_color %}{{ page.title_color }}{% else %}#efefef{% endif %})">
+    <section class="post__intro">
         <div class="post__header__left">
             {% if page.next.url %}
                 <a href="{{page.next.url}}" class="post__navigation__link">
@@ -14,11 +14,14 @@ comments: true
             {% endif %}
         </div>
         <div class="post__header">
-            <div>
+            <div class="post__meta">
                 <time class="post__date">Published on {{ page.date | date_to_string }}</time>
                 <h1 role="heading" class="post__heading">{{ page.title }}</h1>
             </div>
             <div class="post__blurb">{{ page.blurb }}</div>
+            <div class="post__graphic" style="margin-bottom: -{{page.graphic.overlap}}rem">
+                <img src="{{page.graphic.url}}">
+            </div>
         </div>
         <div class="post__header__right">
             {% if page.previous.url %}
@@ -28,7 +31,7 @@ comments: true
             {% endif %}
         </div>
     </section>
-    <article role="article" class="post">
+    <article role="article" class="post" style="padding-top: {{page.graphic.overlap}}rem">
         <section class="post__content">{{ content }}</section>
 
         <div class="post__tags">
