@@ -331,6 +331,12 @@ code.highlighter-rouge {
         background: $color__title-post-header-bg;
         color: $color__title-post-header;
     }
+    &-fill-gray {
+        background: $color__title-post-header-bg;
+    }
+    &-fill-white {
+        background: white;
+    }
 
     &__navigation {
         &__link {
