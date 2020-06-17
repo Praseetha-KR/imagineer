@@ -1,54 +1,148 @@
 .work {
-    &__item {
-        margin-bottom: 1.5em;
-        overflow: hidden;
-        float: none;
-        clear: both;
+    &__heading {
+        margin: auto;
+        text-align: center;
+        position: relative;
+        display: flex;
+        align-items: stretch;
+        @media (min-width: 768px) {
+            text-align: left;
+        }
+    }
+    &__header {
+        padding: 4rem 2rem;
+        position: relative;
         display: flex;
         justify-content: space-between;
-        align-items: center;
         flex-direction: column;
+        align-items: center;
+        width: 100%;
+        &__left, &__right {
+            width: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .work__navigation__link {
+                font-size: 2rem;
+            }
+        }
+        &__right {
+            margin-left: auto;
+        }
+    }
+    &__meta {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    &__title {
+        margin: 0;
+        font-size: 2.8rem;
+        line-height: 1.2;
+        font-family: $title-font;
+        font-weight: 800;
         @media (min-width: 768px) {
+            font-size: 5.5rem;
+        }
+    }
+    &__graphic {
+        width: 90%;
+        @media (min-width: 768px) {
+            width: 25rem;
+        }
+    }
+    &__overview {
+        display: flex;
+        padding: 4rem 6rem 4rem 4rem;
+    }
+    &__intro {
+        flex: 5;
+        font-size: 1.3em;
+        line-height: 1.5;
+    }
+    &__requirements {
+        flex: 4;
+        padding: 0 5rem;
+    }
+    &__scope {
+        flex: 3;
+        line-height: 1.5;
+        margin-left: 1.3em;
+        padding: 0;
+    }
+    &__short-desc {
+        padding: 3em 0;
+        flex-direction: column;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @media (min-width: 768px) {
+            width: 60%;
             flex-direction: row;
-        }
-        &__thumb {
-            text-align: center;
-            @media (min-width: 768px) {
-                flex: 5;
+
+            h3 {
+                padding-right: 5em;
             }
-            img {
-                display: block;
+            div {
+                width: 80%;
             }
         }
-        &__details {
-            padding: 1em;
-            text-align: center;
-            height: 100%;
-            @media (min-width: 768px) {
-                flex: 3;
-                padding: 0.2em 1em;
-            }
-        }
-        &__title {
-            margin: 0;
-            font-family: $body-font;
-            font-size: 1em;
-        }
-        &__duration {
-            text-transform: uppercase;
-            font-size: 0.7em;
-        }
-        &__desc {
-            margin: 0;
-            display: none;
+        div {
+            width: 80%;
         }
     }
-    &__category {
-        visibility: hidden;
-        height: 0;
-    }
-    &__mentions {
-        border: 0.1em solid transparent;
-        padding: 1em;
-    }
+    // &__item {
+    //     margin-bottom: 1.5em;
+    //     overflow: hidden;
+    //     float: none;
+    //     clear: both;
+    //     display: flex;
+    //     justify-content: space-between;
+    //     align-items: center;
+    //     flex-direction: column;
+    //     @media (min-width: 768px) {
+    //         flex-direction: row;
+    //     }
+    //     &__thumb {
+    //         text-align: center;
+    //         @media (min-width: 768px) {
+    //             flex: 5;
+    //         }
+    //         img {
+    //             display: block;
+    //         }
+    //     }
+    //     &__details {
+    //         padding: 1em;
+    //         text-align: center;
+    //         height: 100%;
+    //         @media (min-width: 768px) {
+    //             flex: 3;
+    //             padding: 0.2em 1em;
+    //         }
+    //     }
+    //     &__title {
+    //         margin: 0;
+    //         font-family: $body-font;
+    //         font-size: 1em;
+    //     }
+    //     &__duration {
+    //         text-transform: uppercase;
+    //         font-size: 0.7em;
+    //     }
+    //     &__desc {
+    //         margin: 0;
+    //         display: none;
+    //     }
+    // }
+    // &__category {
+    //     visibility: hidden;
+    //     height: 0;
+    // }
+    // &__mentions {
+    //     border: 0.1em solid transparent;
+    //     padding: 1em;
+    // }
 }

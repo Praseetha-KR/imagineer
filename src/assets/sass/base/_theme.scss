@@ -308,24 +308,62 @@ code.highlighter-rouge {
 }
 
 // work
+
 .work {
-    &__item {
-        background-color: lighten($color__bg, 3%);
-        &__thumb {
-            background-color: lighten($color__bg, 5%);
-        }
-        &__title {
-            color: $color__primary;
-        }
-        &__duration {
-            color: darken($color__text, 20%);
+    color: $color__text--post-body;
+
+    h1, h2, h3, h4, h5 {
+        color: $color__heading;
+    }
+
+    &__heading {
+        background: $color__title-post-header-bg;
+        color: $color__title-post-header;
+    }
+    &__header {
+        &__left, &__right {
+            .post__navigation__link {
+                color: $color__icon-post-nav;
+            }
         }
     }
-    &__mentions {
-        border-color: rgba($color__secondary, 0.3);
-        background-color: rgba($color__secondary, 0.05);
+    &__overview {
+        background: $color__title-post-header-bg;
+        color: $color__title-post-header;
+    }
+
+    &__navigation {
+        &__link {
+            color: $color__primary;
+            border: 1px solid lighten($color__primary, 45%);
+            background: rgba(lighten($color__primary, 10%), 0.1);
+            @media (min-width: 768px) {
+                background: transparent;
+                color: rgba($color__text, 0.5);
+                border-color: transparent;
+            }
+        }
     }
 }
+
+// .work {
+//     &__item {
+//         background-color: lighten($color__bg, 3%);
+//         &__thumb {
+//             background-color: lighten($color__bg, 5%);
+//         }
+//         &__title {
+//             color: $color__primary;
+//         }
+//         &__duration {
+//             color: darken($color__text, 20%);
+//         }
+//     }
+//     &__mentions {
+//         border-color: rgba($color__secondary, 0.3);
+//         background-color: rgba($color__secondary, 0.05);
+//     }
+// }
 
 // project
 .project {
