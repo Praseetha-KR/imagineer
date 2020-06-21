@@ -337,6 +337,11 @@ code.highlighter-rouge {
     &-fill-white {
         background: white;
     }
+    &-bordered {
+        border-width: 1px 0;
+        border-style: solid;
+        border-color: $color__title-post-header-bg;
+    }
 
     &__navigation {
         &__link {
@@ -348,6 +353,15 @@ code.highlighter-rouge {
                 color: rgba($color__text, 0.5);
                 border-color: transparent;
             }
+        }
+    }
+    &-design-card {
+        &__graphic {
+            background-color: white;
+        }
+        &__scope {
+            background-color: $color__title-post-header-bg;
+            color: $color__title-post-header;
         }
     }
 }

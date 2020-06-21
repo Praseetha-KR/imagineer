@@ -46,6 +46,16 @@
             font-size: 5.5rem;
         }
     }
+    &__subtitle {
+        margin: 0;
+        font-size: 2.5rem;
+        line-height: 1.5;
+        font-family: $title-font;
+        font-weight: 100;
+        @media (min-width: 768px) {
+            font-size: 4.3rem;
+        }
+    }
     &__graphic {
         width: 90%;
         @media (min-width: 768px) {
@@ -93,56 +103,57 @@
             width: 80%;
         }
     }
-    // &__item {
-    //     margin-bottom: 1.5em;
-    //     overflow: hidden;
-    //     float: none;
-    //     clear: both;
-    //     display: flex;
-    //     justify-content: space-between;
-    //     align-items: center;
-    //     flex-direction: column;
-    //     @media (min-width: 768px) {
-    //         flex-direction: row;
-    //     }
-    //     &__thumb {
-    //         text-align: center;
-    //         @media (min-width: 768px) {
-    //             flex: 5;
-    //         }
-    //         img {
-    //             display: block;
-    //         }
-    //     }
-    //     &__details {
-    //         padding: 1em;
-    //         text-align: center;
-    //         height: 100%;
-    //         @media (min-width: 768px) {
-    //             flex: 3;
-    //             padding: 0.2em 1em;
-    //         }
-    //     }
-    //     &__title {
-    //         margin: 0;
-    //         font-family: $body-font;
-    //         font-size: 1em;
-    //     }
-    //     &__duration {
-    //         text-transform: uppercase;
-    //         font-size: 0.7em;
-    //     }
-    //     &__desc {
-    //         margin: 0;
-    //         display: none;
-    //     }
-    // }
-    // &__category {
-    //     visibility: hidden;
-    //     height: 0;
-    // }
-    // &__mentions {
-    //     border: 0.1em solid transparent;
-    //     padding: 1em;
-    // }
+    &-list {
+        width: 80%;
+        width: calc(80% + 2em);
+        margin: auto;
+        padding-bottom: 7em;
+    }
+    &-design-cards {
+        display: flex;
+        // position: relative;
+        flex-wrap: wrap;
+    }
+    &-design-card__container {
+        width: 100%;
+        padding: 2.5em;
+        display: flex;
+        justify-content: center;
+        @media (min-width: 992px) {
+            width: 50%;
+        }
+        @media (min-width: 1824px) {
+            width: 33.33%;
+        }
+    }
+    &-design-card {
+        width: 80%;
+        &__link {
+            display: block;
+        }
+        &__graphic {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 27em;
+            border-radius: 0.7em;
+            padding: 10%;
+            img {
+                width: 100%;
+            }
+        }
+        &__content {
+            font-size: 1.2em;
+            line-height: 1.55;
+        }
+        &__scopes {
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 0.7em;
+        }
+        &__scope {
+            margin: 0.5rem 0.5rem 0 0;
+            padding: 0.1rem 0.5rem;
+        }
+    }
 }

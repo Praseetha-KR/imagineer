@@ -25,6 +25,9 @@
 .text-right {
     text-align: right;
 }
+.text-left {
+    text-align: left;
+}
 
 .clearall {
     clear: both;
@@ -107,6 +110,19 @@ figure {
     align-items: center;
     flex-direction: column;
     margin: 0;
+}
+
+.figure-s {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    img {
+        width: 100%;
+        @media (min-width: 768px) {
+            width: 60%;
+        }
+    }
 }
 
 blockquote {
