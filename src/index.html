@@ -53,6 +53,34 @@ active: home
         </section>
     </section>
 
+    <section class="home__design-works">
+        <div class="work-design-cards">
+            {% for work in site.works limit:6 %}
+                <div class="work-design-card__container">
+                    <div class="work-design-card">
+                        <a
+                            class="work-design-card__link"
+                            href="{{ work.url }}"
+                        >
+                            <div class="work-design-card__graphic" style="background: {{ work.theme }};">
+                                <img src="{{ work.graphic.url }}" alt="{{ work.title }} {{ work.subtitle }}">
+                            </div>
+                        </a>
+                        <div class="work-design-card__content">
+                            <h3 class="work-design-card__title">{{ work.title }} {{ work.subtitle }}</h3>
+                            <p>{{ work.intro }}</p>
+                            <div class="work-design-card__scopes">
+                                {% for s in work.scope %}
+                                    <div class="work-design-card__scope">{{ s }}</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
     <section class="text-center masthead">
         <img class="masthead__image" src="/assets/img/imagineer-2019.svg" alt="imagineering the web!">
     </section>
