@@ -23,7 +23,7 @@ active: works
                         </a>
                         <div class="work-design-card__content">
                             <h3 class="work-design-card__title">{{ work.title }} {{ work.subtitle }}</h3>
-                            <p class="work-design-card__desc">{{ work.intro }}</p>
+                            <div class="work-design-card__desc">{{ work.intro }}</div>
                             <div class="work-design-card__scopes">
                                 {% for s in work.scope %}
                                     <div class="work-design-card__scope">{{ s }}</div>

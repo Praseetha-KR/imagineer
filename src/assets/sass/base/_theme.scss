@@ -358,6 +358,13 @@ code.highlighter-rouge {
     &-design-card {
         &__graphic {
             background-color: white;
+            &:hover::after{
+                color: white;
+                background: rgba(42,44,47,0.92);
+            }
+        }
+        &__title {
+            color: $color__title-post-header;
         }
         &__scope {
             background-color: darken($color__title-post-header-bg, 5%);
