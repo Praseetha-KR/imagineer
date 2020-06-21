@@ -25,3 +25,24 @@ paginate_path: "/blog/page:num"
 permalink: /blog/:title/
 
 plugins: [jekyll-paginate]
+
+collections:
+    works:
+        output: true
+        order:
+            - metarefresh/2014/index.html
+            - eventifier/legacy/index.html
+            - flutterclock/index.html
+            - rootconf/2014/index.html
+            - droidcon/2014/index.html
+            - pothi/index.html
+            - metarefresh/2013/index.html
+            - jsfoo/2014/index.html
+            - droidcon/2013/index.html
+            - pythonexpress/index.html
+            - bangpypers/index.html
+            - pssi/index.html
+            - droidcon/2012/index.html
+            - gitworkshop/index.html
+            - certificate/index.html
+            - aser/index.html

@@ -1,4 +1,4 @@
-$header-height: 5em;
+$header-height: 6rem;
 
 .header {
     position: relative;
@@ -11,7 +11,7 @@ $header-height: 5em;
         padding: 4em 0 0;
         @media (min-width: 768px) {
             flex-direction: row;
-            padding: 0 4em;
+            padding: 0 4em 0 2.5em;
             height: $header-height;
         }
     }
@@ -20,11 +20,20 @@ $header-height: 5em;
 .sitelogo {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    &__text {
+    align-items: center;
+    justify-content: center;
+    &__img {
+        width: 70%;
         display: flex;
         align-items: center;
-        padding-left: 1em;
+        @media (min-width: 768px) {
+            width: 10rem;
+        }
+    }
+    &__text {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
         font-family: $title-font;
     }
     &__title {
@@ -36,7 +45,7 @@ $header-height: 5em;
         font-weight: 200;
         font-family: $para-type;
         margin: 0;
-        padding-left: 1em;
+        // padding-left: 1em;
     }
 }
 
@@ -57,9 +66,5 @@ $header-height: 5em;
         font-family: $label-type;
         letter-spacing: 0.14em;
         line-height: 0.5;
-        border-bottom: 0.6em solid transparent;
-        &--active {
-            border-bottom: 0.6em solid transparent;
-        }
-    }
+  }
 }
