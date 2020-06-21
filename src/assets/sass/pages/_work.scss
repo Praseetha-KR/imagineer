@@ -65,21 +65,32 @@
     &__overview {
         display: flex;
         padding: 4rem 6rem 4rem 4rem;
+        flex-wrap: wrap;
     }
     &__intro {
-        flex: 5;
+        flex: 1 0 100%;
         font-size: 1.3em;
         line-height: 1.5;
+        @media (min-width: 992px) {
+            flex: 5;
+        }
     }
     &__requirements {
-        flex: 4;
-        padding: 0 5rem;
+        flex: 1 0 100%;
+        padding: 3rem 0;
+        @media (min-width: 992px) {
+            flex: 4;
+            padding: 0 5rem;
+        }
     }
     &__scope {
-        flex: 3;
+        flex: 1 0 100%;
         line-height: 1.5;
         margin-left: 1.3em;
         padding: 0;
+        @media (min-width: 992px) {
+            flex: 3;
+        }
     }
     &__short-desc {
         padding: 3em 0;
@@ -109,25 +120,53 @@
         margin: auto;
         padding-bottom: 7em;
     }
-    &-design-cards {
+    &__design-works {
+        margin: auto;
+        width: 100%;
+    }
+    &__design-work__list {
         display: flex;
-        // position: relative;
         flex-wrap: wrap;
+
+        .work-design-card__container {
+            width: 100%;
+            padding-bottom: 4em;
+
+            @media (min-width: 768px) and (max-width: 991px) {
+                width: 60%;
+                margin: auto;
+            }
+
+            @media (min-width: 992px) and (max-width: 1499px) {
+                width: 50%;
+                &:nth-child(2n - 1) {
+                    padding-right: 5%;
+                }
+                &:nth-child(2n) {
+                    padding-left: 5%;
+                }
+            }
+            @media (min-width: 1499px) {
+                width: 33.33%;
+                &:nth-child(3n - 2) {
+                    padding-right: 3em;
+                }
+                 &:nth-child(3n - 1) {
+                    padding-right: 1.5em;
+                    padding-left: 1.5em;
+                }
+                &:nth-child(3n) {
+                    padding-left: 3em;
+                }
+            }
+        }
     }
     &-design-card__container {
-        width: 100%;
-        padding: 2.5em;
+        margin-bottom: 4em;
         display: flex;
         justify-content: center;
-        @media (min-width: 992px) {
-            width: 50%;
-        }
-        @media (min-width: 1824px) {
-            width: 33.33%;
-        }
     }
     &-design-card {
-        width: 80%;
         &__link {
             display: block;
         }
@@ -142,18 +181,24 @@
                 width: 100%;
             }
         }
-        &__content {
+        &__title {
+            padding-top: 0.5em;
+            font-size: 2em;
+            line-height: 1;
+        }
+        &__desc {
             font-size: 1.2em;
-            line-height: 1.55;
+            line-height: 1.65;
         }
         &__scopes {
             display: flex;
             flex-wrap: wrap;
-            font-size: 0.7em;
+            font-size: 0.85em;
         }
         &__scope {
             margin: 0.5rem 0.5rem 0 0;
             padding: 0.1rem 0.5rem;
+            border-radius: 0.3em;
         }
     }
 }

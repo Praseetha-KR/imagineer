@@ -360,7 +360,7 @@ code.highlighter-rouge {
             background-color: white;
         }
         &__scope {
-            background-color: $color__title-post-header-bg;
+            background-color: darken($color__title-post-header-bg, 5%);
             color: $color__title-post-header;
         }
     }
