@@ -32,6 +32,7 @@ collections:
         order:
             - metarefresh/2014/index.html
             - eventifier/legacy/index.html
+            - flutterclock/index.html
             - pothi/index.html
             - metarefresh/2013/index.html
             - rootconf/2014/index.html
