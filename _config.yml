@@ -30,21 +30,21 @@ collections:
     works:
         output: true
         order:
-            - metarefresh/2014/index.html
-            - eventifier/legacy/index.html
-            - flutterclock/index.html
-            - rootconf/2014/index.html
-            - eventifier/index.html
-            - pothi/index.html
-            - pythonexpress/index.html
-            - jsfoo/2014/index.html
-            - metarefresh/2013/index.html
-            - droidcon/2014/index.html
-            - motogarage/index.html
-            - droidcon/2013/index.html
-            - bangpypers/index.html
-            - pssi/index.html
-            - droidcon/2012/index.html
-            - gitworkshop/index.html
-            - certificate/index.html
-            - aser/index.html
+            - metarefresh/2014.html
+            - eventifier/legacy.html
+            - flutterclock.html
+            - rootconf/2014.html
+            - eventifier.html
+            - pothi.html
+            - pythonexpress.html
+            - jsfoo/2014.html
+            - metarefresh/2013.html
+            - droidcon/2014.html
+            - motogarage.html
+            - droidcon/2013.html
+            - bangpypers.html
+            - pssi.html
+            - droidcon/2012.html
+            - gitworkshop.html
+            - certificate.html
+            - aser.html
