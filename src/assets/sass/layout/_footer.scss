@@ -11,7 +11,20 @@ $footer-height: 7em;
     font-size: 0.8em;
     line-height: 1.3;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     padding: 0 4.5em 2.5em;
+    @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    &__fixed {
+        text-align: center;
+        padding-bottom: 1em;
+        @media (min-width: 768px) {
+            text-align: left;
+            padding-bottom: 0;
+        }
+    }
 }
