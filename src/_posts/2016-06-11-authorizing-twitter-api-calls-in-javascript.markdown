@@ -34,6 +34,8 @@ Authorization: OAuth
     oauth_version="1.0"
 ```
 
+<br>
+
 | OAuth Fields                | value                                 |
 |-----------------------------|---------------------------------------|
 | `oauth_consumer_key`        | Get from [apps.twitter.com](http://apps.twitter.com/) |
@@ -54,6 +56,7 @@ TWITTER_ACCESS_TOKEN        = ddddddd-xxxXXxxxxXXxxXXXXXxxxxxXXXXxxxxXXxxxxXX,
 TWITTER_ACCESS_TOKEN_SECRET = XXXxxXXxxXXXXXxxxxxXXXXxxxxXXxxxxXX;
 ```
 
+<br>
 ```javascript
 function getAuthorization(httpMethod, baseUrl, reqParams) {
     // Get acces keys

@@ -180,7 +180,7 @@ Here is a list of useful commands,
 
 As mentioned in the last entry of table above, `CTRL+B :` will give tmux prompt at the bottom of the window, you can enter commands there.
 
-```console
+```
 : <command>
 ```
 
@@ -260,7 +260,11 @@ If you want to save commands entered in tmux prompt to for all of your sessions,
 
 Here is an example config file:
 
-```conf
+<div>
+<div class="code-snippet">
+<div class="highlighter-filename">.tmux.conf</div>
+<div class="highlighter-rouge highlighter-linenos">
+{% highlight conf linenos %}
 # enable mouse actions
 set -g mouse on
 
@@ -281,7 +285,9 @@ bind r source-file ~/.tmux.conf
 # Change theme of pane border
 set -g pane-border-fg red
 set -g pane-active-border-fg yellow
-
-```
+{% endhighlight %}
+</div>
+</div>
+</div>
 
 For more options: [`man tmux`](http://man.openbsd.org/OpenBSD-current/man1/tmux.1)
