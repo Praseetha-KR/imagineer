@@ -6,7 +6,7 @@
   "dependencies": {
     "gulp": "^3.9.1",
     "natives": "^1.1.6",
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.13.1"
   },
   "devDependencies": {
     "browser-sync": "^2.24.4",
