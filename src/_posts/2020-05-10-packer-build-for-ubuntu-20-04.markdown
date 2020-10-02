@@ -20,6 +20,12 @@ Ubuntu is discontinuing support for the Debian-installer based classic server in
     <blockquote>Ubuntu 20.04 <a href="http://cdimage.ubuntu.com/ubuntu/releases/20.04/release/" target="_blank">live server</a> has only subiquity support. For debian-installer you can use <a href="http://cdimage.ubuntu.com/ubuntu-legacy-server/releases/20.04/release/" target="_blank">legacy server</a> version.</blockquote>
 </div>
 
+<div class="align-center">
+    <div><strong class="post__h5-5">TLDR;</strong> Check Packer config examples here:
+    <a class="btn btn-accent" href="https://github.com/Praseetha-KR/packer-ubuntu" target="_blank">github.com/Praseetha-KR/packer-ubuntu</a></div>
+</div>
+
+
 ## subiquity
 
 [subiquity](https://github.com/CanonicalLtd/subiquity) is the Ubuntu server's new automated installer, which was introduced in `18.04`. It is the server counterpart of [ubiquity](https://wiki.ubuntu.com/Ubiquity) installer used by desktop live CD installation.
@@ -49,11 +55,11 @@ There are multiple ways to provide configuration data for cloud-init. Typically 
       "memory": 1024,
       "name": "ubuntu-20.04-live-server",
       "iso_urls": [
-        "iso/ubuntu-20.04-live-server-amd64.iso",
-        "http://cdimage.ubuntu.com/ubuntu/releases/20.04/release/ubuntu-20.04-live-server-arm64.iso"
+        "iso/ubuntu-20.04.1-live-server-amd64.iso",
+        "https://releases.ubuntu.com/focal/ubuntu-20.04.1-live-server-amd64.iso"
       ],
       "iso_checksum_type": "sha256",
-      "iso_checksum": "caf3fd69c77c439f162e2ba6040e9c320c4ff0d69aad1340a514319a9264df9f",
+      "iso_checksum": "443511f6bf12402c12503733059269a2e10dec602916c0a75263e5d990f6bb93",
 
       "http_directory": "subiquity/http",
       "output_directory": "output/live-server",
@@ -129,15 +135,41 @@ autoinstall:
 </div>
 </div>
 
+#### Notes
+
+##### 🔐 How to generate hashed password?
+
+```
+mkpasswd --methhod=SHA-512 --rounds=4096
+```
+
+##### 🧩 Why to include those late-commands?
+
+<h5 class="post__h5-5">Issue 1: Packer SSH timeout due to IP change on instance restart</h5>
+
+While building in VMWare, restart after installation causes change in IP address of the instance. This leads packer build to timeout awaiting SSH connection. To fix this issue, we can configure MAC address to be send as identifier in DHCP request.
+
+
+```
+    dhcp-identifier: mac
+```
+
+Since there is no option to set `dhcp-identifier` via cloud config, this is appended to `ens33` interface in `/etc/netplan/00-installer-config.yaml` via `late-commands`.
+
+<h5 class="post__h5-5">Issue 2: Default user sudo with no-password</h5>
+
+Cloud config `identity` doesn't provide a way to set sudo `NOPASSWD` option. So that is written to `sudoers.d/ubuntu` file via `late-commands`.
+
+
 <br>
 Run the packer build:
 ```bash
 $ packer build -force ubuntu-20.04-live-server-packer.json
 
 ==> Retrieving ISO
-==> Trying iso/ubuntu-20.04-live-server-amd64.iso
-==> Trying iso/ubuntu-20.04-live-server-amd64.iso?checksum=sha256%3Acaf3fd69c77c439f162e2ba6040e9c320c4ff0d69aad1340a514319a9264df9f
-==> iso/ubuntu-20.04-live-server-amd64.iso?checksum=sha256%3Acaf3fd69c77c439f162e2ba6040e9c320c4ff0d69aad1340a514319a9264df9f => /path/to/packer-ubuntu/iso/ubuntu-20.04-live-server-amd64.iso
+==> Trying iso/ubuntu-20.04.1-live-server-amd64.iso
+==> Trying iso/ubuntu-20.04.1-live-server-amd64.iso?checksum=sha256%3A443511f6bf12402c12503733059269a2e10dec602916c0a75263e5d990f6bb93
+==> iso/ubuntu-20.04.1-live-server-amd64.iso?checksum=sha256%3A443511f6bf12402c12503733059269a2e10dec602916c0a75263e5d990f6bb93 => /path/to/packer-ubuntu/iso/ubuntu-20.04.1-live-server-amd64.iso
 ==> Deleting previous output directory...
 ==> Creating required virtual machine disks
 ==> Building and writing VMX file
@@ -172,7 +204,7 @@ Build 'ubuntu-20.04-live-server' finished.
 --> VM files in directory: output/live-server
 ```
 
-#### Notes
+<br>
 
 ##### ⏳ Boot interaction sequence for live server
 
@@ -202,28 +234,6 @@ Build 'ubuntu-20.04-live-server' finished.
     </div>
 </div>
 
-##### 🔐 Generating hashed password
-
-```
-mkpasswd --methhod=SHA-512 --rounds=4096
-```
-
-##### ⚠️ Packer SSH timeout issue due to IP change on instance restart
-
-While building in VMWare, restart after installation causes change in IP address of the instance. This leads packer build to timeout awaiting SSH connection. To fix this issue, we can configure MAC address to be send as identifier in DHCP request.
-
-
-```
-    dhcp-identifier: mac
-```
-
-Since there is no option to set `dhcp-identifier` via cloud config, this is appended to `ens33` interface in `/etc/netplan/00-installer-config.yaml` via `late-commands`.
-
-##### 🔧 Default user sudo with no-password
-Cloud config `identity` doesn't provide a way to set sudo `NOPASSWD` option. That is also being directly written to to `sudoers.d/ubuntu` file.
-
-
-<br>
 <hr>
 
 ## debian-installer
@@ -250,11 +260,11 @@ Installation process is quite slow compared to subiquity.
       "memory": 1024,
       "name": "ubuntu-20.04-legacy-server",
       "iso_urls": [
-        "iso/ubuntu-20.04-legacy-server-amd64.iso",
-        "http://cdimage.ubuntu.com/ubuntu-legacy-server/releases/20.04/release/ubuntu-20.04-legacy-server-amd64.iso"
+        "iso/ubuntu-20.04.1-legacy-server-amd64.iso",
+        "http://cdimage.ubuntu.com/ubuntu-legacy-server/releases/20.04/release/ubuntu-20.04.1-legacy-server-amd64.iso"
       ],
       "iso_checksum_type": "sha256",
-      "iso_checksum": "36f15879bd9dfd061cd588620a164a82972663fdd148cce1f70d57d314c21b73",
+      "iso_checksum": "f11bda2f2caed8f420802b59f382c25160b114ccc665dbac9c5046e7fceaced2",
 
       "http_directory": "debian-installer/http",
       "output_directory": "output/live-server",
@@ -364,7 +374,7 @@ d-i preseed/late_command string \
 {% endhighlight %}
 </div>
 
-#### Notes
+<br>
 
 ##### ⏳ Boot interaction sequence for legacy server
 
