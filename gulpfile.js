@@ -1,19 +1,17 @@
-var gulp        = require('gulp');
-var browserSync = require('browser-sync');
-var sass        = require('gulp-sass');
-var autoprefixer= require('gulp-autoprefixer');
-var cp          = require('child_process');
-var runSequence = require('run-sequence');
-var size        = require('gulp-size');
-var bytediff    = require('gulp-bytediff');
-var del         = require('del');
-var minifyCSS   = require('gulp-cssnano');
-var uglify      = require('gulp-uglify');
-var sourcemaps  = require('gulp-sourcemaps');
-var rename      = require('gulp-rename');
+const { series, src, dest, watch } = require('gulp');
+const sourcemaps  = require('gulp-sourcemaps');
+const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+const size = require('gulp-size');
+const rename = require('gulp-rename');
+const bytediff = require('gulp-bytediff');
+const minifyCSS = require('gulp-cssnano');
+const del = require('del');
+const browserSync = require('browser-sync');
+const execa = require('execa');
+var is_prod = false;
 
-
-var paths = {
+const paths = {
     src: 'src',
     dev: 'dev',
     prod: 'prod',
@@ -22,111 +20,95 @@ var paths = {
     css: '/assets/css',
     js: '/assets/js'
 }
-var is_prod = false;
 
-// compile tasks
-gulp.task('jekyll-build', (cb) => {
+function reload(done) {
+    browserSync.reload();
+    done();
+}
+
+async function jekyllBuild() {
     browserSync.notify('Compiling Jekyll');
-    var dest = is_prod ? paths.prod : paths.dev;
-    return cp.spawn(
-        'jekyll', [
+    const pathdest = is_prod ? paths.prod : paths.dev;
+    return await execa('bundle', [
+            'exec',
+            'jekyll',
             'build',
             '--source=' + paths.src,
-            '--destination=' + dest,
+            '--destination=' + pathdest,
             '--config=_config.yml'
         ],
         { stdio: 'inherit' }
     )
-  .on('close', cb);
-});
+}
 
-gulp.task('jekyll-rebuild', ['jekyll-build'], () => {
-    browserSync.reload();
-});
+const jekyllRebuild = series(jekyllBuild, reload);
 
-gulp.task('reload', () => {
-    browserSync.reload();
-});
-
-gulp.task('scss', () => {
-    var dest = is_prod ? paths.prod : paths.dev;
-    return gulp.src(paths.src + paths.scss + '/**/*.scss')
+function scssCompile() {
+    const pathdest = is_prod ? paths.prod : paths.dev;
+    return src(paths.src + paths.scss + '/**/*.scss')
         .pipe(sourcemaps.init())
-        .pipe(sass({
-            indentedSyntax: true
-        }).on('error', sass.logError))
-        .pipe(autoprefixer())
+            .pipe(sass({
+                indentedSyntax: true
+            }).on('error', sass.logError))
+            .pipe(autoprefixer())
         .pipe(sourcemaps.write('.'))
         .pipe(size({showFiles: true}))
-        .pipe(gulp.dest(dest + paths.css))
-        .pipe(gulp.dest(paths.src + paths.css));
-});
-gulp.task('minify-css', () => {
-    var dest = is_prod ? paths.prod : paths.dev;
-    console.log(dest + paths.css + '/app.css');
-    return gulp.src(dest + paths.css + '/app.css')
+        .pipe(dest(pathdest + paths.css))
+        .pipe(dest(paths.src + paths.css));
+}
+
+function cssminify() {
+    const pathdest = is_prod ? paths.prod : paths.dev;
+    console.log(pathdest + paths.css + '/app.css');
+    return src(pathdest + paths.css + '/app.css')
         .pipe(rename({suffix: '.min'}))
         .pipe(bytediff.start())
         .pipe(minifyCSS())
         .pipe(bytediff.stop())
         .pipe(size({showFiles: true}))
-        .pipe(gulp.dest(dest + paths.css))
-        .pipe(gulp.dest(paths.src + paths.css))
+        .pipe(dest(pathdest + paths.css))
+        .pipe(dest(paths.src + paths.css))
         .pipe(browserSync.stream({ match: '**/*.css' }));
-});
+}
 
-gulp.task('watch', () => {
+function watchTask() {
     is_prod = false;
-    gulp.watch(paths.src + paths.scss + '/**/*.scss', () => {
-        runSequence(
-            'scss',
-            'reload'
-        );
-    });
-    gulp.watch([
+    watch(paths.src + paths.scss + '/**/*.scss', series(scssCompile, reload))
+    watch([
         paths.src + '/**/*.html',
-        paths.src + '/**/*.markdown'
-    ], ['jekyll-rebuild']);
-});
+        paths.src + '/**/*.marddown'
+    ], jekyllRebuild);
+}
 
-// server & reload
-gulp.task('browser-sync', ['scss', 'minify-css', 'jekyll-build'], () => {
-    var base = is_prod ? paths.prod : paths.dev;
+function browserSyncInit () {
+    const base = is_prod ? paths.prod : paths.dev;
     browserSync.init({
         server: {
             baseDir: base
         }
-    });
-});
+    })
+}
 
-// dev build
-gulp.task('devbuild', ['browser-sync', 'watch']);
+const browserSyncStart = series(scssCompile, cssminify, jekyllBuild, browserSyncInit);
+const devbuild = series(browserSyncStart, watchTask);
 
-// production build & server
-gulp.task('prodbuild', () => {
+function makeProd (done) {
     is_prod = true;
-    runSequence(
-        'scss',
-        'minify-css',
-        'jekyll-build'
-    );
-});
-gulp.task('server', () => {
-    is_prod = true;
-    runSequence(
-        'browser-sync'
-    );
-});
+    done();
+}
+const prodbuild = series(makeProd, scssCompile, cssminify, jekyllBuild);
 
-// tasks
-gulp.task('default', ['devbuild']);
-gulp.task('build', ['prodbuild']);
-
-// clear generated folders
-gulp.task('cleandev', function() {
+async function cleanprod() {
     return del([paths.dev]);
-});
-gulp.task('cleanprod', function() {
+}
+
+async function cleandev() {
     return del([paths.prod]);
-});
-gulp.task('clean', ['cleandev', 'cleanprod']);
+}
+
+exports.build = series(cleanprod, prodbuild);
+exports.server = series(makeProd, browserSyncStart)
+exports.cleanprod = cleanprod;
+exports.cleandev = cleandev;
+exports.clean = series(cleandev, cleanprod);
+exports.default = series(cleandev, devbuild);
