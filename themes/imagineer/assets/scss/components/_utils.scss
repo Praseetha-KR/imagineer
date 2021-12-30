@@ -1,0 +1,182 @@
+.sr-only {
+    visibility: hidden;
+}
+.center--vertical {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.align-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table {
+    display: table;
+    .cell {
+        display: table-cell;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+.text-left {
+    text-align: left;
+}
+
+.clearall {
+    clear: both;
+}
+
+.flushright {
+    float: right;
+}
+.centered {
+    margin: auto;
+}
+
+.contain-width, .full-width {
+    width: 100%;
+}
+.half-width {
+    width: 50%;
+}
+.contain-height {
+    height: 100%;
+}
+.overflowhidden {
+    overflow: hidden;
+}
+
+.inlineblock {
+    display: inline-block;
+}
+.block {
+    display: block;
+}
+
+.all-caps {
+    text-transform: uppercase;
+}
+
+.profile {
+    img {
+        border-radius: 50%;
+        width: 6em;
+    }
+}
+
+.video-wrapper   {width:100%;height:100%;margin:0 auto auto 0;}
+.h_iframe        {position:relative;}
+.h_iframe .ratio {display:block;width:100%;height:auto;}
+.h_iframe iframe {position:absolute;top:0;left:0;width:100%; height:100%;}
+
+figcaption {
+    text-align: center;
+    font-size: 0.8em;
+    font-style: italic;
+    margin-bottom: 2em;
+    margin-top: 0.25em;
+}
+
+figure {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
+.figure-l {
+    @media (min-width: 992px) {
+        margin-left: -5em;
+        margin-right: -5em;
+    }
+}
+
+.figure-contain {
+    @media (min-width: 992px) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.figure-c {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+}
+
+.figure-s {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    img {
+        width: 100%;
+        @media (min-width: 768px) {
+            width: 60%;
+        }
+    }
+}
+
+blockquote {
+    font-size: 0.95em;
+    border: none;
+    margin: 0;
+    padding: 1.5em 1.8em;
+    border-radius: 1em;
+    margin: 2em 0 2.8em;
+    p {
+        margin: 0;
+    }
+}
+
+.quote-text {
+    font-style: italic;
+    padding: 1.5em 0 0.5em;
+    font-size: 1.4em;
+    margin: 2em auto;
+}
+
+.block {
+    padding: 1em;
+    border: 1px solid;
+    & > .highlighter-rouge:last-child {
+        margin: 0;
+    }
+}
+
+.sideblock {
+    &--right {
+        @media (min-width: 768px) {
+            width: 80%;
+            padding-left: 8%;
+        }
+    }
+    &--for-h3 {
+        @media (min-width: 768px) {
+            margin-top: 2em;
+        }
+    }
+}
+
+.annotation {
+    font-family: $annotation-type;
+    font-size: 0.8em;
+    line-height: 1.4;
+}
+
+@mixin rotated-text($num-letters: 100, $angle-span: 180deg, $angle-offset: 0deg, $direction: 1) {
+    $angle-per-char: $angle-span / $num-letters;
+    @for $i from 1 through $num-letters {
+        .char#{$i} {
+            transform: rotate($angle-offset + $angle-per-char * $direction * $i);
+        }
+    }
+}

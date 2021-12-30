@@ -1,0 +1,13 @@
+{{ define "main" }}
+<section class="about">
+    <div class="about__left">
+        <h1 class="p-1h-top p-1-bottom">About me</h1>
+        <article role="article" class="about__text">
+            {{.Content}}
+        </article>
+    </div>
+    <div class="about__right">
+        <img class="about__image" src="{{ .Params.image }}" alt="Praseetha KR">
+    </div>
+</section>
+{{end}}

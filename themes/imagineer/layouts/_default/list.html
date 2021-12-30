@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div class="main-container centered">
+    <h1 class="page__heading">Blog</h1>
+    <article role="article" class="p-q-top">
+        <ul role="list" class="blogposts">
+            {{ range where site.RegularPages "Type" "in" site.Params.mainSections }}
+                {{ if (ne .Params.status "draft") }}
+                    {{ .Render "li" }}
+                {{ end }}
+            {{ end }}
+        </ul>
+    </article>
+    <section class="m-8-top m-6-bottom">
+        <h5>Filter by tags:</h5>
+        {{ partial "taglist.html" }}
+    </section>
+</div>
+{{ end }}

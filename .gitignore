@@ -1,6 +1,4 @@
 .DS_Store
-node_modules
-/dev
-/prod
-/**/css/
-.jekyll-cache
+.hugo_build.lock
+public/
+resources/*

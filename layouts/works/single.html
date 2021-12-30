@@ -1,0 +1,44 @@
+{{ define "main" }}
+<main role="main">
+    <section class="work__heading">
+        <div class="work__header__left">
+            {{ if .NextInSection }}
+                <a href="{{ .NextInSection.RelPermalink }}" class="work__navigation__link">
+                    <i class="fa fa-chevron-left"></i>
+                </a>
+            {{ end }}
+        </div>
+        <div class="work__header">
+            <div class="work__meta">
+                <h1 role="heading" class="work__title">{{ .Title }}</h1>
+                <h3 class="work__subtitle">{{ .Params.subtitle }}</h3>
+            </div>
+        </div>
+        <div class="work__header__right">
+            {{ if .PrevInSection }}
+                <a href="{{ .PrevInSection.RelPermalink }}" class="work__navigation__link">
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+            {{ end }}
+        </div>
+    </section>
+
+    <section class="work__overview">
+        <div class="work__intro">{{ .Params.intro }}</div>
+        <div class="work__requirements">{{ .Params.requirements }}</div>
+        <div class="work__about">
+            <div class="work__date">Designed in {{ .Params.year }}</div>
+            <div class="work__company">For {{ .Params.company }}</div>
+            <ul class="work__scope">
+                {{ range .Params.scope }}
+                    <li>{{ . }}</li>
+                {{ end }}
+            </ul>
+        </div>
+    </section>
+
+    <article role="article" class="work">
+        {{ .Content }}
+    </article>
+</main>
+{{ end }}

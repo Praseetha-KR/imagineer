@@ -1,0 +1,54 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "imagineer | Praseetha KR"
+theme = "imagineer"
+
+[permalinks]
+"blog" = "/blog/:slug"
+
+SectionPagesMenu = "main"
+[menu]
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/blog"
+    weight = 1
+  [[menu.main]]
+    identifier = "works"
+    name = "Works"
+    url = "/works"
+    weight = 2
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about"
+    weight = 3
+  [[menu.main]]
+    identifier = "rss"
+    name = "<i class='fa fa-rss'></i>"
+    url = "/feed.xml"
+    weight = 4
+    post = true
+
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineAnchors = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = false
+    style = "dracula"
+    tabWidth = 4
+    pygmentsCodefences = true
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[outputFormats]
+[outputFormats.RSS]
+  mediatype = "application/rss"
+  baseName = "feed"

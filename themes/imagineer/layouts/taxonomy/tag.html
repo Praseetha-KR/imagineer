@@ -1,0 +1,22 @@
+{{ define "main" }}
+<div class="main-container centered">
+    <section class="tags__back m-2-v">
+        <a class="posts__more__btn" href="/blog">
+            <i class="fa fa-long-arrow-left"></i>
+            <span>all posts</span>
+        </a>
+    </section>
+    <h3 class="page__sub-heading p">Posts Tagged "{{ .Title }}"</h3>
+    <article role="article" class="p-q-top">
+        <ul role="list" class="posts">
+            {{ range .Data.Pages }}
+                {{ .Render "li" }}
+            {{ end }}
+        </ul>
+    </article>
+    <section class="m-6-v">
+        <h5>Filter by tags:</h5>
+        {{ partial "taglist.html" }}
+    </section>
+</div>
+{{end}}
