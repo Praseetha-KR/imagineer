@@ -200,18 +200,6 @@ code.highlighter-rouge {
     background-image: linear-gradient(transparent, $color__bg-masthead);
 }
 
-.avatarstamp {
-    &__wrapper {
-        background-image: linear-gradient($color__stamp-bg-tint, $color__stamp-bg-tint), url('/assets/img/avatars/stamp_head.jpg');
-        border-color: $color__stamp-border;
-        &::before, &::after {
-            border-color: $color__bg;
-        }
-    }
-    &__star {
-        color: $color__stamp-star;
-    }
-}
 .intro {
     &__title {
         color: $color__heading;

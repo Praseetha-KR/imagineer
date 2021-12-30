@@ -2,7 +2,7 @@
 layout: about
 title:  "About"
 date:   2015-12-24 10:50:00
-image: "/images/avatars/praseetha_kr.jpg"
+image: "/images/praseetha_kr.jpg"
 ---
 
 I'm Praseetha KR, a software engineer specialized in web technologies, based in Bangalore. Currently I work at AppKnox as a Software Architect.

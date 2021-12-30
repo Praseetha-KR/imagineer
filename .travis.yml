@@ -1,8 +1,0 @@
-language: node_js
-node_js:
-    - 11.15.0
-before_install:
-    - rvm install 2.5.0
-    - gem install jekyll jekyll-paginate kramdown rouge
-    - npm install -g gulp-cli
-install: npm install

@@ -11,7 +11,7 @@ theme: "#445A88"
 
 <div>
     <figure class="figure-l p-1h-top  p-q-bottom">
-        <img src="/images/media/pattern-chess.png" class="contain-width" alt="3D chess pattern">
+        <img src="/images/posts/matlab-pattern/chess-pattern.png" class="contain-width" alt="3D chess pattern">
         <figcaption>fig 1: 3D chess pattern</figcaption>
     </figure>
 </div>
@@ -22,7 +22,7 @@ The basic line pattern of this chess pattern is as shown below:
 
 <div>
     <figure class="figure-l p-1h-top p-q-bottom text-center">
-        <img src="/images/media/35.png" class="contain-width" alt="Mesh pattern">
+        <img src="/images/posts/matlab-pattern/mesh-pattern.png" class="contain-width" alt="Mesh pattern">
         <figcaption>fig 2: mesh pattern</figcaption>
     </figure>
 </div>
@@ -76,7 +76,7 @@ This will generate the pattern shown below:
 
 <div>
     <figure class="figure-l p-1h-top p-q-bottom text-center">
-        <img src="/images/media/45.png" class="contain-width" alt="Mesh pattern">
+        <img src="/images/posts/matlab-pattern/mesh-pattern-generated.png" class="contain-width" alt="Mesh pattern">
         <figcaption>fig 3: Matlab generated mesh pattern</figcaption>
     </figure>
 </div>
@@ -93,7 +93,7 @@ For example,
 Sample multicolor pattern:
 
 <figure class="full-width">
-    <img src="/images/media/145.png" class="contain-width" alt="Mesh pattern">
+    <img src="/images/posts/matlab-pattern/colorful-mesh-pattern.png" class="contain-width" alt="Mesh pattern">
     <figcaption>fig 4: colorful mesh pattern</figcaption>
 </figure>
 
