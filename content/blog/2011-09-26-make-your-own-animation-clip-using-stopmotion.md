@@ -61,7 +61,7 @@ Here is a small animation clip which I created:
 <div>
     <div class="video-wrapper">
         <div class="h_iframe">
-            <img class="ratio" src="https://place-hold.it/16x9"/>
+            <img class="ratio" src="https://place-hold.it/16x9" alt="16:9 placeholder" />
             <iframe src="//www.youtube.com/embed/L66EIs1miPc" frameborder="0" allowfullscreen></iframe>
         </div>
     </div>

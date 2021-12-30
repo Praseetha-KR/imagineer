@@ -52,3 +52,6 @@ SectionPagesMenu = "main"
 [outputFormats.RSS]
   mediatype = "application/rss"
   baseName = "feed"
+
+[params]
+"twitter_username" = "void_imagineer"

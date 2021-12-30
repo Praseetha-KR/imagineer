@@ -20,7 +20,7 @@
         class="post__graphic"
         style="margin-bottom: -{{ .Params.graphic.overlap }}rem"
       >
-        <img src="{{ .Params.graphic.url }}" />
+        <img src="{{ .Params.graphic.url }}" alt="{{ .Title }}" />
       </div>
     </div>
     <div class="post__header__right">
@@ -52,27 +52,16 @@
     {{ end }}
 
     <div class="post__social">
-      <!--<section class="share m-2-top">
-        <a class="btn-tweet" href=""
-          ><i class="fa fa-twitter"></i>&nbsp;&nbsp;Tweet</a
-        >
-      </section>-->
+      <section class="share m-2-top">
+        <a class="btn-tweet" href=""><i class="fa fa-twitter"></i>&nbsp;&nbsp;Tweet</a>
+      </section>
 
-      <!--<section class="post__comments p-2-top">
+      <section class="post__comments p-2-top">
         <div id="disqus_thread"></div>
-        <script
-          type="text/javascript"
-          src="//disqus.com/forums/imagineer/embed.js"
-        ></script>
-        <noscript
-          ><a href="//imagineer.disqus.com/?url=ref"
-            >View the discussion thread.</a
-          ></noscript
-        >
-        <a href="//disqus.com" class="dsq-brlink"
-          >blog comments powered by <span class="logo-disqus">Disqus</span></a
-        >
-      </section>-->
+        <script type="text/javascript" src="//disqus.com/forums/imagineer/embed.js"></script>
+        <noscript><a href="//imagineer.disqus.com/?url=ref">View the discussion thread.</a></noscript>
+        <a href="//disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+      </section>
     </div>
   </article>
 
@@ -88,4 +77,25 @@
     {{ end }}
   </nav>
 </main>
+
+<!-- Twitter share button -->
+<script>
+    'use strict';
+    window.onload = function(){
+        var postUrl = '{{ .Permalink }}';
+        var postTitle = '{{ .Title }}';
+        var twitterHandle = '{{ .Site.Params.twitter_username }}';
+        var twitterShareUrl = 'https://twitter.com/intent/tweet?original_referer=' + postUrl + '&text=' + postTitle + '&tw_p=tweetbutton&url=' + postUrl + '&via=' + twitterHandle;
+        console.log('posturl', twitterShareUrl);
+        var width = 600;
+        var height = 400;
+        var left = (window.screen.width / 2) - ((width / 2) + 10);
+        var top = (window.screen.height / 2) - ((height / 2) + 50);
+        document.querySelector('.btn-tweet').onclick = function() {
+            var popUp = window.open(twitterShareUrl, 'popupwindow', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=no, copyhistory=no, width=' + width + ',height='+ height +', top='+top+', left='+left);
+            popUp.focus();
+            return false;
+        };
+    };
+</script>
 {{ end }}

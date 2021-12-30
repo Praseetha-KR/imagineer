@@ -46,7 +46,7 @@ When 2 pixels get combined, 4 subpixel regions are formed:
    - neither is present (always empty)
 
 <div class="p-2-v">
-    <img src="/images/posts/porter-duff-compositing/subpixel_regions.png" alt="" class="half-width centered">
+    <img src="/images/posts/porter-duff-compositing/subpixel_regions.png" alt="Porter-Duff Compositing subpixel regions" class="half-width centered">
 </div>
 
 There are 12 of operators which decides the behaviour in these regions.
@@ -70,7 +70,7 @@ There are 12 of operators which decides the behaviour in these regions.
             <td>1</td>
             <td>Clear</td>
             <td>(0,0,0,0)</td>
-            <td class="nopad nopush"><img src="/images/posts/porter-duff-compositing/clear.png" alt=""></td>
+            <td class="nopad nopush"><img src="/images/posts/porter-duff-compositing/clear.png" alt="Porter-Duff Compositing Clear operation"></td>
             <td>0</td>
             <td>0</td>
         </tr>
@@ -78,7 +78,7 @@ There are 12 of operators which decides the behaviour in these regions.
             <td>2</td>
             <td>S</td>
             <td>(0,S,0,S)</td>
-            <td class="nopad nopush"><img src="/images/posts/porter-duff-compositing/s.png" alt=""></td>
+            <td class="nopad nopush"><img src="/images/posts/porter-duff-compositing/s.png" alt="Porter-Duff Compositing S operation"></td>
             <td>1</td>
             <td>0</td>
         </tr>
@@ -86,7 +86,7 @@ There are 12 of operators which decides the behaviour in these regions.
             <td>3</td>
             <td>B</td>
             <td>(0,0,B,B)</td>
-            <td class="nopad nopush"><img src="/images/posts/porter-duff-compositing/b.png" alt=""></td>
+            <td class="nopad nopush"><img src="/images/posts/porter-duff-compositing/b.png" alt="Porter-Duff Compositing B operation"></td>
             <td>1</td>
             <td>0</td>
         </tr>
@@ -94,7 +94,7 @@ There are 12 of operators which decides the behaviour in these regions.
             <td>4</td>
             <td>S over B</td>
             <td>(0,S,B,S)</td>
-            <td class="nopad nopush"><img src="/images/posts/porter-duff-compositing/s_over_b.png" alt=""></td>
+            <td class="nopad nopush"><img src="/images/posts/porter-duff-compositing/s_over_b.png" alt="Porter-Duff Compositing S over B operation"></td>
             <td>1</td>
             <td>1 - α<sub>S</sub></td>
         </tr>
@@ -102,7 +102,7 @@ There are 12 of operators which decides the behaviour in these regions.
             <td>5</td>
             <td>B over S</td>
             <td>(0,S,B,B)</td>
-            <td class="nopad nopush"><img src="/images/posts/porter-duff-compositing/b_over_s.png" alt=""></td>
+            <td class="nopad nopush"><img src="/images/posts/porter-duff-compositing/b_over_s.png" alt="Porter-Duff Compositing B over S operation"></td>
             <td>1 - α<sub>B</sub></td>
             <td>1</td>
         </tr>
@@ -110,7 +110,7 @@ There are 12 of operators which decides the behaviour in these regions.
             <td>6</td>
             <td>S in B</td>
             <td>(0,0,0,S)</td>
-            <td class="nopad nopush"><img src="/images/posts/porter-duff-compositing/s_in_b.png" alt=""></td>
+            <td class="nopad nopush"><img src="/images/posts/porter-duff-compositing/s_in_b.png" alt="Porter-Duff Compositing S in B operation"></td>
             <td>α<sub>B</sub></td>
             <td>0</td>
         </tr>
@@ -118,7 +118,7 @@ There are 12 of operators which decides the behaviour in these regions.
             <td>7</td>
             <td>B in S</td>
             <td>(0,0,0,B)</td>
-            <td class="nopad nopush"><img src="/images/posts/porter-duff-compositing/b_in_s.png" alt=""></td>
+            <td class="nopad nopush"><img src="/images/posts/porter-duff-compositing/b_in_s.png" alt="Porter-Duff Compositing B in S operation"></td>
             <td>0</td>
             <td>α<sub>S</sub></td>
         </tr>
@@ -126,7 +126,7 @@ There are 12 of operators which decides the behaviour in these regions.
             <td>8</td>
             <td>S out B</td>
             <td>(0,S,0,0)</td>
-            <td class="nopad nopush"><img src="/images/posts/porter-duff-compositing/s_out_b.png" alt=""></td>
+            <td class="nopad nopush"><img src="/images/posts/porter-duff-compositing/s_out_b.png" alt="Porter-Duff Compositing S out B operation"></td>
             <td>1 - α<sub>B</sub></td>
             <td>0</td>
         </tr>
@@ -134,7 +134,7 @@ There are 12 of operators which decides the behaviour in these regions.
             <td>9</td>
             <td>B out S</td>
             <td>(0,0,B,0)</td>
-            <td class="nopad nopush"><img src="/images/posts/porter-duff-compositing/b_out_s.png" alt=""></td>
+            <td class="nopad nopush"><img src="/images/posts/porter-duff-compositing/b_out_s.png" alt="Porter-Duff Compositing B out S operation"></td>
             <td>0</td>
             <td>1 - α<sub>S</sub></td>
         </tr>
@@ -142,7 +142,7 @@ There are 12 of operators which decides the behaviour in these regions.
             <td>10</td>
             <td>S atop B</td>
             <td>(0,0,B,S)</td>
-            <td class="nopad nopush"><img src="/images/posts/porter-duff-compositing/s_atop_b.png" alt=""></td>
+            <td class="nopad nopush"><img src="/images/posts/porter-duff-compositing/s_atop_b.png" alt="Porter-Duff Compositing S atop B operation"></td>
             <td>α<sub>B</sub></td>
             <td>1 - α<sub>A</sub></td>
         </tr>
@@ -150,7 +150,7 @@ There are 12 of operators which decides the behaviour in these regions.
             <td>11</td>
             <td>B atop S</td>
             <td>(0,S,0,B)</td>
-            <td class="nopad nopush"><img src="/images/posts/porter-duff-compositing/b_atop_s.png" alt=""></td>
+            <td class="nopad nopush"><img src="/images/posts/porter-duff-compositing/b_atop_s.png" alt="Porter-Duff Compositing B atop S operation"></td>
             <td>1 - α<sub>B</sub></td>
             <td>α<sub>S</sub></td>
         </tr>
@@ -158,7 +158,7 @@ There are 12 of operators which decides the behaviour in these regions.
             <td>12</td>
             <td>S xor B</td>
             <td>(0,S,B,0)</td>
-            <td class="nopad nopush"><img src="/images/posts/porter-duff-compositing/s_xor_b.png" alt=""></td>
+            <td class="nopad nopush"><img src="/images/posts/porter-duff-compositing/s_xor_b.png" alt="Porter-Duff Compositing S xor B operation"></td>
             <td>1 - α<sub>B</sub></td>
             <td>1 - α<sub>S</sub></td>
         </tr>
