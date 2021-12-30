@@ -1,0 +1,13 @@
+<section>
+    <ul class="post__tags__list">
+        {{range $name, $taxonomy := site.Taxonomies.tags}} 
+            {{ $count := .Count }}
+            {{ with site.GetPage (printf "/tags/%s" $name) }}
+                <li class="post__tag">
+                    <a href="{{ .RelPermalink }}" title="All pages with tag: {{$name}}">
+                        {{$name}} <span>({{$count}})</span>
+                    </a>
+                </li>
+            {{end}}
+        {{end}}
+</section>

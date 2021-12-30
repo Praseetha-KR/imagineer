@@ -1,0 +1,100 @@
+{{ define "main" }}
+<main class="home" role="main">
+  <div class="home__masthead">
+    <!-- intro -->
+    <section class="home__intro intro p-3-top p-3-bottom p-3-h">
+      <h1 class="sr-only">Praseetha KR</h1>
+      <h3 class="intro__title handwriting-type p-q-bottom">
+        imagineering the web
+      </h3>
+      <div class="intro__desc">
+        Hi there, I'm Praseetha, a Software Engineer specialized in web
+        application development. This website contains my notes on programming,
+        design, experiences and other musings.
+      </div>
+    </section>
+  </div>
+  <!-- posts -->
+  <section class="home__postcards p-6-top p-4-bottom">
+    <h2 class="text-center m-1h-bottom">Recent Posts</h2>
+    <ul class="postcards" role="list">
+      {{ range first 6 (where .Site.RegularPages "Type" "in" "blog") }} 
+        {{ if (ne .Params.status "draft") }}
+          <li class="postcards__item">
+            <a class="postcard" role="listtitem" href="{{ .RelPermalink }}">
+              <div class="postcard__content">
+                <div class="postcard__graphic">
+                  <img src="{{ .Params.graphic.url }}" alt="" />
+                </div>
+                <div class="postcard__bottom">
+                  <h3 class="postcard__title">{{ .Title }}</h3>
+                  <div class="postcard__summary">{{ htmlEscape .Params.blurb }}</div>
+                  <div class="postcard__tags">
+                    {{ range .Params.tags }}
+                    <span class="postcard__tag">#{{ . }}</span>
+                    {{ end }}
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+        {{ end }} 
+      {{ end }}
+    </ul>
+    <section class="postcards__more">
+      <a class="postcards__more__btn" href="/blog">
+        <span>More posts</span>
+        <i class="fa fa-long-arrow-right"></i>
+      </a>
+    </section>
+  </section>
+
+  <section class="home__design-works">
+    <h2 class="text-center m-2-bottom">Design Projects</h2>
+    <div class="home__design-work__list">
+      {{ range first 8 (where .Site.RegularPages "Type" "in" "works")}}
+        <div class="work-design-card__container">
+          <div class="work-design-card">
+            <a class="work-design-card__link" href="{{ .RelPermalink }}">
+              <div
+                class="work-design-card__graphic"
+                style="background: {{ .Params.theme }};"
+              >
+                <img
+                  src="{{ .Params.graphic.url }}"
+                  alt="{{ .Title }} {{ .Params.subtitle }}"
+                />
+              </div>
+            </a>
+            <div class="work-design-card__content">
+              <h3 class="work-design-card__title">
+                {{ .Title }} {{ .Params.subtitle }}
+              </h3>
+              <div class="work-design-card__desc">{{ .Params.intro }}</div>
+              <div class="work-design-card__scopes">
+                {{ range .Params.scope }}
+                <div class="work-design-card__scope">{{ . }}</div>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+    <section class="postcards__more">
+      <a class="postcards__more__btn" href="/works">
+        <span>More design works</span>
+        <i class="fa fa-long-arrow-right"></i>
+      </a>
+    </section>
+  </section>
+
+  <section class="text-center masthead">
+    <img
+      class="masthead__image"
+      src="/images/imagineer-2019.svg"
+      alt="imagineering the web!"
+    />
+  </section>
+</main>
+{{ end }}

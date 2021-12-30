@@ -1,0 +1,103 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400|Fira+Code);
+
+$default-type: 'Roboto', sans-serif;
+$default-bold-type: 'Roboto', sans-serif;
+$default-light-type: 'Roboto', sans-serif;
+$code-type: 'Fira Code', monospace, sans-serif;
+$title-type: 'Roboto', sans-serif;
+$handwriting-type: 'Roboto', sans-serif;
+
+$heading-type: $default-bold-type;
+$light-type: $default-light-type;
+$para-type: $default-type;
+$label-type: $default-type;
+$annotation-type: $default-type;
+$alt-heading-type: $default-type;
+
+$body-font: $para-type;
+$title-font: $title-type;
+$font-stack__code: $code-type;
+
+$font__base-size: 16px;
+$font__base-line-height: 1.5em;
+
+body {
+    font-family: $body-font;
+    font-size: $font__base-size;
+    line-height: $font__base-line-height;
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $heading-type;
+    font-weight: 700;
+    margin: 0.5em 0;
+}
+
+.post {
+    h1, h2, h3, h4, h5, h6 {
+        margin: 1.5em 0 0.3em;
+    }
+}
+
+h1 {
+    font-size: 2.0em;
+}
+h2 {
+    font-size: 1.8em;
+}
+h3 {
+    font-size: 1.5em;
+}
+h4 {
+    font-size: 1.3em;
+}
+h5 {
+    font-size: 1.1em;
+}
+@media (min-width: 768px) {
+    h1 {
+        font-size: 2.2em;
+    }
+    h2 {
+        font-size: 1.9em;
+    }
+    h3 {
+        font-size: 1.6em;
+    }
+    h4 {
+        font-size: 1.4em;
+    }
+    h5 {
+        font-size: 1.1em;
+    }
+}
+
+.bold, strong {
+    font-family: $default-bold-type;
+}
+
+.handwriting-type {
+    font-family: $handwriting-type;
+}
+
+.title-type {
+    font-family: $title-type;
+}
+
+.prose-type {
+    font-family: $label-type;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.annotation-type {
+    font-family: $annotation-type;
+}
+
+.textsize-regular {
+    font-size: 1em;
+}
+.textsize-small {
+    font-size: 0.8em;
+}

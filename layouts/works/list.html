@@ -1,0 +1,34 @@
+{{ define "main" }}
+<div class="full-width p-1-top p-2-bottom">
+    <h1 class="page__heading">Design Works</h1>
+</div>
+<div class="work-list centered">
+    <article role="article" class="work__design-works">
+        <div class="work__design-work__list">
+            {{ range where site.RegularPages "Type" "in" "works" }}
+                <div class="work-design-card__container">
+                    <div class="work-design-card">
+                        <a
+                            class="work-design-card__link"
+                            href="{{ .RelPermalink }}"
+                        >
+                            <div class="work-design-card__graphic" style="background: {{ .Params.theme }};">
+                                <img src="{{ .Params.graphic.url }}" alt="{{ .Title }} {{ .Params.subtitle }}">
+                            </div>
+                        </a>
+                        <div class="work-design-card__content">
+                            <h3 class="work-design-card__title">{{ .Title }} {{ .Params.subtitle }}</h3>
+                            <div class="work-design-card__desc">{{ .Params.intro }}</div>
+                            <div class="work-design-card__scopes">
+                                {{ range .Params.scope }}
+                                    <div class="work-design-card__scope">{{ . }}</div>
+                                {{ end }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{ end }}
+        </div>
+    </article>
+</div>
+{{ end }}
