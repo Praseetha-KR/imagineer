@@ -4,6 +4,9 @@ $home__sidebar-width: 18em;
     &__intro {
         text-align: center;
     }
+    &__social {
+        padding: 3rem;
+    }
     &__postcards {
         width: 80%;
         margin: auto;
@@ -82,6 +85,81 @@ $home__sidebar-width: 18em;
             width: 65%;
             font-size: 1.4em;
         }
+    }
+}
+
+.sociallink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem; 
+    height: 3rem;
+    width: 3rem;
+    border-radius: 3rem;
+
+    &--twitter {
+        color: white;
+        background-color: #1DA1F1;
+        &:hover, &:focus, &:active {
+            color: white;
+            background-color: #1490dd;
+        }
+    }
+    &--github {
+        color: white;
+        background-color: #333;
+        &:hover, &:focus, &:active {
+            color: white;
+            background-color: #1b1a1a;
+        }
+    }
+    &--linkedin {
+        color: white;
+        background-color: #0171AC;
+        &:hover, &:focus, &:active {
+            color: white;
+            background-color: #016296;
+        }
+    }
+    &--dribbble {
+        color: white;
+        background-color: #ea4c89;
+        &:hover, &:focus, &:active {
+            color: white;
+            background-color: #c7396f;
+        }
+    }
+    &--codepen {
+        color: white;
+        background-color: #252525;
+        &:hover, &:focus, &:active {
+            color: white;
+            background-color: #000000;
+        }
+    }
+    &--instagram {
+        color: white;
+        background-color: #8134AF;
+        &:hover, &:focus, &:active {
+            color: white;
+            background-color: #752ca0;
+        }
+    }
+
+    &s {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem; 
+    }
+
+    &__label {
+        font-size: 1rem;
+    }
+    &__icon {
+        font-size: 1.5rem;
+        line-height: 1;
     }
 }
 
