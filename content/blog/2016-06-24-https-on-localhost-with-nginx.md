@@ -10,8 +10,12 @@ theme: "#0D974D"
 title_color: "#b0dac3"
 luminance: dark
 graphic:
-    url: "/images/posts/https_localhost_nginx.png"
-    overlap: "4.5"
+    preview:
+        png: "/images/posts/https-localhost-nginx/preview.png"
+        webp: "/images/posts/https-localhost-nginx/preview.webp"
+    main:
+        png: "/images/posts/https-localhost-nginx/main.png"
+        overlap: "4.5"
 ---
 
 This article gives a walk through setting up of **HTTPS protocol for localhost using NGINX** in OSX (10.11.5).

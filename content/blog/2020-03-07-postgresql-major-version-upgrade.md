@@ -10,8 +10,12 @@ theme: "#2b3544"
 title_color: "#6695bb"
 luminance: light
 graphic:
-    url: "/images/posts/postgres-upgrade.png"
-    overlap: "3.8"
+    preview:
+        png: "/images/posts/postgres-upgrade/preview.png"
+        webp: "/images/posts/postgres-upgrade/preview.webp"
+    main:
+        png: "/images/posts/postgres-upgrade/main.png"
+        overlap: "3.8"
 ---
 
 PostgreSQL databases can be migrated without doing database dump-and-restore.

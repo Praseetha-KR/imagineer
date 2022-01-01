@@ -10,8 +10,12 @@ theme: "#212285"
 title_color: "#3B60ED"
 luminance: light
 graphic:
-    url: "/images/posts/squid-droplet.png"
-    overlap: "7"
+    preview:
+        png: "/images/posts/setup-proxy-server-droplet/preview.png"
+        webp: "/images/posts/setup-proxy-server-droplet/preview.webp"
+    main:
+        png: "/images/posts/setup-proxy-server-droplet/main.png"
+        overlap: "7"
 ---
 
 This post shows how to quickly run Squid proxy server on a DigitalOcean droplet via command line interface.

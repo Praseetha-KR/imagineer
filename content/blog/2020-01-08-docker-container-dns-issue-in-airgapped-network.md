@@ -10,8 +10,12 @@ theme: "#3988ad"
 title_color: "#dfeef5"
 luminance: dark
 graphic:
-    url: "/images/posts/docker-dns-issue.png"
-    overlap: "6"
+    preview:
+        png: "/images/posts/airgapped-docker-dns/preview.png"
+        webp: "/images/posts/airgapped-docker-dns/preview.webp"
+    main:
+        png: "/images/posts/airgapped-docker-dns/main.png"
+        overlap: "6"
 ---
 
 ### Problem
@@ -56,7 +60,10 @@ When docker containers are started in Bridge mode, docker daemon copies any non-
 
 <div>
     <figure class="figure-l p-2h-top p-2-bottom text-center">
-        <img class="contain-width" src="/images/posts/airgapped-docker-dns/docker_container_dns_issue.png" alt="Docker DNS issue in air-gapped network">
+        <picture class="contain-width">
+            <source type="image/webp" srcset="/images/posts/airgapped-docker-dns/docker_container_dns_issue.webp">
+            <img src="/images/posts/airgapped-docker-dns/docker_container_dns_issue.png" alt="Docker DNS issue in air-gapped network">
+        </picture>
         <figcaption>fig 1: Docker DNS issue in air-gapped network</figcaption>
     </figure>
 </div>
@@ -100,7 +107,10 @@ $ sudo service dnsmasq restart
 
 <div>
     <figure class="figure-l p-1h-top p-q-bottom text-center">
-        <img src="/images/posts/airgapped-docker-dns/docker_container_dns_solution.png" width="100%" alt="dnsmasq relaying DNS queries from docker interface to loopback interface">
+        <picture class="contain-width">
+            <source type="image/webp" srcset="/images/posts/airgapped-docker-dns/docker_container_dns_solution.webp">
+            <img src="/images/posts/airgapped-docker-dns/docker_container_dns_solution.png" alt="dnsmasq relaying DNS queries from docker interface to loopback interface">
+        </picture>
         <figcaption>fig 2: dnsmasq relaying DNS queries from docker interface to loopback interface</figcaption>
     </figure>
 </div>

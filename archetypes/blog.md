@@ -9,8 +9,13 @@ theme: "#212285"
 title_color: "#3B60ED"
 luminance: light
 graphic:
-    url: ""
-    overlap: "7"
+    preview:
+        png: ""
+        webp: ""
+    main:
+        png: ""
+        webp: ""
+        overlap: "0"
 draft: true
 ---
 

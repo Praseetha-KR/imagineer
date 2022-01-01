@@ -10,8 +10,12 @@ theme: "#257d43"
 title_color: "#ececec"
 luminance: dark
 graphic:
-    url: "/images/posts/archer-repeater.png"
-    overlap: "5"
+    preview:
+        png: "/images/posts/archer-c2-repeater/preview.png"
+        webp: "/images/posts/archer-c2-repeater/preview.webp"
+    main:
+        png: "/images/posts/archer-c2-repeater/main.png"
+        overlap: "5"
 ---
 
 Since the introduction of a new router to our home premises the previous one was lying around unused - it is TP-Link Archer C2 AC750 Wireless Dual Band Gigabit Router. I changed it to run as a Repeater, so that it can strengthen WiFi signal to the weak spots; Here is a note on how to do that.

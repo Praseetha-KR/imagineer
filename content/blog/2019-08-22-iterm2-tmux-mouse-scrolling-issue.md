@@ -10,8 +10,12 @@ theme: "#131214"
 title_color: "#66f96a"
 luminance: light
 graphic:
-    url: "/images/posts/tmux_scroll.png"
-    overlap: "9.5"
+    preview:
+        png: "/images/posts/tmux_scroll/preview.png"
+        webp: "/images/posts/tmux_scroll/preview.webp"
+    main:
+        png: "/images/posts/tmux_scroll/main.png"
+        overlap: "9.5"
 ---
 
 

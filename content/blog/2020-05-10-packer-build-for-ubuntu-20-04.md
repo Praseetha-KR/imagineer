@@ -10,8 +10,12 @@ theme: "#C44227"
 title_color: "#29001C"
 luminance: light
 graphic:
-    url: "/images/posts/packer-ubuntu.png"
-    overlap: "8.2"
+    preview:
+        png: "/images/posts/packer-ubuntu/preview.png"
+        webp: "/images/posts/packer-ubuntu/preview.webp"
+    main:
+        png: "/images/posts/packer-ubuntu/main.png"
+        overlap: "8.2"
 ---
 
 Ubuntu is discontinuing support for the Debian-installer based classic server installer from 20.04 LTS (Focal Fossa) making the way for subiquity server installer. This post shows how the [Packer](https://www.packer.io) build config vary for both installers.

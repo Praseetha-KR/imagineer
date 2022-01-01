@@ -1,81 +1,84 @@
 {{ define "main" }}
 <main role="main">
-  <section class="post__intro">
-    <div class="post__header__left">
-      {{ if .NextInSection }}
-      <a href="{{ .NextInSection.Permalink }}" class="post__navigation__link">
-        <i class="fa fa-chevron-left"></i>
-      </a>
-      {{ end }}
-    </div>
-    <div class="post__header">
-      <div class="post__meta">
-        <time class="post__date"
-          >Published on {{ .Date.Format "02 Jan 2006" }}</time
-        >
-        <h1 role="heading" class="post__heading">{{ .Title }}</h1>
-      </div>
-      <div class="post__blurb">{{ .Description }}</div>
-      <div
-        class="post__graphic"
-        style="margin-bottom: -{{ .Params.graphic.overlap }}rem"
-      >
-        <img src="{{ .Params.graphic.url }}" alt="{{ .Title }}" />
-      </div>
-    </div>
-    <div class="post__header__right">
-      {{ if .PrevInSection }}
-      <a href="{{ .PrevInSection.Permalink }}" class="post__navigation__link">
-        <i class="fa fa-chevron-right"></i>
-      </a>
-      {{ end }}
-    </div>
-  </section>
-  <article
-    role="article"
-    class="post"
-    style="padding-top: {{ .Params.graphic.overlap }}rem"
-  >
-    <section class="post__content">{{- .Content -}}</section>
+    <section class="post__intro">
+        <div class="post__header__left">
+            {{ if .NextInSection }}
+                <a href="{{ .NextInSection.Permalink }}" class="post__navigation__link">
+                    <i class="fa fa-chevron-left"></i>
+                </a>
+            {{ end }}
+        </div>
+        <div class="post__header">
+            <div class="post__meta">
+                <time class="post__date">Published on {{ .Date.Format "02 Jan 2006" }}</time>
+                <h1 role="heading" class="post__heading">{{ .Title }}</h1>
+            </div>
+            <div class="post__blurb">{{ .Description }}</div>
+            {{ if .Params.graphic }}
+                <div
+                    class="post__graphic"
+                    style="margin-bottom: -{{ .Params.graphic.main.overlap }}rem"
+                >
+                    <picture>
+                        {{ if .Params.graphic.main.webp }}<source type="image/webp" srcset="{{ .Params.graphic.main.webp }}">{{ end }}
+                        <img src="{{ .Params.graphic.main.png }}" alt="{{ .Title }}">
+                    </picture>
+                </div>
+            {{ end }}
+        </div>
+        <div class="post__header__right">
+            {{ if .PrevInSection }}
+                <a href="{{ .PrevInSection.Permalink }}" class="post__navigation__link">
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+            {{ end }}
+        </div>
+    </section>
+    <article
+        role="article"
+        class="post"
+        style="padding-top: {{ .Params.graphic.main.overlap }}rem"
+    >
+        <section class="post__content">{{- .Content -}}</section>
 
-    {{ if .Params.tags }}
-    <div class="post__tags">
-      <span class="post__tags__icon">
-        <i class="fa fa-tag" title="tags"></i>
-      </span>
-      <div class="post__tags__list">
-        {{ range (.GetTerms "tags") }}
-        <span class="post__tag"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></span>
+            {{ if .Params.tags }}
+                <div class="post__tags">
+                    <span class="post__tags__icon">
+                        <i class="fa fa-tag" title="tags"></i>
+                    </span>
+                    <div class="post__tags__list">
+                        {{ range (.GetTerms "tags") }}
+                        <span class="post__tag"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></span>
+                        {{ end }}
+                    </div>
+                </div>
+            {{ end }}
+
+        <div class="post__social">
+            <section class="share m-2-top">
+                <a class="btn-tweet" href=""><i class="fa fa-twitter"></i>&nbsp;&nbsp;Tweet</a>
+            </section>
+
+            <section class="post__comments p-2-top">
+                <div id="disqus_thread"></div>
+                <script type="text/javascript" src="//disqus.com/forums/imagineer/embed.js"></script>
+                <noscript><a href="//imagineer.disqus.com/?url=ref">View the discussion thread.</a></noscript>
+                <a href="//disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+            </section>
+        </div>
+    </article>
+
+    <nav role="navigation" class="post__navigation--bottom">
+        {{ if .NextInSection }}
+            <a href="{{ .NextInSection.Permalink}}" class="post__navigation__link">
+                <i class="fa fa-chevron-left"></i>
+            </a>
+            {{ end }} {{ if .PrevInSection }}
+            <a href="{{ .PrevInSection.Permalink }}" class="post__navigation__link">
+                <i class="fa fa-chevron-right"></i>
+            </a>
         {{ end }}
-      </div>
-    </div>
-    {{ end }}
-
-    <div class="post__social">
-      <section class="share m-2-top">
-        <a class="btn-tweet" href=""><i class="fa fa-twitter"></i>&nbsp;&nbsp;Tweet</a>
-      </section>
-
-      <section class="post__comments p-2-top">
-        <div id="disqus_thread"></div>
-        <script type="text/javascript" src="//disqus.com/forums/imagineer/embed.js"></script>
-        <noscript><a href="//imagineer.disqus.com/?url=ref">View the discussion thread.</a></noscript>
-        <a href="//disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-      </section>
-    </div>
-  </article>
-
-  <nav role="navigation" class="post__navigation--bottom">
-    {{ if .NextInSection }}
-    <a href="{{ .NextInSection.Permalink}}" class="post__navigation__link">
-      <i class="fa fa-chevron-left"></i>
-    </a>
-    {{ end }} {{ if .PrevInSection }}
-    <a href="{{ .PrevInSection.Permalink }}" class="post__navigation__link">
-      <i class="fa fa-chevron-right"></i>
-    </a>
-    {{ end }}
-  </nav>
+    </nav>
 </main>
 
 <!-- Twitter share button -->
