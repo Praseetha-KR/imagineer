@@ -2,14 +2,7 @@
 <header class="header header__site" role="banner">
 
     <!-- sitelogo -->
-    <div class="sitelogo">
-        <a class="sitelogo__img" href="{{ .Site.BaseURL }}" title="{{ .Site.Title }}">
-            {{ partial "logo.html" . }}
-        </a>
-        <div class="sitelogo__text">
-            <h2 class="sitelogo__title sr-only"><a role="menuitem" href="{{ .Site.BaseURL }}" title="Praseetha KR">Praseetha KR</a></h2>
-        </div>
-    </div>
+    {{ partial "sitelogo.html" . }}
 
     <!-- sitenav -->
     <nav class="sitenav">
