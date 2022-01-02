@@ -5,7 +5,7 @@ $home__sidebar-width: 18em;
         text-align: center;
     }
     &__social {
-        padding: 3rem;
+        padding: 3rem 0;
     }
     &__postcards {
         width: 80%;
@@ -61,6 +61,7 @@ $home__sidebar-width: 18em;
         display: block;
         margin: auto;
         width: 60%;
+        height: auto;
         @media (min-width: 768px) {
             width: 25rem;
         }
@@ -92,10 +93,25 @@ $home__sidebar-width: 18em;
     display: flex;
     align-items: center;
     justify-content: center;
-    // gap: 0.6rem; 
     height: 3rem;
     width: 3rem;
     border-radius: 3rem;
+
+    &s {
+        list-style-type: none;
+        display: grid;
+        flex-wrap: wrap; 
+        place-self: center;
+        align-items: center;
+        justify-content: center;
+        grid-gap: 2rem;
+        grid-template-columns: repeat(3, 3rem);
+
+        @media (min-width: 600px) {
+            grid-gap: 1rem;
+            grid-template-columns: repeat(6, 3rem);
+        }
+    }
 
     &--twitter {
         background-color: #1DA1F1;
@@ -133,15 +149,7 @@ $home__sidebar-width: 18em;
             background-color: #752ca0;
         }
     }
-
-    &s {
-        list-style-type: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem; 
-    }
-
+    
     &__label {
         font-size: 1rem;
     }
