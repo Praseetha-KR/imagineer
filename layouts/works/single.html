@@ -3,8 +3,8 @@
     <section class="work__heading">
         <div class="work__header__left">
             {{ if .NextInSection }}
-                <a href="{{ .NextInSection.RelPermalink }}" class="work__navigation__link">
-                    <i class="fa fa-chevron-left"></i>
+                <a href="{{ .NextInSection.RelPermalink }}" class="work__navigation__link" title="Previous work">
+                    {{ partial "svg-icon-angle-left" }}
                 </a>
             {{ end }}
         </div>
@@ -16,8 +16,8 @@
         </div>
         <div class="work__header__right">
             {{ if .PrevInSection }}
-                <a href="{{ .PrevInSection.RelPermalink }}" class="work__navigation__link">
-                    <i class="fa fa-chevron-right"></i>
+                <a href="{{ .PrevInSection.RelPermalink }}" class="work__navigation__link" title="Next work">
+                    {{ partial "svg-icon-angle-right" }}
                 </a>
             {{ end }}
         </div>

@@ -7,7 +7,7 @@
     <!-- sitenav -->
     <nav class="sitenav">
         {{ range .Site.Menus.main.ByWeight -}}
-            {{ .Pre }}<a class="sitenav__link" role="menuitem" href="{{ .URL }}" title="{{ .Title }}" {{ if .Post }}target="_blank" {{ end }}>{{- .Name | safeHTML -}}</a>
+            {{ .Pre }}<a class="sitenav__link" href="{{ .URL }}" title="{{ .Title }}" {{ if .Post }}target="_blank" {{ end }}>{{- .Name | safeHTML -}}</a>
         {{- end }}
     </nav>
 

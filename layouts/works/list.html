@@ -14,14 +14,14 @@
                         >
                             <div class="work-design-card__graphic" style="background: {{ .Params.theme }};">
                                 <picture>
-                                    {{ if .Params.graphic.webp }}<source type="image/webp" srcset="{{ .Params.graphic.webp }}">{{ end }}
-                                    <img src="{{ .Params.graphic.png }}" alt="{{ .Title }} {{ .Params.subtitle }}">
+                                    {{ if .Params.graphic.webp }}<source type="image/webp" srcset="{{ .Params.graphic.webp }}" />{{ end }}
+                                    <img src="{{ .Params.graphic.png }}" alt="{{ .Title }} {{ .Params.subtitle }}" width="300" height="400" />
                                 </picture>
                             </div>
                         </a>
                         <div class="work-design-card__content">
                             <h3 class="work-design-card__title">{{ .Title }} {{ .Params.subtitle }}</h3>
-                            <div class="work-design-card__desc">{{ .Params.intro }}</div>
+                            <div class="work-design-card__desc">{{ .Params.intro | safeHTML }}</div>
                             <div class="work-design-card__scopes">
                                 {{ range .Params.scope }}
                                     <div class="work-design-card__scope">{{ . }}</div>
