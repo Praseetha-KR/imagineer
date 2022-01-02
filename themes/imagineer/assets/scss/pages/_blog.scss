@@ -1,10 +1,11 @@
 .blogpost {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
+    font-size: 1.05rem;
     @media (min-width: 768px) {
         flex-direction: row;
-        margin-bottom: 0;
+        margin-bottom: 0.8rem;
     }
     &__time {
         width: 8em;

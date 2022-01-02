@@ -14,13 +14,13 @@ I write [code](https://github.com/Praseetha-KR) most of the time and occasionall
 <div class="socialmedia m-2-v">
     <ul class="m-0-left">
         <li>
-            GitHub: <a target="_blank" href="https://github.com/Praseetha-KR">Praseetha-KR</a>
+            GitHub: <a target="_blank" href="https://github.com/Praseetha-KR" rel="noopener noreferrer nofollow">Praseetha-KR</a>
         </li>
         <li>
-            Twitter: <a target="_blank" href="https://twitter.com/void_imagineer">@void_imagineer</a>
+            Twitter: <a target="_blank" href="https://twitter.com/void_imagineer" rel="noopener noreferrer nofollow">@void_imagineer</a>
         </li>
         <li>
-            LinkedIn: <a target="_blank" href="https://www.linkedin.com/in/praseethakr">in/praseethakr</a>
+            LinkedIn: <a target="_blank" href="https://www.linkedin.com/in/praseethakr" rel="noopener noreferrer nofollow">in/praseethakr</a>
         </li>
         <li>
             Email: <a target="_blank" href="mailto:void.imagieer@gmail.com">void.imagieer[at]gmail[dot]com</a>

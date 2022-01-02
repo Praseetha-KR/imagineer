@@ -24,7 +24,7 @@
     </section>
 
     <section class="work__overview">
-        <div class="work__intro">{{ .Params.intro }}</div>
+        <div class="work__intro">{{ .Params.intro | safeHTML }}</div>
         <div class="work__requirements">{{ .Params.requirements }}</div>
         <div class="work__about">
             <div class="work__date">Designed in {{ .Params.year }}</div>
