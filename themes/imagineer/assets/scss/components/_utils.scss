@@ -1,5 +1,7 @@
 .sr-only {
     visibility: hidden;
+    width: 0;
+    height: 0;
 }
 .center--vertical {
     position: relative;
@@ -10,6 +12,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.align-center-vertical {
+    display: flex;
+    align-items: center;
 }
 
 .table {

@@ -193,6 +193,10 @@ $post-padding: 23%;
             &:last-child {
                 float: right;
             }
+            svg {
+                width: 3rem;
+                height: auto;
+            }
         }
     }
 }

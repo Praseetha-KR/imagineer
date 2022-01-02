@@ -162,7 +162,7 @@ $ sudo nginx -c /path/to/file/nginx_custom.conf -s reload
 
 ## Final step
 
-Access [https://local.website.dev](https://local.website.dev), you can see that little green padlock icon <i class="fa fa-lock" style="color: #94C867"></i> in the address bar. Yes, your local website is on HTTPS now!
+Access [https://local.website.dev](https://local.website.dev), you can see that little green padlock icon <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="16" height="16" fill="#94C867"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"/></svg> in the address bar. Yes, your local website is on HTTPS now!
 
 <figure class="figure-c">
     <img src="/images/posts/https_localhost.jpg" alt="HTTPS Localhost">

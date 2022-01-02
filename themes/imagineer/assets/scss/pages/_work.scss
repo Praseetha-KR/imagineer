@@ -24,7 +24,10 @@
             align-items: center;
             .work__navigation__link {
                 padding: 0.5em;
-                font-size: 2rem;
+                svg {
+                    width: 3rem;
+                    height: auto;
+                }
             }
         }
         &__right {
@@ -182,6 +185,7 @@
             position: relative;
             img {
                 width: 100%;
+                height: auto;
             }
             &:hover::after{
                 content: 'View details →';
