@@ -25,6 +25,15 @@ h5 {
     font-family: $default-bold-type;
 }
 
+pre, code {
+    font-family: $code-font;
+}
+code {
+    font-size: 0.85em;
+    border-radius: 0.2em;
+    padding: 0 0.2em;
+}
+
 .title-type {
     font-family: $title-type;
 }
