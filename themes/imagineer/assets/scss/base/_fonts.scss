@@ -1,12 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400|Fira+Code&display=swap);
-
-$default-type: 'Roboto', sans-serif;
-$default-bold-type: 'Roboto', sans-serif;
-$default-light-type: 'Roboto', sans-serif;
+$default-type: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+$default-bold-type: $default-type;
+$default-light-type: $default-type;
 $code-type: 'Fira Code', monospace, sans-serif;
-$title-type: 'Roboto', sans-serif;
-$handwriting-type: 'Roboto', sans-serif;
 
+$title-type: $default-type;
+$handwriting-type: $default-type;
 $heading-type: $default-bold-type;
 $light-type: $default-light-type;
 $para-type: $default-type;

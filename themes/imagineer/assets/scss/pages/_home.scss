@@ -71,9 +71,12 @@ $home__sidebar-width: 18em;
 // intro
 .intro {
     &__title {
-        font-size: 3.2em;
+        font-size: 2em;
         line-height: 1.5;
         font-weight: 300;
+        @media (min-width: 520px) {
+            font-size: 3.2em;
+        }
         @media (min-width: 768px) {
             font-size: 5.2em;
         }
@@ -106,6 +109,7 @@ $home__sidebar-width: 18em;
         justify-content: center;
         grid-gap: 2rem;
         grid-template-columns: repeat(3, 3rem);
+        overflow: hidden;
 
         @media (min-width: 600px) {
             grid-gap: 1rem;
