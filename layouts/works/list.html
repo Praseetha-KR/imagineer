@@ -13,10 +13,15 @@
                             href="{{ .RelPermalink }}"
                         >
                             <div class="work-design-card__graphic" style="background: {{ .Params.theme }};">
-                                <picture>
-                                    {{ if .Params.graphic.webp }}<source type="image/webp" srcset="{{ .Params.graphic.webp }}" />{{ end }}
-                                    <img src="{{ .Params.graphic.png }}" alt="{{ .Title }} {{ .Params.subtitle }}" width="300" height="400" />
-                                </picture>
+                            <picture>
+                                {{ if (and .Params.graphic.webp_small .Params.graphic.webp) }}
+                                    <source type="image/webp" srcset="{{ .Params.graphic.webp_small }}" />
+                                    <source media="(min-width: 768px)" type="image/webp" srcset="{{ .Params.graphic.webp }}" />
+                                {{ else if .Params.graphic.webp }}
+                                    <source type="image/webp" srcset="{{ .Params.graphic.webp }}" />
+                                {{ end }}
+                                <img src="{{ .Params.graphic.png }}" alt="{{ .Title }} {{ .Params.subtitle }}" width="300" height="400" />
+                            </picture>
                             </div>
                         </a>
                         <div class="work-design-card__content">
