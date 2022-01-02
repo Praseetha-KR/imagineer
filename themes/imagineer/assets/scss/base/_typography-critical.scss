@@ -1,0 +1,40 @@
+@import 'fonts';
+
+body {
+    font-family: $body-font;
+    font-size: $font__base-size;
+    line-height: $font__base-line-height;
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $heading-type;
+    font-weight: 700;
+    margin: 0.5em 0;
+}
+
+h1 {
+    font-size: 2.0em;
+}
+h2 {
+    font-size: 1.8em;
+}
+h3 {
+    font-size: 1.5em;
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 2.2em;
+    }
+    h2 {
+        font-size: 1.9em;
+    }
+    h3 {
+        font-size: 1.6em;
+    }
+}
+
+.handwriting-type {
+    font-family: $handwriting-type;
+}

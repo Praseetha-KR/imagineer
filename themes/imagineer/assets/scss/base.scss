@@ -1,4 +1,3 @@
-@import 'base/reset';
 @import 'base/typography';
 
 @import 'components/syntax-highlight';
@@ -6,15 +5,11 @@
 @import 'components/table';
 @import 'components/lists';
 
-@import 'layout/spacing';
 @import 'layout/header';
 @import 'layout/nav';
-@import 'layout/footer';
 @import 'layout/content';
 
-@import 'pages/home';
 @import 'pages/blog';
 @import 'pages/post';
-@import 'pages/work';
 @import 'pages/project';
 @import 'pages/about';

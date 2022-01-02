@@ -1,0 +1,56 @@
+$header-height: 6rem;
+
+.header {
+    position: relative;
+    z-index: 1;
+    &__site {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4em 0 0;
+        @media (min-width: 768px) {
+            flex-direction: row;
+            padding: 0 4em 0 2.5em;
+            height: $header-height;
+        }
+    }
+}
+
+.sitelogo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    &__text {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        font-family: $title-font;
+    }
+    &__title {
+        font-size: 1.2em;
+        margin: 0;
+    }
+}
+
+.sitenav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    @media (min-width: 768px) {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    &__link {
+        display: flex;
+        align-items: center;
+        font-size: 0.85em;
+        margin: 0 1em;
+        font-family: $label-type;
+        letter-spacing: 0.14em;
+        line-height: 0.5;
+  }
+}

@@ -1,20 +1,4 @@
 // overrides
-.svg-icon {
-    fill: $color__text;
-}
-a {
-    color: $color__link;
-    .svg-icon {
-        fill: $color__link;
-    }
-    &:hover, &:focus, &:active {
-        color: $color__link-active;
-        .svg-icon {
-            fill: $color__link-active;
-        }
-    }
-}
-
 hr {
     border: none;
     height: 2rem;
@@ -53,17 +37,6 @@ blockquote {
     code {
         background-color: transparent;
     }
-}
-
-// _content
-body, .content-wrapper {
-    background: $color__bg;
-    color: $color__text;
-}
-
-// _footer
-.footer {
-    color: $color__text;
 }
 
 // table
@@ -192,9 +165,6 @@ code.highlighter-rouge {
 }
 
 // header
-.header__site {
-    background: $color__title-post-header-bg;
-}
 .sitenav__link {
     &--active {
         color: $color__secondary;
@@ -203,32 +173,14 @@ code.highlighter-rouge {
 
 
 // _home
-.home {
-    background: $color__title-post-header-bg;
-}
-.masthead {
-    background-image: linear-gradient(transparent, $color__bg-masthead);
-}
 
-.intro {
-    &__title {
-        color: $color__heading;
-    }
-}
 .postcards {
     &__item {
-        box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.08);
-        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
         &:hover {
             box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
         }
     }
     &__more__btn {
-        border-color: $color__text;
-        color: $color__text;
-        svg {
-            fill: $color__text;
-        }
         &:hover {
             background-color: $color__primary;
             color: lighten($color__primary, 40%);
@@ -240,9 +192,6 @@ code.highlighter-rouge {
     }
 }
 .postcard {
-    color: $color__postcard-text;
-    background: white;
-    position: relative;
     &:hover, &:active, &:focus {
         color: $color__postcard-text;
     }
@@ -252,9 +201,6 @@ code.highlighter-rouge {
     &__time--dark {
         color: $color__postcard-seal--dark;
         opacity: 0.3;
-    }
-    &__tag {
-        color: $color__postcard-text;
     }
 }
 
@@ -388,18 +334,10 @@ code.highlighter-rouge {
     }
     &-design-card {
         &__graphic {
-            background-color: white;
             &:hover::after{
                 color: white;
                 background: rgba(42,44,47,0.92);
             }
-        }
-        &__title {
-            color: $color__title-post-header;
-        }
-        &__scope {
-            background-color: darken($color__title-post-header-bg, 5%);
-            color: $color__title-post-header;
         }
     }
 }

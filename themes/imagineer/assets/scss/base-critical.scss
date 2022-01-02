@@ -1,0 +1,13 @@
+@import 'base/reset-critical';
+@import 'base/typography-critical';
+
+@import 'components/utils-critical';
+@import 'components/table-critical';
+
+@import 'layout/spacing-critical';
+
+@import 'layout/header-critical';
+@import 'layout/footer-critical';
+
+@import 'pages/home';
+@import 'pages/work';

@@ -1,0 +1,83 @@
+// overrides
+.svg-icon {
+    fill: $color__text;
+}
+a {
+    color: $color__link;
+    .svg-icon {
+        fill: $color__link;
+    }
+    &:hover, &:focus, &:active {
+        color: $color__link-active;
+        .svg-icon {
+            fill: $color__link-active;
+        }
+    }
+}
+
+// _content
+body, .content-wrapper {
+    background: $color__bg;
+    color: $color__text;
+}
+
+// _footer
+.footer {
+    color: $color__text;
+}
+
+// header
+.header__site {
+    background: $color__title-post-header-bg;
+}
+
+// _home
+.home {
+    background: $color__title-post-header-bg;
+}
+.masthead {
+    background-image: linear-gradient(transparent, $color__bg-masthead);
+}
+.intro {
+    &__title {
+        color: $color__heading;
+    }
+}
+
+.postcards {
+    &__item {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.08);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    }
+    &__more__btn {
+        border-color: $color__text;
+        color: $color__text;
+        svg {
+            fill: $color__text;
+        }
+    }
+}
+
+.postcard {
+    color: $color__postcard-text;
+    background: white;
+    position: relative;
+    &__tag {
+        color: $color__postcard-text;
+    }
+}
+
+.work {
+    &-design-card {
+        &__graphic {
+            background-color: white;
+        }
+        &__title {
+            color: $color__title-post-header;
+        }
+        &__scope {
+            background-color: darken($color__title-post-header-bg, 5%);
+            color: $color__title-post-header;
+        }
+    }
+}

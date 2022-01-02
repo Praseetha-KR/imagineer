@@ -28,3 +28,8 @@ $footer-height: 7em;
         }
     }
 }
+
+.content-wrapper {
+    margin: 0 auto;
+    padding-bottom: $footer-height;
+}
