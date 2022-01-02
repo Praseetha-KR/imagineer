@@ -27,43 +27,50 @@ div.chroma {
     border-radius: 0.2rem;
     overflow-x: auto;
     .lnt {
-        padding: 0 0.6em; 
+        padding: 0 0.6em;
     }
     .lntable {
         border: none;
         border-collapse: collapse;
+        width: 100%;
         pre.chroma {
             box-shadow: none;
-            white-space: pre-wrap;
-            word-wrap: break-word;
             & > code {
                 display: block;
                 height: inherit;
                 width: inherit;
                 font-family: $code-font;
-                overflow-x: hidden;
                 overflow-y: hidden;
-                font-size: 0.72em;
-                line-height: 1.2;
             }
         }
         .lntd {
             padding: 0;
             border: none;
             &:first-child {
+                width: 2rem;
+                vertical-align: top;
                 pre.chroma {
                     & > code {
                         border-top-right-radius: 0;
                         border-bottom-right-radius: 0;
+                        overflow-x: hidden;
+                        font-size: 0.72em;
+                        line-height: 1.2;
                     }
                 }
             }
             &:last-child {
                 width: 100%;
-                padding: 0 0.3rem;
                 pre.chroma {
                     border-top-left-radius: 0;
                     border-bottom-left-radius: 0;
+                    white-space: pre;
+                    & > code {
+                        overflow-x: auto;
+                        font-size: 0.72em;
+                        line-height: 1.2;
+                        padding: 0 0.3rem;
+                    }
                 }
             }
         }

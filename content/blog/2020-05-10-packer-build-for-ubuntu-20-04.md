@@ -21,12 +21,12 @@ graphic:
 Ubuntu is discontinuing support for the Debian-installer based classic server installer from 20.04 LTS (Focal Fossa) making the way for subiquity server installer. This post shows how the [Packer](https://www.packer.io) build config vary for both installers.
 
 <div>
-    <blockquote>Ubuntu 20.04 <a href="http://cdimage.ubuntu.com/ubuntu/releases/20.04/release/" target="_blank">live server</a> has only subiquity support. For debian-installer you can use <a href="http://cdimage.ubuntu.com/ubuntu-legacy-server/releases/20.04/release/" target="_blank">legacy server</a> version.</blockquote>
+    <blockquote>Ubuntu 20.04 <a href="http://cdimage.ubuntu.com/ubuntu/releases/20.04/release/" target="_blank" rel="noopener noreferrer nofollow">live server</a> has only subiquity support. For debian-installer you can use <a href="http://cdimage.ubuntu.com/ubuntu-legacy-server/releases/20.04/release/" target="_blank" rel="noopener noreferrer nofollow">legacy server</a> version.</blockquote>
 </div>
 
 <div class="align-center">
     <div><strong class="post__h5-5">TLDR;</strong> Check Packer config examples here:
-    <a class="btn btn-accent" href="https://github.com/Praseetha-KR/packer-ubuntu" target="_blank">github.com/Praseetha-KR/packer-ubuntu</a></div>
+    <a class="btn btn-accent" href="https://github.com/Praseetha-KR/packer-ubuntu" target="_blank" rel="noopener noreferrer nofollow">github.com/Praseetha-KR/packer-ubuntu</a></div>
 </div>
 
 
@@ -36,10 +36,10 @@ Ubuntu is discontinuing support for the Debian-installer based classic server in
 
 Autoinstallation lets you answer all those configuration questions ahead of time with autoinstall config and lets the installation process run without any external interaction. The autoinstall config is provided via cloud-init configuration. Values are taken from the config file if set, else default values are used.
 
-There are multiple ways to provide configuration data for cloud-init. Typically user config is stored in `user-data` and cloud specific config in `meta-data` file. The list of supported cloud datasources can be found in [cloudinit docs](https://cloudinit.readthedocs.io/en/latest/topics/datasources.html#known-sources). Since packer builds it locally, data source is <a href="https://cloudinit.readthedocs.io/en/latest/topics/datasources/nocloud.html" target="_blank">NoCloud</a> in our case and the config files will served to the installer over http.
+There are multiple ways to provide configuration data for cloud-init. Typically user config is stored in `user-data` and cloud specific config in `meta-data` file. The list of supported cloud datasources can be found in [cloudinit docs](https://cloudinit.readthedocs.io/en/latest/topics/datasources.html#known-sources). Since packer builds it locally, data source is <a href="https://cloudinit.readthedocs.io/en/latest/topics/datasources/nocloud.html" target="_blank" rel="noopener noreferrer nofollow">NoCloud</a> in our case and the config files will served to the installer over http.
 
 
-#### Packer config to build a VMWare virtual machine from Ubuntu 20.04 live server ISO
+### Packer config to build a VMWare virtual machine from Ubuntu 20.04 live server ISO
 
 
 1] *ubuntu-20.04-live-server-packer.json*:
@@ -139,15 +139,15 @@ autoinstall:
 </div>
 </div>
 
-#### Notes
+### Notes
 
-##### 🔐 How to generate hashed password?
+#### 🔐 How to generate hashed password?
 
 ```bash
 mkpasswd --method=SHA-512 --rounds=4096
 ```
 
-##### 🧩 Why to include those late-commands?
+#### 🧩 Why to include those late-commands?
 
 <h5 class="post__h5-5">Issue 1: Packer SSH timeout due to IP change on instance restart</h5>
 
@@ -212,7 +212,7 @@ Build 'ubuntu-20.04-live-server' finished.
 
 <br>
 
-##### ⏳ Boot interaction sequence for live server
+#### ⏳ Boot interaction sequence for live server
 
 1. Initial empty screen
 2. Press `<any key>` to goto advanced welcome page
@@ -250,7 +250,7 @@ Preseeding is a way to set answers to questions asked during the installation pr
 
 Installation process is quite slow compared to subiquity.
 
-#### Packer config to build a VMWare virtual machine from Ubuntu 20.04 legacy server ISO
+### Packer config to build a VMWare virtual machine from Ubuntu 20.04 legacy server ISO
 
 1] *ubuntu-20.04-legacy-server-packer.json*:
 
@@ -381,7 +381,7 @@ d-i preseed/late_command string \
 
 <br>
 
-##### ⏳ Boot interaction sequence for legacy server
+#### ⏳ Boot interaction sequence for legacy server
 
 1. Press `ESC` to goto advanced welcome page
 2. Press `ESC` to get popup alert "You are leaving the graphical boot menu and startinng the text mode interface"
@@ -412,17 +412,16 @@ d-i preseed/late_command string \
     </div>
 </div>
 
-
-#### Related Links
-- <a href="https://wiki.ubuntu.com/FoundationsTeam/AutomatedServerInstalls/ConfigReference" target="_blank">Automated server install config referece</a>
-- <a href="https://cloudinit.readthedocs.io/en/latest/index.html" target="_blank">Cloud-init documentation</a>
-- <a href="https://netplan.io/reference#common-properties-for-all-device-types" target="_blank">Netplan reference</a>
-- <a href="https://www.packer.io/docs/builders/vmware/iso/" target="_blank">Packer VMware Builder (from ISO)</a>
-- <a href="https://www.packer.io/guides/automatic-operating-system-installs/preseed_ubuntu/" target="_blank">Packer Unattended Installation for Debian</a>
-- <a href="https://ubuntuforums.org/showthread.php?t=2390785" target="_blank">Difference between live and alternative</a>
-- <a href="https://help.ubuntu.com/lts/installation-guide/i386/ch06s01.html" target="_blank">How the debian-installer works</a>
-- <a href="https://www.debian.org/releases/jessie/amd64/apbs02.html.en" target="_blank">Using preseeding</a>
-- <a href="https://www.debian.org/releases/stable/example-preseed.txt" target="_blank">Preseed file example</a>
+## Related Links
+- <a href="https://wiki.ubuntu.com/FoundationsTeam/AutomatedServerInstalls/ConfigReference" target="_blank" rel="noopener noreferrer nofollow">Automated server install config referece</a>
+- <a href="https://cloudinit.readthedocs.io/en/latest/index.html" target="_blank" rel="noopener noreferrer nofollow">Cloud-init documentation</a>
+- <a href="https://netplan.io/reference#common-properties-for-all-device-types" target="_blank" rel="noopener noreferrer nofollow">Netplan reference</a>
+- <a href="https://www.packer.io/docs/builders/vmware/iso/" target="_blank" rel="noopener noreferrer nofollow">Packer VMware Builder (from ISO)</a>
+- <a href="https://www.packer.io/guides/automatic-operating-system-installs/preseed_ubuntu/" target="_blank" rel="noopener noreferrer nofollow">Packer Unattended Installation for Debian</a>
+- <a href="https://ubuntuforums.org/showthread.php?t=2390785" target="_blank" rel="noopener noreferrer nofollow">Difference between live and alternative</a>
+- <a href="https://help.ubuntu.com/lts/installation-guide/i386/ch06s01.html" target="_blank" rel="noopener noreferrer nofollow">How the debian-installer works</a>
+- <a href="https://www.debian.org/releases/jessie/amd64/apbs02.html.en" target="_blank" rel="noopener noreferrer nofollow">Using preseeding</a>
+- <a href="https://www.debian.org/releases/stable/example-preseed.txt" target="_blank" rel="noopener noreferrer nofollow">Preseed file example</a>
 
 <div class="p-2-top p-1-bottom">
     <table class="contain-width">
@@ -430,7 +429,7 @@ d-i preseed/late_command string \
             <tr>
                 <td class="align-center p-1h-v">
                     Code examples repo:
-                    <div class="m-1-left"><a class="btn btn-accent" href="https://github.com/Praseetha-KR/packer-ubuntu" target="_blank">github.com/Praseetha-KR/packer-ubuntu</a></div>
+                    <div class="m-1-left"><a class="btn btn-accent" href="https://github.com/Praseetha-KR/packer-ubuntu" target="_blank" rel="noopener noreferrer nofollow">github.com/Praseetha-KR/packer-ubuntu</a></div>
                 </td>
             </tr>
         </tbody>
