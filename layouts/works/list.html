@@ -25,7 +25,7 @@
                             </div>
                         </a>
                         <div class="work-design-card__content">
-                            <h3 class="work-design-card__title">{{ .Title }} {{ .Params.subtitle }}</h3>
+                            <h3 class="work-design-card__title">{{ .Title | safeHTML }} {{ .Params.subtitle }}</h3>
                             <div class="work-design-card__desc">{{ .Params.intro | safeHTML }}</div>
                             <div class="work-design-card__scopes">
                                 {{ range .Params.scope }}

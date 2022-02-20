@@ -10,7 +10,7 @@
         </div>
         <div class="work__header">
             <div class="work__meta">
-                <h1 role="heading" class="work__title">{{ .Title }}</h1>
+                <h1 role="heading" class="work__title">{{ .Title | safeHTML }}</h1>
                 <h3 class="work__subtitle">{{ .Params.subtitle }}</h3>
             </div>
         </div>
