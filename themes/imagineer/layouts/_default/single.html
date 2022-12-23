@@ -17,7 +17,7 @@
             {{ if .Params.graphic }}
                 <div
                     class="post__graphic"
-                    style="margin-bottom: -{{ .Params.graphic.main.overlap }}rem"
+                    style="margin-bottom: -{{ .Params.graphic.main.overlap }}rem; width: {{ .Params.graphic.main.width }}"
                 >
                     <picture>
                         {{ if .Params.graphic.main.webp }}<source type="image/webp" srcset="{{ .Params.graphic.main.webp }}">{{ end }}

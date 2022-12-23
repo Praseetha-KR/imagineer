@@ -5,24 +5,16 @@ This is my personal weblog, hosted at [https://imagineer.in](https://imagineer.i
 
 ### Install
 
-Make sure you have:
- - Ruby > 2.2
- - Node > 5.0
-
 ```bash
-gem install jekyll jekyll-paginate kramdown rouge
-npm install
-npm install -g gulp-cli
+brew install hugo
 ```
 
 ### development build
 ```bash
-gulp
+hugo server -D
 ```
-This will generate build files into `/dev`, and it's view will get loaded into a new tab in your default browser.
-
 ### production build
 ```
-gulp build
+hugo
 ```
-This will do production build into `/prod`
+This will generate production build files at `/public`
