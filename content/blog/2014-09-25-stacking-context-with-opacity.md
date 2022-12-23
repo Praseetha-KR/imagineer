@@ -30,6 +30,6 @@ In Fig. B, red has got `z-index: 1` which introduces a new stacking context. All
 
 The container div of red is set with property `opacity: 0.9` in Fig. C, so a new stacking context will be induced in that div. Therefore the `z-index: 1` for red will be applied with respect to the parent div, instead of w.r.t root node. Thus it appears below green and blue blocks.
 
-<p data-height="310" data-theme-id="8104" data-slug-hash="BotKr" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/Praseetha-KR/pen/BotKr/'>BotKr</a> by Praseetha KR (<a href='http://codepen.io/Praseetha-KR'>@Praseetha-KR</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="400" data-theme-id="light" data-slug-hash="BotKr" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/Praseetha-KR/pen/BotKr/'>BotKr</a> by Praseetha KR (<a href='http://codepen.io/Praseetha-KR'>@Praseetha-KR</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 
 <script src="//codepen.io/assets/embed/ei.js"></script>

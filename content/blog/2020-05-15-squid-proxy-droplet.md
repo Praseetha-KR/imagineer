@@ -220,8 +220,8 @@ found 1 connections:
 Connection to XXX.XXX.XXX.XXX port 3128 [tcp/ndl-aas] succeeded!
 {{< / highlight >}}
 
-        </div>
-    </div>
+</div>
+</div>
 </div>
 
 

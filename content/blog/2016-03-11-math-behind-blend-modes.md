@@ -292,5 +292,5 @@ with
 
 <p>Here is a demo for blend mode generator in javascript:</p>
 
-<p data-height="350" data-theme-id="8104" data-slug-hash="grrWba" data-default-tab="result" data-user="Praseetha-KR" class="codepen">See the Pen <a href="http://codepen.io/Praseetha-KR/pen/grrWba/">CSS Blend Modes: Generator in JS</a> by Praseetha KR (<a href="http://codepen.io/Praseetha-KR">@Praseetha-KR</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<p data-height="600" data-theme-id="light" data-slug-hash="grrWba" data-default-tab="result" data-user="Praseetha-KR" class="codepen">See the Pen <a href="http://codepen.io/Praseetha-KR/pen/grrWba/">CSS Blend Modes: Generator in JS</a> by Praseetha KR (<a href="http://codepen.io/Praseetha-KR">@Praseetha-KR</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
