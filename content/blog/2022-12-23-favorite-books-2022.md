@@ -1,7 +1,7 @@
 ---
 title: "5 books I loved reading in 2022"
 slug: favorite-books-2022
-date: 2022-12-23 16:00:00
+date: 2022-12-23 00:00:00
 tags:
     - books
 blurb: "Yearly book recommendation"
