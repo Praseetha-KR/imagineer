@@ -6,6 +6,7 @@ $color__bg: #f3f6fa;
 $color__hr-stripe: #e1e3e6;
 $color__bg-masthead: #e1e3e6;
 $color__tweet-btn: #53A8E8;
+$color__code: mix($color__text, lighten($color__primary, 35%), 60%);
 $color__code-highlight-text: #5a6873;
 $color__code-highlight-bg: #edeff3; //#eceef1; //white; //#eceef1; //#eaedf1;
 $color__code-highlight-dark-text: #b0b8c0; //#89c171;

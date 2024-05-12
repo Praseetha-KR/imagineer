@@ -3,6 +3,7 @@ $table-padding: 0.5em;
 table {
     // border-collapse: collapse;
     // table-layout: fixed;
+    word-break: break-word;
     th {
         padding: 0.5em;
     }
