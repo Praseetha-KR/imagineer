@@ -118,9 +118,9 @@ $home__sidebar-width: 18em;
     }
 
     &--twitter {
-        background-color: #1DA1F1;
+        background-color: #000000; // #1DA1F1;
         &:hover, &:focus, &:active {
-            background-color: #1490dd;
+            background-color: #333333; //#1490dd;
         }
     }
     &--github {
