@@ -18,29 +18,52 @@ graphic:
         overlap: "4.2"
 ---
 
-Enabling SSL certificates with automated renewals for Traefik in my Homelab setup turned out to be quite straightforward. All I had to do was configure Let's Encrypt as the Certificate Authority (CA) with Cloudflare as the DNS provider in Traefik's config files, and then activate it for services in the Docker Compose file.  Once all the configurations were in place, Let's Encrypt promptly issued certificates for the specified subdomains as outlined in the Traefik config. I have to admit, it left me in a bit of a 'what just happened' state.
+Enabling SSL certificates with automated renewals for Traefik in my Homelab setup turned out to be quite straightforward. All I had to do was configure Let's Encrypt as the Certificate Authority (CA) with Cloudflare as the DNS provider in Traefik's config files, and then activate it for services in the Docker Compose file. Once all the configurations were in place, Let's Encrypt promptly issued certificates for the specified subdomains as outlined in the Traefik config. It left me in a bit of a 'what just happened' state. 
 
-While the Traefik container logs provided some helpful insights, they only offered a partial view of the API interactions between Traefik, the Let's Encrypt server, and Cloudflare. To gain a better understanding, I decided to take things up a notch by enabling the BurpSuite proxy. By directing traffic from the Traefik container through the proxy, I finally obtained a complete overview of all the APIs, in accordance with the ACME flow specified in the RFC.
+While the Traefik container logs include info on some key events, it was not sufficient to understand the ACME protocol flow. I wanted to see API interactions between Traefik, the Let's Encrypt server, and Cloudflare in order to understand the complete ACME flow. To gain a better understanding, I redirected the Traefik container's traffic via BurpSuite proxy. This captured a comprehensive list of the APIs involved, aligning perfectly with the ACME flow specified in RFC 8555.
 
-In this post, I'm sharing the configurations I used and a rundown of the captured APIs in the ACME flow, giving you a peek into the process of generating a new SSL certificate. Note that I have used traefik version 2.11.
+In this post, I'm sharing the configurations used and a rundown of the captured APIs in the ACME flow, giving you a peek into the process of generating a new Let's Encrypt SSL certificate.
 
 
 ## Traefik setup without SSL
 
-For example, let’s assume the Traefik VM has the IP `192.168.0.123`. There are four URLs representing different services that need to be routed through Traefik:
+Let’s assume the Traefik VM has the IP `192.168.0.123`. There are four URLs  representing different services (arbitrarily chosen for this post) that need to be routed through Traefik:
 
 - `Traefik Dashboard`: An internal service of Traefik running on port 8080.
 - `whoami`: A Docker container residing in the same VM.
-- `dozzle`: Service in another VM within the same network.
+- `Dozzle`: Service in another VM within the same network.
 - `example.com`: Represents an external URL.
 
 
-<!-- | Service | Routing | Remarks |
-|---------|---------|---------|
-| Traefik&nbsp;dashboard | `http://192.168.0.123:8080` <br> →&nbsp;`http://localhost:8080` | <div class="textsize-small">Traefik container service</div> | 
-| `whoami` | `http://192.168.0.123/whoami` <br> →&nbsp;`http://localhost:80/whoami` | <div class="textsize-small">Another container running in the same VM</div> |
-| `dozzle` | `http://192.168.0.123/dozzle` <br> →&nbsp;`https://192.168.0.124:2443/dozzle` | <div class="textsize-small">A service running in another machine in the local network </div> | 
-| example.com | `http://192.168.0.123/example` <br> →&nbsp;`https://example.com` | <div class="textsize-small">An external website</div> | -->
+<table class="textsize-small">
+    <tr>
+        <th>Service</th>
+        <th>Before</th>
+        <th>After</th>
+    </tr>
+    <tr>
+        <td>Traefik&nbsp;dashboard</td>
+        <td><code>http://192.168.0.123:8080</code></td>
+        <td><code>http://192.168.0.123:8080</code></td>
+    </tr>
+    <tr>
+        <td>whoami</td>
+        <td><code>http://192.168.0.123/whoami</code></td>
+        <td><code>http://192.168.0.123/whoami</code></td>
+    </tr>
+    <tr>
+        <td>Dozzle</td>
+        <td><code>https://192.168.0.124:2443/dozzle</code></td>
+        <td><code>http://192.168.0.123/dozzle</code></td>
+    </tr>
+    <tr>
+        <td>example.com</td>
+        <td><code>https://example.com</code></td>
+        <td><code>http://192.168.0.123/example</code></td>
+    </tr>
+</table>
+
+As you can see, we are unifying all services to be accessible via the Trafik VM IP with HTTP. Services except Traefik dashboard are now available on the specified paths.
 
 <div>
     <figure class="figure-l p-2h-top p-2-bottom text-center">
@@ -51,6 +74,8 @@ For example, let’s assume the Traefik VM has the IP `192.168.0.123`. There are
         <figcaption>fig 1: Traefik HTTP Setup</figcaption>
     </figure>
 </div>
+
+Here are the docker compose file and Traefik static & dynamic configuration files for the HTTP setup: 
 
 ##### Docker Compose file:
 <div>
@@ -171,16 +196,43 @@ http:
 
 ## Traefik setup with SSL
 
-Our next goal is to establish SSL and enable automated certificate renewals using Let's Encrypt certificates. All URLs will be directed to port 443. And we will be using a domain name (`nas.mycustomservice.local`) instead of IP (`192.168.0.123`).
+Our next goal is to establish SSL - all URLs will be directed to port `443`.
+
+We also need to setup automated certificate renewals using Let's Encrypt certificates for mitigating the overhead of managing the SSL certificate manually. 
 
 
-<!-- | Service | Routing |
-|---------|---------------|
-| Traefik&nbsp;dashboard | `http://192.168.0.123:8080`<br> →&nbsp;`https://192.168.0.123/dashboard` |
-| `whoami` | `http://192.168.0.123/whoami`<br> →&nbsp;`https://192.168.0.123/whoami` |
-| `dozzle` | `http://192.168.0.123/dozzle`<br> →&nbsp;`https://192.168.0.123/dozzle` |
-| example.com | `http://192.168.0.123/example`<br> →&nbsp;`https://192.168.0.123/example` | -->
 
+Here is the plan:
+
+<table class="textsize-small">
+    <tr>
+        <th>Service</th>
+        <th>Before</th>
+        <th>After</th>
+    </tr>
+    <tr>
+        <td>Traefik&nbsp;dashboard</td>
+        <td><code>http://192.168.0.123:8080</code></td>
+        <td><code>https://nas.mycustomservice.local/dashboard</code></td>
+    </tr>
+    <tr>
+        <td>whoami</td>
+        <td><code>http://192.168.0.123/whoami</code></td>
+        <td><code>https://nas.mycustomservice.local/whoami</code></td>
+    </tr>
+    <tr>
+        <td>Dozzle</td>
+        <td><code>https://192.168.0.123/dozzle</code></td>
+        <td><code>https://nas.mycustomservice.local/dozzle</code></td>
+    </tr>
+    <tr>
+        <td>example.com</td>
+        <td><code>http://192.168.0.123/example</code></td>
+        <td><code>https://nas.mycustomservice.local/example</code></td>
+    </tr>
+</table>
+
+Note that the Traefik dashboard is no longer bound to a port, but under a URL path.
 
 <div>
     <figure class="figure-l p-2h-top p-2-bottom text-center">
@@ -192,7 +244,9 @@ Our next goal is to establish SSL and enable automated certificate renewals usin
     </figure>
 </div>
 
-Make sure to add A record for the subdomain `nas.mycustomservice.local`.
+We will attach the domain name `nas.mycustomservice.local` instead of the IP `192.168.0.123`. Additionally, for demo purposes, I'm planning to add `testtraefik.local.mycustomservice.local` as an alias for this domain and also `*.nas.mycustomservice.local` to make the services available with subdomain access in case if required. 
+
+Here are the DNS records, local network IPs will make the services to be available within the Homelab network:
 
 ```txt
 A       nas                    192.168.0.123
@@ -201,6 +255,8 @@ CNAME   *.nas                  nas.mycustomservice.local
 ```
 
 <br> 
+
+Here are the docker compose file and Traefik static & dynamic configuration files for the HTTPS setup. Additional lines are highlighted: 
 
 ##### Docker Compose file:
 <div>
@@ -296,7 +352,7 @@ certificatesResolvers:
 
 ##### Traefik Dynamic Configuration files:
 
-During testing use `letEncryptStagingResolver` and switch to `letEncryptProductionResolver` once finalized.
+Note: Use `letEncryptStagingResolver` during testing, and switch to `letEncryptProductionResolver` once finalized.
 
 <div>
 <div class="code-snippet">
@@ -393,8 +449,15 @@ http:
 </div>
 </div>
 
+Once saved, Traefik would contact Let's Encrypt server to issue SSL certificates. If you monitor DNS records, you could see temporary DNS records getting created in Cloudflare. 
 
-### Cloudflare ↔ Traefik ↔ Let's Encrypt API Interaction
+This completes the SSL certificate setup, `https://nas.mycustomservice.local/<service_path>` would give the service access.
+
+<br>
+
+<hr>
+
+## What's happening internally?
 
 The diagram below depicts the typical sequence of requests for SSL certificate issuance by Traefik using the ACME protocol (*Let's Encrypt* as Certificate Authority) and with DNS challenge type (*Cloudflare* as DNS provider). 
 
@@ -410,7 +473,62 @@ The diagram below depicts the typical sequence of requests for SSL certificate i
     </div>
 </div>
 
-Here's the expanded version with request and response details for each API call: (click on each request to expand details)
+#### [Debugging] How to view API requests?
+
+Burp Suite proxy was utilized to capture these API requests. Initially, the proxy was enabled, and the CA certificate was exported in DER format. Subsequently, it was converted to PEM format using the following command:
+
+
+```bash
+openssl x509 -in /path/to/burp_ca.der -out /path/to/burp_ca.pem -outform pem
+```
+
+This file was then transferred to the VM hosting the Traefik container, and the docker-compose file was updated as shown below. This enabled to view all the APIs in BurpSuite's `Proxy > HTTP History`.
+
+<div>
+<div class="code-snippet">
+<div class="chroma-filename">traefik/docker-compose.yml</div>
+<div class="chroma-linenos">
+
+{{< highlight yml "linenos=table,hl_lines=12 16-17" >}}
+services:
+  traefik:
+    image: "traefik:v2.11"
+    container_name: "traefik"
+    ports:
+      - "80:80"
+      - "8080:8080"
+      - "443:443"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "/home/ubuntu/traefik/etc/traefik:/etc/traefik"
+      - "/home/ubuntu/traefik/burp_ca.pem:/etc/ssl/certs/burp_ca.pem"
+    environment:
+      CLOUDFLARE_DNS_API_TOKEN: "<token>"
+      CLOUDFLARE_ZONE_API_TOKEN: "<token>"
+      HTTP_PROXY: "<IP_of_the_machine_with_burpsuite_proxy>"
+      HTTPS_PROXY: "<IP_of_the_machine_with_burpsuite_proxy>"
+  whoami:
+    image: "traefik/whoami"
+    container_name: "whoami"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.whoami.rule=PathPrefix(`/whoami`)"
+      - "traefik.http.routers.whoami.entrypoints=web"
+      - "traefik.http.routers.whoami.middlewares=http2https@file"
+      - "traefik.http.routers.whoami-secure.rule=PathPrefix(`/whoami`)"
+      - "traefik.http.routers.whoami-secure.entrypoints=websecure"
+      - "traefik.http.routers.whoami-secure.tls=true"
+{{< / highlight >}}
+
+</div>
+</div>
+</div>
+
+<br>
+
+### Cloudflare ↔ Traefik ↔ Let's Encrypt API Interaction
+
+Here's the expanded version with request and response details for each API call recorded in BurpSuite: (click on each request to expand details)
 
 <style>
     .diagram--request-response__section {
@@ -2999,60 +3117,7 @@ MIIFVD...0BPHtenfhKj5
 </div>
 </div>
 
----
-
-### [Debugging] How to Intercept API Requests?
-
-To capture these API requests, the Burp Suite proxy was utilized. Initially, the proxy was enabled, and the CA certificate was exported in DER format. Subsequently, it was converted to PEM format using the following command:
-
-
-```bash
-openssl x509 -in /path/to/burp_ca.der -out /path/to/burp_ca.pem -outform pem
-```
-
-This file was then transferred to the VM hosting the Traefik container, and the docker-compose file was updated as shown below. This enabled to view all the APIs in BurpSuite's `Proxy > HTTP History`.
-
-<div>
-<div class="code-snippet">
-<div class="chroma-filename">traefik/docker-compose.yml</div>
-<div class="chroma-linenos">
-
-{{< highlight yml "linenos=table,hl_lines=12 16-17" >}}
-services:
-  traefik:
-    image: "traefik:v2.11"
-    container_name: "traefik"
-    ports:
-      - "80:80"
-      - "8080:8080"
-      - "443:443"
-    volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock:ro"
-      - "/home/ubuntu/traefik/etc/traefik:/etc/traefik"
-      - "/home/ubuntu/traefik/burp_ca.pem:/etc/ssl/certs/burp_ca.pem"
-    environment:
-      CLOUDFLARE_DNS_API_TOKEN: "<token>"
-      CLOUDFLARE_ZONE_API_TOKEN: "<token>"
-      HTTP_PROXY: "<IP_of_system_with_burpsuite_proxy>"
-      HTTPS_PROXY: "<IP_of_system_with_burpsuite_proxy>"
-  whoami:
-    image: "traefik/whoami"
-    container_name: "whoami"
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.whoami.rule=PathPrefix(`/whoami`)"
-      - "traefik.http.routers.whoami.entrypoints=web"
-      - "traefik.http.routers.whoami.middlewares=http2https@file"
-      - "traefik.http.routers.whoami-secure.rule=PathPrefix(`/whoami`)"
-      - "traefik.http.routers.whoami-secure.entrypoints=websecure"
-      - "traefik.http.routers.whoami-secure.tls=true"
-{{< / highlight >}}
-
-</div>
-</div>
-</div>
-
-<br>
+Now check out [RFC 8555](https://datatracker.ietf.org/doc/html/rfc8555), you would be able to map these APIs and understand it very easily!
 
 
 ### References
