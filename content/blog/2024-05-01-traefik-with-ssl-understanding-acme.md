@@ -244,13 +244,13 @@ Note that the Traefik dashboard is no longer bound to a port, but under a URL pa
     </figure>
 </div>
 
-We will attach the domain name `nas.mycustomservice.local` instead of the IP `192.168.0.123`. Additionally, for demo purposes, I'm planning to add `testtraefik.local.mycustomservice.local` as an alias for this domain and also `*.nas.mycustomservice.local` to make the services available with subdomain access in case if required. 
+We will attach the domain name `nas.mycustomservice.local` instead of the IP `192.168.0.123`. Additionally, for demo purposes, I'm planning to add `test1.test2.mycustomservice.local` as an alias for this domain and also `*.nas.mycustomservice.local` to make the services available with subdomain access in case if required. 
 
 Here are the DNS records, local network IPs will make the services to be available within the Homelab network:
 
 ```txt
 A       nas                    192.168.0.123
-A       testtraefik.local      192.168.0.123
+A       test.local             192.168.0.123
 CNAME   *.nas                  nas.mycustomservice.local
 ```
 
@@ -369,7 +369,7 @@ tls:
           main: "nas.mycustomservice.local"
           sans:
             - "*.nas.mycustomservice.local"
-            - "testtraefik.local.mycustomservice.local"
+            - "test1.test2.mycustomservice.local"
 {{< / highlight >}}
 
 </div>
@@ -452,6 +452,55 @@ http:
 Once saved, Traefik would contact Let's Encrypt server to issue SSL certificates. If you monitor DNS records, you could see temporary DNS records getting created in Cloudflare. 
 
 This completes the SSL certificate setup, `https://nas.mycustomservice.local/<service_path>` would give the service access.
+
+The generated SSL certificate can be viewed at `/etc/traefik/acme.json`:
+
+
+<div>
+<div class="code-snippet">
+<div class="chroma-filename">/etc/traefik/acme.json</div>
+<div class="chroma-linenos">
+
+{{< highlight yml "linenos=table,hl_lines=18-26" >}}
+{
+    "letEncryptStagingResolver": {
+        "Account": {
+            "Email": "mycustomemail@mailservice.com",
+            "Registration": {
+                "body": {
+                    "status": "valid",
+                    "contact": [
+                        "mailto:mycustomemail@mailservice.com"
+                    ]
+                },
+                "uri": "https://acme-staging-v02.api.letsencrypt.org/acme/acct/123456789"
+            },
+            "PrivateKey": "MIIJKQIB...F9t44KnJ",
+            "KeyType": "4096"
+        },
+        "Certificates": [{
+            "domain": {
+                "main": "*.nas.mycustomservice.local",
+                "sans": [
+                    "nas.mycustomservice.local",
+                    "test1.test2.mycustomservice.local"
+                ]
+            },
+            "certificate": "LS0tLS1...LS0tLS0K",
+            "key": "LS0tLS1...S0tLS0tCg==",
+            "Store": "default"
+        }]
+    },
+    "letEncryptProductionResolver": {
+        "Account": null,
+        "Certificates": null
+    }
+}
+{{< / highlight >}}
+
+</div>
+</div>
+</div>
 
 <br>
 
@@ -840,15 +889,15 @@ Accept-Encoding: gzip, deflate, br
     "identifiers": [
       {
         "type": "dns",
-        "value": "*.test1.example.com"
+        "value": "*.nas.mycustomservice.local"
       },
       {
         "type": "dns",
-        "value": "test1.example.com"
+        "value": "nas.mycustomservice.local"
       },
       {
         "type": "dns",
-        "value": "test3.test2.example.com"
+        "value": "test1.test2.mycustomservice.local"
       }
     ]
   },
@@ -886,15 +935,15 @@ Strict-Transport-Security: max-age=604800
   "identifiers": [
     {
       "type": "dns",
-      "value": "*.test1.example.com"
+      "value": "*.nas.mycustomservice.local"
     },
     {
       "type": "dns",
-      "value": "test1.example.com"
+      "value": "nas.mycustomservice.local"
     },
     {
       "type": "dns",
-      "value": "test3.test2.example.com"
+      "value": "test1.test2.mycustomservice.local"
     }
   ],
   "authorizations": [
@@ -958,7 +1007,7 @@ Strict-Transport-Security: max-age=604800
 {
   "identifier": {
     "type": "dns",
-    "value": "test1.example.com"
+    "value": "nas.mycustomservice.local"
   },
   "status": "pending",
   "expires": "2024-04-22T22:44:24Z",
@@ -1092,7 +1141,7 @@ Strict-Transport-Security: max-age=604800
 {
   "identifier": {
     "type": "dns",
-    "value": "test1.example.com"
+    "value": "nas.mycustomservice.local"
   },
   "status": "pending",
   "expires": "2024-04-22T22:44:24Z",
@@ -1172,7 +1221,7 @@ Strict-Transport-Security: max-age=604800
 {
   "identifier": {
     "type": "dns",
-    "value": "test3.test2.example.com"
+    "value": "test1.test2.mycustomservice.local"
   },
   "status": "pending",
   "expires": "2024-04-22T22:44:24Z",
@@ -1352,7 +1401,7 @@ Accept-Encoding: gzip, deflate, br
     "created_on": "0001-01-01T00:00:00Z",
     "modified_on": "0001-01-01T00:00:00Z",
     "type": "TXT",
-    "name": "test1.example.com",
+    "name": "nas.mycustomservice.local",
     "content": "BbR...E1I",
     "ttl": 120
 }
@@ -1378,7 +1427,7 @@ Server: cloudflare
         "id": "aAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaA",
         "zone_id": "zzzzzzzzzzzzzzzzZZZZZZZZZZZZZZZZ",
         "zone_name": "example.com",
-        "name": "test1.example.com",
+        "name": "nas.mycustomservice.local",
         "type": "TXT",
         "content": "BbR...E1I",
         "proxiable": false,
@@ -1426,7 +1475,7 @@ Accept-Encoding: gzip, deflate, br
     "created_on": "0001-01-01T00:00:00Z",
     "modified_on": "0001-01-01T00:00:00Z",
     "type": "TXT",
-    "name": "test1.example.com",
+    "name": "nas.mycustomservice.local",
     "content": "_SN...xi0",
     "ttl": 120
 }
@@ -1452,7 +1501,7 @@ Server: cloudflare
         "id": "bBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbB",
         "zone_id": "zzzzzzzzzzzzzzzzZZZZZZZZZZZZZZZZ",
         "zone_name": "example.com",
-        "name": "test1.example.com",
+        "name": "nas.mycustomservice.local",
         "type": "TXT",
         "content": "_SN...xi0",
         "proxiable": false,
@@ -1500,7 +1549,7 @@ Accept-Encoding: gzip, deflate, br
     "created_on": "0001-01-01T00:00:00Z",
     "modified_on": "0001-01-01T00:00:00Z",
     "type": "TXT",
-    "name": "_acme-challenge.test3.test2.example.com",
+    "name": "_acme-challenge.test1.test2.mycustomservice.local",
     "content": "g4K...Prg",
     "ttl": 120
 }
@@ -1526,7 +1575,7 @@ Server: cloudflare
         "id": "cCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC",
         "zone_id": "zzzzzzzzzzzzzzzzZZZZZZZZZZZZZZZZ",
         "zone_name": "example.com",
-        "name": "_acme-challenge.test3.test2.example.com",
+        "name": "_acme-challenge.test1.test2.mycustomservice.local",
         "type": "TXT",
         "content": "g4K...Prg",
         "proxiable": false,
@@ -1684,7 +1733,7 @@ Strict-Transport-Security: max-age=604800
 {
   "identifier": {
     "type": "dns",
-    "value": "test1.example.com"
+    "value": "nas.mycustomservice.local"
   },
   "status": "pending",
   "expires": "2024-04-22T22:44:24Z",
@@ -1752,7 +1801,7 @@ Strict-Transport-Security: max-age=604800
 {
   "identifier": {
     "type": "dns",
-    "value": "test1.example.com"
+    "value": "nas.mycustomservice.local"
   },
   "status": "pending",
   "expires": "2024-04-22T22:44:24Z",
@@ -1820,7 +1869,7 @@ Strict-Transport-Security: max-age=604800
 {
   "identifier": {
     "type": "dns",
-    "value": "test1.example.com"
+    "value": "nas.mycustomservice.local"
   },
   "status": "pending",
   "expires": "2024-04-22T22:44:24Z",
@@ -1888,7 +1937,7 @@ Strict-Transport-Security: max-age=604800
 {
   "identifier": {
     "type": "dns",
-    "value": "test1.example.com"
+    "value": "nas.mycustomservice.local"
   },
   "status": "valid",
   "expires": "2024-05-15T22:44:51Z",
@@ -1900,7 +1949,7 @@ Strict-Transport-Security: max-age=604800
       "token": "<token_1>",
       "validationRecord": [
         {
-          "hostname": "test1.example.com",
+          "hostname": "nas.mycustomservice.local",
           "resolverAddrs": [
             "10.0.32.85:28460"
           ]
@@ -2024,7 +2073,7 @@ Strict-Transport-Security: max-age=604800
 {
   "identifier": {
     "type": "dns",
-    "value": "test1.example.com"
+    "value": "nas.mycustomservice.local"
   },
   "status": "pending",
   "expires": "2024-04-22T22:44:24Z",
@@ -2103,7 +2152,7 @@ Strict-Transport-Security: max-age=604800
 {
   "identifier": {
     "type": "dns",
-    "value": "test1.example.com"
+    "value": "nas.mycustomservice.local"
   },
   "status": "pending",
   "expires": "2024-04-22T22:44:24Z",
@@ -2182,7 +2231,7 @@ Strict-Transport-Security: max-age=604800
 {
   "identifier": {
     "type": "dns",
-    "value": "test1.example.com"
+    "value": "nas.mycustomservice.local"
   },
   "status": "valid",
   "expires": "2024-05-15T22:45:09Z",
@@ -2194,7 +2243,7 @@ Strict-Transport-Security: max-age=604800
       "token": "<token_2>",
       "validationRecord": [
         {
-          "hostname": "test1.example.com",
+          "hostname": "nas.mycustomservice.local",
           "resolverAddrs": [
             "10.0.32.82:23095"
           ]
@@ -2317,7 +2366,7 @@ Strict-Transport-Security: max-age=604800
 {
   "identifier": {
     "type": "dns",
-    "value": "test3.test2.example.com"
+    "value": "test1.test2.mycustomservice.local"
   },
   "status": "pending",
   "expires": "2024-04-22T22:44:24Z",
@@ -2396,7 +2445,7 @@ Strict-Transport-Security: max-age=604800
 {
   "identifier": {
     "type": "dns",
-    "value": "test3.test2.example.com"
+    "value": "test1.test2.mycustomservice.local"
   },
   "status": "pending",
   "expires": "2024-04-22T22:44:24Z",
@@ -2475,7 +2524,7 @@ Strict-Transport-Security: max-age=604800
 {
   "identifier": {
     "type": "dns",
-    "value": "test3.test2.example.com"
+    "value": "test1.test2.mycustomservice.local"
   },
   "status": "pending",
   "expires": "2024-04-22T22:44:24Z",
@@ -2554,7 +2603,7 @@ Strict-Transport-Security: max-age=604800
 {
   "identifier": {
     "type": "dns",
-    "value": "test3.test2.example.com"
+    "value": "test1.test2.mycustomservice.local"
   },
   "status": "valid",
   "expires": "2024-05-15T22:45:34Z",
@@ -2566,7 +2615,7 @@ Strict-Transport-Security: max-age=604800
       "token": "<token_3>",
       "validationRecord": [
         {
-          "hostname": "test3.test2.example.com",
+          "hostname": "test1.test2.mycustomservice.local",
           "resolverAddrs": [
             "10.0.32.82:23095"
           ]
@@ -2811,15 +2860,15 @@ Strict-Transport-Security: max-age=604800
   "identifiers": [
     {
       "type": "dns",
-      "value": "*.test1.example.com"
+      "value": "*.nas.mycustomservice.local"
     },
     {
       "type": "dns",
-      "value": "test1.example.com"
+      "value": "nas.mycustomservice.local"
     },
     {
       "type": "dns",
-      "value": "test3.test2.example.com"
+      "value": "test1.test2.mycustomservice.local"
     }
   ],
   "authorizations": [
@@ -2886,15 +2935,15 @@ Strict-Transport-Security: max-age=604800
   "identifiers": [
     {
       "type": "dns",
-      "value": "*.test1.example.com"
+      "value": "*.nas.mycustomservice.local"
     },
     {
       "type": "dns",
-      "value": "test1.example.com"
+      "value": "nas.mycustomservice.local"
     },
     {
       "type": "dns",
-      "value": "test3.test2.example.com"
+      "value": "test1.test2.mycustomservice.local"
     }
   ],
   "authorizations": [
@@ -2960,15 +3009,15 @@ Strict-Transport-Security: max-age=604800
   "identifiers": [
     {
       "type": "dns",
-      "value": "*.test1.example.com"
+      "value": "*.nas.mycustomservice.local"
     },
     {
       "type": "dns",
-      "value": "test1.example.com"
+      "value": "nas.mycustomservice.local"
     },
     {
       "type": "dns",
-      "value": "test3.test2.example.com"
+      "value": "test1.test2.mycustomservice.local"
     }
   ],
   "authorizations": [
@@ -3101,6 +3150,36 @@ MIIFWz...O1aw0PpQBPDQ==
 MIIFVD...0BPHtenfhKj5
 -----END CERTIFICATE-----
 
+{{< / highlight >}}
+</div>
+</div>
+<hr>
+To view the certificate content, store the above response in a PEM file and run command:
+
+```bash
+while openssl x509 -noout -text; do :; done < cert.pem
+```
+
+Output:
+<div class="code-snippet">
+<div class="chroma-linenos">
+{{< highlight yml "linenos=table,hl_lines=3 5-6" >}}
+Certificate:
+    Data:
+        Subject: CN=*.nas.mycustomservice.local.Info
+        X509v3 extensions:
+            X509v3 Subject Alternative Name:
+                DNS:*.nas.mycustomservice.local, DNS:nas.mycustomservice.local, DNS:test1.test2.mycustomservice.local
+            ...
+        ...
+Certificate:
+    Data:
+        Subject: C=US, O=(STAGING) Let's Encrypt, CN=(STAGING) Artificial Apricot R3
+        ...
+Certificate:
+    Data:
+        Subject: C=US, O=(STAGING) Internet Security Research Group, CN=(STAGING) Pretend Pear X1
+    ...
 {{< / highlight >}}
 </div>
 </div>
