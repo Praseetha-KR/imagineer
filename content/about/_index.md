@@ -23,7 +23,7 @@ I write [code](https://github.com/Praseetha-KR) most of the time and occasionall
             LinkedIn: <a target="_blank" href="https://www.linkedin.com/in/praseethakr" rel="noopener noreferrer nofollow">in/praseethakr</a>
         </li>
         <li>
-            Email: <a target="_blank" href="mailto:void.imagieer@gmail.com">void.imagieer[at]gmail[dot]com</a>
+            Email: <a target="_blank" href="mailto:website.contact@imagineer.in">website.contact@imagineer.in</a>
         </li>
     </ul>
 </div>
