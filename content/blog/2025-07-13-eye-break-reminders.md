@@ -135,3 +135,4 @@ Here is a block diagram illustrating control flow of the entire reminder system:
 ---
 
 I kept the success metric for this system really low - if at least 3 times a day I could rest my eyes then its a win. My brain got adapted to it in a week's time with the focus interruption levels reduced, I hope the eye strain issues will subside on the long run.
+
