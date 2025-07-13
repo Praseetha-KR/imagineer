@@ -124,7 +124,7 @@ For the UI, I thought of adding a relaxing vibe, so decided to use an anime them
 Here is a block diagram illustrating control flow of the entire reminder system:
 
 <div class="p-2-bottom">
-    <div class="align-center">
+    <div class="images-row">
         <figure class="figure-l p-q-bottom text-center">
             <img src="/images/posts/eye-break-reminders/reminder_system_block_diagram.png" class="contain-width" alt="Block diagram of eye break reminder system">
             <figcaption>fig 5: Block diagram of eye break reminder system (notification app + fitness band)</figcaption>
