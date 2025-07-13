@@ -135,6 +135,20 @@ figure {
     }
 }
 
+.images-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 768px) {
+        flex-direction: column;
+        &.images-row--responsive > [class^="p-"] {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
 blockquote {
     font-size: 0.95em;
     border: none;

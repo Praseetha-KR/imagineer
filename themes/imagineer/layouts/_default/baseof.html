@@ -23,17 +23,17 @@
         <meta name="msapplication-config" content="/browserconfig.xml">
         <meta name="theme-color" content="#ffffff">
 
-        {{ $criticalBase := resources.Get "scss/base-critical.scss" | resources.ToCSS | resources.Minify }}
+        {{ $criticalBase := resources.Get "scss/base-critical.scss" | css.Sass | resources.Minify }}
         <style>{{ $criticalBase.Content | safeCSS }}</style>
 
-        {{ $criticalThemeLight := resources.Get "scss/theme-light-critical.scss" | resources.ToCSS | resources.Minify }}
+        {{ $criticalThemeLight := resources.Get "scss/theme-light-critical.scss" | css.Sass | resources.Minify }}
         <style>{{ $criticalThemeLight.Content | safeCSS }}</style>
 
-        {{ $baseStyle := resources.Get "scss/base.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+        {{ $baseStyle := resources.Get "scss/base.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
         <link rel="preload" as="style" href="{{ $baseStyle.Permalink }}" />
         <link rel="stylesheet" href="{{ $baseStyle.Permalink }}" />
 
-        {{ $themeLightStyle := resources.Get "scss/theme-light.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+        {{ $themeLightStyle := resources.Get "scss/theme-light.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
         <link rel="preload" as="style" href="{{ $themeLightStyle.Permalink }}" />
         <link rel="stylesheet" href="{{ $themeLightStyle.Permalink }}" />
     </head>

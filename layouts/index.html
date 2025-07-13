@@ -55,7 +55,7 @@
     <section class="home__postcards p-6-top p-4-bottom">
         <h2 class="text-center m-1h-bottom">Recent Posts</h2>
         <ul class="postcards">
-            {{ range first 6 (where .Site.RegularPages "Type" "in" "blog") }} 
+            {{ range first 9 (where .Site.RegularPages "Type" "in" "blog") }} 
                 {{ if (ne .Params.status "draft") }}
                     <li class="postcards__item">
                         <a class="postcard" href="{{ .RelPermalink }}">
